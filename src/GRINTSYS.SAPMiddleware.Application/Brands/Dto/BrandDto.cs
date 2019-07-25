@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
 using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
 using System;
@@ -6,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GRINTSYS.SAPMiddleware.Brands.Dto
 {
+    [AutoMap(typeof(M2.Brand))]
     public class BrandDto: EntityDto, IHasCreationTime, IMustHaveTenant
     {
         public const int MaxNameLength = 256;

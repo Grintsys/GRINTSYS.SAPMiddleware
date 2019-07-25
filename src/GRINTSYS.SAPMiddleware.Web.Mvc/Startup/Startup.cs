@@ -13,7 +13,7 @@ using GRINTSYS.SAPMiddleware.Configuration;
 using GRINTSYS.SAPMiddleware.Identity;
 using GRINTSYS.SAPMiddleware.Web.Resources;
 using Abp.AspNetCore.SignalR.Hubs;
-
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace GRINTSYS.SAPMiddleware.Web.Startup
 {
@@ -39,6 +39,12 @@ namespace GRINTSYS.SAPMiddleware.Web.Startup
             services.AddScoped<IWebResourceManager, WebResourceManager>();
 
             services.AddSignalR();
+
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new Info { Title = "AbpZeroTemplate API", Version = "v1" });
+                options.DocInclusionPredicate((docName, description) => true);
+            });
 
             // Configure Abp and Dependency Injection
             return services.AddAbp<SAPMiddlewareWebMvcModule>(
@@ -72,6 +78,14 @@ namespace GRINTSYS.SAPMiddleware.Web.Startup
             {
                 routes.MapHub<AbpCommonHub>("/signalr");
             });
+
+            app.UseSwagger();
+            //Enable middleware to serve swagger - ui assets(HTML, JS, CSS etc.)
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "SAPMiddleware API V1");
+            }); //URL: /swagger 
+
 
             app.UseMvc(routes =>
             {

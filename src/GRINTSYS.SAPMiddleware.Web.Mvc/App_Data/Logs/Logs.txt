@@ -2517,3 +2517,649 @@ INFO  2019-07-24 23:02:04,029 [30   ] soft.AspNetCore.Hosting.Internal.WebHost -
 INFO  2019-07-24 23:02:04,082 [6    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
 DEBUG 2019-07-24 23:02:04,094 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"gx8B6DHI2oomZa4ZtI-aSQ","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2019-07-24T23:02:04.0833374-06:00","Properties":{}}
 DEBUG 2019-07-24 23:02:04,094 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: gx8B6DHI2oomZa4ZtI-aSQ
+DEBUG 2019-07-25 10:00:37,713 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-07-25 10:00:37,738 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-07-25 10:00:37,757 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.Web.Startup.SAPMiddlewareWebMvcModule, GRINTSYS.SAPMiddleware.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,760 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareWebCoreModule, GRINTSYS.SAPMiddleware.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,760 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareApplicationModule, GRINTSYS.SAPMiddleware.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,761 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareCoreModule, GRINTSYS.SAPMiddleware.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,761 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,761 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,761 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,762 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,762 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareEntityFrameworkModule, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,762 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,763 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,763 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,763 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,763 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,764 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:37,767 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-07-25 10:00:37,831 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-25 10:00:37,831 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-25 10:00:37,831 [1    ] o.Configuration.LanguageManagementConfig - Converted SAPMiddleware (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-25 10:00:37,831 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-25 10:00:38,125 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareDbContext, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:00:38,795 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-07-25 10:00:38,832 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-07-25 10:00:38,844 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-07-25 10:00:38,850 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: SAPMiddleware
+DEBUG 2019-07-25 10:00:38,854 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-07-25 10:00:38,896 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-07-25 10:00:38,944 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 15 classes define auto mapping attributes
+DEBUG 2019-07-25 10:00:38,945 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-07-25 10:00:38,952 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.CreateUserDto
+DEBUG 2019-07-25 10:00:38,952 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.UserDto
+DEBUG 2019-07-25 10:00:38,953 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-07-25 10:00:38,953 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-07-25 10:00:38,953 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.CreateRoleDto
+DEBUG 2019-07-25 10:00:38,953 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.PermissionDto
+DEBUG 2019-07-25 10:00:38,953 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.RoleDto
+DEBUG 2019-07-25 10:00:38,954 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-07-25 10:00:38,954 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.TenantDto
+DEBUG 2019-07-25 10:00:38,954 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartDto
+DEBUG 2019-07-25 10:00:38,954 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartListDto
+DEBUG 2019-07-25 10:00:38,954 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Brands.Dto.BrandDto
+DEBUG 2019-07-25 10:00:38,954 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2019-07-25 10:00:38,954 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Models.Roles.EditRoleModalViewModel
+INFO  2019-07-25 10:00:46,645 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-25 10:00:48,505 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1864.5555ms 200 application/json
+INFO  2019-07-25 10:00:48,507 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=OEiW0-L2zNkaIWY5DWGYtQ  
+INFO  2019-07-25 10:00:48,719 [6    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-07-25 10:00:48,861 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"OEiW0-L2zNkaIWY5DWGYtQ","IpAddress":"::1","TenantId":2,"UserId":3,"ConnectTime":"2019-07-25T10:00:48.7454105-06:00","Properties":{}}
+DEBUG 2019-07-25 10:38:58,701 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-07-25 10:38:58,735 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-07-25 10:38:58,753 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.Web.Startup.SAPMiddlewareWebMvcModule, GRINTSYS.SAPMiddleware.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,756 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareWebCoreModule, GRINTSYS.SAPMiddleware.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,756 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareApplicationModule, GRINTSYS.SAPMiddleware.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,757 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareCoreModule, GRINTSYS.SAPMiddleware.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,757 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,757 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,757 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,758 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,758 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareEntityFrameworkModule, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,758 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,759 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,759 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,759 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,759 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,759 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:58,763 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-07-25 10:38:58,826 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-25 10:38:58,826 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-25 10:38:58,826 [1    ] o.Configuration.LanguageManagementConfig - Converted SAPMiddleware (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-25 10:38:58,826 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-25 10:38:59,087 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareDbContext, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-25 10:38:59,636 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-07-25 10:38:59,669 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-07-25 10:38:59,678 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-07-25 10:38:59,683 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: SAPMiddleware
+DEBUG 2019-07-25 10:38:59,688 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-07-25 10:38:59,725 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-07-25 10:38:59,772 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 15 classes define auto mapping attributes
+DEBUG 2019-07-25 10:38:59,773 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-07-25 10:38:59,780 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.CreateUserDto
+DEBUG 2019-07-25 10:38:59,781 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.UserDto
+DEBUG 2019-07-25 10:38:59,781 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-07-25 10:38:59,781 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-07-25 10:38:59,781 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.CreateRoleDto
+DEBUG 2019-07-25 10:38:59,781 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.PermissionDto
+DEBUG 2019-07-25 10:38:59,781 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.RoleDto
+DEBUG 2019-07-25 10:38:59,782 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-07-25 10:38:59,782 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.TenantDto
+DEBUG 2019-07-25 10:38:59,782 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartDto
+DEBUG 2019-07-25 10:38:59,782 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartListDto
+DEBUG 2019-07-25 10:38:59,782 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Brands.Dto.BrandDto
+DEBUG 2019-07-25 10:38:59,783 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2019-07-25 10:38:59,783 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Models.Roles.EditRoleModalViewModel
+INFO  2019-07-25 10:39:07,127 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-25 10:39:09,198 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2076.5505ms 200 application/json
+INFO  2019-07-25 10:39:09,200 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=UGrVT6xIRh8_Z3cNLi65fQ  
+INFO  2019-07-25 10:39:09,444 [10   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-07-25 10:39:09,614 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"UGrVT6xIRh8_Z3cNLi65fQ","IpAddress":"::1","TenantId":2,"UserId":3,"ConnectTime":"2019-07-25T10:39:09.4927995-06:00","Properties":{}}
+INFO  2019-07-25 10:40:14,584 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Users  
+INFO  2019-07-25 10:40:15,087 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Users", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:40:17,301 [14   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-07-25 10:40:17,524 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-25 10:40:19,326 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1794.6216ms.
+INFO  2019-07-25 10:40:19,821 [15   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-07-25 10:40:22,667 [7    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 2915.938ms.
+INFO  2019-07-25 10:40:22,727 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 7634.2805ms
+INFO  2019-07-25 10:40:22,768 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8187.7834ms 200 text/html; charset=utf-8
+INFO  2019-07-25 10:40:22,777 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:40:22,783 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+DEBUG 2019-07-25 10:40:22,818 [15   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: UGrVT6xIRh8_Z3cNLi65fQ
+INFO  2019-07-25 10:40:22,840 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 73640.5424ms 101 
+INFO  2019-07-25 10:40:22,846 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:40:22,867 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:40:22,949 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:40:23,090 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:40:23,192 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 102.7069ms.
+INFO  2019-07-25 10:40:23,198 [7    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:40:23,199 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 332.0491ms
+INFO  2019-07-25 10:40:23,200 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 416.9059ms 200 application/x-javascript
+INFO  2019-07-25 10:40:23,595 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 641.6569ms.
+INFO  2019-07-25 10:40:23,653 [12   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:40:23,654 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 807.5589ms
+INFO  2019-07-25 10:40:23,655 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 877.8582ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:40:23,717 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-25 10:40:23,726 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.2312ms 200 application/json
+INFO  2019-07-25 10:40:23,757 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=OfdqZuH_VvfoLqM0VF2qhQ  
+INFO  2019-07-25 10:40:23,798 [22   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-07-25 10:40:23,805 [22   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"OfdqZuH_VvfoLqM0VF2qhQ","IpAddress":"::1","TenantId":2,"UserId":3,"ConnectTime":"2019-07-25T10:40:23.798978-06:00","Properties":{}}
+DEBUG 2019-07-25 10:40:23,849 [22   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: OfdqZuH_VvfoLqM0VF2qhQ
+INFO  2019-07-25 10:40:39,122 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Users  
+INFO  2019-07-25 10:40:39,145 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Users", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:40:39,146 [16   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-07-25 10:40:39,149 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-25 10:40:39,959 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 809.5983ms.
+INFO  2019-07-25 10:40:40,247 [18   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-07-25 10:40:40,631 [15   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 388.3883ms.
+INFO  2019-07-25 10:40:40,631 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 1486.4702ms
+INFO  2019-07-25 10:40:40,633 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1511.3ms 200 text/html; charset=utf-8
+DEBUG 2019-07-25 10:40:40,639 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: OfdqZuH_VvfoLqM0VF2qhQ
+INFO  2019-07-25 10:40:40,639 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 16882.3677ms 101 
+INFO  2019-07-25 10:40:40,680 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:40:40,689 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:40:40,690 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:40:40,692 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:40:40,699 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:40:40,708 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:40:40,714 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 6.3832ms.
+INFO  2019-07-25 10:40:40,714 [19   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:40:40,715 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 15.4156ms
+INFO  2019-07-25 10:40:40,716 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 26.5668ms 200 application/x-javascript
+INFO  2019-07-25 10:40:40,754 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 61.6088ms.
+INFO  2019-07-25 10:40:40,755 [10   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:40:40,755 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 64.7086ms
+INFO  2019-07-25 10:40:40,755 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 76.2873ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:40:40,991 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-25 10:40:41,004 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 12.0773ms 200 application/json
+INFO  2019-07-25 10:40:41,040 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=S9Vun5SYt2AwwoMbV33sxQ  
+INFO  2019-07-25 10:40:41,089 [16   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-07-25 10:40:41,097 [16   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"S9Vun5SYt2AwwoMbV33sxQ","IpAddress":"::1","TenantId":2,"UserId":3,"ConnectTime":"2019-07-25T10:40:41.0910919-06:00","Properties":{}}
+DEBUG 2019-07-25 10:40:41,097 [16   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: S9Vun5SYt2AwwoMbV33sxQ
+INFO  2019-07-25 10:40:51,956 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/user/getAll application/json 
+INFO  2019-07-25 10:40:52,114 [19   ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-07-25 10:40:52,161 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "User"}. Executing action GRINTSYS.SAPMiddleware.Users.UserAppService.GetAll (GRINTSYS.SAPMiddleware.Application)
+INFO  2019-07-25 10:40:52,169 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Users.UserAppService.GetAll (GRINTSYS.SAPMiddleware.Application) with arguments (GRINTSYS.SAPMiddleware.Users.Dto.PagedUserResultRequestDto) - Validation state: Valid
+INFO  2019-07-25 10:40:53,027 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Users.UserAppService.GetAll (GRINTSYS.SAPMiddleware.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 857.7987ms.
+INFO  2019-07-25 10:40:53,325 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-07-25 10:40:53,381 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Users.UserAppService.GetAll (GRINTSYS.SAPMiddleware.Application) in 1219.551ms
+INFO  2019-07-25 10:40:53,381 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1425.2536ms 200 application/json; charset=utf-8
+INFO  2019-07-25 10:41:11,382 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Account/Logout  
+INFO  2019-07-25 10:41:11,405 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Logout", controller = "Account", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Logout (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:41:12,347 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Logout (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-25 10:41:12,376 [10   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.Application signed out.
+INFO  2019-07-25 10:41:12,378 [10   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.External signed out.
+INFO  2019-07-25 10:41:12,379 [10   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.TwoFactorUserId signed out.
+INFO  2019-07-25 10:41:12,384 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Logout (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 37.7115ms.
+INFO  2019-07-25 10:41:12,624 [10   ] ft.AspNetCore.Mvc.RedirectToActionResult - Executing RedirectResult, redirecting to /Account/Login.
+INFO  2019-07-25 10:41:12,630 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Logout (GRINTSYS.SAPMiddleware.Web.Mvc) in 1224.1354ms
+INFO  2019-07-25 10:41:12,641 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1260.084ms 302 
+INFO  2019-07-25 10:41:12,646 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Account/Login  
+INFO  2019-07-25 10:41:12,658 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Account", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:41:12,664 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) with arguments (, , ) - Validation state: Valid
+INFO  2019-07-25 10:41:12,670 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 5.8282ms.
+INFO  2019-07-25 10:41:12,964 [19   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Login.
+INFO  2019-07-25 10:41:13,517 [17   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Login executed in 568.9073ms.
+INFO  2019-07-25 10:41:13,517 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) in 858.884ms
+INFO  2019-07-25 10:41:13,517 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 871.156ms 200 text/html; charset=utf-8
+DEBUG 2019-07-25 10:41:13,523 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: S9Vun5SYt2AwwoMbV33sxQ
+INFO  2019-07-25 10:41:13,524 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 32483.2272ms 101 
+INFO  2019-07-25 10:41:13,574 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:41:13,575 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Shared/Components/TenantChange/Default.js?v=636996480735170204  
+INFO  2019-07-25 10:41:13,588 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:41:13,590 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:41:13,591 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:41:13,596 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 5.973ms.
+INFO  2019-07-25 10:41:13,596 [10   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:41:13,596 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 8.4228ms
+INFO  2019-07-25 10:41:13,596 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 23.2381ms 200 application/x-javascript
+INFO  2019-07-25 10:41:13,598 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:41:13,599 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:41:13,654 [19   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/Components/TenantChange/Default.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\view-resources\Views\Shared\Components\TenantChange\Default.js'
+INFO  2019-07-25 10:41:13,654 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 78.976ms 200 application/javascript
+INFO  2019-07-25 10:41:13,660 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 60.1983ms.
+INFO  2019-07-25 10:41:13,660 [17   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:41:13,660 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 62.1025ms
+INFO  2019-07-25 10:41:13,660 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 68.9899ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:41:18,971 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/Account/TenantChangeModal application/html 0
+INFO  2019-07-25 10:41:18,991 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "TenantChangeModal", controller = "Account", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.TenantChangeModal (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:41:19,010 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.TenantChangeModal (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-25 10:41:19,306 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.TenantChangeModal (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 295.8412ms.
+INFO  2019-07-25 10:41:19,748 [17   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view /Views/Shared/Components/TenantChange/_ChangeModal.cshtml.
+INFO  2019-07-25 10:41:19,812 [17   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view /Views/Shared/Components/TenantChange/_ChangeModal.cshtml executed in 76.8457ms.
+INFO  2019-07-25 10:41:19,812 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.TenantChangeModal (GRINTSYS.SAPMiddleware.Web.Mvc) in 821.0733ms
+INFO  2019-07-25 10:41:19,813 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 842.0342ms 200 text/html; charset=utf-8
+INFO  2019-07-25 10:41:27,658 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/api/services/app/Account/IsTenantAvailable application/json 26
+INFO  2019-07-25 10:41:27,682 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "IsTenantAvailable", controller = "Account"}. Executing action GRINTSYS.SAPMiddleware.Authorization.Accounts.AccountAppService.IsTenantAvailable (GRINTSYS.SAPMiddleware.Application)
+INFO  2019-07-25 10:41:27,777 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Authorization.Accounts.AccountAppService.IsTenantAvailable (GRINTSYS.SAPMiddleware.Application) with arguments (GRINTSYS.SAPMiddleware.Authorization.Accounts.Dto.IsTenantAvailableInput) - Validation state: Valid
+INFO  2019-07-25 10:41:27,934 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Authorization.Accounts.AccountAppService.IsTenantAvailable (GRINTSYS.SAPMiddleware.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 156.3819ms.
+INFO  2019-07-25 10:41:28,219 [14   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-07-25 10:41:28,226 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Authorization.Accounts.AccountAppService.IsTenantAvailable (GRINTSYS.SAPMiddleware.Application) in 543.7823ms
+INFO  2019-07-25 10:41:28,228 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 570.5434ms 200 application/json; charset=utf-8
+INFO  2019-07-25 10:41:35,580 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/api/services/app/Account/IsTenantAvailable application/json 25
+INFO  2019-07-25 10:41:35,586 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "IsTenantAvailable", controller = "Account"}. Executing action GRINTSYS.SAPMiddleware.Authorization.Accounts.AccountAppService.IsTenantAvailable (GRINTSYS.SAPMiddleware.Application)
+INFO  2019-07-25 10:41:35,589 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Authorization.Accounts.AccountAppService.IsTenantAvailable (GRINTSYS.SAPMiddleware.Application) with arguments (GRINTSYS.SAPMiddleware.Authorization.Accounts.Dto.IsTenantAvailableInput) - Validation state: Valid
+INFO  2019-07-25 10:41:35,727 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Authorization.Accounts.AccountAppService.IsTenantAvailable (GRINTSYS.SAPMiddleware.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 138.3558ms.
+INFO  2019-07-25 10:41:36,019 [25   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-07-25 10:41:36,020 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Authorization.Accounts.AccountAppService.IsTenantAvailable (GRINTSYS.SAPMiddleware.Application) in 434.3315ms
+INFO  2019-07-25 10:41:36,021 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 440.2604ms 200 application/json; charset=utf-8
+INFO  2019-07-25 10:41:36,056 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Account/Login  
+INFO  2019-07-25 10:41:36,744 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Account", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:41:36,761 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) with arguments (, , ) - Validation state: Valid
+INFO  2019-07-25 10:41:36,762 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.2059ms.
+INFO  2019-07-25 10:41:36,987 [10   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Login.
+INFO  2019-07-25 10:41:37,626 [10   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Login executed in 639.1531ms.
+INFO  2019-07-25 10:41:37,626 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) in 881.7064ms
+INFO  2019-07-25 10:41:37,627 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1570.2476ms 200 text/html; charset=utf-8
+INFO  2019-07-25 10:41:37,702 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Shared/Components/TenantChange/Default.js?v=636996480976262454  
+INFO  2019-07-25 10:41:37,706 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:41:37,707 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:41:37,711 [17   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/Components/TenantChange/Default.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\view-resources\Views\Shared\Components\TenantChange\Default.js'
+INFO  2019-07-25 10:41:37,712 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.8922ms 200 application/javascript
+INFO  2019-07-25 10:41:37,724 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:41:37,725 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:41:37,726 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:41:37,727 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:41:37,737 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 11.8063ms.
+INFO  2019-07-25 10:41:37,737 [25   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:41:37,737 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 13.6294ms
+INFO  2019-07-25 10:41:37,737 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 30.6989ms 200 application/x-javascript
+INFO  2019-07-25 10:41:38,093 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 366.0357ms.
+INFO  2019-07-25 10:41:38,169 [19   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:41:38,169 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 443.2092ms
+INFO  2019-07-25 10:41:38,169 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 463.3527ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:41:41,033 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/Account/Login application/x-www-form-urlencoded 256
+INFO  2019-07-25 10:41:41,055 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Account", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:41:41,104 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) with arguments (GRINTSYS.SAPMiddleware.Web.Models.Account.LoginViewModel, /, ) - Validation state: Valid
+INFO  2019-07-25 10:41:42,669 [26   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.Application signed in.
+INFO  2019-07-25 10:41:42,672 [26   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.JsonResult in 1567.8224ms.
+INFO  2019-07-25 10:41:43,016 [10   ] matters.Json.Internal.JsonResultExecutor - Executing JsonResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-07-25 10:41:43,016 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) in 1960.9854ms
+INFO  2019-07-25 10:41:43,017 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1984.3081ms 200 application/json; charset=utf-8
+INFO  2019-07-25 10:41:43,039 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2019-07-25 10:41:43,049 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:41:43,050 [17   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-07-25 10:41:43,053 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-25 10:41:43,056 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.3543ms.
+INFO  2019-07-25 10:41:43,226 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/Account/Login application/x-www-form-urlencoded 256
+INFO  2019-07-25 10:41:43,242 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Account", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:41:43,288 [17   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-07-25 10:41:43,288 [25   ] idateAntiforgeryTokenAuthorizationFilter - Antiforgery token validation failed. The provided antiforgery token was meant for a different claims-based user than the current user.
+Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The provided antiforgery token was meant for a different claims-based user than the current user.
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgery.ValidateTokens(HttpContext httpContext, AntiforgeryTokenSet antiforgeryTokenSet)
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgery.ValidateRequestAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ValidateAntiforgeryTokenAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context)
+INFO  2019-07-25 10:41:43,290 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Authorization failed for the request at filter 'Abp.AspNetCore.Mvc.Antiforgery.AbpAutoValidateAntiforgeryTokenAuthorizationFilter'.
+INFO  2019-07-25 10:41:43,297 [25   ] icrosoft.AspNetCore.Mvc.StatusCodeResult - Executing HttpStatusCodeResult, setting HTTP status code 400
+INFO  2019-07-25 10:41:43,298 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) in 56.0317ms
+INFO  2019-07-25 10:41:43,298 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 72.2746ms 400 
+INFO  2019-07-25 10:41:43,304 [25   ] Microsoft.AspNetCore.Server.Kestrel      - Connection id "0HLOH3QE8J8KT", Request id "0HLOH3QE8J8KT:00000004": the application completed without reading the entire request body.
+INFO  2019-07-25 10:41:44,840 [25   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 1555.7627ms.
+INFO  2019-07-25 10:41:44,840 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 1790.5424ms
+INFO  2019-07-25 10:41:44,840 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1801.4829ms 200 text/html; charset=utf-8
+INFO  2019-07-25 10:41:44,957 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:41:44,966 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:41:44,978 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:41:44,979 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:41:44,985 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:41:44,986 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:41:44,992 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 6.7734ms.
+INFO  2019-07-25 10:41:44,993 [25   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:41:44,993 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 14.3731ms
+INFO  2019-07-25 10:41:44,993 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 35.956ms 200 application/x-javascript
+INFO  2019-07-25 10:41:45,059 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 72.817ms.
+INFO  2019-07-25 10:41:45,059 [10   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:41:45,059 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 74.6518ms
+INFO  2019-07-25 10:41:45,059 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 93.2972ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:41:45,165 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-25 10:41:45,176 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.8169ms 200 application/json
+INFO  2019-07-25 10:41:45,191 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=eb56pRS6AXTP4LZ5fjF16Q  
+INFO  2019-07-25 10:41:45,347 [16   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-07-25 10:41:45,355 [16   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"eb56pRS6AXTP4LZ5fjF16Q","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-07-25T10:41:45.3483468-06:00","Properties":{}}
+DEBUG 2019-07-25 10:41:45,356 [16   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: eb56pRS6AXTP4LZ5fjF16Q
+INFO  2019-07-25 10:41:47,199 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Users  
+INFO  2019-07-25 10:41:47,220 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Users", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:41:47,221 [10   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-07-25 10:41:47,224 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-25 10:41:48,426 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1202.0075ms.
+INFO  2019-07-25 10:41:48,870 [10   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-07-25 10:41:49,258 [26   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 388.1808ms.
+INFO  2019-07-25 10:41:49,258 [26   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 2037.7193ms
+INFO  2019-07-25 10:41:49,258 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2059.7972ms 200 text/html; charset=utf-8
+DEBUG 2019-07-25 10:41:49,276 [16   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: eb56pRS6AXTP4LZ5fjF16Q
+INFO  2019-07-25 10:41:49,277 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4085.5888ms 101 
+INFO  2019-07-25 10:41:49,322 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:41:49,323 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:41:49,336 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:41:49,337 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:41:49,338 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:41:49,339 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:41:49,350 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 10.6999ms.
+INFO  2019-07-25 10:41:49,350 [19   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:41:49,350 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 12.3527ms
+INFO  2019-07-25 10:41:49,351 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 27.8077ms 200 application/x-javascript
+INFO  2019-07-25 10:41:49,382 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 44.9315ms.
+INFO  2019-07-25 10:41:49,383 [16   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:41:49,383 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 46.8948ms
+INFO  2019-07-25 10:41:49,383 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 61.6084ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:41:49,435 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-25 10:41:49,444 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.2107ms 200 application/json
+INFO  2019-07-25 10:41:49,489 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=Y-gMDkhQCrRNQqRNdCPdhQ  
+INFO  2019-07-25 10:41:49,520 [14   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-07-25 10:41:49,526 [14   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"Y-gMDkhQCrRNQqRNdCPdhQ","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-07-25T10:41:49.5210983-06:00","Properties":{}}
+DEBUG 2019-07-25 10:41:49,526 [14   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: Y-gMDkhQCrRNQqRNdCPdhQ
+INFO  2019-07-25 10:41:53,924 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Users  
+INFO  2019-07-25 10:41:53,935 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Users", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:41:53,936 [14   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-07-25 10:41:53,939 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-25 10:41:54,836 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 897.2017ms.
+INFO  2019-07-25 10:41:55,135 [14   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-07-25 10:41:55,489 [25   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 354.0006ms.
+INFO  2019-07-25 10:41:55,490 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 1554.6691ms
+INFO  2019-07-25 10:41:55,490 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1566.3136ms 200 text/html; charset=utf-8
+DEBUG 2019-07-25 10:41:55,503 [14   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: Y-gMDkhQCrRNQqRNdCPdhQ
+INFO  2019-07-25 10:41:55,503 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6013.8512ms 101 
+INFO  2019-07-25 10:41:55,553 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:41:55,559 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:41:55,560 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:41:55,564 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:41:55,571 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 6.2374ms.
+INFO  2019-07-25 10:41:55,571 [25   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:41:55,571 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 11.2627ms
+INFO  2019-07-25 10:41:55,571 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:41:55,571 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 18.1652ms 200 application/x-javascript
+INFO  2019-07-25 10:41:55,573 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:41:55,636 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 63.0585ms.
+INFO  2019-07-25 10:41:55,636 [10   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:41:55,636 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 65.3634ms
+INFO  2019-07-25 10:41:55,637 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 78.0115ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:41:55,672 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-25 10:41:55,689 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 16.9672ms 200 application/json
+INFO  2019-07-25 10:41:55,729 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=V5ZMry1bo2XvQI9C5o4FQQ  
+INFO  2019-07-25 10:41:55,765 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/favicon.ico  
+INFO  2019-07-25 10:41:55,767 [17   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+INFO  2019-07-25 10:41:55,769 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\favicon.ico'
+INFO  2019-07-25 10:41:55,769 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.396ms 200 image/x-icon
+DEBUG 2019-07-25 10:41:55,774 [17   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"V5ZMry1bo2XvQI9C5o4FQQ","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-07-25T10:41:55.7682739-06:00","Properties":{}}
+DEBUG 2019-07-25 10:41:55,774 [17   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: V5ZMry1bo2XvQI9C5o4FQQ
+INFO  2019-07-25 10:42:05,442 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Account/Logout  
+INFO  2019-07-25 10:42:05,459 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Logout", controller = "Account", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Logout (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:42:05,472 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Logout (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-25 10:42:05,472 [16   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.Application signed out.
+INFO  2019-07-25 10:42:05,472 [16   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.External signed out.
+INFO  2019-07-25 10:42:05,472 [16   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.TwoFactorUserId signed out.
+INFO  2019-07-25 10:42:05,473 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Logout (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 0.8692ms.
+INFO  2019-07-25 10:42:05,726 [16   ] ft.AspNetCore.Mvc.RedirectToActionResult - Executing RedirectResult, redirecting to /Account/Login.
+INFO  2019-07-25 10:42:05,726 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Logout (GRINTSYS.SAPMiddleware.Web.Mvc) in 266.8458ms
+INFO  2019-07-25 10:42:05,726 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 284.8318ms 302 
+INFO  2019-07-25 10:42:05,738 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Account/Login  
+INFO  2019-07-25 10:42:05,742 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Account", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:42:05,752 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) with arguments (, , ) - Validation state: Valid
+INFO  2019-07-25 10:42:05,752 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1776ms.
+INFO  2019-07-25 10:42:06,069 [17   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Login.
+INFO  2019-07-25 10:42:06,328 [17   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Login executed in 259.2618ms.
+INFO  2019-07-25 10:42:06,329 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) in 586.246ms
+INFO  2019-07-25 10:42:06,330 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 591.5945ms 200 text/html; charset=utf-8
+DEBUG 2019-07-25 10:42:06,372 [17   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: V5ZMry1bo2XvQI9C5o4FQQ
+INFO  2019-07-25 10:42:06,373 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10643.779ms 101 
+INFO  2019-07-25 10:42:06,404 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:42:06,407 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Shared/Components/TenantChange/Default.js?v=636996481263285176  
+INFO  2019-07-25 10:42:06,408 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:42:06,410 [17   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/Components/TenantChange/Default.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\view-resources\Views\Shared\Components\TenantChange\Default.js'
+INFO  2019-07-25 10:42:06,412 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.852ms 200 application/javascript
+INFO  2019-07-25 10:42:06,414 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:42:06,416 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:42:06,420 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:42:06,421 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:42:06,423 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 6.8552ms.
+INFO  2019-07-25 10:42:06,423 [19   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:42:06,423 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 8.9612ms
+INFO  2019-07-25 10:42:06,423 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 19.1754ms 200 application/x-javascript
+INFO  2019-07-25 10:42:06,485 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 64.2311ms.
+INFO  2019-07-25 10:42:06,486 [10   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:42:06,486 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 66.2177ms
+INFO  2019-07-25 10:42:06,486 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 77.5995ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:42:14,663 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2019-07-25 10:42:14,723 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+WARN  2019-07-25 10:42:14,737 [14   ] Mvc.Authorization.AbpAuthorizationFilter - Abp.Authorization.AbpAuthorizationException: Current user did not login to the application!
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(IEnumerable`1 authorizeAttributes) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 42
+   at Abp.Authorization.AuthorizationHelper.CheckPermissions(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 107
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 56
+   at Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Authorization\AbpAuthorizationFilter.cs:line 53
+Abp.Authorization.AbpAuthorizationException: Current user did not login to the application!
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(IEnumerable`1 authorizeAttributes) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 42
+   at Abp.Authorization.AuthorizationHelper.CheckPermissions(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 107
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 56
+   at Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Authorization\AbpAuthorizationFilter.cs:line 53
+INFO  2019-07-25 10:42:14,739 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Authorization failed for the request at filter 'Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter'.
+INFO  2019-07-25 10:42:14,743 [14   ] Microsoft.AspNetCore.Mvc.ChallengeResult - Executing ChallengeResult with authentication schemes ().
+INFO  2019-07-25 10:42:14,756 [14   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.Application was challenged.
+INFO  2019-07-25 10:42:14,756 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 33.2154ms
+INFO  2019-07-25 10:42:14,757 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 93.7849ms 302 
+INFO  2019-07-25 10:42:14,761 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Account/Login?ReturnUrl=%2F  
+INFO  2019-07-25 10:42:14,765 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Account", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:42:14,769 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) with arguments (, /, ) - Validation state: Valid
+INFO  2019-07-25 10:42:14,769 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1423ms.
+INFO  2019-07-25 10:42:14,994 [14   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Login.
+INFO  2019-07-25 10:42:15,320 [14   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Login executed in 326.4195ms.
+INFO  2019-07-25 10:42:15,321 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) in 555.614ms
+INFO  2019-07-25 10:42:15,321 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 560.4315ms 200 text/html; charset=utf-8
+INFO  2019-07-25 10:42:15,423 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Shared/Components/TenantChange/Default.js?v=636996481353206985  
+INFO  2019-07-25 10:42:15,424 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:42:15,424 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:42:15,437 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:42:15,437 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/Components/TenantChange/Default.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\view-resources\Views\Shared\Components\TenantChange\Default.js'
+INFO  2019-07-25 10:42:15,437 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 14.1171ms 200 application/javascript
+INFO  2019-07-25 10:42:15,438 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:42:15,438 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:42:15,439 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:42:15,453 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 13.5469ms.
+INFO  2019-07-25 10:42:15,453 [19   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:42:15,453 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 15.1232ms
+INFO  2019-07-25 10:42:15,453 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 28.7475ms 200 application/x-javascript
+INFO  2019-07-25 10:42:15,489 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 51.1345ms.
+INFO  2019-07-25 10:42:15,490 [17   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:42:15,490 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 53.0071ms
+INFO  2019-07-25 10:42:15,490 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 66.0978ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:42:17,914 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/Account/Login application/x-www-form-urlencoded 256
+INFO  2019-07-25 10:42:17,922 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Account", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:42:17,927 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) with arguments (GRINTSYS.SAPMiddleware.Web.Models.Account.LoginViewModel, /, ) - Validation state: Valid
+INFO  2019-07-25 10:42:18,876 [17   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.Application signed in.
+INFO  2019-07-25 10:42:18,878 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.JsonResult in 950.7928ms.
+INFO  2019-07-25 10:42:19,144 [19   ] matters.Json.Internal.JsonResultExecutor - Executing JsonResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-07-25 10:42:19,144 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) in 1222.1365ms
+INFO  2019-07-25 10:42:19,145 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1230.8382ms 200 application/json; charset=utf-8
+INFO  2019-07-25 10:42:19,175 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2019-07-25 10:42:19,195 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:42:19,196 [14   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-07-25 10:42:19,198 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-25 10:42:19,198 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0202ms.
+INFO  2019-07-25 10:42:19,393 [17   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-07-25 10:42:19,762 [14   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 368.7895ms.
+INFO  2019-07-25 10:42:19,762 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 566.5703ms
+INFO  2019-07-25 10:42:19,762 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 587.5661ms 200 text/html; charset=utf-8
+INFO  2019-07-25 10:42:19,848 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:42:19,861 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:42:19,867 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:42:19,868 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:42:19,870 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:42:19,873 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:42:19,878 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 9.7589ms.
+INFO  2019-07-25 10:42:19,878 [14   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:42:19,879 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 11.6715ms
+INFO  2019-07-25 10:42:19,879 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 30.3992ms 200 application/x-javascript
+INFO  2019-07-25 10:42:19,907 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 32.9684ms.
+INFO  2019-07-25 10:42:19,908 [19   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:42:19,909 [19   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 38.1523ms
+INFO  2019-07-25 10:42:19,909 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 48.1778ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:42:20,037 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-25 10:42:20,047 [19   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.1396ms 200 application/json
+INFO  2019-07-25 10:42:20,067 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=UEJemVTrcN_C11vgTk6spw  
+INFO  2019-07-25 10:42:20,227 [19   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-07-25 10:42:20,234 [19   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"UEJemVTrcN_C11vgTk6spw","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-07-25T10:42:20.2278723-06:00","Properties":{}}
+DEBUG 2019-07-25 10:42:20,234 [19   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: UEJemVTrcN_C11vgTk6spw
+INFO  2019-07-25 10:42:21,985 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Users  
+INFO  2019-07-25 10:42:22,007 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Users", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:42:22,007 [17   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-07-25 10:42:22,014 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-25 10:42:22,917 [26   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 902.8451ms.
+INFO  2019-07-25 10:42:23,186 [26   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-07-25 10:42:23,543 [16   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 356.6404ms.
+INFO  2019-07-25 10:42:23,543 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 1536.125ms
+INFO  2019-07-25 10:42:23,543 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1558.8003ms 200 text/html; charset=utf-8
+DEBUG 2019-07-25 10:42:23,566 [16   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: UEJemVTrcN_C11vgTk6spw
+INFO  2019-07-25 10:42:23,566 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3499.1419ms 101 
+INFO  2019-07-25 10:42:23,591 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:42:23,604 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:42:23,608 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:42:23,609 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:42:23,614 [26   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:42:23,615 [26   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:42:23,622 [26   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 6.7533ms.
+INFO  2019-07-25 10:42:23,622 [26   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:42:23,623 [26   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 8.6852ms
+INFO  2019-07-25 10:42:23,623 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 18.5499ms 200 application/x-javascript
+INFO  2019-07-25 10:42:23,668 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 58.7249ms.
+INFO  2019-07-25 10:42:23,669 [16   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:42:23,669 [16   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 60.8308ms
+INFO  2019-07-25 10:42:23,669 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 77.9921ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:42:23,720 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-25 10:42:23,734 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 14.7799ms 200 application/json
+INFO  2019-07-25 10:42:23,780 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=0rmzFryXqQqXdMG4wgOFvA  
+INFO  2019-07-25 10:42:23,813 [25   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-07-25 10:42:23,818 [25   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"0rmzFryXqQqXdMG4wgOFvA","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-07-25T10:42:23.8143941-06:00","Properties":{}}
+DEBUG 2019-07-25 10:42:23,819 [25   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 0rmzFryXqQqXdMG4wgOFvA
+INFO  2019-07-25 10:42:55,437 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Users  
+INFO  2019-07-25 10:42:55,458 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Users", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:42:55,459 [10   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-07-25 10:42:55,464 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-25 10:42:56,584 [24   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1120.5472ms.
+INFO  2019-07-25 10:42:56,855 [10   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-07-25 10:42:57,181 [25   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 326.5411ms.
+INFO  2019-07-25 10:42:57,182 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 1723.953ms
+INFO  2019-07-25 10:42:57,182 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1744.8593ms 200 text/html; charset=utf-8
+DEBUG 2019-07-25 10:42:57,199 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 0rmzFryXqQqXdMG4wgOFvA
+INFO  2019-07-25 10:42:57,199 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 33419.1485ms 101 
+INFO  2019-07-25 10:42:57,220 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:42:57,228 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:42:57,233 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:42:57,234 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:42:57,234 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:42:57,236 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:42:57,245 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 9.3376ms.
+INFO  2019-07-25 10:42:57,245 [25   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:42:57,245 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 11.0689ms
+INFO  2019-07-25 10:42:57,246 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 17.8097ms 200 application/x-javascript
+INFO  2019-07-25 10:42:57,295 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 60.7821ms.
+INFO  2019-07-25 10:42:57,296 [10   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:42:57,296 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 63.1639ms
+INFO  2019-07-25 10:42:57,296 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 75.7724ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:42:57,367 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-25 10:42:57,378 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 11.791ms 200 application/json
+INFO  2019-07-25 10:42:57,427 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=jTMsEa3St5vjyGzkYKMg9Q  
+INFO  2019-07-25 10:42:57,470 [10   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-07-25 10:42:57,479 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"jTMsEa3St5vjyGzkYKMg9Q","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-07-25T10:42:57.4711856-06:00","Properties":{}}
+DEBUG 2019-07-25 10:42:57,479 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: jTMsEa3St5vjyGzkYKMg9Q
+INFO  2019-07-25 10:43:01,404 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Roles  
+INFO  2019-07-25 10:43:01,434 [20   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Roles", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.RolesController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:43:01,435 [20   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-07-25 10:43:01,553 [20   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.RolesController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+WARN  2019-07-25 10:43:02,133 [10   ] naries.DictionaryBasedLocalizationSource - Can not find 'MobileAccess' in localization source 'SAPMiddleware'!
+INFO  2019-07-25 10:43:02,370 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.RolesController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 816.7379ms.
+INFO  2019-07-25 10:43:02,645 [10   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-07-25 10:43:03,061 [20   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 425.4823ms.
+INFO  2019-07-25 10:43:03,061 [20   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.RolesController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 1626.6311ms
+INFO  2019-07-25 10:43:03,062 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1657.5142ms 200 text/html; charset=utf-8
+DEBUG 2019-07-25 10:43:03,067 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: jTMsEa3St5vjyGzkYKMg9Q
+INFO  2019-07-25 10:43:03,067 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5639.5617ms 101 
+INFO  2019-07-25 10:43:03,125 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:43:03,126 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:43:03,132 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:43:03,132 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:43:03,134 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:43:03,134 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:43:03,142 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 8.5862ms.
+INFO  2019-07-25 10:43:03,143 [10   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:43:03,143 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 10.6713ms
+INFO  2019-07-25 10:43:03,143 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 17.263ms 200 application/x-javascript
+INFO  2019-07-25 10:43:03,190 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 56.3893ms.
+INFO  2019-07-25 10:43:03,191 [17   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:43:03,192 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 60.2601ms
+INFO  2019-07-25 10:43:03,193 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 68.3187ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:43:03,235 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-25 10:43:03,251 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 15.8096ms 200 application/json
+INFO  2019-07-25 10:43:03,286 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=l-83BluMxz9vtSnkPGdQzw  
+INFO  2019-07-25 10:43:03,315 [10   ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-07-25 10:43:03,321 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"l-83BluMxz9vtSnkPGdQzw","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-07-25T10:43:03.3165773-06:00","Properties":{}}
+DEBUG 2019-07-25 10:43:03,322 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: l-83BluMxz9vtSnkPGdQzw
+INFO  2019-07-25 10:43:04,542 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Users  
+INFO  2019-07-25 10:43:04,563 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Users", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:43:04,564 [17   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-07-25 10:43:04,568 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-25 10:43:05,680 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1111.8397ms.
+INFO  2019-07-25 10:43:06,029 [5    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-07-25 10:43:06,412 [5    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 382.9234ms.
+INFO  2019-07-25 10:43:06,412 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.UsersController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 1848.2683ms
+INFO  2019-07-25 10:43:06,412 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1870.5152ms 200 text/html; charset=utf-8
+DEBUG 2019-07-25 10:43:06,433 [25   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: l-83BluMxz9vtSnkPGdQzw
+INFO  2019-07-25 10:43:06,433 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3147.2492ms 101 
+INFO  2019-07-25 10:43:06,460 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:43:06,463 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:43:06,470 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:43:06,470 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:43:06,474 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:43:06,474 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:43:06,483 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 8.698ms.
+INFO  2019-07-25 10:43:06,483 [25   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:43:06,483 [25   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 13.2446ms
+INFO  2019-07-25 10:43:06,483 [25   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 22.933ms 200 application/x-javascript
+INFO  2019-07-25 10:43:06,545 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 70.9082ms.
+INFO  2019-07-25 10:43:06,546 [5    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:43:06,546 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 75.8552ms
+INFO  2019-07-25 10:43:06,546 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 82.5378ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:43:06,585 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-25 10:43:06,595 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.7358ms 200 application/json
+INFO  2019-07-25 10:43:06,659 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=kj_hPAmp76KYosQkj4FJmg  
+INFO  2019-07-25 10:43:06,697 [5    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-07-25 10:43:06,704 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"kj_hPAmp76KYosQkj4FJmg","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-07-25T10:43:06.6984209-06:00","Properties":{}}
+DEBUG 2019-07-25 10:43:06,705 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: kj_hPAmp76KYosQkj4FJmg
+INFO  2019-07-25 10:44:02,082 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Account/Logout  
+INFO  2019-07-25 10:44:02,098 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Logout", controller = "Account", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Logout (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:44:02,108 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Logout (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-25 10:44:02,109 [22   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.Application signed out.
+INFO  2019-07-25 10:44:02,109 [22   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.External signed out.
+INFO  2019-07-25 10:44:02,109 [22   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.TwoFactorUserId signed out.
+INFO  2019-07-25 10:44:02,109 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Logout (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 0.8292ms.
+INFO  2019-07-25 10:44:02,379 [22   ] ft.AspNetCore.Mvc.RedirectToActionResult - Executing RedirectResult, redirecting to /Account/Login.
+INFO  2019-07-25 10:44:02,379 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Logout (GRINTSYS.SAPMiddleware.Web.Mvc) in 281.5106ms
+INFO  2019-07-25 10:44:02,379 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 297.9042ms 302 
+INFO  2019-07-25 10:44:02,386 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/Account/Login  
+INFO  2019-07-25 10:44:02,390 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Account", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-25 10:44:02,393 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) with arguments (, , ) - Validation state: Valid
+INFO  2019-07-25 10:44:02,393 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.139ms.
+INFO  2019-07-25 10:44:02,774 [22   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Login.
+INFO  2019-07-25 10:44:03,042 [5    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Login executed in 268.18ms.
+INFO  2019-07-25 10:44:03,042 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.AccountController.Login (GRINTSYS.SAPMiddleware.Web.Mvc) in 652.7197ms
+INFO  2019-07-25 10:44:03,043 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 656.6524ms 200 text/html; charset=utf-8
+DEBUG 2019-07-25 10:44:03,058 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: kj_hPAmp76KYosQkj4FJmg
+INFO  2019-07-25 10:44:03,059 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 56401.7944ms 101 
+INFO  2019-07-25 10:44:03,093 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=636996479397266263  
+INFO  2019-07-25 10:44:03,097 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=636996479397266263  
+INFO  2019-07-25 10:44:03,098 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Shared/Components/TenantChange/Default.js?v=636996482430427051  
+INFO  2019-07-25 10:44:03,106 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-25 10:44:03,107 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-25 10:44:03,109 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-25 10:44:03,110 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-07-25 10:44:03,119 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 8.8971ms.
+INFO  2019-07-25 10:44:03,119 [22   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-25 10:44:03,119 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 10.3194ms
+INFO  2019-07-25 10:44:03,119 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 22.0058ms 200 application/x-javascript
+INFO  2019-07-25 10:44:03,120 [22   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/Components/TenantChange/Default.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\view-resources\Views\Shared\Components\TenantChange\Default.js'
+INFO  2019-07-25 10:44:03,120 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21.5124ms 200 application/javascript
+INFO  2019-07-25 10:44:03,167 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 60.444ms.
+INFO  2019-07-25 10:44:03,169 [5    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-25 10:44:03,169 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 63.5856ms
+INFO  2019-07-25 10:44:03,169 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 77.584ms 200 application/x-javascript; charset=utf-8

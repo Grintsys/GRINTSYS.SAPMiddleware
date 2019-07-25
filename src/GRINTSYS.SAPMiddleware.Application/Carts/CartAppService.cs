@@ -4,11 +4,12 @@ using Abp.Domain.Repositories;
 using Abp.IdentityFramework;
 using Abp.Linq.Extensions;
 using GRINTSYS.SAPMiddleware.Cart;
+using GRINTSYS.SAPMiddleware.Carts.Dto;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GRINTSYS.SAPMiddleware.Carts.Dto
+namespace GRINTSYS.SAPMiddleware.Carts
 {
     //[AbpAuthorize(PermissionNames.Pages_MobileUsers)]
     public class CartAppService: AsyncCrudAppService<M2.Cart, CartDto, int, GetAllUserCartInput>, ICartAppService
@@ -61,6 +62,7 @@ namespace GRINTSYS.SAPMiddleware.Carts.Dto
         protected override IQueryable<M2.Cart> CreateFilteredQuery(GetAllUserCartInput input)
         {
             return base.CreateFilteredQuery(input)
+                .WhereIf(input.TenantId.HasValue, t => t.TenantId == input.TenantId.Value)
                 .WhereIf(input.Type.HasValue, t => t.Type == (int)input.Type.Value);
         }
     }
