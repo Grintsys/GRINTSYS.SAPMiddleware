@@ -14,7 +14,7 @@ namespace GRINTSYS.SAPMiddleware.Categories.Dto
 
         public int TenantId { get; set; }
 
-        public Int32? PartentId { get; set; }
+        public Int32 PartentId { get; set; }
         public Int32 RemoteId { get; set; }
 
         [StringLength(MaxNameLength)]
