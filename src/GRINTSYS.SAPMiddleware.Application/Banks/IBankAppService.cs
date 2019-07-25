@@ -1,9 +1,9 @@
 ﻿using Abp.Application.Services;
-using GRINTSYS.SAPMiddleware.Clients.Dto;
+using GRINTSYS.SAPMiddleware.Banks.Dto;
 
-namespace GRINTSYS.SAPMiddleware.Clients
+namespace GRINTSYS.SAPMiddleware.Banks
 {
-    public interface IClientAppService : IAsyncCrudAppService<ClientDto, int, GetAllClientInput>
+    public interface IBankAppService : IAsyncCrudAppService<BankDto, int, GetAllBankInput>
     {
     }
 }

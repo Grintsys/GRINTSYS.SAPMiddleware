@@ -19,6 +19,8 @@ namespace GRINTSYS.SAPMiddleware.EntityFrameworkCore
 
         public DbSet<Brand> Brands { get; set; }
 
+        public DbSet<Banner> Banners { get; set; }
+
         public DbSet<Color> Colors { get; set; }
 
         public DbSet<Size> Sizes { get; set; }
