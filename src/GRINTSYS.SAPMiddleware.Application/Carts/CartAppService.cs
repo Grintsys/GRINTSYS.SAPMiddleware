@@ -3,67 +3,54 @@ using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
 using Abp.IdentityFramework;
 using Abp.Linq.Extensions;
+using AutoMapper;
 using GRINTSYS.SAPMiddleware.Cart;
 using GRINTSYS.SAPMiddleware.Carts.Dto;
+using GRINTSYS.SAPMiddleware.M2;
 using Microsoft.AspNetCore.Identity;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Carts
 {
     //[AbpAuthorize(PermissionNames.Pages_MobileUsers)]
-    public class CartAppService: AsyncCrudAppService<M2.Cart, CartDto, int, GetAllUserCartInput>, ICartAppService
+    public class CartAppService : ApplicationService, ICartAppService
     {
-        private readonly IRepository<M2.Cart> _cartRepository;
+        private CartManager _cartManager;
 
-        public CartAppService(IRepository<M2.Cart> cartRespository)
-            :base(cartRespository)
+        public CartAppService(CartManager cartManager)
         {
-            _cartRepository = cartRespository;
-            //CreatePermissionName = PermissionNames.Pages_MobileAccess;
-            //DeletePermissionName = PermissionNames.Pages_MobileAccess;
-        }
-      
-        public override async Task<CartDto> Create(CartDto input)
-        {
-            Logger.Info("Creating a cart for input: " + input);
-
-            CheckCreatePermission();
-
-            // I can't use automapper because foreign key confict maybe there are a good solution
-            // but i dont have time so the mapping is doing manually
-            var cart = new M2.Cart()
-            {
-                UserId = input.UserId,
-                Currency = input.Currency,
-                //Type = input.Type
-            };
-
-            await _cartRepository.InsertAsync(cart);
-
-            return MapToEntityDto(cart);
+            this._cartManager = cartManager;
         }
 
-        protected virtual void CheckErrors(IdentityResult identityResult)
+        public async Task AddCart(AddCartInput input)
         {
-            identityResult.CheckErrors(LocalizationManager);
+            M2.Cart cart = Mapper.Map<AddCartInput, M2.Cart>(input);
+            await _cartManager.CreateCart(cart);
         }
 
-        public override async Task Delete(EntityDto<int> input)
+        public async Task AddItemToCart(AddCartItemInput input)
         {
-            Logger.Info("Deleting a cart for input: " + input);
+            //await _cartProductItemManager.Get(input.)
 
-            CheckDeletePermission();
-
-            var cart = await _cartRepository.FirstOrDefaultAsync(input.Id);
-            await _cartRepository.DeleteAsync(cart);
+            throw new NotImplementedException();
         }
-        
-        protected override IQueryable<M2.Cart> CreateFilteredQuery(GetAllUserCartInput input)
+
+        public Task DeleteCart(DeleteCartInput input)
         {
-            return base.CreateFilteredQuery(input)
-                .WhereIf(input.TenantId.HasValue, t => t.TenantId == input.TenantId.Value)
-                .WhereIf(input.Type.HasValue, t => t.Type == (int)input.Type.Value);
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteItemToCart(DeleteCartInput input)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CartOutput GetCart(GetCartInput input)
+        {
+            throw new NotImplementedException();
         }
     }
 }

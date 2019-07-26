@@ -48,7 +48,7 @@ namespace GRINTSYS.SAPMiddleware.M2
             return CartProductItems.Sum(s => s.Discount);
         }
 
-        public Double GetProductCount()
+        public int GetProductCount()
         {
             return CartProductItems.Count;
         }
