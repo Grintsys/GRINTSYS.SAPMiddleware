@@ -7,6 +7,7 @@ using AutoMapper;
 using GRINTSYS.SAPMiddleware.Cart;
 using GRINTSYS.SAPMiddleware.Carts.Dto;
 using GRINTSYS.SAPMiddleware.M2;
+using GRINTSYS.SAPMiddleware.M2.Products;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,12 @@ namespace GRINTSYS.SAPMiddleware.Carts
     public class CartAppService : ApplicationService, ICartAppService
     {
         private CartManager _cartManager;
+        private ProductManager _productManager;
 
-        public CartAppService(CartManager cartManager)
+        public CartAppService(CartManager cartManager, ProductManager productManager)
         {
             this._cartManager = cartManager;
+            this._productManager = productManager;
         }
 
         public async Task AddCart(AddCartInput input)
@@ -33,14 +36,21 @@ namespace GRINTSYS.SAPMiddleware.Carts
 
         public async Task AddItemToCart(AddCartItemInput input)
         {
-            //await _cartProductItemManager.Get(input.)
+            var productVariant = _productManager.GetProductVariant(input.CartProductVariantId);
 
-            throw new NotImplementedException();
+            var cartProductVariantItem = new M2.CartProductVariant()
+            {
+                //CategoryId = productVariant.
+            };
+
+            await _cartManager.CreateCart(new M2.Cart(input.UserId));
+
+            //await _cartManager.CreateCartProductVariant()
         }
 
-        public Task DeleteCart(DeleteCartInput input)
+        public async Task DeleteCart(DeleteCartInput input)
         {
-            throw new NotImplementedException();
+            await _cartManager.DeleteCart((int)input.Id);
         }
 
         public Task DeleteItemToCart(DeleteCartInput input)

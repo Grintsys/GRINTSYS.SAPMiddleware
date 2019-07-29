@@ -1,5 +1,6 @@
 ﻿using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
+using Abp.Timing;
 using GRINTSYS.SAPMiddleware.Authorization.Users;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace GRINTSYS.SAPMiddleware.M2
 {
     public enum CartType
     {
-        SALES = 0,
+        CART = 0,
         FAVORITES = 1
     };
 
@@ -25,9 +26,17 @@ namespace GRINTSYS.SAPMiddleware.M2
         public String Currency { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<CartProductItem> CartProductItems { get; set; }
-        public int Type { get; set; }
-
+        public CartType Type { get; set; }
         public DateTime CreationTime { get; set; }
+
+        public Cart(int userId = 1)
+        {
+            CreationTime = Clock.Now;
+            Type = CartType.CART;
+            TotalPrice = 0;
+            Currency = "HNL";
+            UserId = userId;
+        }
 
         public Double GetProductTotalPrice()
         {

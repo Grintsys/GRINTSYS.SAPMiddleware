@@ -1,8 +1,11 @@
-﻿using Abp.Domain.Repositories;
+﻿using Abp.Collections.Extensions;
+using Abp.Domain.Repositories;
 using Abp.Domain.Services;
+using Abp.Linq.Extensions;
 using Abp.UI;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,7 +28,16 @@ namespace GRINTSYS.SAPMiddleware.M2
 
         public async Task<Cart> CreateCart(Cart entity)
         {
-            return await _cartRepository.InsertAsync(entity);
+            var cart = _cartRepository.GetAll()
+                .Where(w => w.UserId == entity.UserId)
+                .FirstOrDefault();
+
+            if(cart == null)
+            {
+                return await _cartRepository.InsertAsync(entity);
+            }
+
+            return cart;
         }
 
         public async Task<CartProductItem> CreateCartProductVariant(CartProductItem entity)
