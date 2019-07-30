@@ -31,6 +31,9 @@ namespace GRINTSYS.SAPMiddleware.Authorization.Users
                 Name = AdminUserName,
                 Surname = AdminUserName,
                 EmailAddress = emailAddress,
+                CollectId = 0,
+                SalesPersonId = 0,
+                PrintBluetoothAddress = "",
                 Roles = new List<UserRole>()
             };
 

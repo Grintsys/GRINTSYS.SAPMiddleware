@@ -7,6 +7,7 @@ using AutoMapper;
 using GRINTSYS.SAPMiddleware.Cart;
 using GRINTSYS.SAPMiddleware.Carts.Dto;
 using GRINTSYS.SAPMiddleware.M2;
+using GRINTSYS.SAPMiddleware.M2.Clients;
 using GRINTSYS.SAPMiddleware.M2.Products;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -21,11 +22,15 @@ namespace GRINTSYS.SAPMiddleware.Carts
     {
         private CartManager _cartManager;
         private ProductManager _productManager;
+        private ClientManager _clientManager;
 
-        public CartAppService(CartManager cartManager, ProductManager productManager)
+        public CartAppService(CartManager cartManager,
+            ProductManager productManager, 
+            ClientManager clientManager)
         {
             this._cartManager = cartManager;
             this._productManager = productManager;
+            this._clientManager = clientManager;
         }
 
         public async Task AddCart(AddCartInput input)
@@ -36,19 +41,23 @@ namespace GRINTSYS.SAPMiddleware.Carts
 
         public async Task AddItemToCart(AddCartItemInput input)
         {
+            // get the product that we'll add to the cart
             var productVariant = _productManager.GetProductVariant(input.CartProductVariantId);
 
-            await _cartManager.CreateCart(new M2.Cart(input.UserId));
+            // create the cart if not exits for the order
+            var cart = await _cartManager.CreateCart(new M2.Cart(input.UserId));
 
-            var cartProductVariantItem = new M2.CartProductVariant();
-            cartProductVariantItem.CopyFromProduct(productVariant);
+            // create a copy from the product variant state (because we should mantain price and other stuff)
+            var entity = new M2.CartProductVariant();
+            entity.CopyFromProduct(productVariant);
+                     
+            await _cartManager.CreateCartProductVariant(entity);
 
-            await _cartManager.CreateCartProductVariant(cartProductVariantItem);
-
-
-
-
-            //await _cartManager.CreateCartProductVariant()
+            // Get the discount if that costumer apply
+            var discount = _clientManager.GetClientDiscountAndItemGroupCode(input.CardCode, productVariant.ItemGroup);
+            
+            //Finally add the product Item
+            await _cartManager.CreateCartProductItem(new M2.CartProductItem(cart.Id, input.Quantity, 0.15, discount == null ? 0 : discount.Discount));
         }
 
         public async Task DeleteCart(DeleteCartInput input)

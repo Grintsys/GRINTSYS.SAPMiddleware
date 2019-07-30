@@ -1,5 +1,6 @@
 ﻿using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
+using Abp.Timing;
 using System;
 
 namespace GRINTSYS.SAPMiddleware.M2
@@ -16,14 +17,35 @@ namespace GRINTSYS.SAPMiddleware.M2
         public Double Discount { get; set; }
         public Double DiscountPercent { get; set; }
         public Double ISV { get; set; }
-        public Double TotalItemPrice { get; set; }
-        public String TotalItemPriceFormatted { get; set; }
-        public int Expiration { get; set; }
-
         public DateTime CreationTime { get; set; }
-
         public virtual Cart Cart { get; set; }
         public virtual CartProductVariant CartProductVariant { get; set; }
-        public int Type { get; set; }
+
+        public CartProductItem()
+        {
+            this.CreationTime = Clock.Now;
+        }
+
+        public CartProductItem(int cartId, int qty, double isv, double discount)
+        {
+            this.CreationTime = Clock.Now;
+            this.CartId = cartId;
+            this.Quantity = qty;
+            this.ISV = isv;
+            this.Discount = discount;
+        }
+
+        public Double TotalItemPrice()
+        {
+            if (this.Quantity > 0)
+                return this.Quantity * this.CartProductVariant.Price;
+
+            return 0;
+        }
+
+        public String TotalItemPriceFormatted()
+        {
+            return this.Cart.Currency + " " + this.TotalItemPrice();
+        }
     }
 }

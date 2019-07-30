@@ -13,5 +13,6 @@ namespace GRINTSYS.SAPMiddleware.MultiTenancy
             : base(tenancyName, name)
         {
         }
+
     }
 }
