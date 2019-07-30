@@ -23,8 +23,8 @@ namespace GRINTSYS.SAPMiddleware.M2
         public String RemoteId { get; set; }
         public String DateCreated { get; set; }
         public OrderStatus Status { get; set; }
-        public Int32? ClientId { get; set; }
-        public Int32? UserId { get; set; }
+        public String CardCode { get; set; }
+        public Int32 UserId { get; set; }
         public String Comment { get; set; }
         public String LastErrorMessage { get; set; }
         public Int32 Series { get; set; }
@@ -62,7 +62,6 @@ namespace GRINTSYS.SAPMiddleware.M2
             CreationTime = Clock.Now;
         }
 
-        public virtual Client Client { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
     }

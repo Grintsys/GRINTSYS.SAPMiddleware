@@ -36,6 +36,9 @@ namespace GRINTSYS.SAPMiddleware.M2
         {
             this.SizeId = variant.SizeId;
             this.Price = variant.Price;
+            this.ColorId = variant.ColorId;
+            this.WareHouseCode = variant.WareHouseCode;
+            this.MainImage = variant.ImageUrl;
         }
     }
 }

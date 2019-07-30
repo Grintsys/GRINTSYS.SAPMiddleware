@@ -40,9 +40,14 @@ namespace GRINTSYS.SAPMiddleware.M2
             return cart;
         }
 
-        public async Task<CartProductItem> CreateCartProductVariant(CartProductItem entity)
+        public async Task<CartProductItem> CreateCartProductItem(CartProductItem entity)
         {
             return await _cartProductItemRepository.InsertAsync(entity);
+        }
+
+        public async Task<CartProductVariant> CreateCartProductVariant(CartProductVariant entity)
+        {
+            return await _cartProductVariantRepository.InsertAsync(entity);
         }
 
         public async Task DeleteCart(int id)
@@ -88,12 +93,12 @@ namespace GRINTSYS.SAPMiddleware.M2
 
         public CartProductItem GetCartProductItem(int id)
         {
-            throw new NotImplementedException();
+            return _cartProductItemRepository.Get(id);
         }
 
-        public CartProductItem GetCartProductVariant(int id)
+        public CartProductVariant GetCartProductVariant(int id)
         {
-            throw new NotImplementedException();
+            return _cartProductVariantRepository.Get(id);
         }
     }
 }

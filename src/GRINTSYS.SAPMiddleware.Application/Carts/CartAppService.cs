@@ -38,12 +38,15 @@ namespace GRINTSYS.SAPMiddleware.Carts
         {
             var productVariant = _productManager.GetProductVariant(input.CartProductVariantId);
 
-            var cartProductVariantItem = new M2.CartProductVariant()
-            {
-                //CategoryId = productVariant.
-            };
-
             await _cartManager.CreateCart(new M2.Cart(input.UserId));
+
+            var cartProductVariantItem = new M2.CartProductVariant();
+            cartProductVariantItem.CopyFromProduct(productVariant);
+
+            await _cartManager.CreateCartProductVariant(cartProductVariantItem);
+
+
+
 
             //await _cartManager.CreateCartProductVariant()
         }

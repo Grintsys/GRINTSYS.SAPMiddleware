@@ -9,12 +9,13 @@ namespace GRINTSYS.SAPMiddleware.M2
     public interface ICartManager: IDomainService
     {
         Cart GetCart(int id);
-        Task<Cart> CreateCart(Cart entity);
-        Task DeleteCart(int id);
-        CartProductItem GetCartProductVariant(int id);
-        Task<CartProductItem> CreateCartProductVariant(CartProductItem entity);
-        Task DeleteCartProductVariant(int id);
         CartProductItem GetCartProductItem(int id);
+        CartProductVariant GetCartProductVariant(int id);
+        Task<Cart> CreateCart(Cart entity);
+        Task<CartProductItem> CreateCartProductItem(CartProductItem entity);
+        Task<CartProductVariant> CreateCartProductVariant(CartProductVariant entity);
+        Task DeleteCart(int id);
+        Task DeleteCartProductVariant(int id);
         Task DeleteCartProductItem(int id);
     }
 }
