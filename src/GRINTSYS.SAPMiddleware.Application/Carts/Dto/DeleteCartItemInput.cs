@@ -2,7 +2,7 @@
 
 namespace GRINTSYS.SAPMiddleware.Carts.Dto
 {
-    public class DeleteCartInput
+    public class DeleteCartItemInput
     {
         public int Id { get; set; }
     }

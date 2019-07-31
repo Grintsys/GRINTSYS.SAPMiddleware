@@ -62,17 +62,41 @@ namespace GRINTSYS.SAPMiddleware.Carts
 
         public async Task DeleteCart(DeleteCartInput input)
         {
-            await _cartManager.DeleteCart((int)input.Id);
+            await _cartManager.DeleteCart(input.Id);
         }
 
-        public Task DeleteItemToCart(DeleteCartInput input)
+        public async Task DeleteItemToCart(DeleteCartItemInput input)
         {
-            throw new NotImplementedException();
+            await _cartManager.DeleteCartProductItem(input.Id);
         }
 
+        public Dto.CartOutput GetCart(GetCartInput input)
+        {
+            var cart = _cartManager.GetCartByUser(input.UserId, input.TenantId);
+
+            return new Dto.CartOutput()
+            {
+                id = cart.Id,
+                subtotal = cart.GetProductSubtotalPrice(),
+                ISV = cart.GetProductISVPrice(),
+                product_count = cart.GetProductCount(),
+                currency = "NHL",
+                discount = cart.GetProductDiscountPrice(),
+                total_price = cart.GetProductTotalPrice(),
+                items = cart.CartProductItems.ToList()
+            };           
+        }
+
+        /*
         public CartOutput GetCart(GetCartInput input)
         {
-            throw new NotImplementedException();
-        }
+            
+            var cart = _cartManager.get
+                .WhereIf(input.TenantId.HasValue, t => t.TenantId == input.TenantId.Value)
+                .WhereIf(input.UserId.HasValue, t => t.UserId == input.UserId)
+                .FirstOrDefault()
+                ;
+                
+        }*/
     }
 }

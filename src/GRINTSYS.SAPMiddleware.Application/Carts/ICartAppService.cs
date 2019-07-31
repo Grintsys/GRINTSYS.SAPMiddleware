@@ -12,6 +12,6 @@ namespace GRINTSYS.SAPMiddleware.Cart
         Task AddCart(AddCartInput input);
         Task DeleteCart(DeleteCartInput input);
         Task AddItemToCart(AddCartItemInput input);
-        Task DeleteItemToCart(DeleteCartInput input);
+        Task DeleteItemToCart(DeleteCartItemInput input);
     }
 }

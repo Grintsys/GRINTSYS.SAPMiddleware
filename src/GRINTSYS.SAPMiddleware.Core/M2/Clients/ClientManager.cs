@@ -47,13 +47,13 @@ namespace GRINTSYS.SAPMiddleware.M2.Clients
             return entity.ToList();
         }
 
-        public ClientDiscount GetClientDiscountAndItemGroupCode(string cardcode, int itemgroupcode)
+        public ClientDiscount GetClientDiscountAndItemGroupCode(string cardcode, int itemGroupCode)
         {
             var entity = _clientDiscountRespository.GetAll()
-               .Where(w => w.CardCode.ToLower().Equals(cardcode.ToLower()) 
-                    && w.ItemGroup == itemgroupcode)
-               .FirstOrDefault()
-               ;
+                 .Where(w => w.CardCode.ToLower().Equals(cardcode.ToLower())
+                      && w.ItemGroup == itemGroupCode)
+                 .FirstOrDefault()
+                 ;
 
             return entity;
         }

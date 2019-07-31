@@ -9,6 +9,6 @@ namespace GRINTSYS.SAPMiddleware.M2.Clients
     {
         Client GetClient(int id);
         List<ClientDiscount> GetClientDiscount(string cardcode);
-        ClientDiscount GetClientDiscountAndItemGroupCode(string cardcode, string itemgroupcode);
+        ClientDiscount GetClientDiscountAndItemGroupCode(string cardcode, int itemGroupCode);
     }
 }
