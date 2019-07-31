@@ -24,6 +24,8 @@ namespace GRINTSYS.SAPMiddleware.M2
         public Color()
         {
             CreationTime = Clock.Now;
+            Code = "#000000";
+            RemoteId = 0;
         }
 
     }

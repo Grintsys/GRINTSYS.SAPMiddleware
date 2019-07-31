@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 namespace GRINTSYS.SAPMiddleware.Colors.Dto
 {
     [AutoMap(typeof(M2.Color))]
-    public class ColorDto: EntityDto, IHasCreationTime, IMustHaveTenant
+    public class ColorDto: EntityDto, IMustHaveTenant
     {
         public const int MaxDescriptionLength = 64 * 1024; //64KB
 
@@ -21,7 +21,7 @@ namespace GRINTSYS.SAPMiddleware.Colors.Dto
         [StringLength(MaxDescriptionLength)]
         public String Description { get; set; }
 
-        public DateTime CreationTime { get; set; }
+       
 
     }
 
