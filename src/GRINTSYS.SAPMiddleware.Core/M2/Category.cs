@@ -19,6 +19,7 @@ namespace GRINTSYS.SAPMiddleware.M2
         public Category()
         {
             CreationTime = Clock.Now;
+            Type = "category";
         }
     }
 }

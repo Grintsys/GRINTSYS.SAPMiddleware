@@ -4,6 +4,7 @@ using Abp.UI;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.M2.Products
 {
@@ -20,6 +21,11 @@ namespace GRINTSYS.SAPMiddleware.M2.Products
             this._productRepository = productRepository;
             this._productVariantRepository = productVariantRepository;
             this._productBundleRepository = productBundleRepository;
+        }
+
+        public async Task CreateProduct(Product product)
+        {
+            await _productRepository.InsertAsync(product);
         }
 
         public Product GetProduct(int id)
