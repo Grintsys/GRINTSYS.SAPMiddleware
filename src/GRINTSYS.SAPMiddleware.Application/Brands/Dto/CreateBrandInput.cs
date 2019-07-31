@@ -7,8 +7,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GRINTSYS.SAPMiddleware.Brands.Dto
 {
-    [AutoMap(typeof(M2.Brand))]
-    public class BrandDto: EntityDto, IMustHaveTenant
+    //[AutoMap(typeof(M2.Brand))]
+    public class CreateBrandInput: EntityDto
     {
         public const int MaxNameLength = 256;
 

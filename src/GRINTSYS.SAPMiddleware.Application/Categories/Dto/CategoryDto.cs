@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 namespace GRINTSYS.SAPMiddleware.Categories.Dto
 {
     [AutoMap(typeof(M2.Category))]
-    public class CategoryDto: EntityDto, IHasCreationTime, IMustHaveTenant
+    public class CategoryDto: EntityDto, IMustHaveTenant
     {
         public const int MaxNameLength = 256;
 
@@ -19,9 +19,7 @@ namespace GRINTSYS.SAPMiddleware.Categories.Dto
 
         [StringLength(MaxNameLength)]
         public String Name { get; set; }
-        public String Type { get; set; }
 
-        public DateTime CreationTime { get; set; }
     }
 
 }

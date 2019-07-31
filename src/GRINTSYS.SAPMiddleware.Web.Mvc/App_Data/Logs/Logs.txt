@@ -3608,3 +3608,157 @@ System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-s
    at Abp.Threading.BackgroundWorkers.PeriodicBackgroundWorkerBase.Timer_Elapsed(Object sender, EventArgs e) in D:\Github\aspnetboilerplate\src\Abp\Threading\BackgroundWorkers\PeriodicBackgroundWorkerBase.cs:line 48
 ClientConnectionId:00000000-0000-0000-0000-000000000000
 Error Number:-1,State:0,Class:20
+DEBUG 2019-07-31 15:45:03,473 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-07-31 15:45:03,505 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-07-31 15:45:03,529 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.Web.Startup.SAPMiddlewareWebMvcModule, GRINTSYS.SAPMiddleware.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,533 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareWebCoreModule, GRINTSYS.SAPMiddleware.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,533 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareApplicationModule, GRINTSYS.SAPMiddleware.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,533 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareCoreModule, GRINTSYS.SAPMiddleware.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,534 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,534 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,534 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,534 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,535 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareEntityFrameworkModule, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,535 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,535 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,536 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,536 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,536 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,536 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:03,542 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-07-31 15:45:03,616 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-31 15:45:03,616 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-31 15:45:03,616 [1    ] o.Configuration.LanguageManagementConfig - Converted SAPMiddleware (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-31 15:45:03,616 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-31 15:45:04,032 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareDbContext, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 15:45:04,928 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-07-31 15:45:04,970 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-07-31 15:45:04,984 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-07-31 15:45:04,992 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: SAPMiddleware
+DEBUG 2019-07-31 15:45:04,999 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-07-31 15:45:05,054 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-07-31 15:45:05,117 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 21 classes define auto mapping attributes
+DEBUG 2019-07-31 15:45:05,117 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-07-31 15:45:05,127 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.CreateUserDto
+DEBUG 2019-07-31 15:45:05,128 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.UserDto
+DEBUG 2019-07-31 15:45:05,128 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sizes.Dto.SizeDto
+DEBUG 2019-07-31 15:45:05,129 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-07-31 15:45:05,129 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-07-31 15:45:05,130 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.CreateRoleDto
+DEBUG 2019-07-31 15:45:05,130 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.PermissionDto
+DEBUG 2019-07-31 15:45:05,130 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.RoleDto
+DEBUG 2019-07-31 15:45:05,130 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductDto
+DEBUG 2019-07-31 15:45:05,131 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-07-31 15:45:05,131 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.TenantDto
+DEBUG 2019-07-31 15:45:05,131 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Colors.Dto.ColorDto
+DEBUG 2019-07-31 15:45:05,131 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Clients.Dto.ClientDto
+DEBUG 2019-07-31 15:45:05,132 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Categories.Dto.CategoryDto
+DEBUG 2019-07-31 15:45:05,132 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartDto
+DEBUG 2019-07-31 15:45:05,132 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Brands.Dto.BrandDto
+DEBUG 2019-07-31 15:45:05,132 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banners.Dto.BannerDto
+DEBUG 2019-07-31 15:45:05,133 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banks.Dto.BankDto
+DEBUG 2019-07-31 15:45:05,133 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2019-07-31 15:45:05,133 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Models.Roles.EditRoleModalViewModel
+INFO  2019-07-31 15:45:14,652 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2019-07-31 15:45:14,656 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:62114/  0
+INFO  2019-07-31 15:45:17,260 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-31 15:45:17,260 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-07-31 15:45:17,355 [6    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-07-31 15:45:17,483 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-07-31 15:45:17,496 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 8.2335ms.
+WARN  2019-07-31 15:45:17,899 [11   ] Mvc.Authorization.AbpAuthorizationFilter - Abp.Authorization.AbpAuthorizationException: Current user did not login to the application!
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(IEnumerable`1 authorizeAttributes) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 42
+   at Abp.Authorization.AuthorizationHelper.CheckPermissions(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 107
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 56
+   at Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Authorization\AbpAuthorizationFilter.cs:line 53
+Abp.Authorization.AbpAuthorizationException: Current user did not login to the application!
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(IEnumerable`1 authorizeAttributes) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 42
+   at Abp.Authorization.AuthorizationHelper.CheckPermissions(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 107
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(MethodInfo methodInfo, Type type) in D:\Github\aspnetboilerplate\src\Abp\Authorization\AuthorizationHelper.cs:line 56
+   at Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context) in D:\Github\aspnetboilerplate\src\Abp.AspNetCore\AspNetCore\Mvc\Authorization\AbpAuthorizationFilter.cs:line 53
+INFO  2019-07-31 15:45:17,913 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Authorization failed for the request at filter 'Abp.AspNetCore.Mvc.Authorization.AbpAuthorizationFilter'.
+INFO  2019-07-31 15:45:17,935 [11   ] Microsoft.AspNetCore.Mvc.ChallengeResult - Executing ChallengeResult with authentication schemes ().
+INFO  2019-07-31 15:45:17,983 [11   ] tion.Cookies.CookieAuthenticationHandler - AuthenticationScheme: Identity.Application was challenged.
+INFO  2019-07-31 15:45:17,987 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 720.7433ms
+INFO  2019-07-31 15:45:18,186 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3524.8915ms 302 
+INFO  2019-07-31 15:45:18,509 [13   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-07-31 15:45:23,700 [13   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 5309.8869ms.
+INFO  2019-07-31 15:45:23,713 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 6449.8608ms
+INFO  2019-07-31 15:45:23,741 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9115.8519ms 200 text/html; charset=utf-8
+INFO  2019-07-31 15:45:23,970 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637001847050562878  
+INFO  2019-07-31 15:45:23,970 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637001847050562878  
+INFO  2019-07-31 15:45:24,038 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-07-31 15:45:24,046 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-07-31 15:45:24,131 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-07-31 15:45:24,272 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+WARN  2019-07-31 15:45:24,639 [7    ] ng.AspNetCoreApiDescriptionModelProvider - Controller 'Brand' contains more than one action with name 'Create' for module 'app'. Ignored: System.Threading.Tasks.Task`1[GRINTSYS.SAPMiddleware.Brands.Dto.BrandDto] Create(GRINTSYS.SAPMiddleware.Brands.Dto.BrandDto)
+INFO  2019-07-31 15:45:24,668 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 395.7945ms.
+INFO  2019-07-31 15:45:24,675 [7    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-07-31 15:45:24,681 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 635.1738ms
+INFO  2019-07-31 15:45:24,682 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 711.5449ms 200 application/x-javascript
+INFO  2019-07-31 15:45:25,051 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 920.1533ms.
+INFO  2019-07-31 15:45:25,135 [13   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-07-31 15:45:25,135 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 1097.4586ms
+INFO  2019-07-31 15:45:25,136 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1165.3535ms 200 application/x-javascript; charset=utf-8
+INFO  2019-07-31 15:45:25,190 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-31 15:45:25,305 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 115.3725ms 200 application/json
+INFO  2019-07-31 15:45:25,515 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=iswHeTcBnIt4H8qYRZvVxw  
+INFO  2019-07-31 15:45:25,969 [7    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-07-31 15:45:26,022 [7    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"iswHeTcBnIt4H8qYRZvVxw","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-07-31T15:45:26.0071478-06:00","Properties":{}}
+DEBUG 2019-07-31 15:45:26,137 [7    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: iswHeTcBnIt4H8qYRZvVxw
+DEBUG 2019-07-31 16:05:03,583 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-07-31 16:05:03,615 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-07-31 16:05:03,638 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.Web.Startup.SAPMiddlewareWebMvcModule, GRINTSYS.SAPMiddleware.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,641 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareWebCoreModule, GRINTSYS.SAPMiddleware.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,641 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareApplicationModule, GRINTSYS.SAPMiddleware.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,642 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareCoreModule, GRINTSYS.SAPMiddleware.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,642 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,642 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,642 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,643 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,644 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareEntityFrameworkModule, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,644 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,645 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,645 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,646 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,646 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,646 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:03,649 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-07-31 16:05:03,727 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-31 16:05:03,728 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-31 16:05:03,728 [1    ] o.Configuration.LanguageManagementConfig - Converted SAPMiddleware (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-31 16:05:03,728 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-07-31 16:05:04,111 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareDbContext, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-07-31 16:05:04,838 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-07-31 16:05:04,884 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-07-31 16:05:04,897 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-07-31 16:05:04,903 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: SAPMiddleware
+DEBUG 2019-07-31 16:05:04,908 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-07-31 16:05:04,950 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-07-31 16:05:05,044 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 21 classes define auto mapping attributes
+DEBUG 2019-07-31 16:05:05,044 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-07-31 16:05:05,053 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.CreateUserDto
+DEBUG 2019-07-31 16:05:05,053 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.UserDto
+DEBUG 2019-07-31 16:05:05,054 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sizes.Dto.SizeDto
+DEBUG 2019-07-31 16:05:05,054 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-07-31 16:05:05,055 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-07-31 16:05:05,055 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.CreateRoleDto
+DEBUG 2019-07-31 16:05:05,055 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.PermissionDto
+DEBUG 2019-07-31 16:05:05,055 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.RoleDto
+DEBUG 2019-07-31 16:05:05,055 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductDto
+DEBUG 2019-07-31 16:05:05,055 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-07-31 16:05:05,055 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.TenantDto
+DEBUG 2019-07-31 16:05:05,056 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Colors.Dto.ColorDto
+DEBUG 2019-07-31 16:05:05,056 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Clients.Dto.ClientDto
+DEBUG 2019-07-31 16:05:05,056 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Categories.Dto.CategoryDto
+DEBUG 2019-07-31 16:05:05,056 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartDto
+DEBUG 2019-07-31 16:05:05,056 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Brands.Dto.BrandDto
+DEBUG 2019-07-31 16:05:05,056 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banners.Dto.BannerDto
+DEBUG 2019-07-31 16:05:05,056 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banks.Dto.BankDto
+DEBUG 2019-07-31 16:05:05,057 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2019-07-31 16:05:05,057 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Models.Roles.EditRoleModalViewModel
+INFO  2019-07-31 16:05:14,499 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-07-31 16:05:18,479 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4001.8301ms 200 application/json
+INFO  2019-07-31 16:05:18,485 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=VEW-kJxHl8zrWJAZTbf3-g  
+INFO  2019-07-31 16:05:19,011 [9    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-07-31 16:05:19,254 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"VEW-kJxHl8zrWJAZTbf3-g","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-07-31T16:05:19.0592068-06:00","Properties":{}}
