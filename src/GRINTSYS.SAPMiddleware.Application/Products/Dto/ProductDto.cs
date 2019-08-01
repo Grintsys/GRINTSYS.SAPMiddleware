@@ -2,7 +2,9 @@
 using Abp.AutoMapper;
 using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
+using GRINTSYS.SAPMiddleware.M2;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GRINTSYS.SAPMiddleware.Products.Dto
@@ -29,6 +31,8 @@ namespace GRINTSYS.SAPMiddleware.Products.Dto
         public String MainImageHighRes { get; set; }
 
         public DateTime CreationTime { get; set; }
+
+        public List<ProductVariantDto> Variants { get; set; }
     }
 
 }

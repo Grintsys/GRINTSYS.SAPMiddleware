@@ -9,41 +9,37 @@ using System.Linq;
 using Abp.Linq.Extensions;
 using System.Threading.Tasks;
 using GRINTSYS.SAPMiddleware.Products.Dto;
+using System.Collections.Generic;
+using GRINTSYS.SAPMiddleware.M2.Products;
+using AutoMapper;
 
 namespace GRINTSYS.SAPMiddleware.Products
 {
     [AbpAuthorize(PermissionNames.Pages_MobileAccess)]
-    public class ProductAppService : AsyncCrudAppService<Product, ProductDto, int, GetAllProductInput>, IProductAppService
+    public class ProductAppService : ApplicationService, IProductAppService
     {
-        public ProductAppService(IRepository<Product> productRespository)
-           : base(productRespository)
+        private readonly ProductManager _productManager;
+
+        public ProductAppService(ProductManager productManager)
         {
-            CreatePermissionName = PermissionNames.Pages_MobileAccess;
+            _productManager = productManager;
         }
 
-        public override async Task<ProductDto> Create(ProductDto input)
+        public async Task CreateProduct(AddProductInput input)
         {
-            CheckCreatePermission();
-
-            var product = ObjectMapper.Map<Product>(input);
-
-            //CheckErrors(await _roleManager.CreateAsync(role));
-
-            await this.Repository.InsertAsync(product);
-
-            return MapToEntityDto(product);
+            var product = Mapper.Map<AddProductInput, Product>(input);
+            await _productManager.CreateProduct(product);
         }
 
-        protected override IQueryable<Product> CreateFilteredQuery(GetAllProductInput input)
+        public async Task CreateProductVariant(AddProductVariantInput input)
         {
-            return base.CreateFilteredQuery(input)
-                .WhereIf(input.TenantId.HasValue, t => t.TenantId == input.TenantId.Value)
-                .WhereIf(input.CategoryId.HasValue, t => t.CategoryId == input.CategoryId.Value)
-                .WhereIf(input.BrandId.HasValue, t => t.BrandId == input.CategoryId.Value)
-                .WhereIf(!String.IsNullOrEmpty(input.Name), t => t.Name.Contains(input.Name))
-                .WhereIf(!String.IsNullOrEmpty(input.Code), t => t.Name.Contains(input.Code))
-                .WhereIf(!String.IsNullOrEmpty(input.Description), t => t.Name.Contains(input.Description))
-                ;
+            var productVariant = Mapper.Map<AddProductVariantInput, ProductVariant>(input);
+            await _productManager.CreateProductVariant(productVariant);
+        }
+
+        public ProductDto GetProduct(GetProductInput input)
+        {
+            throw new NotImplementedException();
         }
     }
 }

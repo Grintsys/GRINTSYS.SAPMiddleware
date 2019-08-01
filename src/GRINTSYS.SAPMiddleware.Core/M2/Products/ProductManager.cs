@@ -28,6 +28,16 @@ namespace GRINTSYS.SAPMiddleware.M2.Products
             await _productRepository.InsertAsync(product);
         }
 
+        public async Task CreateProductBundle(ProductBundle productBundle)
+        {
+            await _productBundleRepository.InsertAsync(productBundle);
+        }
+
+        public async Task CreateProductVariant(ProductVariant productVariant)
+        {
+            await _productVariantRepository.InsertAsync(productVariant);
+        }
+
         public Product GetProduct(int id)
         {
             var entity = _productRepository.Get(id);
