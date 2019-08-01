@@ -16,7 +16,7 @@ namespace GRINTSYS.SAPMiddleware.Products
     public class ProductAppService : AsyncCrudAppService<Product, ProductDto, int, GetAllProductInput, AddProductInput>, IProductAppService
     {
 
-        public ProductAppService(IRepository<Product, int> repository, ProductManager productManager) : base(repository)
+        public ProductAppService(IRepository<Product, int> repository) : base(repository)
         {
         }
 
