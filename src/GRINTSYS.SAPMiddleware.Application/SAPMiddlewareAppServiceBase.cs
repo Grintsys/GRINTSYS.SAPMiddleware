@@ -6,6 +6,7 @@ using Abp.IdentityFramework;
 using Abp.Runtime.Session;
 using GRINTSYS.SAPMiddleware.Authorization.Users;
 using GRINTSYS.SAPMiddleware.MultiTenancy;
+using GRINTSYS.SAPMiddleware.M2.Products;
 
 namespace GRINTSYS.SAPMiddleware
 {
@@ -17,6 +18,8 @@ namespace GRINTSYS.SAPMiddleware
         public TenantManager TenantManager { get; set; }
 
         public UserManager UserManager { get; set; }
+
+        public ProductManager ProductManager { get; set; }
 
         protected SAPMiddlewareAppServiceBase()
         {

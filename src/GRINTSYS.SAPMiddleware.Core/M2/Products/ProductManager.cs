@@ -12,15 +12,14 @@ namespace GRINTSYS.SAPMiddleware.M2.Products
     {
         private readonly IRepository<Product> _productRepository;
         private readonly IRepository<ProductVariant> _productVariantRepository;
-        private readonly IRepository<ProductBundle> _productBundleRepository;
+        //private readonly IRepository<ProductBundle> _productBundleRepository;
 
         public ProductManager(IRepository<Product> productRepository, 
-            IRepository<ProductVariant> productVariantRepository, 
-            IRepository<ProductBundle> productBundleRepository)
+            IRepository<ProductVariant> productVariantRepository)
         {
             this._productRepository = productRepository;
             this._productVariantRepository = productVariantRepository;
-            this._productBundleRepository = productBundleRepository;
+            //this._productBundleRepository = productBundleRepository;
         }
 
         public async Task CreateProduct(Product product)
@@ -30,7 +29,10 @@ namespace GRINTSYS.SAPMiddleware.M2.Products
 
         public async Task CreateProductBundle(ProductBundle productBundle)
         {
+            /*
             await _productBundleRepository.InsertAsync(productBundle);
+            */
+            throw new NotImplementedException();
         }
 
         public async Task CreateProductVariant(ProductVariant productVariant)
@@ -52,13 +54,15 @@ namespace GRINTSYS.SAPMiddleware.M2.Products
 
         public ProductBundle GetProductBundle(int id)
         {
+            /*
             var entity = _productBundleRepository.Get(id);
 
             if (entity == null)
             {
                 throw new UserFriendlyException("Product Bundle not found");
             }
-            return entity;
+            return entity;*/
+            throw new NotImplementedException();
         }
 
         public ProductVariant GetProductVariant(int id)

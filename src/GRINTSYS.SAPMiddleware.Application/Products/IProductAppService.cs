@@ -8,5 +8,9 @@ namespace GRINTSYS.SAPMiddleware.Products
 {
     public interface IProductAppService : IApplicationService, ITransientDependency
     {
+        Task CreateProduct(AddProductInput input);
+        Task CreateVariant(AddProductVariantInput input);
+        ProductOutput GetProduct(GetProductInput input);
+        List<ProductOutput> GetAllProducts(GetAllProductInput input);
     }
 }

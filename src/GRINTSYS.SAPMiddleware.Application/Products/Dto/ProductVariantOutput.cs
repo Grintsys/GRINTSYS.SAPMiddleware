@@ -1,18 +1,19 @@
-﻿using Abp.AutoMapper;
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace GRINTSYS.SAPMiddleware.Products.Dto
 {
     [AutoMap(typeof(M2.ProductVariant))]
-    public class AddProductVariantInput
+    public class ProductVariantOutput
     {
-        public int TenantId { get; set; }
         public Int32 ItemGroup { get; set; }
         public Int32 ProductId { get; set; }
         public Int32 ColorId { get; set; }
         public Int32 SizeId { get; set; }
-        [Required]
         public String Code { get; set; }
         public Int32 Quantity { get; set; }
         public Int32 IsCommitted { get; set; }

@@ -4,6 +4,7 @@ using Abp.Collections.Extensions;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
 using GRINTSYS.SAPMiddleware.Authorization;
+using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.Sizes.Dto;
 using System;
 using System.Linq;

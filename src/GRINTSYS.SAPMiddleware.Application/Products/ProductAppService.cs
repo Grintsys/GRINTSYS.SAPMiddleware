@@ -1,43 +1,55 @@
 ﻿using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Collections.Extensions;
+using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
 using GRINTSYS.SAPMiddleware.Authorization;
+using GRINTSYS.SAPMiddleware.Authorization.Roles;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Products;
 using GRINTSYS.SAPMiddleware.Products.Dto;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Products
 {
     [AbpAuthorize(PermissionNames.Pages_MobileAccess)]
-    public class ProductAppService : AsyncCrudAppService<Product, ProductDto, int, GetAllProductInput, AddProductInput>, IProductAppService
+    public class ProductAppService : SAPMiddlewareAppServiceBase, IProductAppService
     {
+        private readonly ProductManager _productManager;
+        //ProductManager productManager;
 
-        public ProductAppService(IRepository<Product, int> repository) : base(repository)
+        public ProductAppService(ProductManager productManager) 
         {
+            _productManager = productManager;
         }
 
-        public override async Task<ProductDto> Create(AddProductInput input)
+        public async Task CreateProduct(AddProductInput input)
         {
-            CheckCreatePermission();
-
             var product = ObjectMapper.Map<Product>(input);
-
-            //CheckErrors(await _roleManager.CreateAsync(role));
-
-            //await _productManager.CreateProduct(product);
-
-            return MapToEntityDto(product);
+            await _productManager.CreateProduct(product);
         }
 
-        protected override IQueryable<Product> CreateFilteredQuery(GetAllProductInput input)
+        public async Task CreateVariant(AddProductVariantInput input)
         {
-            return base.CreateFilteredQuery(input)
-                .WhereIf(input.TenantId.HasValue, t => t.TenantId == input.TenantId.Value);
+            var productVariant = ObjectMapper.Map<ProductVariant>(input);
+            await _productManager.CreateProductVariant(productVariant);
         }
 
+        public List<ProductOutput> GetAllProducts(GetAllProductInput input)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public ProductOutput GetProduct(GetProductInput input)
+        {
+            var product = _productManager.GetProduct(input.Id);
+
+            var result = ObjectMapper.Map<ProductOutput>(product);
+
+            return result;
+        }
     }
 }
