@@ -5,12 +5,7 @@ using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Products
 {
-    public interface IProductAppService : IApplicationService
+    public interface IProductAppService : IAsyncCrudAppService<ProductDto, int, GetAllProductInput, AddProductInput>
     {
-        Task CreateProduct(AddProductInput input);
-        Task CreateProductVariant(AddProductVariantInput input);
-
-        ProductDto GetProduct(GetProductInput input);
-        //List<ProductVariantDto> GetProductVariants(GetProductVariantInput input);
     }
 }

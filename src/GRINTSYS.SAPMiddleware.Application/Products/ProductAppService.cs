@@ -2,44 +2,42 @@
 using Abp.Authorization;
 using Abp.Collections.Extensions;
 using Abp.Domain.Repositories;
+using Abp.Linq.Extensions;
 using GRINTSYS.SAPMiddleware.Authorization;
 using GRINTSYS.SAPMiddleware.M2;
-using System;
-using System.Linq;
-using Abp.Linq.Extensions;
-using System.Threading.Tasks;
-using GRINTSYS.SAPMiddleware.Products.Dto;
-using System.Collections.Generic;
 using GRINTSYS.SAPMiddleware.M2.Products;
-using AutoMapper;
+using GRINTSYS.SAPMiddleware.Products.Dto;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Products
 {
     [AbpAuthorize(PermissionNames.Pages_MobileAccess)]
-    public class ProductAppService : ApplicationService, IProductAppService
+    public class ProductAppService : AsyncCrudAppService<Product, ProductDto, int, GetAllProductInput, AddProductInput>, IProductAppService
     {
-        private readonly ProductManager _productManager;
 
-        public ProductAppService(ProductManager productManager)
+        public ProductAppService(IRepository<Product, int> repository, ProductManager productManager) : base(repository)
         {
-            _productManager = productManager;
         }
 
-        public async Task CreateProduct(AddProductInput input)
+        public override async Task<ProductDto> Create(AddProductInput input)
         {
-            var product = Mapper.Map<AddProductInput, Product>(input);
-            await _productManager.CreateProduct(product);
+            CheckCreatePermission();
+
+            var product = ObjectMapper.Map<Product>(input);
+
+            //CheckErrors(await _roleManager.CreateAsync(role));
+
+            //await _productManager.CreateProduct(product);
+
+            return MapToEntityDto(product);
         }
 
-        public async Task CreateProductVariant(AddProductVariantInput input)
+        protected override IQueryable<Product> CreateFilteredQuery(GetAllProductInput input)
         {
-            var productVariant = Mapper.Map<AddProductVariantInput, ProductVariant>(input);
-            await _productManager.CreateProductVariant(productVariant);
+            return base.CreateFilteredQuery(input)
+                .WhereIf(input.TenantId.HasValue, t => t.TenantId == input.TenantId.Value);
         }
 
-        public ProductDto GetProduct(GetProductInput input)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

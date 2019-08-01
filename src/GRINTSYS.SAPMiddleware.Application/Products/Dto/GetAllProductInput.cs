@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Abp.Application.Services.Dto;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GRINTSYS.SAPMiddleware.Products.Dto
 {
-    public class GetAllProductInput
+    public class GetAllProductInput: PagedAndSortedResultRequestDto
     {
         public int? TenantId { get; set; }
         public String Name { get; set; }
