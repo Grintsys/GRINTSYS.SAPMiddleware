@@ -1,13 +1,12 @@
-﻿using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
-using Abp.Timing;
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
 using System;
 
-namespace GRINTSYS.SAPMiddleware.M2
+namespace GRINTSYS.SAPMiddleware.Orders.Dto
 {
-    public class OrderItem: Entity, IHasCreationTime, IMustHaveTenant
+    [AutoMap(typeof(M2.OrderItem))]
+    public class OrderItemOutput: EntityDto
     {
-        public int TenantId { get; set; }
         public String Code { get; set; }
         public String Name { get; set; }
         public Int32 Quantity { get; set; }
@@ -17,14 +16,5 @@ namespace GRINTSYS.SAPMiddleware.M2
         public Double TaxValue { get; set; }
         public String TaxCode { get; set; }
         public String WarehouseCode { get; set; }
-        
-        public DateTime CreationTime { get; set; }
-
-        public OrderItem()
-        {
-            CreationTime = Clock.Now;
-        }
-
-        public virtual Order Order { get; set; }
     }
 }

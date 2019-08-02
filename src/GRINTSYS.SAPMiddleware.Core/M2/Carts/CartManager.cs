@@ -103,5 +103,23 @@ namespace GRINTSYS.SAPMiddleware.M2
                 .Where(w => w.CartId == cartId)
                 .ToList();
         }
+
+        public List<CartProductItem> GetCartProductItemsByUser(long userId, int tenantId)
+        {
+            var cart = _cartRepository.GetAllIncluding(x => x.CartProductItems)
+                .Where(w => w.UserId == userId
+                    && w.TenantId == tenantId
+                    && w.Type == CartType.CART)
+                .FirstOrDefault();
+
+            if(cart == null)
+            {
+                throw new UserFriendlyException("cart not found");
+            }
+
+            return _cartProductItemRepository.GetAllIncluding(x => x.Variant)
+               .Where(w => w.CartId == cart.Id)
+               .ToList();
+        }
     }
 }
