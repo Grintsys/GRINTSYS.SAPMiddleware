@@ -78,7 +78,18 @@ namespace GRINTSYS.SAPMiddleware.M2.Products
             return entity;
         }
 
-        public void UpdateProductStock(int productVariantId, int qty)
+        public async Task<ProductVariant> GetProductVariantAsync(int id)
+        {
+            var entity = await _productVariantRepository.FirstOrDefaultAsync(id);
+
+            if (entity == null)
+            {
+                throw new UserFriendlyException("Product Variant not found");
+            }
+            return entity;
+        }
+
+        public async Task UpdateProductStock(int productVariantId, int qty)
         {
             var productVariant = GetProductVariant(productVariantId);
 
@@ -87,7 +98,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Products
 
             productVariant.IsCommitted += qty;
 
-            _productVariantRepository.Update(productVariant);
+            await _productVariantRepository.UpdateAsync(productVariant);
         }
     }
 }

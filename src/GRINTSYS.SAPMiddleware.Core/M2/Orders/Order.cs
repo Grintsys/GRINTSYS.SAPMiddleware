@@ -57,6 +57,10 @@ namespace GRINTSYS.SAPMiddleware.M2
 
         public Order()
         {
+            RemoteId = "";
+            Comment = "";
+            LastErrorMessage = "";
+            Series = 0;
             CreationTime = Clock.Now;
         }
 

@@ -12,35 +12,31 @@ namespace GRINTSYS.SAPMiddleware.M2
         CreadoEnAplicacion = 1,
         CreadoEnSAP = 2,
         Error = 3,
-        Canceled = 4
+        Cancelado = 4
     }
 
     public class Payment: Entity, IHasCreationTime, IMustHaveTenant
     {
         public int TenantId { get; set; }
-
         public String DocEntry { get; set; }
-        public Int32? ClientId { get; set; }
-        public Int32? CashId { get; set; }
-        public Int32? TransferId { get; set; }
-        public Int32? DeviceUserId { get; set; }
+        public long UserId { get; set; }
         public Double TotalAmount { get; set; }
         public String LastErrorMessage { get; set; }
         public PaymentStatus Status { get; set; }
         public String Comment { get; set; }
         public String ReferenceNumber { get; set; }
-
         public DateTime CreationTime { get; set; }
 
-        public virtual List<Check> Checks { get; set; }
-        public virtual Cash Cash { get; set; }
-        public virtual Transfer Transfer { get; set; }
+        public virtual List<InvoiceItem> Invoices { get; set; }
+        public virtual List<PaymentCheck> Checks { get; set; }
+        public virtual List<PaymentCash> Cash { get; set; }
+        public virtual List<PaymentTransfer> Transfer { get; set; }
         public virtual Client Client { get; set; }
         public virtual User User { get; set; }
-        public virtual List<InvoiceItem> Invoices { get; set; }
 
         public Payment()
         {
+            Status = PaymentStatus.CreadoEnAplicacion;
             CreationTime = Clock.Now;
         }
     }

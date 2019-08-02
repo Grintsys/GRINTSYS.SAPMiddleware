@@ -5,7 +5,7 @@ using System;
 
 namespace GRINTSYS.SAPMiddleware.M2
 {
-    public class Check: Entity, IHasCreationTime, IMustHaveTenant
+    public class PaymentCheck: Entity, IHasCreationTime, IMustHaveTenant
     {
         public int TenantId { get; set; }
 
@@ -21,7 +21,7 @@ namespace GRINTSYS.SAPMiddleware.M2
 
         public DateTime CreationTime { get; set; }
 
-        public Check()
+        public PaymentCheck()
         {
             CreationTime = Clock.Now;
         }

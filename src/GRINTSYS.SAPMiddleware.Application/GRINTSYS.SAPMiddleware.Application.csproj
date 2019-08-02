@@ -13,4 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\GRINTSYS.SAPMiddleware.Core\GRINTSYS.SAPMiddleware.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Payments\Job\" />
+  </ItemGroup>
 </Project>

@@ -4,14 +4,16 @@ using GRINTSYS.SAPMiddleware.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GRINTSYS.SAPMiddleware.Migrations
 {
     [DbContext(typeof(SAPMiddlewareDbContext))]
-    partial class SAPMiddlewareDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190802194552_OrderModelFix")]
+    partial class OrderModelFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1164,6 +1166,25 @@ namespace GRINTSYS.SAPMiddleware.Migrations
                     b.ToTable("CartProductItems");
                 });
 
+            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Cash", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("Amount");
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<string>("GeneralAccount");
+
+                    b.Property<int>("TenantId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cash");
+                });
+
             modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -1185,6 +1206,37 @@ namespace GRINTSYS.SAPMiddleware.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Check", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("Amount");
+
+                    b.Property<int>("BankId");
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<DateTime>("DueDate");
+
+                    b.Property<string>("GeneralAccount");
+
+                    b.Property<int>("PaymentId");
+
+                    b.Property<string>("RefenceNumber");
+
+                    b.Property<int>("TenantId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BankId");
+
+                    b.HasIndex("PaymentId");
+
+                    b.ToTable("Checks");
                 });
 
             modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Client", b =>
@@ -1515,11 +1567,15 @@ namespace GRINTSYS.SAPMiddleware.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("CashId");
+
                     b.Property<int?>("ClientId");
 
                     b.Property<string>("Comment");
 
                     b.Property<DateTime>("CreationTime");
+
+                    b.Property<int?>("DeviceUserId");
 
                     b.Property<string>("DocEntry");
 
@@ -1533,96 +1589,21 @@ namespace GRINTSYS.SAPMiddleware.Migrations
 
                     b.Property<double>("TotalAmount");
 
-                    b.Property<long>("UserId");
+                    b.Property<int?>("TransferId");
+
+                    b.Property<long?>("UserId");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CashId");
+
                     b.HasIndex("ClientId");
+
+                    b.HasIndex("TransferId");
 
                     b.HasIndex("UserId");
 
                     b.ToTable("Payments");
-                });
-
-            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.PaymentCash", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<double>("Amount");
-
-                    b.Property<DateTime>("CreationTime");
-
-                    b.Property<string>("GeneralAccount");
-
-                    b.Property<int>("PaymentId");
-
-                    b.Property<int>("TenantId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PaymentId");
-
-                    b.ToTable("Cash");
-                });
-
-            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.PaymentCheck", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<double>("Amount");
-
-                    b.Property<int>("BankId");
-
-                    b.Property<DateTime>("CreationTime");
-
-                    b.Property<DateTime>("DueDate");
-
-                    b.Property<string>("GeneralAccount");
-
-                    b.Property<int>("PaymentId");
-
-                    b.Property<string>("RefenceNumber");
-
-                    b.Property<int>("TenantId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BankId");
-
-                    b.HasIndex("PaymentId");
-
-                    b.ToTable("Checks");
-                });
-
-            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.PaymentTransfer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<double>("Amount");
-
-                    b.Property<DateTime>("CreationTime");
-
-                    b.Property<DateTime>("Date");
-
-                    b.Property<string>("GeneralAccount");
-
-                    b.Property<int>("PaymentId");
-
-                    b.Property<string>("ReferenceNumber");
-
-                    b.Property<int>("TenantId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PaymentId");
-
-                    b.ToTable("Transfers");
                 });
 
             modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Product", b =>
@@ -1651,11 +1632,11 @@ namespace GRINTSYS.SAPMiddleware.Migrations
                         .IsRequired()
                         .HasMaxLength(256);
 
-                    b.Property<int?>("PaymentTransferId");
-
                     b.Property<string>("Season");
 
                     b.Property<int>("TenantId");
+
+                    b.Property<int?>("TransferId");
 
                     b.Property<int?>("WishListItemId");
 
@@ -1665,7 +1646,7 @@ namespace GRINTSYS.SAPMiddleware.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("PaymentTransferId");
+                    b.HasIndex("TransferId");
 
                     b.HasIndex("WishListItemId");
 
@@ -1781,6 +1762,29 @@ namespace GRINTSYS.SAPMiddleware.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sizes");
+                });
+
+            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Transfer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("Amount");
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("GeneralAccount");
+
+                    b.Property<string>("ReferenceNumber");
+
+                    b.Property<int>("TenantId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Transfers");
                 });
 
             modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.WishListItem", b =>
@@ -2067,6 +2071,19 @@ namespace GRINTSYS.SAPMiddleware.Migrations
                         .HasForeignKey("ProductVariantId");
                 });
 
+            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Check", b =>
+                {
+                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Bank", "Bank")
+                        .WithMany()
+                        .HasForeignKey("BankId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Payment", "Payment")
+                        .WithMany("Checks")
+                        .HasForeignKey("PaymentId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Document", b =>
                 {
                     b.HasOne("GRINTSYS.SAPMiddleware.M2.Client", "Client")
@@ -2107,43 +2124,21 @@ namespace GRINTSYS.SAPMiddleware.Migrations
 
             modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Payment", b =>
                 {
+                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Cash", "Cash")
+                        .WithMany()
+                        .HasForeignKey("CashId");
+
                     b.HasOne("GRINTSYS.SAPMiddleware.M2.Client", "Client")
                         .WithMany()
                         .HasForeignKey("ClientId");
 
+                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Transfer", "Transfer")
+                        .WithMany()
+                        .HasForeignKey("TransferId");
+
                     b.HasOne("GRINTSYS.SAPMiddleware.Authorization.Users.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.PaymentCash", b =>
-                {
-                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Payment", "Payment")
-                        .WithMany("Cash")
-                        .HasForeignKey("PaymentId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.PaymentCheck", b =>
-                {
-                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Bank", "Bank")
-                        .WithMany()
-                        .HasForeignKey("BankId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Payment", "Payment")
-                        .WithMany("Checks")
-                        .HasForeignKey("PaymentId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.PaymentTransfer", b =>
-                {
-                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Payment", "Payment")
-                        .WithMany("Transfer")
-                        .HasForeignKey("PaymentId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Product", b =>
@@ -2158,9 +2153,9 @@ namespace GRINTSYS.SAPMiddleware.Migrations
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("GRINTSYS.SAPMiddleware.M2.PaymentTransfer")
+                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Transfer")
                         .WithMany("Products")
-                        .HasForeignKey("PaymentTransferId");
+                        .HasForeignKey("TransferId");
 
                     b.HasOne("GRINTSYS.SAPMiddleware.M2.WishListItem")
                         .WithMany("Products")

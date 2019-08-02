@@ -46,9 +46,9 @@ namespace GRINTSYS.SAPMiddleware.EntityFrameworkCore
         public DbSet<LogEntry> Logs { get; set; }
         public DbSet<ClientDiscount> ClientDiscounts { get; set; }
         public DbSet<Payment> Payments { get; set; }
-        public DbSet<Cash> Cash { get; set; }
-        public DbSet<Transfer> Transfers { get; set; }
-        public DbSet<Check> Checks { get; set; }
+        public DbSet<PaymentCash> Cash { get; set; }
+        public DbSet<PaymentTransfer> Transfers { get; set; }
+        public DbSet<PaymentCheck> Checks { get; set; }
         public DbSet<Bank> Banks { get; set; }
         public DbSet<InvoiceItem> Invoices { get; set; }
         public DbSet<InvoiceHistory> InvoiceHistory { get; set; }

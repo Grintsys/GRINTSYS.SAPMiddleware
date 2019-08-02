@@ -8,6 +8,7 @@ using GRINTSYS.SAPMiddleware.M2.Products;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Orders.Job
 {
@@ -29,8 +30,7 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
             _emailSender = emailSender;
         }
 
-        [UnitOfWork]
-        public override void Execute(CreateOrderParams args)
+        public async Task CreateOrder(CreateOrderParams args)
         {
             var newOrder = new Order()
             {
@@ -42,14 +42,16 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
                 CardCode = args.CardCode
             };
 
-            var order = _orderManager.CreateOrder(newOrder);
+            var order = await _orderManager.CreateOrder(newOrder);
 
             var products = _cartManager.GetCartProductItemsByUser(args.UserId, args.TenantId);
-            
-            foreach(var item in products)
+
+            foreach (var item in products)
             {
                 var newOrderItem = new OrderItem()
                 {
+                    TenantId = args.TenantId,
+                    OrderId = order.Id,
                     Code = item.Variant.Code,
                     Quantity = item.Quantity,
                     Price = item.Variant.Price,
@@ -57,13 +59,26 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
                     WarehouseCode = item.Variant.WareHouseCode
                 };
 
-                _orderManager.CreateOrderItem(newOrderItem);
+                await _orderManager.CreateOrderItem(newOrderItem);
                 //actualiza el comprometido pero solo en M2
-                _productManager.UpdateProductStock(item.Variant.Id, item.Quantity);
+                await _productManager.UpdateProductStock(item.Variant.Id, item.Quantity);
             }
 
             //delete the user cart
-            _cartManager.DeleteUserCart(args.UserId, args.TenantId);
+            await _cartManager.DeleteUserCart(args.UserId, args.TenantId);
+        }
+
+        [UnitOfWork]
+        public override async void Execute(CreateOrderParams args)
+        {
+            try
+            {
+                await CreateOrder(args);
+
+            }catch(Exception e)
+            {
+                Logger.Error(e.Message);
+            }
         }
     }
 }

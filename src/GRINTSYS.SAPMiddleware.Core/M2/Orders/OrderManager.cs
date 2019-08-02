@@ -13,16 +13,29 @@ namespace GRINTSYS.SAPMiddleware.M2.Orders
     {
         private readonly IRepository<Order> _orderRepository;
         private readonly IRepository<OrderItem> _orderItemRepository;
+        private readonly IRepository<Cart> _cartRespository;
 
         public OrderManager(IRepository<Order> orderRepository,
-            IRepository<OrderItem> orderItemRepository)
+            IRepository<OrderItem> orderItemRepository,
+            IRepository<Cart> cartRespository)
         {
             _orderRepository = orderRepository;
             _orderItemRepository = orderItemRepository;
+            _cartRespository = cartRespository;
         }
 
         public async Task<Order> CreateOrder(Order order)
         {
+            var cart = _cartRespository.GetAll()
+                .Where(w => w.UserId == order.UserId
+                    && w.TenantId == order.TenantId)
+                .FirstOrDefault();
+
+            if(cart == null)
+            {
+                throw new UserFriendlyException("You can't create a new Order because your cart is empty");
+            }
+
             return await _orderRepository.InsertAsync(order);
         }
 

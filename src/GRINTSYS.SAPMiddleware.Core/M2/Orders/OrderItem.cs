@@ -8,6 +8,7 @@ namespace GRINTSYS.SAPMiddleware.M2
     public class OrderItem: Entity, IHasCreationTime, IMustHaveTenant
     {
         public int TenantId { get; set; }
+        public Int32 OrderId { get; set; }
         public String Code { get; set; }
         public String Name { get; set; }
         public Int32 Quantity { get; set; }

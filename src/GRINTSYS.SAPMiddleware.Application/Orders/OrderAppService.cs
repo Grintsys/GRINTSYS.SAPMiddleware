@@ -9,6 +9,7 @@ using Abp.UI;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Orders;
 using GRINTSYS.SAPMiddleware.Orders.Dto;
+using GRINTSYS.SAPMiddleware.Orders.Job;
 
 namespace GRINTSYS.SAPMiddleware.Orders
 {
@@ -46,21 +47,15 @@ namespace GRINTSYS.SAPMiddleware.Orders
         {
             var userId = GetUserId();
 
-            var newOrder = new Order()
-            {
-                TenantId = input.TenantId,
-                UserId = userId,
-                Status = OrderStatus.CreadoEnAplicacion,
-                DeliveryDate = input.DeliveryDate,
-                Comment = input.Comment,
-                CardCode = input.CardCode
-            };
-
-            var order = await _orderManager.CreateOrder(newOrder);
-
-            var cart = _cartManager.GetCartProductItemsByUser(userId, input.TenantId);
-
-            //_cartManager.GetCartProductItems()
+            await _backgroundJobManager.EnqueueAsync<OrderCreationJob, CreateOrderParams>(
+                new CreateOrderParams
+                {
+                     TenantId = input.TenantId,
+                     UserId = userId,
+                     CardCode = input.CardCode,
+                     Comment = input.Comment,
+                     DeliveryDate = input.DeliveryDate
+                });
         }
 
         public OrderOutput GetOrder(GetOrderInput input)

@@ -5,16 +5,18 @@ using System;
 
 namespace GRINTSYS.SAPMiddleware.M2
 {
-    public class Cash : Entity, IHasCreationTime, IMustHaveTenant
+    public class PaymentCash : Entity, IHasCreationTime, IMustHaveTenant
     {
         public int TenantId { get; set; }
-
+        public int PaymentId { get; set; }
         public String GeneralAccount { get; set; }
         public Double Amount { get; set; }
 
         public DateTime CreationTime { get; set; }
 
-        public Cash()
+        public virtual Payment Payment { get; set; }
+
+        public PaymentCash()
         {
             CreationTime = Clock.Now;
         }

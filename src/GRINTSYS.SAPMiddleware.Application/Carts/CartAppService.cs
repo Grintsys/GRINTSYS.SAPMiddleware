@@ -18,15 +18,12 @@ namespace GRINTSYS.SAPMiddleware.Carts
     {
         private CartManager _cartManager;
         private ProductManager _productManager;
-        private ClientManager _clientManager;
 
         public CartAppService(CartManager cartManager,
-            ProductManager productManager, 
-            ClientManager clientManager)
+            ProductManager productManager)
         {
             this._cartManager = cartManager;
             this._productManager = productManager;
-            this._clientManager = clientManager;
         }
 
         public long GetUserId()
@@ -52,10 +49,10 @@ namespace GRINTSYS.SAPMiddleware.Carts
             var cart = await _cartManager.CreateCart(new Cart(input.TenantId, userId));
 
             // get the product that we'll add to the cart
-            var productVariant = _productManager.GetProductVariant(input.ProductVariantId);
+            var productVariant = await _productManager.GetProductVariantAsync(input.ProductVariantId);
 
             //var tenant = this.TenantManager.FindByIdAsync(input.TenantId);
-            var isv = this.TenantManager.GetFeatureValueOrNullAsync(input.TenantId, "ISV");
+            var isv = await this.TenantManager.GetFeatureValueOrNullAsync(input.TenantId, "ISV");
             //var isv = tenant == null ? 0.0 : tenant.
             // Get the discount if that costumer apply
             //var discount = _clientManager.GetClientDiscountByItemGroupCode(input.CardCode, productVariant.ItemGroup);
