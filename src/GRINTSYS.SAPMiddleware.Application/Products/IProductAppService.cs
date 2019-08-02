@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services;
+using Abp.Application.Services.Dto;
 using Abp.Dependency;
 using GRINTSYS.SAPMiddleware.Products.Dto;
 using System.Collections.Generic;
@@ -11,6 +12,6 @@ namespace GRINTSYS.SAPMiddleware.Products
         Task CreateProduct(AddProductInput input);
         Task CreateVariant(AddProductVariantInput input);
         ProductOutput GetProduct(GetProductInput input);
-        List<ProductOutput> GetAllProducts(GetAllProductInput input);
+        PagedResultDto<ProductOutput> GetAllProducts(GetAllProductInput input);
     }
 }

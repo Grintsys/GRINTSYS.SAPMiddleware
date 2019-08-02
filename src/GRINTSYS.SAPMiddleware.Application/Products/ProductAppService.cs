@@ -1,16 +1,18 @@
-﻿using Abp.Application.Services;
+﻿using Abp.Application.Services.Dto;
 using Abp.Authorization;
+using Abp.AutoMapper;
 using Abp.Collections.Extensions;
-using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
 using GRINTSYS.SAPMiddleware.Authorization;
-using GRINTSYS.SAPMiddleware.Authorization.Roles;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Products;
 using GRINTSYS.SAPMiddleware.Products.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic.Core;
+//using System.Linq;
 using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Products
@@ -18,11 +20,12 @@ namespace GRINTSYS.SAPMiddleware.Products
     [AbpAuthorize(PermissionNames.Pages_MobileAccess)]
     public class ProductAppService : SAPMiddlewareAppServiceBase, IProductAppService
     {
+        private readonly IRepository<Product> _productRepository;
         private readonly ProductManager _productManager;
-        //ProductManager productManager;
 
-        public ProductAppService(ProductManager productManager) 
+        public ProductAppService(IRepository<Product> productRepository, ProductManager productManager) 
         {
+            _productRepository = productRepository;
             _productManager = productManager;
         }
 
@@ -38,9 +41,31 @@ namespace GRINTSYS.SAPMiddleware.Products
             await _productManager.CreateProductVariant(productVariant);
         }
 
-        public List<ProductOutput> GetAllProducts(GetAllProductInput input)
+        public PagedResultDto<ProductOutput> GetAllProducts(GetAllProductInput input)
         {
-            throw new System.NotImplementedException();
+            if (input.MaxResultCount <= 0)
+                input.MaxResultCount = AppConsts.MaxResultCount;
+
+            if (String.IsNullOrEmpty(input.Sorting))
+                input.Sorting = AppConsts.DefaultSortingField;
+
+            var productsCount = _productRepository.Count();
+            var products = _productRepository.GetAllIncluding(x => x.Variants)
+                .WhereIf(input.TenantId.HasValue, t => t.TenantId == input.TenantId.Value)
+                .WhereIf(input.CategoryId.HasValue, t => t.CategoryId == input.CategoryId.Value)
+                .WhereIf(input.BrandId.HasValue, t => t.BrandId == input.BrandId.Value)
+                .WhereIf(!String.IsNullOrEmpty(input.Name), t => t.Name.Contains(input.Name))
+                .WhereIf(!String.IsNullOrEmpty(input.Code), t => t.Code.Contains(input.Code))
+                .OrderBy(input.Sorting)
+                .PageBy(input)
+                .ToList()
+                ;
+
+            return new PagedResultDto<ProductOutput>
+            {
+                TotalCount = productsCount,
+                Items = products.MapTo<List<ProductOutput>>()
+            };
         }
 
         public ProductOutput GetProduct(GetProductInput input)
