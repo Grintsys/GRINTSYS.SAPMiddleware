@@ -1,9 +1,11 @@
-﻿using GRINTSYS.SAPMiddleware.M2;
+﻿using Abp.AutoMapper;
+using GRINTSYS.SAPMiddleware.M2;
 using System;
 using System.Collections.Generic;
 
 namespace GRINTSYS.SAPMiddleware.Carts.Dto
 {
+    //[AutoMap(typeof(Cart))]
     public class CartOutput
     {
         public int id { get; set; }
@@ -13,7 +15,7 @@ namespace GRINTSYS.SAPMiddleware.Carts.Dto
         public double ISV { get; set; }
         public double subtotal { get; set; }
         public string currency { get; set; }
-        public List<CartProductItem> items { get; set; }
+        public List<CartProductItemOutput> items { get; set; }
         public CartOutput() { }
         public CartOutput(int id) {
             this.id = id;

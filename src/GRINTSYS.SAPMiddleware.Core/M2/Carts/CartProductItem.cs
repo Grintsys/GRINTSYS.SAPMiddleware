@@ -25,14 +25,16 @@ namespace GRINTSYS.SAPMiddleware.M2
             this.CreationTime = Clock.Now;
         }
 
-        public CartProductItem(int tenantId, int cartId, int productVariantId, int qty, double isv, double discount)
+        public CartProductItem(int tenantId, int cartId, int productVariantId, int qty, double price, double isv, double discount)
         {
+            var discountvalue = ((price * qty) * discount) / 100;
+
             this.TenantId = tenantId;
             this.CreationTime = Clock.Now;
             this.CartId = cartId;
             this.Quantity = qty;
-            this.ISV = isv;
-            this.Discount = discount;
+            this.ISV = ((qty * price) - discountvalue) * isv;
+            this.Discount = discountvalue;
             this.ProductVariantId = productVariantId;
         }
 
@@ -41,7 +43,7 @@ namespace GRINTSYS.SAPMiddleware.M2
             if (this.Quantity > 0)
                 return this.Quantity * this.Variant.Price;
 
-            return 0;
+            return 0.0;
         }
 
         public String TotalItemPriceFormatted()

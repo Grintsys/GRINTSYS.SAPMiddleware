@@ -14,6 +14,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Products
         Task CreateProductBundle(ProductBundle productBundle);
         Product GetProduct(int id);
         ProductVariant GetProductVariant(int id);
+        //List<ProductVariant> GetProductVariantByProductId(int id);
         ProductBundle GetProductBundle(int id);
     }
 }

@@ -12,5 +12,6 @@ namespace GRINTSYS.SAPMiddleware.Carts
         Task DeleteCart(DeleteCartInput input);
         Task AddItemToCart(AddCartItemInput input);
         Task DeleteItemToCart(DeleteCartItemInput input);
+        double CalculateSubtotal(int cartId);
     }
 }

@@ -96,5 +96,12 @@ namespace GRINTSYS.SAPMiddleware.M2
         {
             return _cartProductItemRepository.Get(id);
         }
+
+        public List<CartProductItem> GetCartProductItems(int cartId)
+        {
+            return _cartProductItemRepository.GetAllIncluding(x => x.Variant)
+                .Where(w => w.CartId == cartId)
+                .ToList();
+        }
     }
 }

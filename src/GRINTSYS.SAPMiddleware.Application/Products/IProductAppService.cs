@@ -13,5 +13,6 @@ namespace GRINTSYS.SAPMiddleware.Products
         Task CreateVariant(AddProductVariantInput input);
         ProductOutput GetProduct(GetProductInput input);
         PagedResultDto<ProductOutput> GetAllProducts(GetAllProductInput input);
+        //double CalculateSubtotal(int cartId);
     }
 }

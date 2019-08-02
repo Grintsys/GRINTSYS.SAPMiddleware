@@ -11,6 +11,7 @@ namespace GRINTSYS.SAPMiddleware.M2
         Cart GetCart(int id);
         Cart GetCartByUser(long userId, int tenantId);
         CartProductItem GetCartProductItem(int id);
+        List<CartProductItem> GetCartProductItems(int cartId);
         Task<Cart> CreateCart(Cart entity);
         Task<CartProductItem> CreateCartProductItem(CartProductItem entity);
         Task DeleteCart(int id);

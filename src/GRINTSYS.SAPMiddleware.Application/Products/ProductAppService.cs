@@ -21,6 +21,7 @@ namespace GRINTSYS.SAPMiddleware.Products
     public class ProductAppService : SAPMiddlewareAppServiceBase, IProductAppService
     {
         private readonly IRepository<Product> _productRepository;
+        //private readonly IRepository<ProductVariant> _productVariantRespository;
         private readonly ProductManager _productManager;
 
         public ProductAppService(IRepository<Product> productRepository, ProductManager productManager) 

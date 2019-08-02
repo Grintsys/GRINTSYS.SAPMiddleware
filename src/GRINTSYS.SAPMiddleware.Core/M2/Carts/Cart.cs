@@ -48,7 +48,7 @@ namespace GRINTSYS.SAPMiddleware.M2
             if (CartProductItems.Count <= 0)
                 return 0;
 
-            return CartProductItems.Sum(s => s.TotalItemPrice());
+            return CartProductItems.Sum(s => s.Quantity * s.Variant.Price);
         }
 
         public Double GetProductISVPrice()

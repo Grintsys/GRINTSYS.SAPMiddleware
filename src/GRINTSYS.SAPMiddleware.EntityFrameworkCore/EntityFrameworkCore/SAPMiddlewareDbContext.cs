@@ -33,7 +33,7 @@ namespace GRINTSYS.SAPMiddleware.EntityFrameworkCore
 
         public DbSet<CartProductItem> CartProductItems { get; set; }
 
-        //public DbSet<CartProductVariant> CartProductVariants { get; set; }
+        //public DbSet<TenantSetting> TenantSettings { get; set; }
 
         public DbSet<Order> Orders { get; set; }
 
