@@ -1,15 +1,14 @@
 ﻿using Abp.Application.Services;
-using Abp.Application.Services.Dto;
+using Abp.Dependency;
 using GRINTSYS.SAPMiddleware.Carts.Dto;
-using System;
 using System.Threading.Tasks;
 
-namespace GRINTSYS.SAPMiddleware.Cart
+namespace GRINTSYS.SAPMiddleware.Carts
 {
-    public interface ICartAppService : IApplicationService
+    public interface ICartAppService : IApplicationService, ITransientDependency
     {
         CartOutput GetCart(GetCartInput input);
-        Task AddCart(AddCartInput input);
+        CartOutput GetCartInfo(GetCartInput input);
         Task DeleteCart(DeleteCartInput input);
         Task AddItemToCart(AddCartItemInput input);
         Task DeleteItemToCart(DeleteCartItemInput input);

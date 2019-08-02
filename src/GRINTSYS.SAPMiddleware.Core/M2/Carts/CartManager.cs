@@ -15,15 +15,12 @@ namespace GRINTSYS.SAPMiddleware.M2
     {
         private readonly IRepository<Cart> _cartRepository;
         private readonly IRepository<CartProductItem> _cartProductItemRepository;
-        private readonly IRepository<CartProductVariant> _cartProductVariantRepository;
 
         public CartManager(IRepository<Cart> cartRepository, 
-            IRepository<CartProductItem> cartProductItemRepository,
-            IRepository<CartProductVariant> cartProductVariantRepository)
+            IRepository<CartProductItem> cartProductItemRepository)
         {
             this._cartRepository = cartRepository;
             this._cartProductItemRepository = cartProductItemRepository;
-            this._cartProductVariantRepository = cartProductVariantRepository;
         }
 
         public async Task<Cart> CreateCart(Cart entity)
@@ -42,12 +39,17 @@ namespace GRINTSYS.SAPMiddleware.M2
 
         public async Task<CartProductItem> CreateCartProductItem(CartProductItem entity)
         {
-            return await _cartProductItemRepository.InsertAsync(entity);
-        }
+            var cartItem = _cartProductItemRepository.GetAll()
+                .Where(w => w.TenantId == entity.TenantId 
+                    && w.ProductVariantId == entity.ProductVariantId)
+                .FirstOrDefault();
 
-        public async Task<CartProductVariant> CreateCartProductVariant(CartProductVariant entity)
-        {
-            return await _cartProductVariantRepository.InsertAsync(entity);
+            if(cartItem != null)
+            {
+                throw new UserFriendlyException("Item is Already on Cart");
+            }
+
+            return await _cartProductItemRepository.InsertAsync(entity);
         }
 
         public async Task DeleteCart(int id)
@@ -74,35 +76,18 @@ namespace GRINTSYS.SAPMiddleware.M2
             await _cartProductItemRepository.DeleteAsync(entity);
         }
 
-        public async Task DeleteCartProductVariant(int id)
-        {
-            var entity = _cartProductVariantRepository.Get(id);
-
-            if (entity == null)
-            {
-                throw new UserFriendlyException("Item not found");
-            }
-
-            await _cartProductVariantRepository.DeleteAsync(entity);
-        }
-
         public Cart GetCart(int id)
         {
             return _cartRepository.Get(id);
         }
 
-        public Cart GetCartByUser(int userId, int tenantId)
+        public Cart GetCartByUser(long userId, int tenantId)
         {
-            var cart = _cartRepository.GetAll()
+            var cart = _cartRepository.GetAllIncluding(x => x.CartProductItems)
                 .Where(w => w.UserId == userId 
                     && w.TenantId == tenantId
                     && w.Type == CartType.CART)
                 .FirstOrDefault();
-
-            if(cart == null)
-            {
-                return new Cart(-1);
-            }
 
             return cart;
         }
@@ -110,11 +95,6 @@ namespace GRINTSYS.SAPMiddleware.M2
         public CartProductItem GetCartProductItem(int id)
         {
             return _cartProductItemRepository.Get(id);
-        }
-
-        public CartProductVariant GetCartProductVariant(int id)
-        {
-            return _cartProductVariantRepository.Get(id);
         }
     }
 }

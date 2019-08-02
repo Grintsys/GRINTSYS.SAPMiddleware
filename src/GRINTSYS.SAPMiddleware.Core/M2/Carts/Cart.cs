@@ -19,19 +19,19 @@ namespace GRINTSYS.SAPMiddleware.M2
         public const int MaxNameLength = 256;
 
         public int TenantId { get; set; }
-        public Int32 UserId { get; set; }
+        public long UserId { get; set; }
         public String Currency { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<CartProductItem> CartProductItems { get; set; }
         public CartType Type { get; set; }
         public DateTime CreationTime { get; set; }
 
-        public Cart(int userId = 1)
+        public Cart(int tenantId, long userId = 1)
         {
             CreationTime = Clock.Now;
             Type = CartType.CART;
-            Currency = "HNL";
             UserId = userId;
+            TenantId = tenantId;
         }
 
         public String GetProductTotalPriceFormatted()
@@ -45,16 +45,25 @@ namespace GRINTSYS.SAPMiddleware.M2
         }
         public Double GetProductSubtotalPrice()
         {
+            if (CartProductItems.Count <= 0)
+                return 0;
+
             return CartProductItems.Sum(s => s.TotalItemPrice());
         }
 
         public Double GetProductISVPrice()
         {
+            if (CartProductItems.Count <= 0)
+                return 0;
+
             return CartProductItems.Sum(s => s.ISV);
         }
 
         public Double GetProductDiscountPrice()
         {
+            if (CartProductItems.Count <= 0)
+                return 0;
+
             return CartProductItems.Sum(s => s.Discount);
         }
 

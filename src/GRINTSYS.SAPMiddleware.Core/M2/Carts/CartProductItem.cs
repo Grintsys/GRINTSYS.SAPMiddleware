@@ -8,8 +8,7 @@ namespace GRINTSYS.SAPMiddleware.M2
     public class CartProductItem: Entity, IHasCreationTime, IMustHaveTenant
     {
         public int TenantId { get; set; }
-
-        public Int32 CartProductVariantId { get; set; }
+        public Int32? ProductVariantId { get; set; }
         public Int32 CartId { get; set; }
         public Int32 RemoteId { get; set; }
         //TODO: the best to include orderId
@@ -19,26 +18,28 @@ namespace GRINTSYS.SAPMiddleware.M2
         public Double ISV { get; set; }
         public DateTime CreationTime { get; set; }
         public virtual Cart Cart { get; set; }
-        public virtual CartProductVariant CartProductVariant { get; set; }
+        public virtual ProductVariant Variant { get; set; }
 
         public CartProductItem()
         {
             this.CreationTime = Clock.Now;
         }
 
-        public CartProductItem(int cartId, int qty, double isv, double discount)
+        public CartProductItem(int tenantId, int cartId, int productVariantId, int qty, double isv, double discount)
         {
+            this.TenantId = tenantId;
             this.CreationTime = Clock.Now;
             this.CartId = cartId;
             this.Quantity = qty;
             this.ISV = isv;
             this.Discount = discount;
+            this.ProductVariantId = productVariantId;
         }
 
         public Double TotalItemPrice()
         {
             if (this.Quantity > 0)
-                return this.Quantity * this.CartProductVariant.Price;
+                return this.Quantity * this.Variant.Price;
 
             return 0;
         }

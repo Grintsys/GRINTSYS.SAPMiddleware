@@ -46,7 +46,7 @@ namespace GRINTSYS.SAPMiddleware.M2
         public virtual Size Size { get; set; }
         //[ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
-        public virtual List<CartProductVariant> CartProductVariants { get; set; }
+        //public virtual List<CartProductItem> CartProductVariants { get; set; }
         public virtual List<ProductBundleDetail> ProductBundleDetails { get; set; }
     }
 }

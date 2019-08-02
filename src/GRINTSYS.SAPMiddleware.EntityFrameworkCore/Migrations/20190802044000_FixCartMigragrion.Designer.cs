@@ -4,14 +4,16 @@ using GRINTSYS.SAPMiddleware.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GRINTSYS.SAPMiddleware.Migrations
 {
     [DbContext(typeof(SAPMiddlewareDbContext))]
-    partial class SAPMiddlewareDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190802044000_FixCartMigragrion")]
+    partial class FixCartMigragrion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1139,6 +1141,8 @@ namespace GRINTSYS.SAPMiddleware.Migrations
 
                     b.Property<int>("CartId");
 
+                    b.Property<int>("CartProductVariantId");
+
                     b.Property<DateTime>("CreationTime");
 
                     b.Property<double>("Discount");
@@ -1146,8 +1150,6 @@ namespace GRINTSYS.SAPMiddleware.Migrations
                     b.Property<double>("DiscountPercent");
 
                     b.Property<double>("ISV");
-
-                    b.Property<int?>("ProductVariantId");
 
                     b.Property<int>("Quantity");
 
@@ -1159,9 +1161,56 @@ namespace GRINTSYS.SAPMiddleware.Migrations
 
                     b.HasIndex("CartId");
 
-                    b.HasIndex("ProductVariantId");
+                    b.HasIndex("CartProductVariantId");
 
                     b.ToTable("CartProductItems");
+                });
+
+            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.CartProductVariant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CategoryId");
+
+                    b.Property<int>("ColorId");
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<double>("Discount");
+
+                    b.Property<double>("DiscountPercent");
+
+                    b.Property<string>("MainImage");
+
+                    b.Property<string>("Name");
+
+                    b.Property<double>("Price");
+
+                    b.Property<string>("PriceFormatted");
+
+                    b.Property<int?>("ProductVariantId");
+
+                    b.Property<int>("SizeId");
+
+                    b.Property<int>("TenantId");
+
+                    b.Property<string>("Url");
+
+                    b.Property<string>("WareHouseCode");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ColorId");
+
+                    b.HasIndex("ProductVariantId");
+
+                    b.HasIndex("SizeId");
+
+                    b.ToTable("CartProductVariants");
                 });
 
             modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Cash", b =>
@@ -2066,9 +2115,32 @@ namespace GRINTSYS.SAPMiddleware.Migrations
                         .HasForeignKey("CartId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("GRINTSYS.SAPMiddleware.M2.ProductVariant", "Variant")
+                    b.HasOne("GRINTSYS.SAPMiddleware.M2.CartProductVariant", "CartProductVariant")
                         .WithMany()
+                        .HasForeignKey("CartProductVariantId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.CartProductVariant", b =>
+                {
+                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Color", "Color")
+                        .WithMany()
+                        .HasForeignKey("ColorId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("GRINTSYS.SAPMiddleware.M2.ProductVariant")
+                        .WithMany("CartProductVariants")
                         .HasForeignKey("ProductVariantId");
+
+                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Size", "Size")
+                        .WithMany()
+                        .HasForeignKey("SizeId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Check", b =>

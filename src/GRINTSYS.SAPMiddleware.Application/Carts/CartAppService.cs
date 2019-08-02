@@ -1,24 +1,17 @@
-﻿using Abp.Application.Services;
-using Abp.Application.Services.Dto;
-using Abp.Domain.Repositories;
-using Abp.IdentityFramework;
-using Abp.Linq.Extensions;
-using AutoMapper;
-using GRINTSYS.SAPMiddleware.Cart;
+﻿using Abp.Runtime.Session;
+using Abp.UI;
 using GRINTSYS.SAPMiddleware.Carts.Dto;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Clients;
 using GRINTSYS.SAPMiddleware.M2.Products;
-using Microsoft.AspNetCore.Identity;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Carts
 {
     //[AbpAuthorize(PermissionNames.Pages_MobileUsers)]
-    public class CartAppService : ApplicationService, ICartAppService
+    public class CartAppService : SAPMiddlewareAppServiceBase, ICartAppService
     {
         private CartManager _cartManager;
         private ProductManager _productManager;
@@ -33,31 +26,37 @@ namespace GRINTSYS.SAPMiddleware.Carts
             this._clientManager = clientManager;
         }
 
-        public async Task AddCart(AddCartInput input)
+        public long GetUserId()
         {
-            M2.Cart cart = Mapper.Map<AddCartInput, M2.Cart>(input);
-            await _cartManager.CreateCart(cart);
+            var userId = long.MinValue;
+            try
+            {
+                userId = AbpSession.GetUserId();
+            }
+            catch (Exception)
+            {
+                throw new UserFriendlyException("Expired Session");
+            }
+
+            return userId;
         }
 
         public async Task AddItemToCart(AddCartItemInput input)
         {
+            var userId = GetUserId();
+
+            // create the cart if not exits otherwise get the current cart
+            var cart = await _cartManager.CreateCart(new Cart(input.TenantId, userId));
+
             // get the product that we'll add to the cart
-            var productVariant = _productManager.GetProductVariant(input.CartProductVariantId);
-
-            // create the cart if not exits for the order
-            var cart = await _cartManager.CreateCart(new M2.Cart(input.UserId));
-
-            // create a copy from the product variant state (because we should mantain price and other stuff)
-            var entity = new M2.CartProductVariant();
-            entity.CopyFromProduct(productVariant);
-                     
-            await _cartManager.CreateCartProductVariant(entity);
+            var productVariant = _productManager.GetProductVariant(input.ProductVariantId);
 
             // Get the discount if that costumer apply
-            var discount = _clientManager.GetClientDiscountAndItemGroupCode(input.CardCode, productVariant.ItemGroup);
-            
-            //Finally add the product Item
-            await _cartManager.CreateCartProductItem(new M2.CartProductItem(cart.Id, input.Quantity, 0.15, discount == null ? 0 : discount.Discount));
+            var discount = _clientManager.GetClientDiscountByItemGroupCode(input.CardCode, productVariant.ItemGroup);
+
+            var cartItem = new CartProductItem(input.TenantId, cart.Id, productVariant.Id, input.Quantity, 0.15, discount);
+            //add the item to the cart
+            await _cartManager.CreateCartProductItem(cartItem);
         }
 
         public async Task DeleteCart(DeleteCartInput input)
@@ -70,11 +69,19 @@ namespace GRINTSYS.SAPMiddleware.Carts
             await _cartManager.DeleteCartProductItem(input.Id);
         }
 
-        public Dto.CartOutput GetCart(GetCartInput input)
+        public CartOutput GetCart(GetCartInput input)
         {
-            var cart = _cartManager.GetCartByUser(input.UserId, input.TenantId);
+            var userId = AbpSession.GetUserId();
+            //var tenant = await GetCurrentTenantAsync();
 
-            return new Dto.CartOutput()
+            var cart = _cartManager.GetCartByUser(userId, input.TenantId);
+
+            if(cart == null)
+            {
+                return new CartOutput(-1);
+            }
+
+            return new CartOutput()
             {
                 id = cart.Id,
                 subtotal = cart.GetProductSubtotalPrice(),
@@ -87,16 +94,9 @@ namespace GRINTSYS.SAPMiddleware.Carts
             };           
         }
 
-        /*
-        public CartOutput GetCart(GetCartInput input)
+        public CartOutput GetCartInfo(GetCartInput input)
         {
-            
-            var cart = _cartManager.get
-                .WhereIf(input.TenantId.HasValue, t => t.TenantId == input.TenantId.Value)
-                .WhereIf(input.UserId.HasValue, t => t.UserId == input.UserId)
-                .FirstOrDefault()
-                ;
-                
-        }*/
+            throw new System.NotImplementedException();
+        }
     }
 }
