@@ -4,6 +4,7 @@ using Abp.Timing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GRINTSYS.SAPMiddleware.M2
 {
@@ -43,6 +44,7 @@ namespace GRINTSYS.SAPMiddleware.M2
 
         public virtual Color Color { get; set; }
         public virtual Size Size { get; set; }
+        [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
         public virtual List<CartProductVariant> CartProductVariants { get; set; }
         public virtual List<ProductBundleDetail> ProductBundleDetails { get; set; }

@@ -1,8 +1,8 @@
-﻿namespace GRINTSYS.SAPMiddleware.Products.Dto
+﻿using Abp.Application.Services.Dto;
+
+namespace GRINTSYS.SAPMiddleware.Products.Dto
 {
-    public class GetProductInput
+    public class GetProductInput: EntityDto
     {
-        public int TenantId;
-        public int Id;
     }
 }

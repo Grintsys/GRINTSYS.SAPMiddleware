@@ -3,6 +3,7 @@ using Abp.Domain.Services;
 using Abp.UI;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,7 +43,8 @@ namespace GRINTSYS.SAPMiddleware.M2.Products
 
         public Product GetProduct(int id)
         {
-            var entity = _productRepository.Get(id);
+            var entity = _productRepository.GetAllIncluding(a => a.Variants)
+                .FirstOrDefault(b => b.Id == id);
 
             if (entity == null)
             {
