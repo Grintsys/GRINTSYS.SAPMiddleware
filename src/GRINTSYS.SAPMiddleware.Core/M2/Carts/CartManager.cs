@@ -76,6 +76,21 @@ namespace GRINTSYS.SAPMiddleware.M2
             await _cartProductItemRepository.DeleteAsync(entity);
         }
 
+        public Task DeleteUserCart(long userId, int tenantId)
+        {
+            var entity = _cartRepository.GetAll()
+                .Where(w => w.UserId == userId
+                    && w.TenantId == tenantId)
+                .FirstOrDefault();
+
+            if (entity == null)
+            {
+                throw new UserFriendlyException("user doesn't have a cart");
+            }
+
+            return _cartRepository.DeleteAsync(entity);
+        }
+
         public Cart GetCart(int id)
         {
             return _cartRepository.Get(id);

@@ -77,5 +77,17 @@ namespace GRINTSYS.SAPMiddleware.M2.Products
             }
             return entity;
         }
+
+        public void UpdateProductStock(int productVariantId, int qty)
+        {
+            var productVariant = GetProductVariant(productVariantId);
+
+            if (qty <= 0)
+                throw new UserFriendlyException("Quantity can't be negative");
+
+            productVariant.IsCommitted += qty;
+
+            _productVariantRepository.Update(productVariant);
+        }
     }
 }

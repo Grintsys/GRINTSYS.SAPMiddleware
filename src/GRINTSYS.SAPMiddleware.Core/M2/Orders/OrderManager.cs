@@ -12,15 +12,23 @@ namespace GRINTSYS.SAPMiddleware.M2.Orders
     public class OrderManager : DomainService, IOrderManager
     {
         private readonly IRepository<Order> _orderRepository;
+        private readonly IRepository<OrderItem> _orderItemRepository;
 
-        public OrderManager(IRepository<Order> orderRepository)
+        public OrderManager(IRepository<Order> orderRepository,
+            IRepository<OrderItem> orderItemRepository)
         {
             _orderRepository = orderRepository;
+            _orderItemRepository = orderItemRepository;
         }
 
         public async Task<Order> CreateOrder(Order order)
         {
             return await _orderRepository.InsertAsync(order);
+        }
+
+        public Task CreateOrderItem(OrderItem orderItem)
+        {
+            return _orderItemRepository.InsertAsync(orderItem);
         }
 
         public Order GetOrder(int id)

@@ -12,6 +12,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Products
         Task CreateProduct(Product product);
         Task CreateProductVariant(ProductVariant productVariant);
         Task CreateProductBundle(ProductBundle productBundle);
+        void UpdateProductStock(int productVariantId, int qty);
         Product GetProduct(int id);
         ProductVariant GetProductVariant(int id);
         //List<ProductVariant> GetProductVariantByProductId(int id);

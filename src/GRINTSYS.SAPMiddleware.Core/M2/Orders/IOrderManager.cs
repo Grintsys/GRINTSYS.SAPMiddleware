@@ -9,6 +9,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Orders
     public interface IOrderManager: IDomainService
     {
         Task<Order> CreateOrder(Order order);
+        Task CreateOrderItem(OrderItem orderItem);
         Order GetOrder(int id);
         List<Order> GetOrders(int userId, DateTime begin, DateTime end);
     }
