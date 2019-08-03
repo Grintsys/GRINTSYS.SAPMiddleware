@@ -26,21 +26,6 @@ namespace GRINTSYS.SAPMiddleware.Carts
             this._productManager = productManager;
         }
 
-        public long GetUserId()
-        {
-            var userId = long.MinValue;
-            try
-            {
-                userId = AbpSession.GetUserId();
-            }
-            catch (Exception)
-            {
-                throw new UserFriendlyException("Expired Session");
-            }
-
-            return userId;
-        }
-
         public async Task AddItemToCart(AddCartItemInput input)
         {
             var userId = GetUserId();

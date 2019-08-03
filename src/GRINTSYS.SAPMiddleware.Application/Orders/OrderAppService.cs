@@ -28,21 +28,6 @@ namespace GRINTSYS.SAPMiddleware.Orders
             _backgroundJobManager = backgroundJobManager;
         }
 
-        public long GetUserId()
-        {
-            var userId = long.MinValue;
-            try
-            {
-                userId = AbpSession.GetUserId();
-            }
-            catch (Exception)
-            {
-                throw new UserFriendlyException("Expired Session");
-            }
-
-            return userId;
-        }
-
         public async Task CreateOrder(AddOrderInput input)
         {
             var userId = GetUserId();

@@ -39,5 +39,10 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
         {
             return _paymentTransferRepository.InsertAsync(paymentTransfer);
         }
+
+        public Task CreatePayment(Payment payment)
+        {
+            return _paymentRepository.InsertAsync(payment);
+        }
     }
 }

@@ -38,6 +38,7 @@ namespace GRINTSYS.SAPMiddleware.M2
         {
             Status = PaymentStatus.CreadoEnAplicacion;
             CreationTime = Clock.Now;
+            LastErrorMessage = "";
         }
     }
 }

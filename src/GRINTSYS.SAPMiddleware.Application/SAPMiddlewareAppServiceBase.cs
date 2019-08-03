@@ -7,6 +7,7 @@ using Abp.Runtime.Session;
 using GRINTSYS.SAPMiddleware.Authorization.Users;
 using GRINTSYS.SAPMiddleware.MultiTenancy;
 using GRINTSYS.SAPMiddleware.M2.Products;
+using Abp.UI;
 
 namespace GRINTSYS.SAPMiddleware
 {
@@ -18,8 +19,6 @@ namespace GRINTSYS.SAPMiddleware
         public TenantManager TenantManager { get; set; }
 
         public UserManager UserManager { get; set; }
-
-        public ProductManager ProductManager { get; set; }
 
         protected SAPMiddlewareAppServiceBase()
         {
@@ -40,6 +39,21 @@ namespace GRINTSYS.SAPMiddleware
         protected virtual Task<Tenant> GetCurrentTenantAsync()
         {
             return TenantManager.GetByIdAsync(AbpSession.GetTenantId());
+        }
+
+        public long GetUserId()
+        {
+            var userId = long.MinValue;
+            try
+            {
+                userId = AbpSession.GetUserId();
+            }
+            catch (Exception)
+            {
+                throw new UserFriendlyException("Expired Session");
+            }
+
+            return userId;
         }
 
         protected virtual void CheckErrors(IdentityResult identityResult)

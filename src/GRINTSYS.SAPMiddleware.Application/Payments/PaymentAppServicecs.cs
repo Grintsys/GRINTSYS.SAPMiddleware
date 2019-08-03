@@ -2,15 +2,31 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using GRINTSYS.SAPMiddleware.M2;
+using GRINTSYS.SAPMiddleware.M2.Payments;
 using GRINTSYS.SAPMiddleware.Payments.Dto;
 
 namespace GRINTSYS.SAPMiddleware.Payments
 {
     public class PaymentAppServicecs : SAPMiddlewareAppServiceBase, IPaymentAppService
     {
-        public Task CreatePayment(PaymentInput payment)
+        private readonly PaymentManager _paymentManager;
+
+        public PaymentAppServicecs(PaymentManager paymentManager)
         {
-            throw new NotImplementedException();
+            _paymentManager = paymentManager;
+        }
+
+        public Task CreatePayment(PaymentInput input)
+        {
+            var payment = new Payment()
+            {
+                TenantId = input.TenantId,
+                TotalAmount = input.Total,
+                Comment = input.Comment
+            };
+
+            return _paymentManager.CreatePayment(payment);
         }
 
         public Task PayByCash(CashInput input)

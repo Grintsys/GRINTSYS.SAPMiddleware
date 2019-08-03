@@ -13,8 +13,8 @@ namespace GRINTSYS.SAPMiddleware.M2
         public String DocumentNumber { get; set; }
         public Double TotalAmount { get; set; }
         public Double PayedAmount { get; set; }
-        public virtual Payment Payment { get; set; }
         public DateTime CreationTime { get; set; }
+        public virtual Payment Payment { get; set; }
 
         public InvoiceItem()
         {
