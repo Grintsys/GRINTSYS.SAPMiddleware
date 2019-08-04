@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Abp.AutoMapper;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Payments;
 using GRINTSYS.SAPMiddleware.Payments.Dto;
@@ -17,31 +18,41 @@ namespace GRINTSYS.SAPMiddleware.Payments
             _paymentManager = paymentManager;
         }
 
-        public Task CreatePayment(PaymentInput input)
+        public Task CreatePayment(AddPaymentInput input)
         {
-            var payment = new Payment()
-            {
-                TenantId = input.TenantId,
-                TotalAmount = input.Total,
-                Comment = input.Comment
-            };
+            var payment = ObjectMapper.Map<Payment>(input);
 
             return _paymentManager.CreatePayment(payment);
         }
 
-        public Task PayByCash(CashInput input)
+        public PaymentOutput GetPayment(GetPaymentInput input)
         {
-            throw new NotImplementedException();
+            var payment = _paymentManager.GetPayment(input.Id);
+
+            return new PaymentOutput()
+            {
+                Id = payment.Id,
+                DocEntry = payment.DocEntry,
+                UserId = payment.UserId,
+                GeneralAccount = payment.Bank.GeneralAccount,
+                BankName = payment.Bank.Name,
+                Status = ((PaymentStatus)payment.Status).ToString(),
+                Type = ((PaymentType)payment.Type).ToString(),
+                Comment = payment.Comment,
+                PayedAmount = payment.PayedAmount,
+                InvoiceNumber = payment.Invoice.DocumentCode,
+                ReferenceNumber = payment.ReferenceNumber,
+                LastErrorMessage = payment.LastErrorMessage,
+                CreationTime = payment.CreationTime,
+                DebtCollectorId = payment.User.CollectId
+            };
         }
 
-        public Task PayByCheck(CheckInput input)
+        public List<Payment> GetPaymentsByUser(GetAllPaymentInput input)
         {
-            throw new NotImplementedException();
-        }
+            var userId = GetUserId();
 
-        public Task PayByTransfer(TransferInput input)
-        {
-            throw new NotImplementedException();
+            return _paymentManager.GetPaymentsByUser(input.TenantId, userId, input.Begin, input.End);
         }
     }
 }

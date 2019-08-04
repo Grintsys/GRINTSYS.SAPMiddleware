@@ -13,7 +13,6 @@ namespace GRINTSYS.SAPMiddleware.M2
         [Required]
         [StringLength(MaxNameLength)]
         public String Name { get; set; }
-        public String FormatCode { get; set; }
         public String GeneralAccount { get; set; }
         public DateTime CreationTime { get; set; }
         public Bank()

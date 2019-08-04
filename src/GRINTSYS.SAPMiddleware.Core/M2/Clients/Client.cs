@@ -32,7 +32,7 @@ namespace GRINTSYS.SAPMiddleware.M2
         [JsonProperty(PropertyName = "past_due")]
         public Double PastDue { get; set; }
         public String ContactPerson { get; set; }
-        public virtual ICollection<Document> Invoices { get; set; }
+        public virtual ICollection<Invoice> Invoices { get; set; }
 
         public DateTime CreationTime { get; set; }
 
