@@ -28,6 +28,13 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
             return _paymentRepository.InsertAsync(payment);
         }
 
+        public Invoice GetInvoice(int id)
+        {
+            return _invoiceRepository.GetAllIncluding(x => x.Client)
+                .Where(w => w.Id == id)
+                .FirstOrDefault();
+        }
+
         public Payment GetPayment(int id)
         {
             var payment = _paymentRepository.GetAllIncluding(x => x.Bank, x => x.Invoice, x => x.User)
@@ -47,6 +54,11 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
                     && w.UserId == userId 
                     && begin >= w.CreationTime && end <= w.CreationTime)
                 .ToList();
+        }
+
+        public Payment UpdatePayment(Payment payment)
+        {
+            return _paymentRepository.Update(payment);
         }
 
         public void ValidatePayedAmount(int invoiceId, double amount)

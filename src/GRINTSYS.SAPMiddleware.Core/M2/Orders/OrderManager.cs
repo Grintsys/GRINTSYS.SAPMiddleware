@@ -65,5 +65,10 @@ namespace GRINTSYS.SAPMiddleware.M2.Orders
                     && w.CreationTime >= begin && w.CreationTime <= end)
                 .ToList();
         }
+
+        public Order UpdateOrder(Order order)
+        {
+            return _orderRepository.Update(order);
+        }
     }
 }

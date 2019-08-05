@@ -32,8 +32,8 @@ namespace GRINTSYS.SAPMiddleware.Orders
         {
             var userId = GetUserId();
 
-            await _backgroundJobManager.EnqueueAsync<OrderCreationJob, CreateOrderParams>(
-                new CreateOrderParams
+            await _backgroundJobManager.EnqueueAsync<OrderJob, OrderParams>(
+                new OrderParams
                 {
                      TenantId = input.TenantId,
                      UserId = userId,

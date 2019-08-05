@@ -1,21 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Abp.AutoMapper;
+﻿using Abp.BackgroundJobs;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Payments;
 using GRINTSYS.SAPMiddleware.Payments.Dto;
+using GRINTSYS.SAPMiddleware.Payments.Job;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Payments
 {
     public class PaymentAppServicecs : SAPMiddlewareAppServiceBase, IPaymentAppService
     {
         private readonly PaymentManager _paymentManager;
+        private readonly IBackgroundJobManager _backgroundJobManager;
 
-        public PaymentAppServicecs(PaymentManager paymentManager)
+        public PaymentAppServicecs(IBackgroundJobManager backgroundJobManager, PaymentManager paymentManager)
         {
+            _backgroundJobManager = backgroundJobManager;
             _paymentManager = paymentManager;
+        }
+
+        public Task AutorizePayment(GetPaymentInput input)
+        {
+            return _backgroundJobManager.EnqueueAsync<PaymentJob, PaymentJobArgs>(
+               new PaymentJobArgs
+               {
+                   Id = input.Id,
+                   UserId = GetUserId()
+               });
         }
 
         public Task CreatePayment(AddPaymentInput input)
@@ -23,6 +34,33 @@ namespace GRINTSYS.SAPMiddleware.Payments
             var payment = ObjectMapper.Map<Payment>(input);
 
             return _paymentManager.CreatePayment(payment);
+        }
+
+        public PaymentOutput DeclinePayment(GetPaymentInput input)
+        {
+            var entity = _paymentManager.GetPayment(input.Id);
+
+            entity.Status = PaymentStatus.CanceladoPorFinanzas;
+
+            var payment = _paymentManager.UpdatePayment(entity);
+
+            return new PaymentOutput()
+            {
+                Id = payment.Id,
+                DocEntry = payment.DocEntry,
+                UserId = payment.UserId,
+                GeneralAccount = payment.Bank.GeneralAccount,
+                BankName = payment.Bank.Name,
+                Status = ((PaymentStatus)payment.Status).ToString(),
+                Type = ((PaymentType)payment.Type).ToString(),
+                Comment = payment.Comment,
+                PayedAmount = payment.PayedAmount,
+                InvoiceNumber = payment.Invoice.DocumentCode,
+                ReferenceNumber = payment.ReferenceNumber,
+                LastErrorMessage = payment.LastMessage,
+                CreationTime = payment.CreationTime,
+                DebtCollectorId = payment.User.CollectId
+            };
         }
 
         public PaymentOutput GetPayment(GetPaymentInput input)
@@ -42,7 +80,7 @@ namespace GRINTSYS.SAPMiddleware.Payments
                 PayedAmount = payment.PayedAmount,
                 InvoiceNumber = payment.Invoice.DocumentCode,
                 ReferenceNumber = payment.ReferenceNumber,
-                LastErrorMessage = payment.LastErrorMessage,
+                LastErrorMessage = payment.LastMessage,
                 CreationTime = payment.CreationTime,
                 DebtCollectorId = payment.User.CollectId
             };

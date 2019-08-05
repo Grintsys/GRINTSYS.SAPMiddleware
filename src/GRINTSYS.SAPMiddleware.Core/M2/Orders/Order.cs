@@ -24,7 +24,7 @@ namespace GRINTSYS.SAPMiddleware.M2
         public String CardCode { get; set; }
         public long UserId { get; set; }
         public String Comment { get; set; }
-        public String LastErrorMessage { get; set; }
+        public String LastMessage { get; set; }
         public Int32 Series { get; set; }
         public String DeliveryDate { get; set; }
 
@@ -59,7 +59,7 @@ namespace GRINTSYS.SAPMiddleware.M2
         {
             RemoteId = "";
             Comment = "";
-            LastErrorMessage = "";
+            LastMessage = "";
             Series = 0;
             CreationTime = Clock.Now;
         }

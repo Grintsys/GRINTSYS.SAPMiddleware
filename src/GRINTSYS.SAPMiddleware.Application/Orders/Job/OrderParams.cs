@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GRINTSYS.SAPMiddleware.Orders.Job
 {
-    public class CreateOrderParams
+    public class OrderParams
     {
         public int TenantId { get; set; }
         public long UserId { get; set; }

@@ -38,13 +38,14 @@ namespace GRINTSYS.SAPMiddleware.M2
         [Required]
         public Int32 BankId { get; set; }
         public Double PayedAmount { get; set; }
-        public String LastErrorMessage { get; set; }
+        public String LastMessage { get; set; }
         [StringLength(MaxCommentLength)]
         public String Comment { get; set; }
         [StringLength(MaxReferenceNumberLength)]
         public String ReferenceNumber { get; set; }
         public PaymentStatus Status { get; set; }
         public PaymentType Type { get; set; }
+        public DateTime PayedDate { get; set; }
         public DateTime CreationTime { get; set; }
         public virtual User User { get; set; }
         public virtual Invoice Invoice { get; set; }
@@ -55,7 +56,8 @@ namespace GRINTSYS.SAPMiddleware.M2
             Status = PaymentStatus.CreadoEnAplicacion;
             Type = PaymentType.Transferencia;
             CreationTime = Clock.Now;
-            LastErrorMessage = "";
+            PayedDate = Clock.Now;
+            LastMessage = "";
             Comment = "";
             PayedAmount = 0.0;
         }
