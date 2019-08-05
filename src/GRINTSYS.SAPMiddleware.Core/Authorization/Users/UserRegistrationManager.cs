@@ -11,6 +11,7 @@ using Abp.Runtime.Session;
 using Abp.UI;
 using GRINTSYS.SAPMiddleware.Authorization.Roles;
 using GRINTSYS.SAPMiddleware.MultiTenancy;
+using GRINTSYS.SAPMiddleware.Mail;
 
 namespace GRINTSYS.SAPMiddleware.Authorization.Users
 {
@@ -66,6 +67,13 @@ namespace GRINTSYS.SAPMiddleware.Authorization.Users
 
             CheckErrors(await _userManager.CreateAsync(user, plainPassword));
             await CurrentUnitOfWork.SaveChangesAsync();
+
+            await new EmailHelper().Send(new EmailArgs()
+            {
+                To = user.EmailAddress,
+                Subject = String.Format("M2 Creacion de usuario"),
+                Body = String.Format("El usuario {0} ha sido creado exitosamente", user.UserName),
+            });
 
             return user;
         }

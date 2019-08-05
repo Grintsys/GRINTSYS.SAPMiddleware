@@ -15,6 +15,6 @@ namespace GRINTSYS.SAPMiddleware.Payments
         PaymentOutput GetPayment(GetPaymentInput input);
         List<Payment> GetPaymentsByUser(GetAllPaymentInput input);
         Task AutorizePayment(GetPaymentInput input);
-        PaymentOutput DeclinePayment(GetPaymentInput input);
+        Task<PaymentOutput> DeclinePayment(GetPaymentInput input);
     }
 }

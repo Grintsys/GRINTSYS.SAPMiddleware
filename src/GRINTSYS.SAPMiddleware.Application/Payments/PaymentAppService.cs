@@ -1,9 +1,12 @@
 ﻿using Abp.BackgroundJobs;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Payments;
+using GRINTSYS.SAPMiddleware.Mail;
 using GRINTSYS.SAPMiddleware.Payments.Dto;
 using GRINTSYS.SAPMiddleware.Payments.Job;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Payments
@@ -45,13 +48,28 @@ namespace GRINTSYS.SAPMiddleware.Payments
             return _paymentManager.CreatePayment(payment);
         } 
 
-        public PaymentOutput DeclinePayment(GetPaymentInput input)
+        public async Task<PaymentOutput> DeclinePayment(GetPaymentInput input)
         {
             var entity = _paymentManager.GetPayment(input.Id);
 
             entity.Status = PaymentStatus.CanceladoPorFinanzas;
 
             var payment = _paymentManager.UpdatePayment(entity);
+
+            /*
+            _backgroundJobManager.Enqueue<EmailJob, EmailArgs>(new EmailArgs()
+            {
+                To = entity.User.EmailAddress,
+                Subject = String.Format("Notificacion Pago Cancelado Por Finanzas, Id: {0}", entity.Id),
+                Body = String.Format("Pago Id: {0}, Factura: {1}, Fue Cancelado Por Finanzas", entity.Id, entity.Invoice.DocumentCode),
+            });*/
+
+            var result = await new EmailHelper().Send(new EmailArgs()
+            {
+                To = entity.User.EmailAddress,
+                Subject = String.Format("Notificacion Pago Cancelado Por Finanzas, Id: {0}", entity.Id),
+                Body = String.Format("Pago Id: {0}, Factura: {1}, Fue Cancelado Por Finanzas", entity.Id, entity.Invoice.DocumentCode),
+            });
 
             return new PaymentOutput()
             {

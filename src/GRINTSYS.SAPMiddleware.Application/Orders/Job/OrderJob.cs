@@ -7,6 +7,7 @@ using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Orders;
 using GRINTSYS.SAPMiddleware.M2.Products;
 using GRINTSYS.SAPMiddleware.Mail;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;

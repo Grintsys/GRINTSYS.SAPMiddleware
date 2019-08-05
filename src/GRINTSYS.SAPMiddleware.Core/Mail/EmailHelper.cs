@@ -1,10 +1,10 @@
-﻿using SendGrid;
+﻿using Abp.UI;
+using SendGrid;
 using SendGrid.Helpers.Mail;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Mail
@@ -13,7 +13,7 @@ namespace GRINTSYS.SAPMiddleware.Mail
     {
         public async Task<string> Send(EmailArgs args)
         {
-            var apiKey = String.IsNullOrEmpty(args.ApiKey) ? ConfigurationManager.AppSettings["SendGripAPIKey"] : args.ApiKey;
+            var apiKey = String.IsNullOrEmpty(args.ApiKey) ? ConfigurationManager.AppSettings["SendGrindApiKey"] : args.ApiKey;
             var fromEmail = String.IsNullOrEmpty(args.FromEmail) ? ConfigurationManager.AppSettings["FromEmail"] : args.FromEmail;
             var fromEmailDisplayName = String.IsNullOrEmpty(args.FromEmailDisplayName) ? ConfigurationManager.AppSettings["FromEmailDisplayName"] : args.FromEmailDisplayName;
 
@@ -22,8 +22,12 @@ namespace GRINTSYS.SAPMiddleware.Mail
             {
                 From = new EmailAddress(fromEmail, fromEmailDisplayName),
                 Subject = args.Subject,
+                PlainTextContent = args.Body,
                 HtmlContent = args.Body
             };
+
+            if (args.To == null)
+                throw new UserFriendlyException("To Email Address is needed");
 
             string[] toArray = args.To.Split(',');
             List<EmailAddress> tos = toArray

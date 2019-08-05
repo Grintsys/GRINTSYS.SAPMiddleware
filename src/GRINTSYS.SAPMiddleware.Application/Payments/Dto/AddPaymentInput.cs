@@ -12,7 +12,6 @@ namespace GRINTSYS.SAPMiddleware.Payments.Dto
         private const int MaxCommentLength = 150;
         private const int MaxReferenceNumberLength = 50;
         public int TenantId { get; set; }
-        public String DocEntry { get; set; }
         public Int32 InvoiceId { get; set; }
         public Int32 BankId { get; set; }
         public Double PayedAmount { get; set; }
