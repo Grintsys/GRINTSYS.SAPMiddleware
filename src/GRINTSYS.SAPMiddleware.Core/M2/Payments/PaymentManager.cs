@@ -21,6 +21,11 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
             _invoiceRepository = invoiceRepository;
         }
 
+        public Task CreateInvoice(Invoice invoice)
+        {
+            return _invoiceRepository.InsertAsync(invoice);
+        }
+
         public Task CreatePayment(Payment payment)
         {
             ValidatePayedAmount(payment.InvoiceId, payment.PayedAmount);

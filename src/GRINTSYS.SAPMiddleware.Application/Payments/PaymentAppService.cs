@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Payments
 {
-    public class PaymentAppServicecs : SAPMiddlewareAppServiceBase, IPaymentAppService
+    public class PaymentAppService : SAPMiddlewareAppServiceBase, IPaymentAppService
     {
         private readonly PaymentManager _paymentManager;
         private readonly IBackgroundJobManager _backgroundJobManager;
 
-        public PaymentAppServicecs(IBackgroundJobManager backgroundJobManager, PaymentManager paymentManager)
+        public PaymentAppService(IBackgroundJobManager backgroundJobManager, PaymentManager paymentManager)
         {
             _backgroundJobManager = backgroundJobManager;
             _paymentManager = paymentManager;
@@ -29,12 +29,21 @@ namespace GRINTSYS.SAPMiddleware.Payments
                });
         }
 
+        public Task CreateInvoice(AddInvoiceInput input)
+        {
+            var invoice = ObjectMapper.Map<Invoice>(input);
+
+            return _paymentManager.CreateInvoice(invoice);
+        }
+
         public Task CreatePayment(AddPaymentInput input)
         {
             var payment = ObjectMapper.Map<Payment>(input);
 
+            payment.UserId = GetUserId();
+
             return _paymentManager.CreatePayment(payment);
-        }
+        } 
 
         public PaymentOutput DeclinePayment(GetPaymentInput input)
         {
