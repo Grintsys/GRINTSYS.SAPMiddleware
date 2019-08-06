@@ -69,6 +69,26 @@ namespace GRINTSYS.SAPMiddleware.Controllers
             };
         }
 
+        [HttpPost]
+        public async Task<AuthenticateResultModel> AuthenticateTenantUser([FromBody] AuthenticateModel model)
+        {
+            var loginResult = await GetLoginResultAsync(
+                model.UserNameOrEmailAddress,
+                model.Password,
+                GetTenancyParamNameOrNull(model.TenantId)
+            );
+
+            var accessToken = CreateAccessToken(CreateJwtClaims(loginResult.Identity));
+
+            return new AuthenticateResultModel
+            {
+                AccessToken = accessToken,
+                EncryptedAccessToken = GetEncrpyedAccessToken(accessToken),
+                ExpireInSeconds = (int)_configuration.Expiration.TotalSeconds,
+                UserId = loginResult.User.Id
+            };
+        }
+
         [HttpGet]
         public List<ExternalLoginProviderInfoModel> GetExternalAuthenticationProviders()
         {
@@ -178,6 +198,16 @@ namespace GRINTSYS.SAPMiddleware.Controllers
             }
 
             return _tenantCache.GetOrNull(AbpSession.TenantId.Value)?.TenancyName;
+        }
+
+        private string GetTenancyParamNameOrNull(int? tenantId)
+        {
+            if (!tenantId.HasValue)
+            {
+                return null;
+            }
+
+            return _tenantCache.GetOrNull(tenantId.Value)?.TenancyName;
         }
 
         private async Task<AbpLoginResult<Tenant, User>> GetLoginResultAsync(string usernameOrEmailAddress, string password, string tenancyName)

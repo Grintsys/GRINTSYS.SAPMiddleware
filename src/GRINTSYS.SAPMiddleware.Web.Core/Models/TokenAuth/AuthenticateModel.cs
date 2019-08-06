@@ -14,5 +14,7 @@ namespace GRINTSYS.SAPMiddleware.Models.TokenAuth
         public string Password { get; set; }
         
         public bool RememberClient { get; set; }
+
+        public int? TenantId { get; set; }
     }
 }
