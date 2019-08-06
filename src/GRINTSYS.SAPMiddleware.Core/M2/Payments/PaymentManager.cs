@@ -1,4 +1,5 @@
-﻿using Abp.Domain.Repositories;
+﻿using Abp.Collections.Extensions;
+using Abp.Domain.Repositories;
 using Abp.Domain.Services;
 using Abp.UI;
 using System;
@@ -52,12 +53,12 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
             return payment;
         }
 
-        public List<Payment> GetPaymentsByUser(int tenantId, long userId, DateTime begin, DateTime end)
+        public List<Payment> GetPaymentsByUser(int tenantId, long userId, DateTime? begin, DateTime? end)
         {
             return _paymentRepository.GetAllIncluding(x => x.Bank, x => x.Invoice)
                 .Where( w => w.TenantId == tenantId
-                    && w.UserId == userId 
-                    && begin >= w.CreationTime && end <= w.CreationTime)
+                    && w.UserId == userId)
+                .WhereIf(begin.HasValue && end.HasValue,  w => begin >= w.CreationTime && end <= w.CreationTime)
                 .ToList();
         }
 

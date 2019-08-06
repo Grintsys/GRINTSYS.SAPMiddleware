@@ -1,10 +1,10 @@
 ﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GRINTSYS.SAPMiddleware.Payments.Dto
 {
+    [AutoMap(typeof(M2.Payment))]
     public class PaymentOutput: EntityDto
     {
         public int TenantId { get; set; }

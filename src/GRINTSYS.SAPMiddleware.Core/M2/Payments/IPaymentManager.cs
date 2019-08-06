@@ -12,7 +12,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
         Payment GetPayment(int id);
         Payment UpdatePayment(Payment payment);
         Invoice GetInvoice(int id);
-        List<Payment> GetPaymentsByUser(int tenantId, long userId, DateTime begin, DateTime end);
+        List<Payment> GetPaymentsByUser(int tenantId, long userId, DateTime? begin, DateTime? end);
         void ValidatePayedAmount(int invoiceId, double amount);
     }
 }
