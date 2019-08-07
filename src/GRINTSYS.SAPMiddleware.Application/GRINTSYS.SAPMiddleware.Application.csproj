@@ -13,4 +13,9 @@
   <ItemGroup>
     <ProjectReference Include="..\GRINTSYS.SAPMiddleware.Core\GRINTSYS.SAPMiddleware.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Interop.SAPbobsCOM">
+      <HintPath>..\..\SapConnectorSDK\Interop.SAPbobsCOM.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>
