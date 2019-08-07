@@ -8,5 +8,7 @@ namespace GRINTSYS.SAPMiddleware.Payments.Job
     {
         public int Id { get; set; }
         public long UserId { get; set; }
+
+        public String To { get; set; }
     }
 }

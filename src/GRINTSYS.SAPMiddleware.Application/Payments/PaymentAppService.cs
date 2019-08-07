@@ -1,4 +1,5 @@
 ﻿using Abp.BackgroundJobs;
+using GRINTSYS.SAPMiddleware.Authorization.Users;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Payments;
 using GRINTSYS.SAPMiddleware.Mail;
@@ -13,23 +14,31 @@ namespace GRINTSYS.SAPMiddleware.Payments
 {
     public class PaymentAppService : SAPMiddlewareAppServiceBase, IPaymentAppService
     {
+        private readonly UserManager _userManager;
         private readonly PaymentManager _paymentManager;
         private readonly IBackgroundJobManager _backgroundJobManager;
 
-        public PaymentAppService(IBackgroundJobManager backgroundJobManager, PaymentManager paymentManager)
+        public PaymentAppService(IBackgroundJobManager backgroundJobManager, 
+            UserManager userManager,
+            PaymentManager paymentManager)
         {
             _backgroundJobManager = backgroundJobManager;
+            _userManager = userManager;
             _paymentManager = paymentManager;
         }
 
-        public Task AutorizePayment(GetPaymentInput input)
+        public async Task AutorizePayment(GetPaymentInput input)
         {
-            return _backgroundJobManager.EnqueueAsync<PaymentJob, PaymentJobArgs>(
+            var userId = GetUserId();
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+
+            await _backgroundJobManager.EnqueueAsync<PaymentJob, PaymentJobArgs>(
                new PaymentJobArgs
                {
                    Id = input.Id,
-                   UserId = GetUserId()
-               });
+                   UserId = GetUserId(),
+                   To = user.EmailAddress
+            });
         }
 
         public Task CreateInvoice(AddInvoiceInput input)
@@ -39,13 +48,13 @@ namespace GRINTSYS.SAPMiddleware.Payments
             return _paymentManager.CreateInvoice(invoice);
         }
 
-        public Task CreatePayment(AddPaymentInput input)
+        public async Task CreatePayment(AddPaymentInput input)
         {
             var payment = ObjectMapper.Map<Payment>(input);
 
             payment.UserId = GetUserId();
 
-            return _paymentManager.CreatePayment(payment);
+            await _paymentManager.CreatePayment(payment);
         } 
 
         public async Task<PaymentOutput> DeclinePayment(GetPaymentInput input)
