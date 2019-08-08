@@ -15,10 +15,12 @@ namespace GRINTSYS.SAPMiddleware.Payments.Job
             TaskResponse taskResponse;
             using (var httpClient = new HttpClient())
             {
+                /*
                 var content = new MultipartFormDataContent();
                 content.Add(new StringContent(id.ToString()), "Id");
-
-                using (var response = await httpClient.PostAsync(ConfigurationManager.AppSettings["SAPOrderEndpoint"], content))
+                */
+                var url = ConfigurationManager.AppSettings["SAPOrderEndpoint"] + id;
+                using (var response = await httpClient.GetAsync(url))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     taskResponse = JsonConvert.DeserializeObject<TaskResponse>(apiResponse);

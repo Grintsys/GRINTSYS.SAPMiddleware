@@ -41,11 +41,11 @@ namespace GRINTSYS.SAPMiddleware.Payments
             });
         }
 
-        public Task CreateInvoice(AddInvoiceInput input)
+        public async Task CreateInvoice(AddInvoiceInput input)
         {
             var invoice = ObjectMapper.Map<Invoice>(input);
 
-            return _paymentManager.CreateInvoice(invoice);
+            await _paymentManager.CreateInvoice(invoice);
         }
 
         public async Task CreatePayment(AddPaymentInput input)
