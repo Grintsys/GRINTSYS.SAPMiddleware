@@ -80,13 +80,13 @@ namespace GRINTSYS.SAPMiddleware.Products
             return result;
         }
 
-        public PagedResultDto<ProductOutput> Search(SearchProductInput input)
+        public ProductListResultDto GetProductByQuerySearch(SearchProductInput input)
         {
             if (input.MaxResultCount <= 0)
                 input.MaxResultCount = AppConsts.MaxResultCount;
 
             if (String.IsNullOrEmpty(input.Sorting))
-                input.Sorting = AppConsts.DefaultSortingField;
+                input.Sorting = AppConsts.DefaultSortingField;         
 
             var products = _productRepository.GetAllIncluding(x => x.Variants)
                 .WhereIf(input.TenantId.HasValue, t => t.TenantId == input.TenantId.Value)
@@ -95,15 +95,23 @@ namespace GRINTSYS.SAPMiddleware.Products
                 .WhereIf(input.Category.HasValue, t => t.CategoryId == input.Category.Value)
                 .OrderBy(input.Sorting)
                 .PageBy(input)
-                .ToList()
                 ;
+
+            if (!String.IsNullOrEmpty(input.Price))
+            {
+                var priceList = input.Price.Split('|');
+                var prices = priceList.ToList().Select(s => Double.Parse(s));
+
+                if (prices.Count() > 1)
+                    products = products.Where(t => t.Variants.FirstOrDefault().Price >= prices.First() && t.Variants.FirstOrDefault().Price <= prices.Last());
+            }
 
             var productsCount = products.Count();
 
-            return new PagedResultDto<ProductOutput>
+            return new ProductListResultDto()
             {
                 TotalCount = productsCount,
-                Items = products.MapTo<List<ProductOutput>>()
+                Items = products.ToList().MapTo<List<ProductOutput>>()
             };
         }
     }

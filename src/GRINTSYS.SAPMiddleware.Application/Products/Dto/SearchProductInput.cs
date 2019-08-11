@@ -7,6 +7,7 @@ namespace GRINTSYS.SAPMiddleware.Products.Dto
     {
         public int? TenantId { get; set; }
         public String SearchText { get; set; }
+        public String Price { get; set; }
         public int? Category { get; set; }
         public int SkipCount { get; set; }
         public int MaxResultCount { get; set; }

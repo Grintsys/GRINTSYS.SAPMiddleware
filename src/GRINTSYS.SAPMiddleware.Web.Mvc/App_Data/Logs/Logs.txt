@@ -16436,3 +16436,843 @@ INFO  2019-08-10 23:10:49,183 [21   ] soft.AspNetCore.Hosting.Internal.WebHost -
 INFO  2019-08-10 23:10:52,700 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/Search?TenantId=1&Sorting=Id application/json 
 INFO  2019-08-10 23:10:52,720 [7    ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
 INFO  2019-08-10 23:10:52,737 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 59.7373ms 404 
+DEBUG 2019-08-11 07:16:36,339 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-08-11 07:16:37,048 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-08-11 07:16:37,082 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.Web.Startup.SAPMiddlewareWebMvcModule, GRINTSYS.SAPMiddleware.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,087 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareWebCoreModule, GRINTSYS.SAPMiddleware.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,088 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareApplicationModule, GRINTSYS.SAPMiddleware.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,088 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareCoreModule, GRINTSYS.SAPMiddleware.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,089 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,089 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,089 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,091 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,092 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareEntityFrameworkModule, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,092 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,093 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,093 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,094 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,094 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,094 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:37,100 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-08-11 07:16:37,347 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 07:16:37,348 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 07:16:37,348 [1    ] o.Configuration.LanguageManagementConfig - Converted SAPMiddleware (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 07:16:37,348 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 07:16:38,403 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareDbContext, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:16:40,142 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-08-11 07:16:40,202 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-08-11 07:16:40,218 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-08-11 07:16:40,227 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: SAPMiddleware
+DEBUG 2019-08-11 07:16:40,232 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-08-11 07:16:40,591 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-08-11 07:16:40,744 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 31 classes define auto mapping attributes
+DEBUG 2019-08-11 07:16:40,744 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-08-11 07:16:40,757 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.CreateUserDto
+DEBUG 2019-08-11 07:16:40,759 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.UserDto
+DEBUG 2019-08-11 07:16:40,760 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sizes.Dto.SizeDto
+DEBUG 2019-08-11 07:16:40,761 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-08-11 07:16:40,762 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-08-11 07:16:40,762 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.CreateRoleDto
+DEBUG 2019-08-11 07:16:40,762 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.PermissionDto
+DEBUG 2019-08-11 07:16:40,762 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.RoleDto
+DEBUG 2019-08-11 07:16:40,763 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.AddProductInput
+DEBUG 2019-08-11 07:16:40,763 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.AddProductVariantInput
+DEBUG 2019-08-11 07:16:40,764 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductDto
+DEBUG 2019-08-11 07:16:40,764 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductOutput
+DEBUG 2019-08-11 07:16:40,764 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductVariantDto
+DEBUG 2019-08-11 07:16:40,764 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductVariantOutput
+DEBUG 2019-08-11 07:16:40,765 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.AddInvoiceInput
+DEBUG 2019-08-11 07:16:40,765 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.AddPaymentInput
+DEBUG 2019-08-11 07:16:40,765 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.PaymentOutput
+DEBUG 2019-08-11 07:16:40,766 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Orders.Dto.OrderItemOutput
+DEBUG 2019-08-11 07:16:40,766 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-08-11 07:16:40,766 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.TenantDto
+DEBUG 2019-08-11 07:16:40,766 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Colors.Dto.ColorDto
+DEBUG 2019-08-11 07:16:40,767 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Clients.Dto.ClientDto
+DEBUG 2019-08-11 07:16:40,767 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Categories.Dto.CategoryDto
+DEBUG 2019-08-11 07:16:40,768 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartDto
+DEBUG 2019-08-11 07:16:40,768 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartProductItemOutput
+DEBUG 2019-08-11 07:16:40,768 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Brands.Dto.BrandDto
+DEBUG 2019-08-11 07:16:40,768 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banners.Dto.BannerDto
+DEBUG 2019-08-11 07:16:40,768 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banks.Dto.BankDto
+DEBUG 2019-08-11 07:16:40,769 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2019-08-11 07:16:40,769 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Models.Roles.EditRoleModalViewModel
+INFO  2019-08-11 07:16:51,583 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2019-08-11 07:16:51,583 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:62114/  0
+INFO  2019-08-11 07:16:51,745 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 165.5725ms 200 
+INFO  2019-08-11 07:16:58,797 [4    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-08-11 07:16:58,893 [4    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-08-11 07:16:59,007 [4    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-08-11 07:16:59,022 [4    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 7.8528ms.
+INFO  2019-08-11 07:16:59,532 [9    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-08-11 07:17:03,173 [7    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 3742.9579ms.
+INFO  2019-08-11 07:17:03,291 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 4428.8243ms
+INFO  2019-08-11 07:17:03,295 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/bootstrap-select/dist/css/bootstrap-select.css?v=a7N4Jki3LzSbThclvqbu4nF45twcjuc772JGFhY9qwk  
+INFO  2019-08-11 07:17:03,298 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/bootstrap/dist/css/bootstrap.css?v=fmMNkMcjSw3xcp9iuPnku_ryk9kaWgrEbfJfKmdZ45o  
+INFO  2019-08-11 07:17:03,300 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/toastr/toastr.css?v=W8a9WvLyUO7CXtOC4f9LoUMwkywM7JSq-Xm5kNsYW08  
+INFO  2019-08-11 07:17:03,311 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/fonts/material-icons/materialicons.css?v=2SsVsQpWRHM3EJ4D4MT4RRpiEXbEuK0vEjPxVr5P7Ek  
+INFO  2019-08-11 07:17:03,350 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 11779.0222ms 200 text/html; charset=utf-8
+INFO  2019-08-11 07:17:03,358 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/fonts/roboto/roboto.css?v=DWPiEyLnt8XZ68WQeudmZPGSejowhmQNUUhaX8dYF1Q  
+INFO  2019-08-11 07:17:03,384 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/roboto/roboto.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\fonts\roboto\roboto.css'
+INFO  2019-08-11 07:17:03,389 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/toastr/toastr.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\toastr\toastr.css'
+INFO  2019-08-11 07:17:03,391 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap-select/dist/css/bootstrap-select.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\bootstrap-select\dist\css\bootstrap-select.css'
+INFO  2019-08-11 07:17:03,394 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 92.5638ms 200 text/css
+INFO  2019-08-11 07:17:03,399 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 37.7432ms 200 text/css
+INFO  2019-08-11 07:17:03,403 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 108.0225ms 200 text/css
+INFO  2019-08-11 07:17:03,431 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/material-icons/materialicons.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\fonts\material-icons\materialicons.css'
+INFO  2019-08-11 07:17:03,445 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css?v=l7wu43l7XpKWzFn29hiH8AFe4I_CNzbCPmaAQivPYMg  
+INFO  2019-08-11 07:17:03,448 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 131.9422ms 200 text/css
+INFO  2019-08-11 07:17:03,452 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/Waves/dist/waves.css?v=0zP86LzXedNkkBjePtKrMTAPuIy6EzHfGlyYvsmGLBw  
+INFO  2019-08-11 07:17:03,458 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/font-awesome/css/font-awesome.css?v=NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w  
+INFO  2019-08-11 07:17:03,489 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\famfamfam-flags\dist\sprite\famfamfam-flags.css'
+INFO  2019-08-11 07:17:03,495 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Waves/dist/waves.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\Waves\dist\waves.css'
+INFO  2019-08-11 07:17:03,498 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/font-awesome/css/font-awesome.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\font-awesome\css\font-awesome.css'
+INFO  2019-08-11 07:17:03,501 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFO  2019-08-11 07:17:03,504 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 57.8633ms 200 text/css
+INFO  2019-08-11 07:17:03,508 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 50.1608ms 200 text/css
+INFO  2019-08-11 07:17:03,511 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 211.2646ms 200 text/css
+INFO  2019-08-11 07:17:03,513 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/css/themes/all-themes.css?v=XaAlkmhL9gA6mBxpcxGYAWxggxkIpRmT9qGbKejs6eA  
+INFO  2019-08-11 07:17:03,517 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/css/materialize.css?v=OdWlipUYj8b9Oa4RyT45njteIcxH-4pGocqe0r0V8js  
+INFO  2019-08-11 07:17:03,518 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 53.401ms 200 text/css
+INFO  2019-08-11 07:17:03,521 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/animate.css/animate.css?v=00w68NO3TLuHjKRHJmjrrgJBDtG_6OhbJEu1gtHcsuo  
+INFO  2019-08-11 07:17:03,525 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/css/style.css?v=151KUrNx-cFGpjXC7QZ8WbWSo-mQTLO0htvGyBUR_i8  
+INFO  2019-08-11 07:17:03,527 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Shared/_Layout.css?v=uq7unI_U0xZr0Pbyzeu6KfbJKHVFuv0wNJ4CrrhQknw  
+INFO  2019-08-11 07:17:03,534 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/_Layout.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\view-resources\Views\Shared\_Layout.css'
+INFO  2019-08-11 07:17:03,543 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/materialize.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\css\materialize.css'
+INFO  2019-08-11 07:17:03,544 [5    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/animate.css/animate.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\animate.css\animate.css'
+INFO  2019-08-11 07:17:03,547 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 16.7257ms 200 text/css
+INFO  2019-08-11 07:17:03,549 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/morris.js/morris.css?v=szHusaozbQctTn4FX-3l5E0A5zoxz7-ne4fr8NgWJlw  
+INFO  2019-08-11 07:17:03,555 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 39.1728ms 200 text/css
+INFO  2019-08-11 07:17:03,557 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 29.8022ms 200 text/css
+INFO  2019-08-11 07:17:03,560 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/themes/all-themes.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\css\themes\all-themes.css'
+INFO  2019-08-11 07:17:03,562 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/json2/json2.js?v=EZJ68U7eUi8uSP0MRRUalYten2eOlhREE9kJOIbIeYg  
+INFO  2019-08-11 07:17:03,566 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/images/user.png  
+INFO  2019-08-11 07:17:03,571 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 50.1461ms 200 text/css
+INFO  2019-08-11 07:17:03,574 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/style.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\css\style.css'
+INFO  2019-08-11 07:17:03,580 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/morris.js/morris.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\morris.js\morris.css'
+INFO  2019-08-11 07:17:03,584 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/json2/json2.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\json2\json2.js'
+INFO  2019-08-11 07:17:03,799 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 74.6934ms 200 text/css
+INFO  2019-08-11 07:17:03,816 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 49.4523ms 200 text/css
+INFO  2019-08-11 07:17:03,817 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 234.2749ms 200 application/javascript
+INFO  2019-08-11 07:17:03,830 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/moment/min/moment-with-locales.js?v=7CN4bWPV0U57HDA4YjdCBKCAynhqdWErjNn-5rrsW_I  
+INFO  2019-08-11 07:17:03,845 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/bootstrap/dist/js/bootstrap.js?v=Cr6N6zNN4bp0OwTQOZ6Z66M2r-2dpy_EwKMCyZ-SOMg  
+INFO  2019-08-11 07:17:03,863 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/jquery/dist/jquery.js?v=DZAnKJ_6XZ9si04Hgrsxu_8s717jcIzLy3oi35EouyE  
+INFO  2019-08-11 07:17:03,870 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/images/user.png'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\images\user.png'
+INFO  2019-08-11 07:17:03,877 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 311.3631ms 200 image/png
+INFO  2019-08-11 07:17:03,884 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/jquery-validation/dist/jquery.validate.js?v=KuzD50lDGNI5jq_ipt4hwDpSJk3fhseTR1jdvaBoZLs  
+INFO  2019-08-11 07:17:03,897 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/toastr/toastr.js?v=C7DJ6LzTt1Hvj9fd-yRnySs3I4T2B8XmQ3TqXQjc00g  
+INFO  2019-08-11 07:17:03,901 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/blockUI/jquery.blockUI.js?v=oQaw-JJuUcJQ9QVYMcFnPxICDT-hv8-kuxT2FNzTGhc  
+INFO  2019-08-11 07:17:03,905 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\jquery-validation\dist\jquery.validate.js'
+INFO  2019-08-11 07:17:03,911 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 32.5821ms 200 application/javascript
+INFO  2019-08-11 07:17:03,918 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/toastr/toastr.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\toastr\toastr.js'
+INFO  2019-08-11 07:17:03,929 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\bootstrap\dist\js\bootstrap.js'
+INFO  2019-08-11 07:17:03,937 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 42.9484ms 200 application/javascript
+INFO  2019-08-11 07:17:03,941 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/blockUI/jquery.blockUI.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\blockUI\jquery.blockUI.js'
+INFO  2019-08-11 07:17:03,948 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\jquery\dist\jquery.js'
+INFO  2019-08-11 07:17:03,955 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/moment/min/moment-with-locales.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\moment\min\moment-with-locales.js'
+INFO  2019-08-11 07:17:03,962 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 119.3182ms 200 application/javascript
+INFO  2019-08-11 07:17:03,967 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 147.4134ms 200 application/javascript
+INFO  2019-08-11 07:17:03,968 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/sweetalert/dist/sweetalert.min.js?v=aPktydUv1rN3mouQeXoKi3ioFTIQlULuqYeoTAA2ihY  
+INFO  2019-08-11 07:17:03,974 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 66.771ms 200 application/javascript
+INFO  2019-08-11 07:17:03,983 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 158.4607ms 200 application/javascript
+INFO  2019-08-11 07:17:03,983 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/sweetalert/dist/sweetalert.min.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\sweetalert\dist\sweetalert.min.js'
+INFO  2019-08-11 07:17:03,987 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 19.2731ms 200 application/javascript
+INFO  2019-08-11 07:17:04,095 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/spin.js/spin.js?v=GySbz3oZXNlwoawo5PpYy0iM38B-q3jyi_HLw00uxy0  
+INFO  2019-08-11 07:17:04,103 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/images/user-img-background.jpg  
+INFO  2019-08-11 07:17:04,111 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/fonts/roboto/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2  
+INFO  2019-08-11 07:17:04,116 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/spin.js/jquery.spin.js?v=EG38bUU5b2M64hy9cNAzu_cQBEsiBYsDifOcoHqNd2k  
+INFO  2019-08-11 07:17:04,129 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/spin.js/spin.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\spin.js\spin.js'
+INFO  2019-08-11 07:17:04,139 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/images/user-img-background.jpg'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\images\user-img-background.jpg'
+INFO  2019-08-11 07:17:04,202 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 113.6377ms 200 application/javascript
+INFO  2019-08-11 07:17:04,206 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 90.8767ms 200 image/jpeg
+INFO  2019-08-11 07:17:04,210 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/roboto/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\fonts\roboto\d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2'
+INFO  2019-08-11 07:17:04,214 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/spin.js/jquery.spin.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\spin.js\jquery.spin.js'
+INFO  2019-08-11 07:17:04,217 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/fonts/material-icons/materialicons.woff2  
+INFO  2019-08-11 07:17:04,221 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 130.1999ms 200 font/woff2
+INFO  2019-08-11 07:17:04,223 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 165.6226ms 200 application/javascript
+INFO  2019-08-11 07:17:04,229 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/material-icons/materialicons.woff2'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\fonts\material-icons\materialicons.woff2'
+INFO  2019-08-11 07:17:04,231 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 26.7044ms 200 font/woff2
+INFO  2019-08-11 07:17:04,382 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/fonts/roboto/CWB0XYA8bzo0kSThX0UTuA.woff2  
+INFO  2019-08-11 07:17:04,419 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/roboto/CWB0XYA8bzo0kSThX0UTuA.woff2'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\fonts\roboto\CWB0XYA8bzo0kSThX0UTuA.woff2'
+INFO  2019-08-11 07:17:04,425 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 154.2712ms 200 font/woff2
+INFO  2019-08-11 07:17:04,563 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0  
+INFO  2019-08-11 07:17:04,565 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/bootstrap-select/dist/js/bootstrap-select.js?v=_KDPX2Vvqq8sySMxlLNJxt9j6Cmb8i_xp602ozhYxzI  
+INFO  2019-08-11 07:17:04,571 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/push.js/push.js?v=HDxbpm8oBKwe1bmX9Z1SahYYA7zEbc1dk7LfopvOvoE  
+INFO  2019-08-11 07:17:04,575 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/famfamfam-flags/dist/sprite/famfamfam-flags.png  
+INFO  2019-08-11 07:17:04,583 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/jquery-slimscroll/jquery.slimscroll.js?v=4K6ZHzwMYR5_eU2SeDIaByus_qki9IFY8hmxl5U6D1Y  
+INFO  2019-08-11 07:17:04,593 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/Waves/dist/waves.js?v=Lar7zQhqgdoUsaqhuwkgnWgsC-eRWIxHhJPV-QtrDog  
+INFO  2019-08-11 07:17:04,614 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery-slimscroll/jquery.slimscroll.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\jquery-slimscroll\jquery.slimscroll.js'
+INFO  2019-08-11 07:17:04,633 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap-select/dist/js/bootstrap-select.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\bootstrap-select\dist\js\bootstrap-select.js'
+INFO  2019-08-11 07:17:04,648 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 37.2053ms 200 application/javascript
+INFO  2019-08-11 07:17:04,675 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Waves/dist/waves.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\Waves\dist\waves.js'
+INFO  2019-08-11 07:17:04,686 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/font-awesome/fonts/fontawesome-webfont.woff2'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\font-awesome\fonts\fontawesome-webfont.woff2'
+INFO  2019-08-11 07:17:04,693 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 110.3683ms 200 application/javascript
+INFO  2019-08-11 07:17:04,702 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 162.3637ms 200 font/woff2
+INFO  2019-08-11 07:17:04,714 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 92.3764ms 200 application/javascript
+INFO  2019-08-11 07:17:04,724 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/abp-web-resources/Abp/Framework/scripts/abp.js?v=FGfi3RfHf06ftjVdq2JaO16cF9CPZNPvujmuYBacXxg  
+INFO  2019-08-11 07:17:04,760 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/push.js/push.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\push.js\push.js'
+INFO  2019-08-11 07:17:04,779 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/famfamfam-flags/dist/sprite/famfamfam-flags.png'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\famfamfam-flags\dist\sprite\famfamfam-flags.png'
+INFO  2019-08-11 07:17:04,808 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/abp.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\abp.js'
+INFO  2019-08-11 07:17:04,823 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 229.1265ms 200 image/png
+INFO  2019-08-11 07:17:04,835 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 103.6882ms 200 application/javascript
+INFO  2019-08-11 07:17:04,843 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js?v=RJuGDX616JN_UziXsmKnth0alpECKCx0gtxKZVrZWxY  
+INFO  2019-08-11 07:17:04,848 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 198.6489ms 200 application/javascript
+INFO  2019-08-11 07:17:04,866 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js?v=lMgLZMlGsipWDxpvEPxfKVREzRedV_ygRnTj2kvADpw  
+INFO  2019-08-11 07:17:04,872 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.spin.js'
+INFO  2019-08-11 07:17:04,878 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js?v=ImopdkB8alCil1HigOwW3CDqWKsLZXyplf7TXBbjRnE  
+INFO  2019-08-11 07:17:04,881 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 49.4214ms 200 application/javascript
+INFO  2019-08-11 07:17:04,887 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js?v=Y3zoG-hSFKmbS3BHKo_wFWRPbyzJXKoNrnF73uFdtqU  
+INFO  2019-08-11 07:17:04,888 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.jquery.js'
+INFO  2019-08-11 07:17:04,894 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 39.154ms 200 application/javascript
+INFO  2019-08-11 07:17:04,912 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.blockUI.js'
+INFO  2019-08-11 07:17:04,913 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js?v=guLvtVJMvLobKpGAlQigrGWMQ1sGQo4yTL46zjGQUUY  
+INFO  2019-08-11 07:17:04,916 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 30.8036ms 200 application/javascript
+INFO  2019-08-11 07:17:04,922 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.toastr.js'
+INFO  2019-08-11 07:17:04,949 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/js/main.js?v=OOmcJycn99lcvh9w0IizEjzOazpG5tcmZoDUcPDpBGc  
+INFO  2019-08-11 07:17:04,941 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/js/admin.js?v=_sUixSUZcmP81slFpHh9ygZ5nNihdHlHLkpoSCncHCw  
+INFO  2019-08-11 07:17:04,951 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 78.6618ms 200 application/javascript
+INFO  2019-08-11 07:17:04,957 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.sweet-alert.js'
+INFO  2019-08-11 07:17:04,962 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/main.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\js\main.js'
+INFO  2019-08-11 07:17:04,964 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 62.9822ms 200 application/javascript
+INFO  2019-08-11 07:17:04,969 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/admin.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\js\admin.js'
+INFO  2019-08-11 07:17:04,974 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 16.7978ms 200 application/javascript
+INFO  2019-08-11 07:17:04,975 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 51.5536ms 200 application/javascript
+INFO  2019-08-11 07:17:04,978 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637011046005952623  
+INFO  2019-08-11 07:17:04,982 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637011046005952623  
+INFO  2019-08-11 07:17:04,984 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Shared/_Layout.js?v=jOYc7_5N1zFKt3qTihQ-9Kc0wjSMXkAeHUXNyvn8sYo  
+INFO  2019-08-11 07:17:05,024 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/_Layout.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\view-resources\Views\Shared\_Layout.js'
+INFO  2019-08-11 07:17:05,037 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 46.5647ms 200 application/javascript
+INFO  2019-08-11 07:17:05,063 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/jquery-countTo/jquery.countTo.js?v=AGGYFLOyVnIKn_2UCDl9D_5VWf8wHWCOtm9YU0P9g6I  
+INFO  2019-08-11 07:17:05,068 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery-countTo/jquery.countTo.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\jquery-countTo\jquery.countTo.js'
+INFO  2019-08-11 07:17:05,077 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 30.023ms 200 application/javascript
+INFO  2019-08-11 07:17:05,081 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/signalr-client/signalr.min.js?v=DeOex_tR7FzkV208FN2wnFJvIUIKXWsVjbW0171naJo  
+INFO  2019-08-11 07:17:05,092 [4    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-08-11 07:17:05,107 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js?v=8bQpuR0dFdbi0KIM9VVSonDAxoXNRsdDAvuSZSI8Oyw  
+INFO  2019-08-11 07:17:05,109 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-08-11 07:17:05,125 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\abp-web-resources\Abp\Framework\scripts\libs\abp.signalr-client.js'
+INFO  2019-08-11 07:17:05,132 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 37.3092ms 200 application/javascript
+INFO  2019-08-11 07:17:05,137 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/raphael/raphael.js?v=MPXjTSEImVJI1834JAHubdK7Lts1VTUPJmCQ9zKAjyA  
+INFO  2019-08-11 07:17:05,158 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/signalr-client/signalr.min.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\signalr-client\signalr.min.js'
+INFO  2019-08-11 07:17:05,181 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 80.9672ms 200 application/javascript
+INFO  2019-08-11 07:17:05,189 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/morris.js/morris.js?v=cQB75DEaDbn4oSiaWgdoh3TuZCHSO-kYdD_Ehka48Ro  
+INFO  2019-08-11 07:17:05,199 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/chart.js/dist/Chart.bundle.js?v=TQAtDUIU_0XtXZLNjMBV8noK8jNSngwHlgtC_PvsRAk  
+INFO  2019-08-11 07:17:05,248 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/morris.js/morris.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\morris.js\morris.js'
+INFO  2019-08-11 07:17:05,256 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 66.8101ms 200 application/javascript
+INFO  2019-08-11 07:17:05,259 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/raphael/raphael.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\raphael\raphael.js'
+INFO  2019-08-11 07:17:05,264 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 126.8775ms 200 application/javascript
+INFO  2019-08-11 07:17:05,271 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/chart.js/dist/Chart.bundle.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\chart.js\dist\Chart.bundle.js'
+INFO  2019-08-11 07:17:05,283 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 79.0903ms 200 application/javascript
+INFO  2019-08-11 07:17:05,284 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/Flot/jquery.flot.js?v=t7kx8nPDixJ3ucbB9OBcTsCYhaSHvdrzJ54tfkmjjhI  
+INFO  2019-08-11 07:17:05,293 [4    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-08-11 07:17:05,298 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Flot/jquery.flot.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\Flot\jquery.flot.js'
+INFO  2019-08-11 07:17:05,309 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21.1617ms 200 application/javascript
+INFO  2019-08-11 07:17:05,356 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-08-11 07:17:05,365 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/Flot/jquery.flot.resize.js?v=i59RRvMkqw-28mDu6YRzKo77gmM7k9aPZMtcw45wgu4  
+INFO  2019-08-11 07:17:05,372 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Flot/jquery.flot.resize.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\Flot\jquery.flot.resize.js'
+INFO  2019-08-11 07:17:05,376 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 13.8848ms 200 application/javascript
+INFO  2019-08-11 07:17:05,515 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/Flot/jquery.flot.categories.js?v=boFmSyjqeVxzSQb0qhVhRkCnWsf705mn-5CEBAaYNRo  
+INFO  2019-08-11 07:17:05,516 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/Flot/jquery.flot.pie.js?v=RsEWYd9gdLG1bCIcU8j59Rkvf_1O7HtzoD1TRUs22cU  
+INFO  2019-08-11 07:17:05,523 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Flot/jquery.flot.categories.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\Flot\jquery.flot.categories.js'
+INFO  2019-08-11 07:17:05,526 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Flot/jquery.flot.pie.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\Flot\jquery.flot.pie.js'
+INFO  2019-08-11 07:17:05,530 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 15.6159ms 200 application/javascript
+INFO  2019-08-11 07:17:05,533 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 17.4974ms 200 application/javascript
+INFO  2019-08-11 07:17:05,577 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/Flot/jquery.flot.time.js?v=pYLIMq3HE4prBar2HxbrrCdHAfG-Sv6nfnOaHDS5xBo  
+INFO  2019-08-11 07:17:05,583 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Flot/jquery.flot.time.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\Flot\jquery.flot.time.js'
+INFO  2019-08-11 07:17:05,591 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.765ms 200 application/javascript
+INFO  2019-08-11 07:17:05,776 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 416.0232ms.
+INFO  2019-08-11 07:17:05,827 [9    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-08-11 07:17:05,827 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/jquery-sparkline/dist/jquery.sparkline.js?v=k0LZZpXY4vJp6vbA5CL5bb20Ou0IO3Shz-J6U6Vq56c  
+INFO  2019-08-11 07:17:05,833 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Home/Index.js?v=tRGDdqeVjO63iaO1qvGPpKF2NuT2riEOyYovlY_otk0  
+INFO  2019-08-11 07:17:05,838 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 720.2394ms
+INFO  2019-08-11 07:17:05,879 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 862.464ms 200 application/x-javascript
+INFO  2019-08-11 07:17:05,893 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery-sparkline/dist/jquery.sparkline.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\jquery-sparkline\dist\jquery.sparkline.js'
+INFO  2019-08-11 07:17:05,902 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Home/Index.js'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\view-resources\Views\Home\Index.js'
+INFO  2019-08-11 07:17:05,906 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 78.2599ms 200 application/javascript
+INFO  2019-08-11 07:17:05,909 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 77.4976ms 200 application/javascript
+INFO  2019-08-11 07:17:06,474 [4    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 1178.5703ms.
+INFO  2019-08-11 07:17:06,518 [4    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-08-11 07:17:06,523 [4    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 1417.1986ms
+INFO  2019-08-11 07:17:06,592 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1549.1303ms 200 application/x-javascript; charset=utf-8
+INFO  2019-08-11 07:17:06,596 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-08-11 07:17:06,765 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 136.101ms 200 application/json
+INFO  2019-08-11 07:17:06,774 [4    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=8aCjI8v4vyfjitDobIM31w  
+INFO  2019-08-11 07:17:07,481 [5    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-08-11 07:17:07,554 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"8aCjI8v4vyfjitDobIM31w","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-08-11T07:17:07.533221-06:00","Properties":{}}
+DEBUG 2019-08-11 07:17:07,670 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 8aCjI8v4vyfjitDobIM31w
+INFO  2019-08-11 07:20:42,644 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/Search?TenantId=1&Sorting=Id application/json 
+INFO  2019-08-11 07:20:42,928 [26   ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-08-11 07:20:42,962 [26   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 318.0421ms 404 
+INFO  2019-08-11 07:21:53,538 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/Search?TenantId=1&Sorting=Id application/json 
+INFO  2019-08-11 07:21:53,588 [20   ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-08-11 07:21:53,610 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 59.2821ms 404 
+INFO  2019-08-11 07:22:10,765 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/swagger  
+INFO  2019-08-11 07:22:10,780 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 16.7483ms 301 
+INFO  2019-08-11 07:22:10,786 [33   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/swagger/index.html  
+INFO  2019-08-11 07:22:10,853 [33   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 65.8928ms 200 text/html
+INFO  2019-08-11 07:22:10,920 [33   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/swagger/swagger-ui-standalone-preset.js  
+INFO  2019-08-11 07:22:10,934 [32   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/swagger/swagger-ui-bundle.js  
+INFO  2019-08-11 07:22:10,939 [34   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/swagger/swagger-ui.css  
+INFO  2019-08-11 07:22:11,004 [35   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+INFO  2019-08-11 07:22:11,035 [32   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+INFO  2019-08-11 07:22:11,042 [35   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 99.2203ms 200 text/css
+DEBUG 2019-08-11 07:22:11,056 [34   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 8aCjI8v4vyfjitDobIM31w
+INFO  2019-08-11 07:22:11,062 [32   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 131.0053ms 200 application/javascript
+INFO  2019-08-11 07:22:11,075 [35   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+INFO  2019-08-11 07:22:11,084 [35   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 171.328ms 200 application/javascript
+INFO  2019-08-11 07:22:11,096 [34   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 304323.0948ms 101 
+INFO  2019-08-11 07:22:12,151 [32   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/swagger/v1/swagger.json  
+INFO  2019-08-11 07:22:12,569 [20   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 417.5626ms 200 application/json;charset=utf-8
+DEBUG 2019-08-11 07:38:22,593 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-08-11 07:38:22,636 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-08-11 07:38:22,661 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.Web.Startup.SAPMiddlewareWebMvcModule, GRINTSYS.SAPMiddleware.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,666 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareWebCoreModule, GRINTSYS.SAPMiddleware.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,666 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareApplicationModule, GRINTSYS.SAPMiddleware.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,667 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareCoreModule, GRINTSYS.SAPMiddleware.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,668 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,668 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,669 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,670 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,670 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareEntityFrameworkModule, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,671 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,671 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,672 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,672 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,672 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,672 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:22,677 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-08-11 07:38:22,769 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 07:38:22,769 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 07:38:22,769 [1    ] o.Configuration.LanguageManagementConfig - Converted SAPMiddleware (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 07:38:22,769 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 07:38:23,184 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareDbContext, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:38:23,916 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-08-11 07:38:23,957 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-08-11 07:38:23,969 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-08-11 07:38:23,976 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: SAPMiddleware
+DEBUG 2019-08-11 07:38:23,982 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-08-11 07:38:24,024 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-08-11 07:38:24,084 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 31 classes define auto mapping attributes
+DEBUG 2019-08-11 07:38:24,084 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-08-11 07:38:24,096 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.CreateUserDto
+DEBUG 2019-08-11 07:38:24,098 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.UserDto
+DEBUG 2019-08-11 07:38:24,098 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sizes.Dto.SizeDto
+DEBUG 2019-08-11 07:38:24,100 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-08-11 07:38:24,101 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-08-11 07:38:24,101 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.CreateRoleDto
+DEBUG 2019-08-11 07:38:24,101 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.PermissionDto
+DEBUG 2019-08-11 07:38:24,101 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.RoleDto
+DEBUG 2019-08-11 07:38:24,102 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.AddProductInput
+DEBUG 2019-08-11 07:38:24,103 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.AddProductVariantInput
+DEBUG 2019-08-11 07:38:24,103 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductDto
+DEBUG 2019-08-11 07:38:24,103 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductOutput
+DEBUG 2019-08-11 07:38:24,104 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductVariantDto
+DEBUG 2019-08-11 07:38:24,104 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductVariantOutput
+DEBUG 2019-08-11 07:38:24,104 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.AddInvoiceInput
+DEBUG 2019-08-11 07:38:24,104 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.AddPaymentInput
+DEBUG 2019-08-11 07:38:24,105 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.PaymentOutput
+DEBUG 2019-08-11 07:38:24,105 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Orders.Dto.OrderItemOutput
+DEBUG 2019-08-11 07:38:24,105 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-08-11 07:38:24,105 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.TenantDto
+DEBUG 2019-08-11 07:38:24,105 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Colors.Dto.ColorDto
+DEBUG 2019-08-11 07:38:24,106 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Clients.Dto.ClientDto
+DEBUG 2019-08-11 07:38:24,106 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Categories.Dto.CategoryDto
+DEBUG 2019-08-11 07:38:24,106 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartDto
+DEBUG 2019-08-11 07:38:24,106 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartProductItemOutput
+DEBUG 2019-08-11 07:38:24,106 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Brands.Dto.BrandDto
+DEBUG 2019-08-11 07:38:24,106 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banners.Dto.BannerDto
+DEBUG 2019-08-11 07:38:24,107 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banks.Dto.BankDto
+DEBUG 2019-08-11 07:38:24,107 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2019-08-11 07:38:24,107 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Models.Roles.EditRoleModalViewModel
+INFO  2019-08-11 07:38:34,071 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/Search?TenantId=1&Sorting=Id&SearchText=CL0048 application/json 
+INFO  2019-08-11 07:38:34,856 [10   ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-08-11 07:38:36,128 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1955.0901ms 404 
+DEBUG 2019-08-11 07:38:59,741 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-08-11 07:39:00,207 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-08-11 07:39:00,240 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.Web.Startup.SAPMiddlewareWebMvcModule, GRINTSYS.SAPMiddleware.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,244 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareWebCoreModule, GRINTSYS.SAPMiddleware.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,245 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareApplicationModule, GRINTSYS.SAPMiddleware.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,246 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareCoreModule, GRINTSYS.SAPMiddleware.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,246 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,247 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,248 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,249 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,250 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareEntityFrameworkModule, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,250 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,251 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,251 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,251 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,251 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,252 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:00,255 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-08-11 07:39:00,475 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 07:39:00,475 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 07:39:00,475 [1    ] o.Configuration.LanguageManagementConfig - Converted SAPMiddleware (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 07:39:00,475 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 07:39:01,105 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareDbContext, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 07:39:03,306 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-08-11 07:39:03,364 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-08-11 07:39:03,386 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-08-11 07:39:03,394 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: SAPMiddleware
+DEBUG 2019-08-11 07:39:03,404 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-08-11 07:39:03,653 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-08-11 07:39:03,724 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 31 classes define auto mapping attributes
+DEBUG 2019-08-11 07:39:03,724 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-08-11 07:39:03,747 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.CreateUserDto
+DEBUG 2019-08-11 07:39:03,748 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.UserDto
+DEBUG 2019-08-11 07:39:03,750 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sizes.Dto.SizeDto
+DEBUG 2019-08-11 07:39:03,751 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-08-11 07:39:03,751 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-08-11 07:39:03,752 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.CreateRoleDto
+DEBUG 2019-08-11 07:39:03,752 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.PermissionDto
+DEBUG 2019-08-11 07:39:03,753 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.RoleDto
+DEBUG 2019-08-11 07:39:03,753 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.AddProductInput
+DEBUG 2019-08-11 07:39:03,753 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.AddProductVariantInput
+DEBUG 2019-08-11 07:39:03,754 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductDto
+DEBUG 2019-08-11 07:39:03,754 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductOutput
+DEBUG 2019-08-11 07:39:03,754 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductVariantDto
+DEBUG 2019-08-11 07:39:03,755 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductVariantOutput
+DEBUG 2019-08-11 07:39:03,755 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.AddInvoiceInput
+DEBUG 2019-08-11 07:39:03,755 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.AddPaymentInput
+DEBUG 2019-08-11 07:39:03,755 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.PaymentOutput
+DEBUG 2019-08-11 07:39:03,756 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Orders.Dto.OrderItemOutput
+DEBUG 2019-08-11 07:39:03,756 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-08-11 07:39:03,756 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.TenantDto
+DEBUG 2019-08-11 07:39:03,757 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Colors.Dto.ColorDto
+DEBUG 2019-08-11 07:39:03,757 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Clients.Dto.ClientDto
+DEBUG 2019-08-11 07:39:03,758 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Categories.Dto.CategoryDto
+DEBUG 2019-08-11 07:39:03,759 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartDto
+DEBUG 2019-08-11 07:39:03,759 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartProductItemOutput
+DEBUG 2019-08-11 07:39:03,759 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Brands.Dto.BrandDto
+DEBUG 2019-08-11 07:39:03,759 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banners.Dto.BannerDto
+DEBUG 2019-08-11 07:39:03,760 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banks.Dto.BankDto
+DEBUG 2019-08-11 07:39:03,764 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2019-08-11 07:39:03,765 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Models.Roles.EditRoleModalViewModel
+INFO  2019-08-11 07:39:13,819 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:62114/  0
+INFO  2019-08-11 07:39:13,819 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/GetProductByQuerySearch?TenantId=1&Sorting=Id&SearchText=CL0048 application/json 
+INFO  2019-08-11 07:39:13,819 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2019-08-11 07:39:14,034 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 219.1662ms 200 
+INFO  2019-08-11 07:39:15,078 [7    ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-08-11 07:39:24,333 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetProductByQuerySearch", controller = "Product"}. Executing action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application)
+INFO  2019-08-11 07:39:24,334 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-08-11 07:39:24,449 [6    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-08-11 07:39:24,553 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-08-11 07:39:24,568 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 9.8399ms.
+INFO  2019-08-11 07:39:26,381 [7    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-08-11 07:39:28,935 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) with arguments (GRINTSYS.SAPMiddleware.Products.Dto.SearchProductInput) - Validation state: Valid
+INFO  2019-08-11 07:40:07,465 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 38435.6779ms.
+INFO  2019-08-11 07:40:07,634 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-08-11 07:40:07,915 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) in 43570.1982ms
+INFO  2019-08-11 07:40:07,978 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 54173.0003ms 200 application/json; charset=utf-8
+INFO  2019-08-11 07:40:08,433 [9    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 42429.0616ms.
+INFO  2019-08-11 07:40:08,581 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/bootstrap-select/dist/css/bootstrap-select.css?v=a7N4Jki3LzSbThclvqbu4nF45twcjuc772JGFhY9qwk  
+INFO  2019-08-11 07:40:08,594 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/bootstrap/dist/css/bootstrap.css?v=fmMNkMcjSw3xcp9iuPnku_ryk9kaWgrEbfJfKmdZ45o  
+INFO  2019-08-11 07:40:08,606 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/fonts/material-icons/materialicons.css?v=2SsVsQpWRHM3EJ4D4MT4RRpiEXbEuK0vEjPxVr5P7Ek  
+INFO  2019-08-11 07:40:08,612 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 44258.4266ms
+INFO  2019-08-11 07:40:08,613 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/fonts/roboto/roboto.css?v=DWPiEyLnt8XZ68WQeudmZPGSejowhmQNUUhaX8dYF1Q  
+INFO  2019-08-11 07:40:08,626 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 54820.3972ms 200 text/html; charset=utf-8
+INFO  2019-08-11 07:40:08,631 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/toastr/toastr.css?v=W8a9WvLyUO7CXtOC4f9LoUMwkywM7JSq-Xm5kNsYW08  
+INFO  2019-08-11 07:40:08,688 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/material-icons/materialicons.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\fonts\material-icons\materialicons.css'
+INFO  2019-08-11 07:40:08,718 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap-select/dist/css/bootstrap-select.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\bootstrap-select\dist\css\bootstrap-select.css'
+INFO  2019-08-11 07:40:08,731 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/toastr/toastr.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\toastr\toastr.css'
+INFO  2019-08-11 07:40:08,732 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 247.7306ms 200 text/css
+INFO  2019-08-11 07:40:08,740 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 149.0415ms 200 text/css
+INFO  2019-08-11 07:40:08,748 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 104.4613ms 200 text/css
+INFO  2019-08-11 07:40:08,807 [22   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/roboto/roboto.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\fonts\roboto\roboto.css'
+INFO  2019-08-11 07:40:08,815 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css?v=l7wu43l7XpKWzFn29hiH8AFe4I_CNzbCPmaAQivPYMg  
+INFO  2019-08-11 07:40:08,824 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFO  2019-08-11 07:40:08,835 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/font-awesome/css/font-awesome.css?v=NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w  
+INFO  2019-08-11 07:40:08,844 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 233.3555ms 200 text/css
+INFO  2019-08-11 07:40:08,849 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 261.4653ms 200 text/css
+INFO  2019-08-11 07:40:08,851 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/animate.css/animate.css?v=00w68NO3TLuHjKRHJmjrrgJBDtG_6OhbJEu1gtHcsuo  
+INFO  2019-08-11 07:40:08,858 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/Waves/dist/waves.css?v=0zP86LzXedNkkBjePtKrMTAPuIy6EzHfGlyYvsmGLBw  
+INFO  2019-08-11 07:40:08,862 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/font-awesome/css/font-awesome.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\font-awesome\css\font-awesome.css'
+INFO  2019-08-11 07:40:08,873 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/css/materialize.css?v=OdWlipUYj8b9Oa4RyT45njteIcxH-4pGocqe0r0V8js  
+INFO  2019-08-11 07:40:08,882 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 47.2345ms 200 text/css
+INFO  2019-08-11 07:40:08,890 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/Waves/dist/waves.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\Waves\dist\waves.css'
+INFO  2019-08-11 07:40:08,900 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/famfamfam-flags/dist/sprite/famfamfam-flags.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\famfamfam-flags\dist\sprite\famfamfam-flags.css'
+INFO  2019-08-11 07:40:08,905 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 43.4727ms 200 text/css
+INFO  2019-08-11 07:40:08,907 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 115.0378ms 200 text/css
+INFO  2019-08-11 07:40:08,913 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/css/style.css?v=151KUrNx-cFGpjXC7QZ8WbWSo-mQTLO0htvGyBUR_i8  
+INFO  2019-08-11 07:40:08,926 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/materialize.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\css\materialize.css'
+INFO  2019-08-11 07:40:08,929 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Shared/_Layout.css?v=uq7unI_U0xZr0Pbyzeu6KfbJKHVFuv0wNJ4CrrhQknw  
+INFO  2019-08-11 07:40:08,937 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 65.2241ms 200 text/css
+INFO  2019-08-11 07:40:08,946 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/lib/morris.js/morris.css?v=szHusaozbQctTn4FX-3l5E0A5zoxz7-ne4fr8NgWJlw  
+INFO  2019-08-11 07:40:09,061 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/_Layout.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\view-resources\Views\Shared\_Layout.css'
+INFO  2019-08-11 07:40:09,159 [22   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/morris.js/morris.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\morris.js\morris.css'
+INFO  2019-08-11 07:40:09,208 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 145.7726ms 200 text/css
+INFO  2019-08-11 07:40:09,261 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/animate.css/animate.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\lib\animate.css\animate.css'
+INFO  2019-08-11 07:40:09,267 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/css/themes/all-themes.css?v=XaAlkmhL9gA6mBxpcxGYAWxggxkIpRmT9qGbKejs6eA  
+INFO  2019-08-11 07:40:09,268 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/style.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\css\style.css'
+INFO  2019-08-11 07:40:09,284 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 416.9298ms 200 text/css
+INFO  2019-08-11 07:40:09,344 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 371.1879ms 200 text/css
+INFO  2019-08-11 07:40:09,359 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 228.2959ms 200 text/css
+INFO  2019-08-11 07:40:09,361 [6    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/themes/all-themes.css'. Physical path: 'C:\Users\Sergio Peralta\Documents\GitHub\GRINTSYS.SAPMiddleware\src\GRINTSYS.SAPMiddleware.Web.Mvc\wwwroot\css\themes\all-themes.css'
+INFO  2019-08-11 07:40:09,364 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 151.447ms 200 text/css
+INFO  2019-08-11 07:40:10,331 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637011059436554533  
+INFO  2019-08-11 07:40:10,348 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637011059436554533  
+INFO  2019-08-11 07:40:10,393 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-08-11 07:40:10,407 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-08-11 07:40:10,427 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-08-11 07:40:10,478 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-08-11 07:40:10,794 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 337.0937ms.
+INFO  2019-08-11 07:40:10,796 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 295.745ms.
+INFO  2019-08-11 07:40:10,827 [22   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-08-11 07:40:10,830 [6    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-08-11 07:40:10,833 [22   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 422.454ms
+INFO  2019-08-11 07:40:10,841 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 515.8063ms 200 application/x-javascript; charset=utf-8
+INFO  2019-08-11 07:40:10,843 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 440.5342ms
+INFO  2019-08-11 07:40:10,847 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 544.3142ms 200 application/x-javascript
+INFO  2019-08-11 07:40:11,067 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-08-11 07:40:11,150 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 86.1546ms 200 application/json
+INFO  2019-08-11 07:40:11,158 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=iGvQcZWoRIA4Wko8HYfE5w  
+INFO  2019-08-11 07:40:11,847 [9    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-08-11 07:40:11,951 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"iGvQcZWoRIA4Wko8HYfE5w","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-08-11T07:40:11.9270935-06:00","Properties":{}}
+DEBUG 2019-08-11 07:40:12,046 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: iGvQcZWoRIA4Wko8HYfE5w
+INFO  2019-08-11 07:40:24,980 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/GetProductByQuerySearch?TenantId=1&Sorting=Id&SearchText=cl0038 application/json 
+INFO  2019-08-11 07:40:24,999 [6    ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-08-11 07:40:25,012 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetProductByQuerySearch", controller = "Product"}. Executing action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application)
+INFO  2019-08-11 07:40:25,024 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) with arguments (GRINTSYS.SAPMiddleware.Products.Dto.SearchProductInput) - Validation state: Valid
+INFO  2019-08-11 07:40:27,127 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2100.7071ms.
+INFO  2019-08-11 07:40:27,166 [6    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-08-11 07:40:27,171 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) in 2153.8637ms
+INFO  2019-08-11 07:40:27,239 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2230.7739ms 200 application/json; charset=utf-8
+INFO  2019-08-11 07:40:39,992 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/GetProductByQuerySearch?TenantId=1&Sorting=Id&SearchText=cl0038 application/json 
+INFO  2019-08-11 07:40:40,002 [6    ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-08-11 07:40:40,014 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetProductByQuerySearch", controller = "Product"}. Executing action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application)
+INFO  2019-08-11 07:40:40,020 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) with arguments (GRINTSYS.SAPMiddleware.Products.Dto.SearchProductInput) - Validation state: Valid
+INFO  2019-08-11 07:40:40,138 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 111.2593ms.
+INFO  2019-08-11 07:40:40,206 [9    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-08-11 07:40:40,211 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) in 193.1126ms
+INFO  2019-08-11 07:40:40,218 [9    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 229.2975ms 200 application/json; charset=utf-8
+DEBUG 2019-08-11 08:13:56,760 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-08-11 08:13:57,100 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-08-11 08:13:57,144 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.Web.Startup.SAPMiddlewareWebMvcModule, GRINTSYS.SAPMiddleware.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,150 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareWebCoreModule, GRINTSYS.SAPMiddleware.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,151 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareApplicationModule, GRINTSYS.SAPMiddleware.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,151 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareCoreModule, GRINTSYS.SAPMiddleware.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,152 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,153 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,154 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,155 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,156 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareEntityFrameworkModule, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,156 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,156 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,157 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,157 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,158 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,158 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:57,170 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-08-11 08:13:57,301 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 08:13:57,302 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 08:13:57,302 [1    ] o.Configuration.LanguageManagementConfig - Converted SAPMiddleware (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 08:13:57,302 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 08:13:57,756 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareDbContext, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:13:59,269 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-08-11 08:13:59,313 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-08-11 08:13:59,324 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-08-11 08:13:59,330 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: SAPMiddleware
+DEBUG 2019-08-11 08:13:59,336 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-08-11 08:13:59,641 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-08-11 08:13:59,701 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 31 classes define auto mapping attributes
+DEBUG 2019-08-11 08:13:59,701 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-08-11 08:13:59,709 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.CreateUserDto
+DEBUG 2019-08-11 08:13:59,710 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.UserDto
+DEBUG 2019-08-11 08:13:59,710 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sizes.Dto.SizeDto
+DEBUG 2019-08-11 08:13:59,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-08-11 08:13:59,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-08-11 08:13:59,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.CreateRoleDto
+DEBUG 2019-08-11 08:13:59,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.PermissionDto
+DEBUG 2019-08-11 08:13:59,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.RoleDto
+DEBUG 2019-08-11 08:13:59,712 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.AddProductInput
+DEBUG 2019-08-11 08:13:59,712 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.AddProductVariantInput
+DEBUG 2019-08-11 08:13:59,712 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductDto
+DEBUG 2019-08-11 08:13:59,712 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductOutput
+DEBUG 2019-08-11 08:13:59,713 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductVariantDto
+DEBUG 2019-08-11 08:13:59,713 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductVariantOutput
+DEBUG 2019-08-11 08:13:59,713 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.AddInvoiceInput
+DEBUG 2019-08-11 08:13:59,713 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.AddPaymentInput
+DEBUG 2019-08-11 08:13:59,713 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.PaymentOutput
+DEBUG 2019-08-11 08:13:59,713 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Orders.Dto.OrderItemOutput
+DEBUG 2019-08-11 08:13:59,713 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-08-11 08:13:59,713 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.TenantDto
+DEBUG 2019-08-11 08:13:59,714 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Colors.Dto.ColorDto
+DEBUG 2019-08-11 08:13:59,714 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Clients.Dto.ClientDto
+DEBUG 2019-08-11 08:13:59,714 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Categories.Dto.CategoryDto
+DEBUG 2019-08-11 08:13:59,714 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartDto
+DEBUG 2019-08-11 08:13:59,714 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartProductItemOutput
+DEBUG 2019-08-11 08:13:59,714 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Brands.Dto.BrandDto
+DEBUG 2019-08-11 08:13:59,714 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banners.Dto.BannerDto
+DEBUG 2019-08-11 08:13:59,715 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banks.Dto.BankDto
+DEBUG 2019-08-11 08:13:59,715 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2019-08-11 08:13:59,715 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Models.Roles.EditRoleModalViewModel
+INFO  2019-08-11 08:14:06,544 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2019-08-11 08:14:06,544 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:62114/  0
+INFO  2019-08-11 08:14:06,689 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 149.1384ms 200 
+INFO  2019-08-11 08:14:12,379 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-08-11 08:14:12,464 [7    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-08-11 08:14:12,530 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-08-11 08:14:12,539 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 5.49ms.
+INFO  2019-08-11 08:14:13,519 [9    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-08-11 08:14:16,278 [5    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 2838.6158ms.
+INFO  2019-08-11 08:14:16,367 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 3944.2556ms
+INFO  2019-08-11 08:14:16,577 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9894.4319ms 200 text/html; charset=utf-8
+INFO  2019-08-11 08:14:16,680 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637011080396435379  
+INFO  2019-08-11 08:14:16,681 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637011080396435379  
+INFO  2019-08-11 08:14:16,762 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-08-11 08:14:16,774 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-08-11 08:14:16,904 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-08-11 08:14:16,959 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-08-11 08:14:17,338 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 431.901ms.
+INFO  2019-08-11 08:14:17,352 [7    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-08-11 08:14:17,356 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 394.88ms.
+INFO  2019-08-11 08:14:17,361 [5    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-08-11 08:14:17,370 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 599.6803ms
+INFO  2019-08-11 08:14:17,379 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 588.6476ms
+INFO  2019-08-11 08:14:17,383 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 698.3746ms 200 application/x-javascript; charset=utf-8
+INFO  2019-08-11 08:14:17,386 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 708.0744ms 200 application/x-javascript
+INFO  2019-08-11 08:14:17,460 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-08-11 08:14:17,551 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 96.2927ms 200 application/json
+INFO  2019-08-11 08:14:17,676 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=5tFgHq68TjWLpKRjyBvGUw  
+INFO  2019-08-11 08:14:18,259 [6    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-08-11 08:14:18,309 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"5tFgHq68TjWLpKRjyBvGUw","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-08-11T08:14:18.2942797-06:00","Properties":{}}
+DEBUG 2019-08-11 08:14:18,379 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 5tFgHq68TjWLpKRjyBvGUw
+INFO  2019-08-11 08:14:57,973 [5    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/GetProductByQuerySearch?TenantId=1&Sorting=Id&Price=500%7C600 application/json 
+INFO  2019-08-11 08:14:58,298 [5    ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-08-11 08:14:58,321 [5    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetProductByQuerySearch", controller = "Product"}. Executing action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application)
+INFO  2019-08-11 08:14:59,154 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) with arguments (GRINTSYS.SAPMiddleware.Products.Dto.SearchProductInput) - Validation state: Valid
+INFO  2019-08-11 08:15:32,839 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 33682.1981ms.
+INFO  2019-08-11 08:15:33,032 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-08-11 08:15:33,099 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) in 34774.0643ms
+INFO  2019-08-11 08:15:33,148 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 35130.7261ms 200 application/json; charset=utf-8
+DEBUG 2019-08-11 08:17:25,024 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-08-11 08:17:25,303 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-08-11 08:17:25,323 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.Web.Startup.SAPMiddlewareWebMvcModule, GRINTSYS.SAPMiddleware.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,328 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareWebCoreModule, GRINTSYS.SAPMiddleware.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,329 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareApplicationModule, GRINTSYS.SAPMiddleware.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,329 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareCoreModule, GRINTSYS.SAPMiddleware.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,329 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,330 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,330 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,330 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,331 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareEntityFrameworkModule, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,331 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,331 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,331 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,332 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,332 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,333 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:25,336 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-08-11 08:17:25,427 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 08:17:25,427 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 08:17:25,427 [1    ] o.Configuration.LanguageManagementConfig - Converted SAPMiddleware (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 08:17:25,427 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 08:17:25,920 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareDbContext, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:17:27,549 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-08-11 08:17:27,587 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-08-11 08:17:27,599 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-08-11 08:17:27,607 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: SAPMiddleware
+DEBUG 2019-08-11 08:17:27,615 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-08-11 08:17:27,835 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-08-11 08:17:27,913 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 31 classes define auto mapping attributes
+DEBUG 2019-08-11 08:17:27,913 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-08-11 08:17:27,921 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.CreateUserDto
+DEBUG 2019-08-11 08:17:27,923 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.UserDto
+DEBUG 2019-08-11 08:17:27,924 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sizes.Dto.SizeDto
+DEBUG 2019-08-11 08:17:27,925 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-08-11 08:17:27,925 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-08-11 08:17:27,926 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.CreateRoleDto
+DEBUG 2019-08-11 08:17:27,926 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.PermissionDto
+DEBUG 2019-08-11 08:17:27,926 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.RoleDto
+DEBUG 2019-08-11 08:17:27,926 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.AddProductInput
+DEBUG 2019-08-11 08:17:27,926 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.AddProductVariantInput
+DEBUG 2019-08-11 08:17:27,927 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductDto
+DEBUG 2019-08-11 08:17:27,927 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductOutput
+DEBUG 2019-08-11 08:17:27,927 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductVariantDto
+DEBUG 2019-08-11 08:17:27,927 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductVariantOutput
+DEBUG 2019-08-11 08:17:27,927 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.AddInvoiceInput
+DEBUG 2019-08-11 08:17:27,927 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.AddPaymentInput
+DEBUG 2019-08-11 08:17:27,928 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.PaymentOutput
+DEBUG 2019-08-11 08:17:27,928 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Orders.Dto.OrderItemOutput
+DEBUG 2019-08-11 08:17:27,928 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-08-11 08:17:27,928 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.TenantDto
+DEBUG 2019-08-11 08:17:27,928 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Colors.Dto.ColorDto
+DEBUG 2019-08-11 08:17:27,928 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Clients.Dto.ClientDto
+DEBUG 2019-08-11 08:17:27,928 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Categories.Dto.CategoryDto
+DEBUG 2019-08-11 08:17:27,929 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartDto
+DEBUG 2019-08-11 08:17:27,929 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartProductItemOutput
+DEBUG 2019-08-11 08:17:27,929 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Brands.Dto.BrandDto
+DEBUG 2019-08-11 08:17:27,929 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banners.Dto.BannerDto
+DEBUG 2019-08-11 08:17:27,929 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banks.Dto.BankDto
+DEBUG 2019-08-11 08:17:27,929 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2019-08-11 08:17:27,929 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Models.Roles.EditRoleModalViewModel
+INFO  2019-08-11 08:17:34,637 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2019-08-11 08:17:34,637 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:62114/  0
+INFO  2019-08-11 08:17:34,757 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 127.7269ms 200 
+INFO  2019-08-11 08:17:39,996 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-08-11 08:17:40,092 [7    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-08-11 08:17:40,166 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-08-11 08:17:40,192 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 11.1211ms.
+INFO  2019-08-11 08:17:41,015 [6    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-08-11 08:17:44,380 [6    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 3421.5167ms.
+INFO  2019-08-11 08:17:44,453 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 4438.8901ms
+INFO  2019-08-11 08:17:44,542 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9904.4558ms 200 text/html; charset=utf-8
+INFO  2019-08-11 08:17:44,576 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637011082478369392  
+INFO  2019-08-11 08:17:44,579 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637011082478369392  
+INFO  2019-08-11 08:17:44,659 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-08-11 08:17:44,669 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-08-11 08:17:44,755 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-08-11 08:17:44,866 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-08-11 08:17:45,315 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 446.3467ms.
+INFO  2019-08-11 08:17:45,322 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 562.929ms.
+INFO  2019-08-11 08:17:45,330 [6    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-08-11 08:17:45,334 [13   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-08-11 08:17:45,348 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 679.1311ms
+INFO  2019-08-11 08:17:45,350 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 669.7522ms
+INFO  2019-08-11 08:17:45,395 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 773.6408ms 200 application/x-javascript; charset=utf-8
+INFO  2019-08-11 08:17:45,414 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 788.3848ms 200 application/x-javascript
+INFO  2019-08-11 08:17:45,431 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-08-11 08:17:45,527 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 123.2663ms 200 application/json
+INFO  2019-08-11 08:17:45,651 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=_oUZkRVzJNgdPBJxexyFog  
+INFO  2019-08-11 08:17:46,164 [9    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-08-11 08:17:46,204 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"_oUZkRVzJNgdPBJxexyFog","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-08-11T08:17:46.1945179-06:00","Properties":{}}
+DEBUG 2019-08-11 08:17:46,264 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: _oUZkRVzJNgdPBJxexyFog
+INFO  2019-08-11 08:17:52,293 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/GetProductByQuerySearch?TenantId=1&Sorting=Id&Price=500%7C600 application/json 
+INFO  2019-08-11 08:17:52,523 [6    ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-08-11 08:17:52,545 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetProductByQuerySearch", controller = "Product"}. Executing action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application)
+INFO  2019-08-11 08:17:54,314 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) with arguments (GRINTSYS.SAPMiddleware.Products.Dto.SearchProductInput) - Validation state: Valid
+INFO  2019-08-11 08:18:10,196 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 15879.2977ms.
+INFO  2019-08-11 08:18:10,445 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-08-11 08:18:10,496 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) in 17948.815ms
+INFO  2019-08-11 08:18:10,501 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 18205.8031ms 200 application/json; charset=utf-8
+INFO  2019-08-11 08:18:22,585 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/GetProductByQuerySearch?TenantId=1&Sorting=Id&Price=500%7C600 application/json 
+INFO  2019-08-11 08:18:22,593 [13   ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-08-11 08:18:22,605 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetProductByQuerySearch", controller = "Product"}. Executing action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application)
+INFO  2019-08-11 08:18:22,614 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) with arguments (GRINTSYS.SAPMiddleware.Products.Dto.SearchProductInput) - Validation state: Valid
+INFO  2019-08-11 08:18:22,893 [13   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 276.8292ms.
+INFO  2019-08-11 08:18:23,076 [6    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-08-11 08:18:23,079 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) in 472.0545ms
+INFO  2019-08-11 08:18:23,086 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 502.792ms 200 application/json; charset=utf-8
+INFO  2019-08-11 08:18:30,095 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/GetProductByQuerySearch?TenantId=1&Sorting=Id&Price=500%7C900 application/json 
+INFO  2019-08-11 08:18:30,101 [6    ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-08-11 08:18:30,112 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetProductByQuerySearch", controller = "Product"}. Executing action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application)
+INFO  2019-08-11 08:18:30,289 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) with arguments (GRINTSYS.SAPMiddleware.Products.Dto.SearchProductInput) - Validation state: Valid
+INFO  2019-08-11 08:18:30,558 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 267.1569ms.
+INFO  2019-08-11 08:18:30,762 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-08-11 08:18:30,785 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) in 658.4399ms
+INFO  2019-08-11 08:18:30,788 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 698.1976ms 200 application/json; charset=utf-8
+INFO  2019-08-11 08:18:39,411 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/GetProductByQuerySearch?TenantId=1&Sorting=Id&Price=500%7C1200 application/json 
+INFO  2019-08-11 08:18:39,419 [7    ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-08-11 08:18:39,427 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetProductByQuerySearch", controller = "Product"}. Executing action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application)
+INFO  2019-08-11 08:18:39,436 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) with arguments (GRINTSYS.SAPMiddleware.Products.Dto.SearchProductInput) - Validation state: Valid
+INFO  2019-08-11 08:18:39,711 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 273.2261ms.
+INFO  2019-08-11 08:18:39,914 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-08-11 08:18:39,934 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) in 502.5323ms
+INFO  2019-08-11 08:18:39,938 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 533.4179ms 200 application/json; charset=utf-8
+INFO  2019-08-11 08:18:53,939 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/GetProductByQuerySearch?TenantId=1&Sorting=Id&Price=900%7C1200 application/json 
+INFO  2019-08-11 08:18:53,944 [6    ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-08-11 08:18:53,958 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetProductByQuerySearch", controller = "Product"}. Executing action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application)
+INFO  2019-08-11 08:18:53,964 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) with arguments (GRINTSYS.SAPMiddleware.Products.Dto.SearchProductInput) - Validation state: Valid
+INFO  2019-08-11 08:18:54,274 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 308.6964ms.
+INFO  2019-08-11 08:18:54,444 [15   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-08-11 08:18:54,453 [15   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) in 489.3309ms
+INFO  2019-08-11 08:18:54,457 [15   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 518.0134ms 200 application/json; charset=utf-8
+DEBUG 2019-08-11 08:42:36,237 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-08-11 08:42:36,507 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2019-08-11 08:42:36,535 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.Web.Startup.SAPMiddlewareWebMvcModule, GRINTSYS.SAPMiddleware.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,539 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareWebCoreModule, GRINTSYS.SAPMiddleware.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,539 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareApplicationModule, GRINTSYS.SAPMiddleware.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,540 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.SAPMiddlewareCoreModule, GRINTSYS.SAPMiddleware.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,540 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,540 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,541 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,542 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,542 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareEntityFrameworkModule, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,543 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,543 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,543 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,543 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,544 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,545 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:36,550 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2019-08-11 08:42:36,651 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 08:42:36,651 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 08:42:36,651 [1    ] o.Configuration.LanguageManagementConfig - Converted SAPMiddleware (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 08:42:36,651 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-08-11 08:42:37,142 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: GRINTSYS.SAPMiddleware.EntityFrameworkCore.SAPMiddlewareDbContext, GRINTSYS.SAPMiddleware.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-08-11 08:42:38,624 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-08-11 08:42:38,664 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-08-11 08:42:38,675 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-08-11 08:42:38,684 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: SAPMiddleware
+DEBUG 2019-08-11 08:42:38,690 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-08-11 08:42:38,903 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-08-11 08:42:38,979 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 31 classes define auto mapping attributes
+DEBUG 2019-08-11 08:42:38,979 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-08-11 08:42:38,988 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.CreateUserDto
+DEBUG 2019-08-11 08:42:38,989 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Users.Dto.UserDto
+DEBUG 2019-08-11 08:42:38,989 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sizes.Dto.SizeDto
+DEBUG 2019-08-11 08:42:38,990 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-08-11 08:42:38,990 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-08-11 08:42:38,990 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.CreateRoleDto
+DEBUG 2019-08-11 08:42:38,990 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.PermissionDto
+DEBUG 2019-08-11 08:42:38,990 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Roles.Dto.RoleDto
+DEBUG 2019-08-11 08:42:38,991 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.AddProductInput
+DEBUG 2019-08-11 08:42:38,991 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.AddProductVariantInput
+DEBUG 2019-08-11 08:42:38,991 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductDto
+DEBUG 2019-08-11 08:42:38,991 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductOutput
+DEBUG 2019-08-11 08:42:38,991 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductVariantDto
+DEBUG 2019-08-11 08:42:38,991 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Products.Dto.ProductVariantOutput
+DEBUG 2019-08-11 08:42:38,992 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.AddInvoiceInput
+DEBUG 2019-08-11 08:42:38,992 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.AddPaymentInput
+DEBUG 2019-08-11 08:42:38,992 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Payments.Dto.PaymentOutput
+DEBUG 2019-08-11 08:42:38,992 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Orders.Dto.OrderItemOutput
+DEBUG 2019-08-11 08:42:38,992 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-08-11 08:42:38,992 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.MultiTenancy.Dto.TenantDto
+DEBUG 2019-08-11 08:42:38,992 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Colors.Dto.ColorDto
+DEBUG 2019-08-11 08:42:38,992 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Clients.Dto.ClientDto
+DEBUG 2019-08-11 08:42:38,993 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Categories.Dto.CategoryDto
+DEBUG 2019-08-11 08:42:38,993 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartDto
+DEBUG 2019-08-11 08:42:38,993 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Carts.Dto.CartProductItemOutput
+DEBUG 2019-08-11 08:42:38,993 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Brands.Dto.BrandDto
+DEBUG 2019-08-11 08:42:38,993 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banners.Dto.BannerDto
+DEBUG 2019-08-11 08:42:38,993 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Banks.Dto.BankDto
+DEBUG 2019-08-11 08:42:38,994 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2019-08-11 08:42:38,994 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - GRINTSYS.SAPMiddleware.Web.Models.Roles.EditRoleModalViewModel
+INFO  2019-08-11 08:42:45,148 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2019-08-11 08:42:45,148 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 DEBUG http://localhost:62114/  0
+INFO  2019-08-11 08:42:45,275 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 134.5168ms 200 
+INFO  2019-08-11 08:42:50,072 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc)
+INFO  2019-08-11 08:42:50,145 [7    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2019-08-11 08:42:50,244 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) - Validation state: Valid
+INFO  2019-08-11 08:42:50,254 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc), returned result Microsoft.AspNetCore.Mvc.ViewResult in 5.594ms.
+INFO  2019-08-11 08:42:50,689 [6    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2019-08-11 08:42:53,631 [12   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 3008.9028ms.
+INFO  2019-08-11 08:42:53,698 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Web.Controllers.HomeController.Index (GRINTSYS.SAPMiddleware.Web.Mvc) in 3612.1126ms
+INFO  2019-08-11 08:42:53,875 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8635.3287ms 200 text/html; charset=utf-8
+INFO  2019-08-11 08:42:53,940 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637011097589055841  
+INFO  2019-08-11 08:42:53,941 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637011097589055841  
+INFO  2019-08-11 08:42:54,002 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)
+INFO  2019-08-11 08:42:54,019 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)
+INFO  2019-08-11 08:42:54,235 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) with arguments (, False) - Validation state: Valid
+INFO  2019-08-11 08:42:54,326 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) with arguments (Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) - Validation state: Valid
+INFO  2019-08-11 08:42:54,649 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 320.5107ms.
+INFO  2019-08-11 08:42:54,663 [6    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2019-08-11 08:42:54,672 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 648.0682ms
+INFO  2019-08-11 08:42:54,688 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 740.1766ms 200 application/x-javascript
+INFO  2019-08-11 08:42:54,695 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.ContentResult in 453.6948ms.
+INFO  2019-08-11 08:42:54,719 [12   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2019-08-11 08:42:54,723 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 717.6918ms
+INFO  2019-08-11 08:42:54,754 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 787.737ms 200 application/x-javascript; charset=utf-8
+INFO  2019-08-11 08:42:54,762 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2019-08-11 08:42:54,828 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 68.8824ms 200 application/json
+INFO  2019-08-11 08:42:54,861 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=mwJWZHYy_3AqaOqqb2liYw  
+INFO  2019-08-11 08:42:55,337 [7    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
+DEBUG 2019-08-11 08:42:55,424 [7    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"mwJWZHYy_3AqaOqqb2liYw","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2019-08-11T08:42:55.4044662-06:00","Properties":{}}
+DEBUG 2019-08-11 08:42:55,522 [7    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: mwJWZHYy_3AqaOqqb2liYw
+INFO  2019-08-11 08:43:13,135 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/product/GetProductByQuerySearch?TenantId=1&Sorting=Id&Price=900%7C1200 application/json 
+INFO  2019-08-11 08:43:13,416 [7    ] uthentication.JwtBearer.JwtBearerHandler - Successfully validated the token.
+INFO  2019-08-11 08:43:13,460 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetProductByQuerySearch", controller = "Product"}. Executing action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application)
+INFO  2019-08-11 08:43:14,463 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) with arguments (GRINTSYS.SAPMiddleware.Products.Dto.SearchProductInput) - Validation state: Valid
+INFO  2019-08-11 08:43:15,389 [9    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 923.337ms.
+INFO  2019-08-11 08:43:15,632 [6    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-08-11 08:43:15,687 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action GRINTSYS.SAPMiddleware.Products.ProductAppService.GetProductByQuerySearch (GRINTSYS.SAPMiddleware.Application) in 2222.9857ms
+INFO  2019-08-11 08:43:15,690 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2566.7157ms 200 application/json; charset=utf-8
