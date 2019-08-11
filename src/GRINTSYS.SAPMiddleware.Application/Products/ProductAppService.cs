@@ -106,12 +106,12 @@ namespace GRINTSYS.SAPMiddleware.Products
                     products = products.Where(t => t.Variants.FirstOrDefault().Price >= prices.First() && t.Variants.FirstOrDefault().Price <= prices.Last());
             }
 
-            var productsCount = products.Count();
+            var productsCount = products.ToList().Count();
 
             return new ProductListResultDto()
             {
                 TotalCount = productsCount,
-                Items = products.ToList().MapTo<List<ProductOutput>>()
+                Items = products.MapTo<List<ProductOutput>>()
             };
         }
     }

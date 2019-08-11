@@ -22,5 +22,7 @@ namespace GRINTSYS.SAPMiddleware.Products.Dto
         public String Currency { get; set; }
         public String WareHouseCode { get; set; }
         public String ImageUrl { get; set; }
+        public ColorOutput Color { get; set; }
+        public SizeOuput Size { get; set; }
     }
 }

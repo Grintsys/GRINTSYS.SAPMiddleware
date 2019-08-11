@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GRINTSYS.SAPMiddleware.Products.Dto
 {
-    [AutoMap(typeof(M2.Product))]
+    [AutoMap(typeof(Product))]
     public class ProductDto: EntityDto, IHasCreationTime, IMustHaveTenant
     {
         public const int MaxNameLength = 256;
@@ -29,9 +29,7 @@ namespace GRINTSYS.SAPMiddleware.Products.Dto
         public String Description { get; set; }
         public String MainImage { get; set; }
         public String MainImageHighRes { get; set; }
-
         public DateTime CreationTime { get; set; }
-
         public List<ProductVariantDto> Variants { get; set; }
     }
 

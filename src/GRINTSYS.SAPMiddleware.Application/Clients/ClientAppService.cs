@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Services;
 using Abp.Authorization;
+using Abp.AutoMapper;
 using Abp.Collections.Extensions;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
@@ -7,6 +8,7 @@ using GRINTSYS.SAPMiddleware.Authorization;
 using GRINTSYS.SAPMiddleware.Clients.Dto;
 using GRINTSYS.SAPMiddleware.M2;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -32,6 +34,16 @@ namespace GRINTSYS.SAPMiddleware.Clients
             await this.Repository.InsertAsync(obj);
 
             return MapToEntityDto(obj);
+        }
+
+        public List<ClientDto> GetClientBySearchQuery(ClientSearchInput input)
+        {
+            var clients =  this.Repository.GetAll()
+                .WhereIf(!String.IsNullOrEmpty(input.SearchText), t => t.Name.Contains(input.SearchText) || t.CardCode.Contains(input.SearchText) || t.ContactPerson.Contains(input.SearchText))
+                .WhereIf(input.TenantId.HasValue, w => w.TenantId == input.TenantId)
+                .ToList();
+
+            return clients.MapTo<List<ClientDto>>();
         }
 
         protected override IQueryable<Client> CreateFilteredQuery(GetAllClientInput input)

@@ -2,9 +2,7 @@
 using Abp.Domain.Services;
 using Abp.UI;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.M2.Products
@@ -43,15 +41,16 @@ namespace GRINTSYS.SAPMiddleware.M2.Products
 
         public Product GetProduct(int id)
         {
-            var entity = _productRepository.GetAllIncluding(a => a.Variants)
-                .FirstOrDefault(b => b.Id == id);
+            var variants = _productVariantRepository.GetAllIncluding(a => a.Color, b => b.Size, c => c.Product)
+             .Where(w => w.ProductId == id)
+             .ToList();
 
-            if (entity == null)
+            if (variants.Count() <= 0)
             {
                 throw new UserFriendlyException("Product not found");
             }
 
-            return entity;
+            return variants.FirstOrDefault().Product;
         }
 
         public ProductBundle GetProductBundle(int id)
