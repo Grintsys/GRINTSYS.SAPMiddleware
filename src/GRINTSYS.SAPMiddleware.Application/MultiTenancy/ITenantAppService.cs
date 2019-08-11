@@ -6,6 +6,7 @@ namespace GRINTSYS.SAPMiddleware.MultiTenancy
 {
     public interface ITenantAppService : IAsyncCrudAppService<TenantDto, int, PagedTenantResultRequestDto, CreateTenantDto, TenantDto>
     {
+        
     }
 }
 

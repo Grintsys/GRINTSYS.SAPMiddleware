@@ -18,5 +18,9 @@ namespace GRINTSYS.SAPMiddleware.MultiTenancy.Dto
         public string Name { get; set; }        
         
         public bool IsActive {get; set;}
+        public string Logo { get; set; }
+        public string Language { get; set; }
+        public string Currency { get; set; }
+        public double ISV { get; set; }
     }
 }

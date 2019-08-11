@@ -8,6 +8,7 @@ using GRINTSYS.SAPMiddleware.Authorization;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Products;
 using GRINTSYS.SAPMiddleware.Products.Dto;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,8 +50,7 @@ namespace GRINTSYS.SAPMiddleware.Products
 
             if (String.IsNullOrEmpty(input.Sorting))
                 input.Sorting = AppConsts.DefaultSortingField;
-
-            var productsCount = _productRepository.Count();
+     
             var products = _productRepository.GetAllIncluding(x => x.Variants)
                 .WhereIf(input.TenantId.HasValue, t => t.TenantId == input.TenantId.Value)
                 .WhereIf(input.CategoryId.HasValue, t => t.CategoryId == input.CategoryId.Value)
@@ -61,6 +61,8 @@ namespace GRINTSYS.SAPMiddleware.Products
                 .PageBy(input)
                 .ToList()
                 ;
+
+            var productsCount = products.Count();
 
             return new PagedResultDto<ProductOutput>
             {
@@ -76,6 +78,33 @@ namespace GRINTSYS.SAPMiddleware.Products
             var result = ObjectMapper.Map<ProductOutput>(product);
 
             return result;
+        }
+
+        public PagedResultDto<ProductOutput> Search(SearchProductInput input)
+        {
+            if (input.MaxResultCount <= 0)
+                input.MaxResultCount = AppConsts.MaxResultCount;
+
+            if (String.IsNullOrEmpty(input.Sorting))
+                input.Sorting = AppConsts.DefaultSortingField;
+
+            var products = _productRepository.GetAllIncluding(x => x.Variants)
+                .WhereIf(input.TenantId.HasValue, t => t.TenantId == input.TenantId.Value)
+                .WhereIf(!String.IsNullOrEmpty(input.SearchText), 
+                    t => t.Code.Contains(input.SearchText) || t.Name.Contains(input.SearchText) || t.Description.Contains(input.SearchText))
+                .WhereIf(input.Category.HasValue, t => t.CategoryId == input.Category.Value)
+                .OrderBy(input.Sorting)
+                .PageBy(input)
+                .ToList()
+                ;
+
+            var productsCount = products.Count();
+
+            return new PagedResultDto<ProductOutput>
+            {
+                TotalCount = productsCount,
+                Items = products.MapTo<List<ProductOutput>>()
+            };
         }
     }
 }

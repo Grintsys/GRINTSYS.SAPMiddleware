@@ -14,6 +14,8 @@ namespace GRINTSYS.SAPMiddleware.Products.Dto
     {
         public const int MaxNameLength = 256;
         public const int MaxDescriptionLength = 64 * 1024; //64KB
+
+        public int Id { get; set; }
         public String Name { get; set; }
         public String Code { get; set; }
         public Int32 CategoryId { get; set; }

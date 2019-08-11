@@ -10,6 +10,7 @@ namespace GRINTSYS.SAPMiddleware.Products.Dto
     [AutoMap(typeof(M2.ProductVariant))]
     public class ProductVariantOutput
     {
+        public Int32 Id { get; set; }
         public Int32 ItemGroup { get; set; }
         public Int32 ProductId { get; set; }
         public Int32 ColorId { get; set; }
