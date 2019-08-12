@@ -13,3 +13,9 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+
+  steps:
+  task: MSBuild@1
+  inputs:
+    solution: '**/*.sln'
+    msbuildArchitecture: 'x64'
