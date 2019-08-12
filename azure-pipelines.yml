@@ -15,9 +15,10 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: DotNetCoreInstaller@0
+- task: UseDotNet@2
   inputs:
-    version: '2.2.0' # replace this value with the version that you need for your project
+    packageType: 'sdk'
+    version: '2.2'
 
 - task: DotNetCoreCLI@2
   displayName: RestorePackages
