@@ -22,11 +22,14 @@ steps:
 
 - task: DotNetCoreCLI@2
   displayName: RestorePackages
-  inputs:
+  inputs:   
     command: 'restore'
+    projects: '**/*.csproj'
     feedsToUse: 'select'  
 
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
     command: 'build'
+    projects: '**/*.csproj'
+    arguments: '--configuration Release' # Update this to match your need
