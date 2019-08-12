@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services;
+using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.AutoMapper;
 using Abp.Collections.Extensions;
@@ -10,6 +11,7 @@ using GRINTSYS.SAPMiddleware.M2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Clients
@@ -36,14 +38,28 @@ namespace GRINTSYS.SAPMiddleware.Clients
             return MapToEntityDto(obj);
         }
 
-        public List<ClientDto> GetClientBySearchQuery(ClientSearchInput input)
+        public PagedResultDto<ClientDto> GetClientBySearchQuery(ClientSearchInput input)
         {
+            if (input.MaxResultCount <= 0)
+                input.MaxResultCount = AppConsts.MaxResultCount;
+
+            if (String.IsNullOrEmpty(input.Sorting))
+                input.Sorting = AppConsts.DefaultSortingField;
+
             var clients =  this.Repository.GetAll()
                 .WhereIf(!String.IsNullOrEmpty(input.SearchText), t => t.Name.Contains(input.SearchText) || t.CardCode.Contains(input.SearchText) || t.ContactPerson.Contains(input.SearchText))
                 .WhereIf(input.TenantId.HasValue, w => w.TenantId == input.TenantId)
+                .OrderBy(input.Sorting)
+                .PageBy(input)
                 .ToList();
 
-            return clients.MapTo<List<ClientDto>>();
+            var itemsCount = clients.Count();
+
+            return new PagedResultDto<ClientDto>
+            {
+                TotalCount = itemsCount,
+                Items = clients.MapTo<List<ClientDto>>()
+            };
         }
 
         protected override IQueryable<Client> CreateFilteredQuery(GetAllClientInput input)

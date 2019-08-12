@@ -4,14 +4,16 @@ using GRINTSYS.SAPMiddleware.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GRINTSYS.SAPMiddleware.Migrations
 {
     [DbContext(typeof(SAPMiddlewareDbContext))]
-    partial class SAPMiddlewareDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190812022542_GoogleUAFieldForLogErrors")]
+    partial class GoogleUAFieldForLogErrors
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
