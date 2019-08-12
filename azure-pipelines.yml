@@ -10,20 +10,17 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  buildPlatform: 'Any CPU'
 
 steps:
 - task: NuGetCommand@2
   inputs:
     command: 'restore'
     restoreSolution: '**/*.sln'
-    feedsToUse: 'select'
-
+    feedsToUse: 'select'   
 - task: VSBuild@1
   inputs:
     solution: '**\*.sln'
-    msbuildArgs: 'release'
     platform: '$(BuildPlatform)'
     configuration: '$(BuildConfiguration)'
