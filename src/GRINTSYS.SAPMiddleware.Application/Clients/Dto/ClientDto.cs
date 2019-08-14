@@ -3,6 +3,7 @@ using Abp.AutoMapper;
 using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GRINTSYS.SAPMiddleware.Clients.Dto
@@ -22,9 +23,8 @@ namespace GRINTSYS.SAPMiddleware.Clients.Dto
         public String RTN { get; set; }
         public Double PastDue { get; set; }
         public String ContactPerson { get; set; }
-
         public DateTime CreationTime { get; set; }
-
+        public List<InvoiceDto> Invoices { get; set; }
     }
 
 }

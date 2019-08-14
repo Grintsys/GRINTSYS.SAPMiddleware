@@ -8,6 +8,8 @@ using Abp.Linq.Extensions;
 using GRINTSYS.SAPMiddleware.Authorization;
 using GRINTSYS.SAPMiddleware.Clients.Dto;
 using GRINTSYS.SAPMiddleware.M2;
+using GRINTSYS.SAPMiddleware.M2.Clients;
+using GRINTSYS.SAPMiddleware.M2.Payments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,10 +21,12 @@ namespace GRINTSYS.SAPMiddleware.Clients
     [AbpAuthorize(PermissionNames.Pages_MobileAccess)]
     public class ClientAppService : AsyncCrudAppService<Client, ClientDto, int, GetAllClientInput>, IClientAppService
     {
-        public ClientAppService(IRepository<Client> respository)
+        private readonly ClientManager _clientManager;
+        public ClientAppService(IRepository<Client> respository, ClientManager clientManager)
            : base(respository)
         {
             CreatePermissionName = PermissionNames.Pages_MobileAccess;
+            _clientManager = clientManager;
         }
 
         public override async Task<ClientDto> Create(ClientDto input)
@@ -37,6 +41,16 @@ namespace GRINTSYS.SAPMiddleware.Clients
 
             return MapToEntityDto(obj);
         }
+
+        public ClientDto GetClient(EntityDto<int> input)
+        {
+            var client = _clientManager.GetClient(input.Id);
+
+            var obj = ObjectMapper.Map<ClientDto>(client);
+
+            return obj;
+        }
+         
 
         public PagedResultDto<ClientDto> GetClientBySearchQuery(ClientSearchInput input)
         {

@@ -13,7 +13,6 @@ namespace GRINTSYS.SAPMiddleware.M2.Clients
         private readonly IRepository<Client> _clientRespository;
         private readonly IRepository<ClientDiscount> _clientDiscountRespository;
 
-
         public ClientManager(IRepository<Client> clientRespository, 
             IRepository<ClientDiscount> clientDiscountRespository)
         {
@@ -23,7 +22,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Clients
 
         public Client GetClient(int id)
         {
-            var entity = _clientRespository.Get(id);
+            var entity = _clientRespository.GetAllIncluding(x => x.Invoices).FirstOrDefault(x => x.Id == id);
 
             if(entity == null)
             {

@@ -65,7 +65,11 @@ namespace GRINTSYS.SAPMiddleware.Controllers
                 AccessToken = accessToken,
                 EncryptedAccessToken = GetEncrpyedAccessToken(accessToken),
                 ExpireInSeconds = (int)_configuration.Expiration.TotalSeconds,
-                UserId = loginResult.User.Id
+                UserId = loginResult.User.Id,
+                CollectorId = loginResult.User.CollectId,
+                SalesPersonId = loginResult.User.SalesPersonId,
+                EmailAddress = loginResult.User.EmailAddress,
+                FullName = loginResult.User.FullName
             };
         }
 

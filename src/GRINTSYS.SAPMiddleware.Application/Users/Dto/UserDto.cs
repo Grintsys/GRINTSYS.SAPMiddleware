@@ -35,6 +35,10 @@ namespace GRINTSYS.SAPMiddleware.Users.Dto
 
         public DateTime CreationTime { get; set; }
 
+        public int SalesPersonId { get; set; }
+
+        public int CollectorId { get; set; }
+
         public string[] RoleNames { get; set; }
     }
 }

@@ -8,23 +8,23 @@ namespace GRINTSYS.SAPMiddleware.Carts.Dto
     //[AutoMap(typeof(Cart))]
     public class CartOutput
     {
-        public int id { get; set; }
-        public int product_count { get; set; }
-        public double total_price { get; set; }
-        public double discount { get; set; }
+        public int Id { get; set; }
+        public int ProductCount { get; set; }
+        public double TotalPrice { get; set; }
+        public double Discount { get; set; }
         public double ISV { get; set; }
-        public double subtotal { get; set; }
-        public string currency { get; set; }
+        public double Subtotal { get; set; }
+        public string Currency { get; set; }
         public List<CartProductItemOutput> items { get; set; }
         public CartOutput() { }
         public CartOutput(int id) {
-            this.id = id;
-            product_count = 0;
-            total_price = 0;
-            discount = 0;
+            this.Id = id;
+            ProductCount = 0;
+            TotalPrice = 0;
+            Discount = 0;
             ISV = 0;
-            subtotal = 0;
-            currency = "";
+            Subtotal = 0;
+            Currency = "";
         }
     }
 }

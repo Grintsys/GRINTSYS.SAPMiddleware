@@ -220,6 +220,28 @@ namespace GRINTSYS.SAPMiddleware.Users
             return true;
         }
 
+        public UserDto GetUserDetails(long id)
+        {
+            var user = Repository.FirstOrDefault(x => x.Id == id);
+
+            if (user == null)
+            {
+                throw new UserFriendlyException("User Not Found");
+            }
+
+            return new UserDto()
+            {
+                Id = user.Id,
+                FullName = user.FullName,
+                EmailAddress = user.EmailAddress,
+                Name = user.Name,
+                UserName = user.UserName,
+                Surname = user.Surname,
+                IsActive = user.IsActive,
+                CollectorId = user.CollectId,
+                SalesPersonId = user.SalesPersonId
+            };
+        }
     }
 }
 
