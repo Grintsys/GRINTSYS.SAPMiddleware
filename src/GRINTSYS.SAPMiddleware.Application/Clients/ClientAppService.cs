@@ -42,7 +42,7 @@ namespace GRINTSYS.SAPMiddleware.Clients
             return MapToEntityDto(obj);
         }
 
-        public ClientDto GetClient(EntityDto<int> input)
+        public ClientDto GetClient(GetClientInput input)
         {
             var client = _clientManager.GetClient(input.Id);
 
@@ -74,6 +74,15 @@ namespace GRINTSYS.SAPMiddleware.Clients
                 TotalCount = itemsCount,
                 Items = clients.MapTo<List<ClientDto>>()
             };
+        }
+
+        public ClientDto GetClientDocuments(GetClientInput input)
+        {
+            var client = _clientManager.GetClient(input.Id);
+
+            var obj = ObjectMapper.Map<ClientDto>(client);
+
+            return obj;
         }
 
         protected override IQueryable<Client> CreateFilteredQuery(GetAllClientInput input)
