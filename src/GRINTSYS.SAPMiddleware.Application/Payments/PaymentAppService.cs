@@ -1,4 +1,5 @@
 ﻿using Abp.BackgroundJobs;
+using Abp.UI;
 using GRINTSYS.SAPMiddleware.Authorization.Users;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Payments;
@@ -55,6 +56,12 @@ namespace GRINTSYS.SAPMiddleware.Payments
             payment.UserId = GetUserId();
 
             await _paymentManager.CreatePayment(payment);
+
+            /*
+            foreach (var item in input.PaymentItemList)
+            {
+            }
+            */
         } 
 
         public async Task<PaymentOutput> DeclinePayment(GetPaymentInput input)
@@ -77,7 +84,7 @@ namespace GRINTSYS.SAPMiddleware.Payments
             {
                 To = entity.User.EmailAddress,
                 Subject = String.Format("Notificacion Pago Cancelado Por Finanzas, Id: {0}", entity.Id),
-                Body = String.Format("Pago Id: {0}, Factura: {1}, Fue Cancelado Por Finanzas", entity.Id, entity.Invoice.DocumentCode),
+                Body = String.Format("Pago Id: {0}, Fue Cancelado Por Finanzas", entity.Id),
             });
 
             return new PaymentOutput()
@@ -91,12 +98,25 @@ namespace GRINTSYS.SAPMiddleware.Payments
                 Type = ((PaymentType)payment.Type).ToString(),
                 Comment = payment.Comment,
                 PayedAmount = payment.PayedAmount,
-                InvoiceNumber = payment.Invoice.DocumentCode,
                 ReferenceNumber = payment.ReferenceNumber,
                 LastErrorMessage = payment.LastMessage,
                 CreationTime = payment.CreationTime,
                 DebtCollectorId = payment.User.CollectId
             };
+        }
+
+        public async Task DeletePayment(DeletePaymentInput input)
+        {
+            var payment = _paymentManager.GetPayment(input.Id);
+
+            var user = await GetCurrentUserAsync();
+
+            if(payment.UserId != user.Id)
+            {
+                throw new UserFriendlyException("You can not delete a payment of another person");
+            }
+
+            await _paymentManager.DeletePayment(input.Id);
         }
 
         public PaymentOutput GetPayment(GetPaymentInput input)
@@ -114,7 +134,6 @@ namespace GRINTSYS.SAPMiddleware.Payments
                 Type = ((PaymentType)payment.Type).ToString(),
                 Comment = payment.Comment,
                 PayedAmount = payment.PayedAmount,
-                InvoiceNumber = payment.Invoice.DocumentCode,
                 ReferenceNumber = payment.ReferenceNumber,
                 LastErrorMessage = payment.LastMessage,
                 CreationTime = payment.CreationTime,

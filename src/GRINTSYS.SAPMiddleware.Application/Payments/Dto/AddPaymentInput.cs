@@ -2,12 +2,13 @@
 using Abp.AutoMapper;
 using GRINTSYS.SAPMiddleware.M2;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GRINTSYS.SAPMiddleware.Payments.Dto
 {
     [AutoMap(typeof(Payment))]
-    public class AddPaymentInput: EntityDto
+    public class AddPaymentInput : EntityDto
     {
         private const int MaxCommentLength = 150;
         private const int MaxReferenceNumberLength = 50;
@@ -20,5 +21,6 @@ namespace GRINTSYS.SAPMiddleware.Payments.Dto
         [StringLength(MaxReferenceNumberLength)]
         public String ReferenceNumber { get; set; }
         public PaymentType Type { get; set; }
+        public List<PaymentItemOutput> PaymentItemList { get; set; }
     }
 }

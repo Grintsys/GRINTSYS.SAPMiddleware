@@ -34,8 +34,6 @@ namespace GRINTSYS.SAPMiddleware.M2
         [Required]
         public long UserId { get; set; }
         [Required]
-        public Int32 InvoiceId { get; set; }
-        [Required]
         public Int32 BankId { get; set; }
         public Double PayedAmount { get; set; }
         public String LastMessage { get; set; }
@@ -48,8 +46,8 @@ namespace GRINTSYS.SAPMiddleware.M2
         public DateTime PayedDate { get; set; }
         public DateTime CreationTime { get; set; }
         public virtual User User { get; set; }
-        public virtual Invoice Invoice { get; set; }
         public virtual Bank Bank { get; set; }
+        public virtual ICollection<PaymentInvoiceItem> InvoicesItems { get; set; }
 
         public Payment()
         {

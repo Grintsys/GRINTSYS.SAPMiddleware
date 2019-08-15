@@ -1458,8 +1458,6 @@ namespace GRINTSYS.SAPMiddleware.Migrations
 
                     b.Property<string>("DocEntry");
 
-                    b.Property<int>("InvoiceId");
-
                     b.Property<string>("LastMessage");
 
                     b.Property<double>("PayedAmount");
@@ -1481,11 +1479,36 @@ namespace GRINTSYS.SAPMiddleware.Migrations
 
                     b.HasIndex("BankId");
 
-                    b.HasIndex("InvoiceId");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("Payments");
+                });
+
+            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.PaymentInvoiceItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("BalanceDue");
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<string>("DocumentCode");
+
+                    b.Property<double>("PayedAmount");
+
+                    b.Property<int>("PaymentId");
+
+                    b.Property<int>("TenantId");
+
+                    b.Property<double>("TotalAmount");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PaymentId");
+
+                    b.ToTable("PaymentInvoiceItem");
                 });
 
             modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Product", b =>
@@ -1906,14 +1929,17 @@ namespace GRINTSYS.SAPMiddleware.Migrations
                         .HasForeignKey("BankId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Invoice", "Invoice")
-                        .WithMany()
-                        .HasForeignKey("InvoiceId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("GRINTSYS.SAPMiddleware.Authorization.Users.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.PaymentInvoiceItem", b =>
+                {
+                    b.HasOne("GRINTSYS.SAPMiddleware.M2.Payment", "Payment")
+                        .WithMany("InvoicesItems")
+                        .HasForeignKey("PaymentId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
