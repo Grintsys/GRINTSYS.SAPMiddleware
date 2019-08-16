@@ -15,6 +15,7 @@ namespace GRINTSYS.SAPMiddleware.Payments.Dto
         public int TenantId { get; set; }
         public Int32 InvoiceId { get; set; }
         public Int32 BankId { get; set; }
+        public Int32 ClientId { get; set; }
         public Double PayedAmount { get; set; }
         [StringLength(MaxCommentLength)]
         public String Comment { get; set; }

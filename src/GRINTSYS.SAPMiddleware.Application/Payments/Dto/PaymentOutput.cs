@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
+using GRINTSYS.SAPMiddleware.Clients.Dto;
 using System;
 using System.Collections.Generic;
 
@@ -22,6 +23,7 @@ namespace GRINTSYS.SAPMiddleware.Payments.Dto
         public String Status { get; set; }
         public String Type { get; set; }
         public DateTime CreationTime { get; set; }
+        public ClientDto Client { get; set; }
         //public virtual List<PaymentItemOutput> InvoicesItems { get; set; }
     }
 }

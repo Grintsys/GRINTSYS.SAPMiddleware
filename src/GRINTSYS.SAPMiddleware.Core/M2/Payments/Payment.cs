@@ -33,6 +33,7 @@ namespace GRINTSYS.SAPMiddleware.M2
         public String DocEntry { get; set; }
         [Required]
         public long UserId { get; set; }
+        public int ClientId { get; set; }
         [Required]
         public Int32 BankId { get; set; }
         public Double PayedAmount { get; set; }
@@ -47,6 +48,7 @@ namespace GRINTSYS.SAPMiddleware.M2
         public DateTime CreationTime { get; set; }
         public virtual User User { get; set; }
         public virtual Bank Bank { get; set; }
+        public virtual Client Client { get; set; }
         public virtual ICollection<PaymentInvoiceItem> InvoicesItems { get; set; }
 
         public Payment()
