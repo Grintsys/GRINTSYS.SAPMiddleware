@@ -22,6 +22,6 @@ namespace GRINTSYS.SAPMiddleware.Payments.Dto
         public String Status { get; set; }
         public String Type { get; set; }
         public DateTime CreationTime { get; set; }
-        public virtual List<PaymentItemOutput> InvoicesItems { get; set; }
+        //public virtual List<PaymentItemOutput> InvoicesItems { get; set; }
     }
 }

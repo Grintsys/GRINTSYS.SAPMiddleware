@@ -1,4 +1,6 @@
-﻿using Abp.BackgroundJobs;
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+using Abp.BackgroundJobs;
 using Abp.UI;
 using GRINTSYS.SAPMiddleware.Authorization.Users;
 using GRINTSYS.SAPMiddleware.M2;
@@ -141,14 +143,19 @@ namespace GRINTSYS.SAPMiddleware.Payments
             };
         }
 
-        public List<Payment> GetPaymentsByUser(GetAllPaymentInput input)
+        public PagedResultDto<PaymentOutput> GetPaymentsByUser(GetAllPaymentInput input)
         {
             var userId = GetUserId();
 
-            return _paymentManager.GetPaymentsByUser(input.TenantId, 
+            var payments = _paymentManager.GetPaymentsByUser(input.TenantId, 
                 userId,
                 DateTime.Parse(input.Begin), 
                 DateTime.Parse(input.End));
+
+            return new PagedResultDto<PaymentOutput>
+            {
+                Items = payments.MapTo<List<PaymentOutput>>()
+            };
         }
     }
 }

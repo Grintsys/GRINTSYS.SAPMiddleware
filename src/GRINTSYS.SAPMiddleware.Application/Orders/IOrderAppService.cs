@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services;
+using Abp.Application.Services.Dto;
 using Abp.Dependency;
 using GRINTSYS.SAPMiddleware.Orders.Dto;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
         Task CreateOrder(AddOrderInput input);
         Task GetOrderInSap(SentToSapInput input);
         OrderOutput GetOrder(GetOrderInput input);
-        List<OrderOutput> GetOrders(GetAllOrderInput input);
+        PagedResultDto<OrderOutput> GetOrders(GetAllOrderInput input);
         List<SellerOutput> GetSellers(GetAllSellerInput input);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Text;
 using System.Threading.Tasks;
+using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.BackgroundJobs;
 using Abp.Collections.Extensions;
@@ -69,12 +70,12 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 Comment = order.Comment,
                 CreationTime = order.CreationTime,
                 DeliveryDate = order.DeliveryDate,
-                Series = order.Series,
-                Items = order.OrderItems.MapTo<List<OrderItemOutput>>()
+                Series = order.Series//,
+                //Items = order.OrderItems.MapTo<List<OrderItemOutput>>()
             };
         }
 
-        public List<OrderOutput> GetOrders(GetAllOrderInput input)
+        public PagedResultDto<OrderOutput> GetOrders(GetAllOrderInput input)
         {
             var userId = GetUserId();
 
@@ -82,7 +83,10 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 userId, 
                 DateTime.Parse(input.begin), DateTime.Parse(input.end));
 
-            return orders.MapTo<List<OrderOutput>>();
+            return new PagedResultDto<OrderOutput>()
+            {
+                Items = orders.MapTo<List<OrderOutput>>()
+            };
         }
 
         public List<SellerOutput> GetSellers(GetAllSellerInput input)

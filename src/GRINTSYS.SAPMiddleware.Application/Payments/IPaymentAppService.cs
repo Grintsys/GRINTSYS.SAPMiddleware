@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services;
+using Abp.Application.Services.Dto;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.Payments.Dto;
 using System;
@@ -13,7 +14,7 @@ namespace GRINTSYS.SAPMiddleware.Payments
         Task CreatePayment(AddPaymentInput input);
         Task CreateInvoice(AddInvoiceInput input);
         PaymentOutput GetPayment(GetPaymentInput input);
-        List<Payment> GetPaymentsByUser(GetAllPaymentInput input);
+        PagedResultDto<PaymentOutput> GetPaymentsByUser(GetAllPaymentInput input);
         Task AutorizePayment(GetPaymentInput input);
         Task<PaymentOutput> DeclinePayment(GetPaymentInput input);
         Task DeletePayment(DeletePaymentInput input);
