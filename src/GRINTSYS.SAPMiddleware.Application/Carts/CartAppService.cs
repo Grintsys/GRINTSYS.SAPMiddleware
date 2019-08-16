@@ -97,5 +97,11 @@ namespace GRINTSYS.SAPMiddleware.Carts
 
             return items.Sum(s => s.Variant.Price * s.Quantity);
         }
+
+        public Task CreateCart(AddCartInput input)
+        {
+            var userId = GetUserId();
+            return _cartManager.CreateCart(new Cart(input.TenantId, userId));
+        }
     }
 }

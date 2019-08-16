@@ -5,6 +5,7 @@ using GRINTSYS.SAPMiddleware.Authorization.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GRINTSYS.SAPMiddleware.M2
 {
@@ -33,9 +34,10 @@ namespace GRINTSYS.SAPMiddleware.M2
         public String DocEntry { get; set; }
         [Required]
         public long UserId { get; set; }
-        public int ClientId { get; set; }
         [Required]
         public Int32 BankId { get; set; }
+        public String CardCode { get; set; }
+        //public Int32 ClientId { get; set; }
         public Double PayedAmount { get; set; }
         public String LastMessage { get; set; }
         [StringLength(MaxCommentLength)]
@@ -48,7 +50,7 @@ namespace GRINTSYS.SAPMiddleware.M2
         public DateTime CreationTime { get; set; }
         public virtual User User { get; set; }
         public virtual Bank Bank { get; set; }
-        public virtual Client Client { get; set; }
+        //public virtual Client Client { get; set; }
         public virtual ICollection<PaymentInvoiceItem> InvoicesItems { get; set; }
 
         public Payment()

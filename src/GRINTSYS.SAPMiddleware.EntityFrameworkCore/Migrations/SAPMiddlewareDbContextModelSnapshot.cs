@@ -1451,6 +1451,8 @@ namespace GRINTSYS.SAPMiddleware.Migrations
 
                     b.Property<int>("BankId");
 
+                    b.Property<string>("CardCode");
+
                     b.Property<string>("Comment")
                         .HasMaxLength(150);
 
