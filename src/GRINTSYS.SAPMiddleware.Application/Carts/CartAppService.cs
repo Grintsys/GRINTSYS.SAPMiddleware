@@ -55,6 +55,7 @@ namespace GRINTSYS.SAPMiddleware.Carts
         public async Task DeleteItemToCart(DeleteCartItemInput input)
         {
             //var userId = GetUserId();
+            //TODO: another user can delete cart items
             await _cartManager.DeleteCartProductItem(input.Id);
         }
 
@@ -74,13 +75,13 @@ namespace GRINTSYS.SAPMiddleware.Carts
 
             return new CartOutput()
             {
-                id = cart.Id,
-                subtotal = items.Sum(c => c.Variant.Price * c.Quantity),
+                Id = cart.Id,
+                Subtotal = items.Sum(c => c.Variant.Price * c.Quantity),
                 ISV = cart.GetProductISVPrice(),
-                product_count = cart.GetProductCount(),
-                currency = "NHL",
-                discount = cart.GetProductDiscountPrice(),
-                total_price = (items.Sum(c => c.Variant.Price * c.Quantity) - cart.GetProductDiscountPrice()) + cart.GetProductISVPrice(),
+                ProductCount = cart.GetProductCount(),
+                Currency = "NHL",
+                Discount = cart.GetProductDiscountPrice(),
+                TotalPrice = (items.Sum(c => c.Variant.Price * c.Quantity) - cart.GetProductDiscountPrice()) + cart.GetProductISVPrice(),
                 items = items.MapTo<List<CartProductItemOutput>>()
             };
         }
@@ -95,6 +96,12 @@ namespace GRINTSYS.SAPMiddleware.Carts
             var items = _cartManager.GetCartProductItems(cartId);
 
             return items.Sum(s => s.Variant.Price * s.Quantity);
+        }
+
+        public Task CreateCart(AddCartInput input)
+        {
+            var userId = GetUserId();
+            return _cartManager.CreateCart(new Cart(input.TenantId, userId));
         }
     }
 }

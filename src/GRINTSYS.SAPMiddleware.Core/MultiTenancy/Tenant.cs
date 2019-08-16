@@ -18,7 +18,6 @@ namespace GRINTSYS.SAPMiddleware.MultiTenancy
         public string Language { get; set; }
         public string Currency { get; set; }
         public double ISV { get; set; }
-
         public string GoogleUA { get; set; }
     }
 }

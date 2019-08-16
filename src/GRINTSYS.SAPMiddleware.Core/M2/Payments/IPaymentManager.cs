@@ -9,6 +9,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
     {
         Task CreatePayment(Payment payment);
         Task CreateInvoice(Invoice invoice);
+        Task DeletePayment(int id);
         Payment GetPayment(int id);
         Payment UpdatePayment(Payment payment);
         Invoice GetInvoice(int id);

@@ -2,14 +2,19 @@
 using Abp.Dependency;
 using Abp.Domain.Uow;
 using Abp.Net.Mail;
+using Castle.Core.Logging;
 using GRINTSYS.SAPMiddleware.Authorization.Users;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Orders;
 using GRINTSYS.SAPMiddleware.M2.Products;
 using GRINTSYS.SAPMiddleware.Mail;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -67,8 +72,23 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
                 await _productManager.UpdateProductStock(item.Variant.Id, item.Quantity);
             }
 
-            //delete the user cart
+            //Delete the user cart
             await _cartManager.DeleteUserCart(args.UserId, args.TenantId);
+
+            //Hey this send to SAP
+            await SendToSap(order.Id);
+        }
+
+        public async Task SendToSap(int id)
+        {
+            Logger.Debug(String.Format("SendToSap({0})", id));
+            string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], id);
+            var response = await AppConsts.Instance.GetClient().GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Logger.Info("Success to send to SAP");
+            }
         }
 
         [UnitOfWork]
@@ -78,11 +98,27 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
             {
                 await CreateOrder(args);
 
-            }catch(Exception e)
+                /*
+                //Finally send a mail
+                var user = await _userManager.GetUserByIdAsync(args.UserId);
+
+                if (user == null)
+                    return;
+
+                await new EmailHelper().Send(new EmailArgs
+                {
+                    Subject = String.Format("Confirmación de pedido para cliente {0} ha sido Creado En M2", args.CardCode),
+                    Body = "",
+                    To = user.EmailAddress
+                });*/
+
+            }
+            catch(Exception e)
             {
                 Logger.Error(e.Message);
 
-                var user = await _userManager.FindByIdAsync(args.UserId.ToString());
+                /*
+                var user = await _userManager.GetUserByIdAsync(args.UserId);
 
                 if (user == null)
                     return;
@@ -91,7 +127,7 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
                     Subject = String.Format("Error Pedido Cliente {0}", args.CardCode),
                     Body = e.Message,
                     To = user.EmailAddress
-                });
+                });*/
             }
         }
     }

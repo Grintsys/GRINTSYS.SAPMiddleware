@@ -25,7 +25,7 @@ namespace GRINTSYS.SAPMiddleware.M2
 
         public async Task<Cart> CreateCart(Cart entity)
         {
-            var cart = _cartRepository.GetAll()
+            var cart =  _cartRepository.GetAllList()
                 .Where(w => w.UserId == entity.UserId)
                 .FirstOrDefault();
 

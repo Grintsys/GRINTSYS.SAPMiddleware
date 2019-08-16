@@ -11,5 +11,7 @@ namespace GRINTSYS.SAPMiddleware.Users
         Task<ListResultDto<RoleDto>> GetRoles();
 
         Task ChangeLanguage(ChangeUserLanguageDto input);
+
+        UserDto GetUserDetails(long id);
     }
 }

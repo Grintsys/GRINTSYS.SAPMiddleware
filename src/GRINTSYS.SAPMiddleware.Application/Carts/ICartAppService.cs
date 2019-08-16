@@ -7,6 +7,7 @@ namespace GRINTSYS.SAPMiddleware.Carts
 {
     public interface ICartAppService : IApplicationService, ITransientDependency
     {
+        Task CreateCart(AddCartInput input);
         CartOutput GetCart(GetCartInput input);
         CartOutput GetCartInfo(GetCartInput input);
         Task DeleteCart(DeleteCartInput input);
