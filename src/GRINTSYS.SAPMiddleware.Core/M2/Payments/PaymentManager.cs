@@ -63,7 +63,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
             return _paymentRepository.GetAllIncluding(x => x.Bank, x => x.InvoicesItems)
                 .Where( w => w.TenantId == tenantId
                     && w.UserId == userId)
-                .WhereIf(begin.HasValue && end.HasValue,  w => begin >= w.CreationTime && end <= w.CreationTime)
+                .WhereIf(begin.HasValue && end.HasValue,  w => w.CreationTime >= begin && w.CreationTime <= end)
                 .ToList();
         }
 
