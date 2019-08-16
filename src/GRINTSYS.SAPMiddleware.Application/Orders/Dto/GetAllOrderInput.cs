@@ -7,7 +7,7 @@ namespace GRINTSYS.SAPMiddleware.Orders.Dto
     public class GetAllOrderInput
     {
         public int TenantId { get; set; }
-        public DateTime begin { get; set; }
-        public DateTime end { get; set; }
+        public String begin { get; set; }
+        public String end { get; set; }
     }
 }

@@ -145,7 +145,10 @@ namespace GRINTSYS.SAPMiddleware.Payments
         {
             var userId = GetUserId();
 
-            return _paymentManager.GetPaymentsByUser(input.TenantId, userId, input.Begin, input.End);
+            return _paymentManager.GetPaymentsByUser(input.TenantId, 
+                userId,
+                DateTime.Parse(input.Begin), 
+                DateTime.Parse(input.End));
         }
     }
 }

@@ -78,7 +78,9 @@ namespace GRINTSYS.SAPMiddleware.Orders
         {
             var userId = GetUserId();
 
-            var orders = _orderManager.GetOrders(input.TenantId, userId, input.begin, input.end);
+            var orders = _orderManager.GetOrders(input.TenantId, 
+                userId, 
+                DateTime.Parse(input.begin), DateTime.Parse(input.end));
 
             return orders.MapTo<List<OrderOutput>>();
         }

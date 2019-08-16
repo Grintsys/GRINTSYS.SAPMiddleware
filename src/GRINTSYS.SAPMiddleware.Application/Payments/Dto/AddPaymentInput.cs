@@ -21,6 +21,7 @@ namespace GRINTSYS.SAPMiddleware.Payments.Dto
         [StringLength(MaxReferenceNumberLength)]
         public String ReferenceNumber { get; set; }
         public PaymentType Type { get; set; }
+        public DateTime PayedDate { get; set; }
         public List<PaymentItemOutput> PaymentItemList { get; set; }
     }
 }
