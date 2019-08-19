@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Text;
-using System.Threading.Tasks;
-using Abp.Application.Services.Dto;
+﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.BackgroundJobs;
 using Abp.Collections.Extensions;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
-using Abp.Runtime.Session;
 using Abp.UI;
-using AutoMapper.QueryableExtensions;
 using GRINTSYS.SAPMiddleware.Authorization.Users;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Orders;
 using GRINTSYS.SAPMiddleware.Orders.Dto;
 using GRINTSYS.SAPMiddleware.Orders.Job;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Orders
 {
@@ -79,13 +77,25 @@ namespace GRINTSYS.SAPMiddleware.Orders
         {
             var userId = GetUserId();
 
-            var orders = _orderManager.GetOrders(input.TenantId, 
-                userId, 
-                DateTime.Parse(input.begin), DateTime.Parse(input.end));
+            var orders = _orderManager.GetOrders(input.TenantId,
+                userId,
+                DateTime.Parse(input.begin),
+                DateTime.Parse(input.end))
+                .Select(s => new OrderOutput()
+                {
+                    CardCode = s.CardCode,
+                    Comment = s.Comment,
+                    Status = ((OrderStatus)s.Status).ToString(),
+                    TotalFormatted = s.GetTotal().ToString()
+                })
+                .ToList();
+
+            var total = orders.Count();
 
             return new PagedResultDto<OrderOutput>()
             {
-                Items = orders.MapTo<List<OrderOutput>>()
+                TotalCount = total,
+                Items = orders
             };
         }
 

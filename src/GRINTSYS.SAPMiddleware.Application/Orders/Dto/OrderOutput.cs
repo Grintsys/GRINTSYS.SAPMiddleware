@@ -18,6 +18,7 @@ namespace GRINTSYS.SAPMiddleware.Orders.Dto
         public Int32 Series { get; set; }
         public String DeliveryDate { get; set; }
         public ClientDto Client { get; set; }
+        public String TotalFormatted { get; set; }
         //public List<OrderItemOutput> Items { get; set;}
     }
 }
