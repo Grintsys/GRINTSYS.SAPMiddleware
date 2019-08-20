@@ -13,6 +13,7 @@ namespace GRINTSYS.SAPMiddleware.M2
 
         public String Name { get; set; }
         public String CardCode { get; set; }
+        public String Dimension { get; set; }
         public String PhoneNumber { get; set; }
         public Double CreditLimit { get; set; }
         public Double Balance { get; set; }
