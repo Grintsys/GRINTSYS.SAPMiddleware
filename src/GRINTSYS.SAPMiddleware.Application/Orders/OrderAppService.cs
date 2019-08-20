@@ -159,6 +159,8 @@ namespace GRINTSYS.SAPMiddleware.Orders
 
         public async Task GetOrderInSap(SentToSapInput input)
         {
+            await _backgroundJobManager.EnqueueAsync<OrderToSAPJob, int>(input.Id);
+            /*
             Logger.Debug(String.Format("SendToSap({0})", input.Id));
             string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], input.Id);
             var response = await AppConsts.Instance.GetClient().GetAsync(url);
@@ -166,7 +168,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
             if (response.IsSuccessStatusCode)
             {
                 Logger.Info("Success to send to SAP");
-            }
+            }*/
         }
     }
 }
