@@ -37,14 +37,9 @@ namespace GRINTSYS.SAPMiddleware.Web.Controllers
         }
 
 
-        public async Task<ActionResult> SendToSap(int id)
+        public async Task<ActionResult> SendToSap(int orderId)
         {
-            int a = 1;
-
-            //var output = await _roleAppService.GetRoleForEdit(new EntityDto(roleId));
-            //var model = new EditRoleModalViewModel(output);
-
-            //return View("_EditRoleModal", model);
+            await _orderService.GetOrderInSap(new SentToSapInput() { Id = orderId });
 
             return RedirectToAction("Index");
         }

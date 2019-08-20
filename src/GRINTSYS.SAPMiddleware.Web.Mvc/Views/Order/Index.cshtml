@@ -52,12 +52,13 @@
                             <td>@order.Comment</td>
                             <td>@order.TotalFormatted</td>
                             <td>@order.LastMessage</td>
+                            <td><i class="material-icons" style="color:@(order.Status.Contains("SAP") ? "green":"red");">@(order.Status.Contains("SAP") ? "check_box" : "indeterminate_check_box")</i></td>
                             <td class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="material-icons">menu</i>
                                 </a>
                                 <ul class="dropdown-menu pull-right">
-                                    <li><a href="@Url.Action("SendToSap", "Orders", new { orderId = order.Id })" class="waves-effect waves-block edit-role"><i class="material-icons">Send</i>@L("Send")</a></li>                         
+                                    <li><a id="SendToSap" href="@Url.Action("SendToSap", "Order", new { orderId = order.Id })" class="waves-effect waves-block edit-user"><i class="material-icons">edit</i>@L("send")</a></li>
                                 </ul>
                             </td>
                         </tr>
