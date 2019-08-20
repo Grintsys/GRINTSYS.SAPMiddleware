@@ -13,13 +13,16 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
     public class PaymentManager : DomainService, IPaymentManager
     {
         private readonly IRepository<Payment> _paymentRepository;
+        private readonly IRepository<PaymentInvoiceItem> _paymentInvoiceItemRepository;
         private readonly IRepository<Invoice> _invoiceRepository;
 
         public PaymentManager(IRepository<Payment> paymentRepository,
-            IRepository<Invoice> invoiceRepository)
+            IRepository<Invoice> invoiceRepository,
+            IRepository<PaymentInvoiceItem> invoiceItem)
         {
             _paymentRepository = paymentRepository;
             _invoiceRepository = invoiceRepository;
+            _paymentInvoiceItemRepository = invoiceItem;
         }
 
         public Task CreateInvoice(Invoice invoice)
@@ -29,8 +32,6 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
 
         public Task CreatePayment(Payment payment)
         {
-            //ValidatePayedAmount(payment.InvoiceId, payment.PayedAmount);
-
             return _paymentRepository.InsertAsync(payment);
         }
 
@@ -93,6 +94,11 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
 
             if (amount <= 0)
                 throw new UserFriendlyException("the amount can't be 0 or less");
+        }
+
+        public Task AddPaymentInvoiceItem(PaymentInvoiceItem item)
+        {
+            return _paymentInvoiceItemRepository.InsertAsync(item);
         }
     }
 }

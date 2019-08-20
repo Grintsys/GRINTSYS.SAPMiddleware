@@ -64,11 +64,16 @@ namespace GRINTSYS.SAPMiddleware.Payments
 
             await _paymentManager.CreatePayment(payment);
 
-            /*
             foreach (var item in input.PaymentItemList)
             {
+                await _paymentManager.AddPaymentInvoiceItem(new PaymentInvoiceItem()
+                {
+                    TenantId = input.TenantId,
+                    DocEntry = input.DocEntry,
+                    DocumentCode = item.DocumentCode,
+                    PaymentId = payment.Id
+                });
             }
-            */
         } 
 
         public async Task<PaymentOutput> DeclinePayment(GetPaymentInput input)
