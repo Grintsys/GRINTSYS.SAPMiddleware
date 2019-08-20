@@ -13,16 +13,16 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
     public class PaymentManager : DomainService, IPaymentManager
     {
         private readonly IRepository<Payment> _paymentRepository;
-        private readonly IRepository<PaymentInvoiceItem> _paymentInvoiceItemRepository;
         private readonly IRepository<Invoice> _invoiceRepository;
+        private readonly IRepository<PaymentInvoiceItem> _paymentInvoiceItemRepository;
 
         public PaymentManager(IRepository<Payment> paymentRepository,
             IRepository<Invoice> invoiceRepository,
-            IRepository<PaymentInvoiceItem> invoiceItem)
+            IRepository<PaymentInvoiceItem> paymentInvoiceItem)
         {
             _paymentRepository = paymentRepository;
             _invoiceRepository = invoiceRepository;
-            _paymentInvoiceItemRepository = invoiceItem;
+            _paymentInvoiceItemRepository = paymentInvoiceItem;
         }
 
         public Task CreateInvoice(Invoice invoice)
@@ -70,7 +70,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
 
         public List<Payment> GetPayments(int tenantId, DateTime? begin, DateTime? end)
         {
-            return _paymentRepository.GetAllIncluding(x => x.Bank)
+            return _paymentRepository.GetAllIncluding(x => x.Bank, x=> x.InvoicesItems)
                 .Where(w => w.TenantId == tenantId)
                 .WhereIf(begin.HasValue && end.HasValue, w => w.CreationTime >= begin && w.CreationTime <= end)
                 .OrderByDescending( o => o.Id)
