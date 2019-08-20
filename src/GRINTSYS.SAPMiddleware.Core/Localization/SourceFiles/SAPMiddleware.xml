@@ -99,6 +99,9 @@
     <text name="Payment">Payment</text>
     <text name="M2Module">M2 Module</text>
     <text name="M2Admin">M2 Admin</text>
-    <text name="MobileAccess">Mobile Access</text>
+    <text name="Autorization">Autorization</text>
+    <text name="Send">Send</text>
+    <text name="Approve">Approve</text>
+    <text name="Decline">Decline</text>
   </texts>
 </localizationDictionary>
