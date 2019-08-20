@@ -12,6 +12,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Orders
         Task CreateOrderItem(OrderItem orderItem);
         Order GetOrder(int id);
         Order UpdateOrder(Order order);
-        List<Order> GetOrders(int tenantId, long userId, DateTime begin, DateTime end);
+        List<Order> GetOrders(int tenantId, DateTime begin, DateTime end);
+        List<Order> GetOrdersByUser(int tenantId, long userId, DateTime begin, DateTime end);
     }
 }

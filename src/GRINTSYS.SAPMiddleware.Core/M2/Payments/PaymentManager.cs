@@ -67,6 +67,15 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
                 .ToList();
         }
 
+        public List<Payment> GetPayments(int tenantId, DateTime? begin, DateTime? end)
+        {
+            return _paymentRepository.GetAllIncluding(x => x.Bank)
+                .Where(w => w.TenantId == tenantId)
+                .WhereIf(begin.HasValue && end.HasValue, w => w.CreationTime >= begin && w.CreationTime <= end)
+                .OrderByDescending( o => o.Id)
+                .ToList();
+        }
+
         public Payment UpdatePayment(Payment payment)
         {
             return _paymentRepository.Update(payment);

@@ -1,6 +1,7 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.BackgroundJobs;
+using Abp.Runtime.Session;
 using Abp.UI;
 using GRINTSYS.SAPMiddleware.Authorization.Users;
 using GRINTSYS.SAPMiddleware.M2;
@@ -20,14 +21,18 @@ namespace GRINTSYS.SAPMiddleware.Payments
         private readonly UserManager _userManager;
         private readonly PaymentManager _paymentManager;
         private readonly IBackgroundJobManager _backgroundJobManager;
+        private readonly IAbpSession _session;
+
 
         public PaymentAppService(IBackgroundJobManager backgroundJobManager, 
             UserManager userManager,
-            PaymentManager paymentManager)
+            PaymentManager paymentManager,
+            IAbpSession session)
         {
             _backgroundJobManager = backgroundJobManager;
             _userManager = userManager;
             _paymentManager = paymentManager;
+            _session = session;
         }
 
         public async Task AutorizePayment(GetPaymentInput input)
@@ -140,6 +145,27 @@ namespace GRINTSYS.SAPMiddleware.Payments
                 LastErrorMessage = payment.LastMessage,
                 CreationTime = payment.CreationTime,
                 DebtCollectorId = payment.User.CollectId
+            };
+        }
+
+        public PagedResultDto<PaymentOutput> GetPayments(GetAllPaymentInput input)
+        {
+            if (input.TenantId == 0)
+                input.TenantId = (int)_session.TenantId;
+
+            if (String.IsNullOrEmpty(input.Begin))
+                input.Begin = DateTime.MinValue.ToString();
+
+            if (String.IsNullOrEmpty(input.End))
+                input.End = DateTime.MaxValue.ToString();
+
+            var payments = _paymentManager.GetPayments(input.TenantId,
+                DateTime.Parse(input.Begin),
+                DateTime.Parse(input.End));
+
+            return new PagedResultDto<PaymentOutput>
+            {
+                Items = payments.MapTo<List<PaymentOutput>>()
             };
         }
 

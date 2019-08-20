@@ -4,6 +4,7 @@ using Abp.BackgroundJobs;
 using Abp.Collections.Extensions;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
+using Abp.Runtime.Session;
 using Abp.UI;
 using GRINTSYS.SAPMiddleware.Authorization.Users;
 using GRINTSYS.SAPMiddleware.M2;
@@ -25,16 +26,19 @@ namespace GRINTSYS.SAPMiddleware.Orders
         //TODO: please find a better solution insted of create a user repository
         private readonly IRepository<User, long> _userRepository;
         private readonly IBackgroundJobManager _backgroundJobManager;
+        private readonly IAbpSession _session;
 
         public OrderAppService(OrderManager orderManager, 
             CartManager cartManager,
             IRepository<User, long> userRepository,
-            IBackgroundJobManager backgroundJobManager)
+            IBackgroundJobManager backgroundJobManager,
+            IAbpSession session)
         {
             _orderManager = orderManager;
             _cartManager = cartManager;
             _userRepository = userRepository;
             _backgroundJobManager = backgroundJobManager;
+            _session = session;
         }
 
         public async Task CreateOrder(AddOrderInput input)
@@ -75,9 +79,52 @@ namespace GRINTSYS.SAPMiddleware.Orders
 
         public PagedResultDto<OrderOutput> GetOrders(GetAllOrderInput input)
         {
-            var userId = GetUserId();
+            if (input.TenantId == 0)
+                input.TenantId = (int)_session.TenantId;
+
+            if (String.IsNullOrEmpty(input.begin))
+                input.begin = DateTime.MinValue.ToString();
+
+            if (String.IsNullOrEmpty(input.end))
+                input.end = DateTime.MaxValue.ToString();
 
             var orders = _orderManager.GetOrders(input.TenantId,
+                DateTime.Parse(input.begin),
+                DateTime.Parse(input.end))
+                .Select(s => new OrderOutput()
+                {
+                    Id = s.Id,
+                    CardCode = s.CardCode,
+                    Comment = s.Comment,
+                    LastMessage = s.LastMessage,
+                    Status = ((OrderStatus)s.Status).ToString(),
+                    TotalFormatted = s.GetTotal().ToString()
+                })
+                .OrderByDescending(o => o.Id)
+                .ToList();
+
+            var total = orders.Count();
+
+            return new PagedResultDto<OrderOutput>()
+            {
+                TotalCount = total,
+                Items = orders
+            };
+        }
+
+
+        //this methods need some refactor
+        public PagedResultDto<OrderOutput> GetOrdersByUser(GetAllOrderInput input)
+        {
+            var userId = GetUserId();
+
+            if (String.IsNullOrEmpty(input.begin))
+                input.begin = DateTime.MinValue.ToString();
+
+            if (String.IsNullOrEmpty(input.end))
+                input.end = DateTime.MaxValue.ToString();
+
+            var orders = _orderManager.GetOrdersByUser(input.TenantId,
                 userId,
                 DateTime.Parse(input.begin),
                 DateTime.Parse(input.end))
@@ -85,6 +132,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 {
                     CardCode = s.CardCode,
                     Comment = s.Comment,
+                    LastMessage = s.LastMessage,
                     Status = ((OrderStatus)s.Status).ToString(),
                     TotalFormatted = s.GetTotal().ToString()
                 })

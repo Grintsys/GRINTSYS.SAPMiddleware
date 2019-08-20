@@ -12,6 +12,7 @@ namespace GRINTSYS.SAPMiddleware.Authorization
             context.CreatePermission(PermissionNames.Pages_Roles, L("Roles"));
             context.CreatePermission(PermissionNames.Pages_Tenants, L("Tenants"), multiTenancySides: MultiTenancySides.Host);
             context.CreatePermission(PermissionNames.Pages_MobileAccess, L("MobileAccess"));
+            context.CreatePermission(PermissionNames.Pages_M2Admin, L("M2Admin"));
         }
 
         private static ILocalizableString L(string name)
