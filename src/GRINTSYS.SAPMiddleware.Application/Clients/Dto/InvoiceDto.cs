@@ -11,7 +11,6 @@ namespace GRINTSYS.SAPMiddleware.Clients.Dto
     public class InvoiceDto : EntityDto
     {
         public int TenantId { get; set; }
-        public int DoctEntry { get; set; }
         public String DocumentCode { get; set; }
         public String DueDate { get; set; }
         public Double TotalAmount { get; set; }
