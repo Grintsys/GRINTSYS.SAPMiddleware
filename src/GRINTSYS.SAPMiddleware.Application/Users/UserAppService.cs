@@ -238,7 +238,7 @@ namespace GRINTSYS.SAPMiddleware.Users
                 UserName = user.UserName,
                 Surname = user.Surname,
                 IsActive = user.IsActive,
-                CollectorId = user.CollectId,
+                CollectId = user.CollectId,
                 SalesPersonId = user.SalesPersonId
             };
         }

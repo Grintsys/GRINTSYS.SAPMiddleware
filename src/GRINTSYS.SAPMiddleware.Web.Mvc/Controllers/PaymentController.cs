@@ -32,14 +32,16 @@ namespace GRINTSYS.SAPMiddleware.Web.Controllers
         }
 
 
-        public async Task<ActionResult> SendToSap(int id)
+        public async Task<ActionResult> Authorize(int paymentId)
         {
-            int a = 1;
+            await _paymentService.AutorizePayment(new GetPaymentInput() { Id = paymentId });
 
-            //var output = await _roleAppService.GetRoleForEdit(new EntityDto(roleId));
-            //var model = new EditRoleModalViewModel(output);
+            return RedirectToAction("Index");
+        }
 
-            //return View("_EditRoleModal", model);
+        public async Task<ActionResult> Decline(int paymentId)
+        {
+            await _paymentService.DeclinePayment(new GetPaymentInput() { Id = paymentId });
 
             return RedirectToAction("Index");
         }

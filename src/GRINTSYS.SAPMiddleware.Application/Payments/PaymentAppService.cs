@@ -40,13 +40,25 @@ namespace GRINTSYS.SAPMiddleware.Payments
             var userId = GetUserId();
             var user = await _userManager.FindByIdAsync(userId.ToString());
 
+            Logger.Debug(String.Format("SendToSap({0})", input.Id));
+            string url = String.Format("{0}api/payments/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], input.Id);
+            var response = await AppConsts.Instance.GetClient().GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Logger.Info("Success to send to SAP");
+
+                /*aqui manda email de que se ejecuto correctamente o ocurrio algun error*/
+            }
+
+            /*
             await _backgroundJobManager.EnqueueAsync<PaymentJob, PaymentJobArgs>(
                new PaymentJobArgs
                {
                    Id = input.Id,
                    UserId = GetUserId(),
                    To = user.EmailAddress
-            });
+            });*/
         }
 
         public async Task CreateInvoice(AddInvoiceInput input)

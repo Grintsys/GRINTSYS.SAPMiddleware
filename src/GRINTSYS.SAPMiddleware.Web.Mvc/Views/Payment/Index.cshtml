@@ -44,23 +44,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach (var order in Model.Payments)
+                    @foreach (var payment in Model.Payments)
                     {
                         <tr>
-                            <td>@order.Id</td>
-                            <td>@order.Status</td>
-                            <td>@order.Comment</td>
-                            <td>@order.PayedAmount</td>
-                            <td>@order.LastErrorMessage</td>
+                            <td>@payment.Id</td>
+                            <td>@payment.Status</td>
+                            <td>@payment.Comment</td>
+                            <td>@payment.PayedAmount</td>
+                            <td>@payment.LastErrorMessage</td>
+                            <td><i class="material-icons" style="color:@(payment.Status.Contains("Autorizado") || payment.Status.Contains("SAP") ? "green":"red");">@(payment.Status.Contains("Autorizado") || payment.Status.Contains("SAP") ? "check_box" : "indeterminate_check_box")</i></td>
                             <td class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="material-icons">menu</i>
                                 </a>
                                 <ul class="dropdown-menu pull-right">
-                                    <li><a href="@Url.Action("Authorize", "Payments", new { Id = order.Id })" class="waves-effect waves-block edit-role"><i class="material-icons">Send</i>@L("Authotize")</a></li>
-                                    <li><a href="@Url.Action("Decline", "Payments", new { Id = order.Id })" class="waves-effect waves-block edit-role"><i class="material-icons">Send</i>@L("Decline")</a></li>
+                                    <li><a id="SendToSap" href="@Url.Action("Authorize", "Payment", new { paymentId = payment.Id })" class="waves-effect waves-block edit-user"><i class="material-icons">edit</i>@L("Approve")</a></li>
+                                    <li><a id="SendToSap" href="@Url.Action("Decline", "Payment", new { paymentId = payment.Id })" class="waves-effect waves-block edit-user"><i class="material-icons">edit</i>@L("Decline")</a></li>
                                 </ul>
-                            </td>
+                            </td>                          
                         </tr>
                     }
                     </tbody>
