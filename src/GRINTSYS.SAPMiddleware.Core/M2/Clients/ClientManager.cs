@@ -32,30 +32,18 @@ namespace GRINTSYS.SAPMiddleware.M2.Clients
             return entity;
         }
 
-        public List<ClientDiscount> GetClientDiscount(string cardcode)
+        public double GetClientDiscountByItemGroupCode(string cardcode, int itemgroup)
         {
-            var entity = _clientDiscountRespository.GetAll()
-                .Where(w => w.CardCode.ToLower().Equals(cardcode.ToLower()))
-                ;
-
-            if (entity.Count() == 0)
-            {
-                throw new UserFriendlyException("Client discounts not found");
-            }
-
-            return entity.ToList();
-        }
-
-        public Double GetClientDiscountByItemGroupCode(string cardcode, int itemGroupCode)
-        {
-            if (String.IsNullOrEmpty(cardcode) || itemGroupCode <= 0)
+            if (String.IsNullOrEmpty(cardcode) || itemgroup <= 0)
                 return 0.0;
 
-            var entity = _clientDiscountRespository.GetAll()
-                 .Where(w => w.CardCode.ToLower().Equals(cardcode.ToLower())
-                      && w.ItemGroup == itemGroupCode)
-                 .FirstOrDefault()
-                 ;
+            var entity = _clientDiscountRespository
+                .FirstOrDefault(w => w.CardCode.ToLower().Equals(cardcode.ToLower()) 
+                && w.ItemGroup == itemgroup)          
+                ;
+
+            if (entity == null)
+                return 0.0;
 
             return entity.Discount;
         }

@@ -12,6 +12,7 @@ using GRINTSYS.SAPMiddleware.Payments.Job;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Payments
@@ -180,8 +181,11 @@ namespace GRINTSYS.SAPMiddleware.Payments
                 DateTime.Parse(input.Begin),
                 DateTime.Parse(input.End));
 
+            var total = payments.Count();
+
             return new PagedResultDto<PaymentOutput>
             {
+                TotalCount = total,
                 Items = payments.MapTo<List<PaymentOutput>>()
             };
         }
