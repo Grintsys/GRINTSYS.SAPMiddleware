@@ -42,70 +42,63 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
             _orderService = orderService;
         }
 
-        public async Task<Order> CreateOrder(OrderParams args)
-        {
-            var newOrder = new Order()
-            {
-                TenantId = args.TenantId,
-                UserId = args.UserId,
-                Status = OrderStatus.CreadoEnAplicacion,
-                DeliveryDate = args.DeliveryDate,
-                Comment = args.Comment,
-                CardCode = args.CardCode
-            };
-
-            var order = await _orderManager.CreateOrder(newOrder);
-
-            var products = _cartManager.GetCartProductItemsByUser(args.UserId, args.TenantId);
-
-            foreach (var item in products)
-            {
-                var newOrderItem = new OrderItem()
-                {
-                    TenantId = args.TenantId,
-                    OrderId = order.Id,
-                    Code = item.Variant.Code,
-                    Quantity = item.Quantity,
-                    Price = item.Variant.Price,
-                    TaxCode = "", //falta esto
-                    WarehouseCode = item.Variant.WareHouseCode
-                };
-
-                await _orderManager.CreateOrderItem(newOrderItem);
-                //actualiza el comprometido pero solo en M2
-                await _productManager.UpdateProductStock(item.Variant.Id, item.Quantity);
-            }
-
-            //Delete the user cart
-            await _cartManager.DeleteUserCart(args.UserId, args.TenantId);
-
-            //Hey this send to SAP
-            string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], order.Id);
-            //var response = await AppConsts.Instance.GetClient().GetAsync(url);
-
-            using (var Client = new HttpClient())
-            {
-                Client.Timeout = TimeSpan.FromMinutes(5);
-                Client.DefaultRequestHeaders.Accept.Clear();
-                Client.DefaultRequestHeaders.Accept.Add(
-                    new MediaTypeWithQualityHeaderValue("application/json"));
-
-                var response = await Client.GetAsync(url);
-                if (response.IsSuccessStatusCode)
-                {
-                    Logger.Info("Success to send to SAP");
-                }
-            }
-           
-            return order;
-        }
-
-        [UnitOfWork]
         public override async void Execute(OrderParams args)
         {
             try
             {
-                var order = await CreateOrder(args);
+                var newOrder = new Order()
+                {
+                    TenantId = args.TenantId,
+                    UserId = args.UserId,
+                    Status = OrderStatus.CreadoEnAplicacion,
+                    DeliveryDate = args.DeliveryDate,
+                    Comment = args.Comment,
+                    CardCode = args.CardCode
+                };
+
+                var order = await _orderManager.CreateOrder(newOrder);
+
+                var products = _cartManager.GetCartProductItemsByUser(args.UserId, args.TenantId);
+
+                foreach (var item in products)
+                {
+                    var newOrderItem = new OrderItem()
+                    {
+                        TenantId = args.TenantId,
+                        OrderId = order.Id,
+                        Code = item.Variant.Code,
+                        Quantity = item.Quantity,
+                        Price = item.Variant.Price,
+                        TaxCode = "", //falta esto
+                        WarehouseCode = item.Variant.WareHouseCode
+                    };
+
+                    await _orderManager.CreateOrderItem(newOrderItem);
+                    //actualiza el comprometido pero solo en M2
+                    await _productManager.UpdateProductStock(item.Variant.Id, item.Quantity);
+                }
+
+                //Delete the user cart
+                await _cartManager.DeleteUserCart(args.UserId, args.TenantId);
+
+                //Hey this send to SAP
+                string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], order.Id);
+                //var response = await AppConsts.Instance.GetClient().GetAsync(url);
+
+                using (var Client = new HttpClient())
+                {
+                    Client.Timeout = TimeSpan.FromMinutes(5);
+                    Client.DefaultRequestHeaders.Accept.Clear();
+                    Client.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    var response = await Client.GetAsync(url);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        Logger.Info("Success to send to SAP");
+                    }
+                }
+
 
                 /*
                 //Finally send a mail
@@ -122,7 +115,7 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
                 });*/
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Logger.Error(e.Message);
 

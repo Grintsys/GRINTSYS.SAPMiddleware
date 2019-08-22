@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using GRINTSYS.SAPMiddleware.Configuration;
+using Abp.Hangfire.Configuration;
 
 namespace GRINTSYS.SAPMiddleware.Web.Host.Startup
 {
@@ -22,6 +23,7 @@ namespace GRINTSYS.SAPMiddleware.Web.Host.Startup
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(typeof(SAPMiddlewareWebHostModule).GetAssembly());
+            Configuration.BackgroundJobs.UseHangfire();
         }
     }
 }

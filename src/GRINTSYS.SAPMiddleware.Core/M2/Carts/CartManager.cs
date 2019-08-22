@@ -41,12 +41,13 @@ namespace GRINTSYS.SAPMiddleware.M2
         {
             var cartItem = _cartProductItemRepository.GetAll()
                 .Where(w => w.TenantId == entity.TenantId 
-                    && w.ProductVariantId == entity.ProductVariantId)
+                    && w.ProductVariantId == entity.ProductVariantId
+                    && w.CartId == entity.CartId)
                 .FirstOrDefault();
 
             if(cartItem != null)
             {
-                throw new UserFriendlyException("Item is Already on Cart");
+                throw new UserFriendlyException("Item is Already on this Cart");
             }
 
             return await _cartProductItemRepository.InsertAsync(entity);
