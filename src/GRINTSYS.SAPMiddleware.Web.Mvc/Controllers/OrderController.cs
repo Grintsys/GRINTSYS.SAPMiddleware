@@ -36,6 +36,13 @@ namespace GRINTSYS.SAPMiddleware.Web.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> Delete(int orderId)
+        {
+            await _orderService.DeleteOrder(new DeleteOrderInput() { OrderId = orderId });
+
+            return RedirectToAction("Index");
+        }
+
 
         public async Task<ActionResult> SendToSap(int orderId)
         {

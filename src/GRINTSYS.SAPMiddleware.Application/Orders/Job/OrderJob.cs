@@ -81,12 +81,22 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
 
             //Hey this send to SAP
             string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], order.Id);
-            var response = await AppConsts.Instance.GetClient().GetAsync(url);
+            //var response = await AppConsts.Instance.GetClient().GetAsync(url);
 
-            if (response.IsSuccessStatusCode)
+            using (var Client = new HttpClient())
             {
-                Logger.Info("Success to send to SAP");
+                Client.Timeout = TimeSpan.FromMinutes(5);
+                Client.DefaultRequestHeaders.Accept.Clear();
+                Client.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+
+                var response = await Client.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    Logger.Info("Success to send to SAP");
+                }
             }
+           
             return order;
         }
 

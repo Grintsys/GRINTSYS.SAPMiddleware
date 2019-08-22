@@ -79,5 +79,10 @@ namespace GRINTSYS.SAPMiddleware.M2.Orders
         {
             return _orderRepository.Update(order);
         }
+
+        public async Task DeleteOrderAsync(Order order)
+        {
+             await _orderRepository.DeleteAsync(order);
+        }
     }
 }

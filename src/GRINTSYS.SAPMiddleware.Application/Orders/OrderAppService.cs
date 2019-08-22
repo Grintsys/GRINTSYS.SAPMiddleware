@@ -41,7 +41,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
             _session = session;
         }
 
-        public async Task CreateOrder(AddOrderInput input)
+        public async Task CreateOrder(CreateOrderInput input)
         {
             var userId = GetUserId();
 
@@ -57,6 +57,16 @@ namespace GRINTSYS.SAPMiddleware.Orders
                      Comment = input.Comment,
                      DeliveryDate = input.DeliveryDate
                 });
+        }
+
+        public async Task DeleteOrder(DeleteOrderInput input)
+        {
+            var order = _orderManager.GetOrder(input.OrderId);
+
+            if (order == null)
+                throw new UserFriendlyException("Order is not found");
+
+            await _orderManager.DeleteOrderAsync(order);
         }
 
         public OrderOutput GetOrder(GetOrderInput input)

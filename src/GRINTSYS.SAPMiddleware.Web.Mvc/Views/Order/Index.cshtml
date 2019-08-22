@@ -58,7 +58,8 @@
                                     <i class="material-icons">menu</i>
                                 </a>
                                 <ul class="dropdown-menu pull-right">
-                                    <li><a id="SendToSap" href="@Url.Action("SendToSap", "Order", new { orderId = order.Id })" class="waves-effect waves-block edit-user"><i class="material-icons">edit</i>@L("send")</a></li>
+                                    <li><a id="SendToSap" href="@Url.Action("SendToSap", "Order", new { orderId = order.Id })" class="waves-effect waves-block edit-user"><i class="material-icons">edit</i>@L("Send")</a></li>
+                                    <li><a id="DeleteOrder" href="@Url.Action("Delete", "Order", new { orderId = order.Id })" class="waves-effect waves-block edit-user"><i class="material-icons">edit</i>@L("Delete")</a></li>
                                 </ul>
                             </td>
                         </tr>
