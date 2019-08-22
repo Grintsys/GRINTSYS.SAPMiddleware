@@ -64,7 +64,6 @@ namespace GRINTSYS.SAPMiddleware.Carts
         public CartOutput GetCart(GetCartInput input)
         {
             var userId = AbpSession.GetUserId();
-            //var tenant = await GetCurrentTenantAsync();
 
             var cart = _cartManager.GetCartByUser(userId, input.TenantId);
 
@@ -75,7 +74,6 @@ namespace GRINTSYS.SAPMiddleware.Carts
 
             var items = _cartManager.GetCartProductItems(cart.Id);
 
-            var currency = cart.CartProductItems.FirstOrDefault();
             var total = (items.Sum(c => c.Variant.Price * c.Quantity) - cart.GetProductDiscountPrice()) + cart.GetProductISVPrice();
             return new CartOutput()
             {
