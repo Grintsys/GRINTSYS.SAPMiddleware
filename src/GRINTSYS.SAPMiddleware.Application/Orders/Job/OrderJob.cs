@@ -8,6 +8,7 @@ using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Orders;
 using GRINTSYS.SAPMiddleware.M2.Products;
 using GRINTSYS.SAPMiddleware.Mail;
+using GRINTSYS.SAPMiddleware.Orders.Dto;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
@@ -26,19 +27,22 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
         private readonly OrderManager _orderManager;
         private readonly CartManager _cartManager;
         private readonly UserManager _userManager;
+        private readonly IOrderAppService _orderService;
 
         public OrderJob(ProductManager productManager, 
             OrderManager orderManager, 
             CartManager cartManager,
-            UserManager userManager)
+            UserManager userManager,
+            IOrderAppService orderService)
         {
             _productManager = productManager;
             _orderManager = orderManager;
             _cartManager = cartManager;
             _userManager = userManager;
+            _orderService = orderService;
         }
 
-        public async Task CreateOrder(OrderParams args)
+        public async Task<Order> CreateOrder(OrderParams args)
         {
             var newOrder = new Order()
             {
@@ -76,19 +80,14 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
             await _cartManager.DeleteUserCart(args.UserId, args.TenantId);
 
             //Hey this send to SAP
-            await SendToSap(order.Id);
-        }
-
-        public async Task SendToSap(int id)
-        {
-            Logger.Debug(String.Format("SendToSap({0})", id));
-            string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], id);
+            string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], order.Id);
             var response = await AppConsts.Instance.GetClient().GetAsync(url);
 
             if (response.IsSuccessStatusCode)
             {
                 Logger.Info("Success to send to SAP");
             }
+            return order;
         }
 
         [UnitOfWork]
@@ -96,7 +95,7 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
         {
             try
             {
-                await CreateOrder(args);
+                var order = await CreateOrder(args);
 
                 /*
                 //Finally send a mail

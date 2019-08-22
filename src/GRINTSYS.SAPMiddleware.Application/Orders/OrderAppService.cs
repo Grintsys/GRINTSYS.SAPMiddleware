@@ -98,6 +98,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
                     Comment = s.Comment,
                     LastMessage = s.LastMessage,
                     Status = ((OrderStatus)s.Status).ToString(),
+                    Total = s.GetTotal(),
                     TotalFormatted = s.GetTotal().ToString()
                 })
                 .OrderByDescending(o => o.Id)

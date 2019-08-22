@@ -26,7 +26,7 @@
     </environment>
 }
 <div class="block-header">
-    <h2>SAMPLE DASHBOARD</h2>
+    <h2>@L("SalesAndPaymentDashboard")</h2>
 </div>
 
 <!-- Widgets -->
@@ -37,19 +37,19 @@
                 <i class="material-icons">playlist_add_check</i>
             </div>
             <div class="content">
-                <div class="text">NEW TASKS</div>
-                <div class="number count-to" data-from="0" data-to="125" data-speed="1000" data-fresh-interval="20"></div>
+                <div class="text">@L("CountSales")</div>
+                <div class="number count-to" data-from="0" data-to="@ViewBag.SalesCountByThisMonth" data-speed="1000" data-fresh-interval="20"></div>
             </div>
         </div>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div class="info-box bg-cyan hover-expand-effect">
             <div class="icon">
-                <i class="material-icons">help</i>
+                <i class="material-icons">attach_money</i>
             </div>
             <div class="content">
-                <div class="text">NEW TICKETS</div>
-                <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
+                <div class="text">@L("TotalSales")</div>
+                <div class="number count-to" data-from="0" data-to="@ViewBag.SalesAmountByThisMonth" data-speed="1000" data-fresh-interval="20"></div>
             </div>
         </div>
     </div>
