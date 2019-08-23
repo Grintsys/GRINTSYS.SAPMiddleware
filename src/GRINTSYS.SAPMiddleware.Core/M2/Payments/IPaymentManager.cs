@@ -8,6 +8,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
     public interface IPaymentManager : IDomainService
     {
         Task CreatePayment(Payment payment);
+        Task AddPaymentInvoiceItem(PaymentInvoiceItem item);
         Task CreateInvoice(Invoice invoice);
         Task DeletePayment(int id);
         Payment GetPayment(int id);

@@ -1,6 +1,7 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.BackgroundJobs;
+using Abp.Runtime.Session;
 using Abp.UI;
 using GRINTSYS.SAPMiddleware.Authorization.Users;
 using GRINTSYS.SAPMiddleware.M2;
@@ -11,6 +12,7 @@ using GRINTSYS.SAPMiddleware.Payments.Job;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Payments
@@ -20,14 +22,18 @@ namespace GRINTSYS.SAPMiddleware.Payments
         private readonly UserManager _userManager;
         private readonly PaymentManager _paymentManager;
         private readonly IBackgroundJobManager _backgroundJobManager;
+        private readonly IAbpSession _session;
+
 
         public PaymentAppService(IBackgroundJobManager backgroundJobManager, 
             UserManager userManager,
-            PaymentManager paymentManager)
+            PaymentManager paymentManager,
+            IAbpSession session)
         {
             _backgroundJobManager = backgroundJobManager;
             _userManager = userManager;
             _paymentManager = paymentManager;
+            _session = session;
         }
 
         public async Task AutorizePayment(GetPaymentInput input)
@@ -35,13 +41,25 @@ namespace GRINTSYS.SAPMiddleware.Payments
             var userId = GetUserId();
             var user = await _userManager.FindByIdAsync(userId.ToString());
 
+            Logger.Debug(String.Format("SendToSap({0})", input.Id));
+            string url = String.Format("{0}api/payments/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], input.Id);
+            var response = await AppConsts.Instance.GetClient().GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Logger.Info("Success to send to SAP");
+
+                /*aqui manda email de que se ejecuto correctamente o ocurrio algun error*/
+            }
+
+            /*
             await _backgroundJobManager.EnqueueAsync<PaymentJob, PaymentJobArgs>(
                new PaymentJobArgs
                {
                    Id = input.Id,
                    UserId = GetUserId(),
                    To = user.EmailAddress
-            });
+            });*/
         }
 
         public async Task CreateInvoice(AddInvoiceInput input)
@@ -59,11 +77,16 @@ namespace GRINTSYS.SAPMiddleware.Payments
 
             await _paymentManager.CreatePayment(payment);
 
-            /*
             foreach (var item in input.PaymentItemList)
             {
+                await _paymentManager.AddPaymentInvoiceItem(new PaymentInvoiceItem()
+                {
+                    TenantId = input.TenantId,
+                    DocEntry = input.DocEntry,
+                    DocumentCode = item.DocumentCode,
+                    PaymentId = payment.Id
+                });
             }
-            */
         } 
 
         public async Task<PaymentOutput> DeclinePayment(GetPaymentInput input)
@@ -140,6 +163,30 @@ namespace GRINTSYS.SAPMiddleware.Payments
                 LastErrorMessage = payment.LastMessage,
                 CreationTime = payment.CreationTime,
                 DebtCollectorId = payment.User.CollectId
+            };
+        }
+
+        public PagedResultDto<PaymentOutput> GetPayments(GetAllPaymentInput input)
+        {
+            if (input.TenantId == 0)
+                input.TenantId = (int)_session.TenantId;
+
+            if (String.IsNullOrEmpty(input.Begin))
+                input.Begin = DateTime.MinValue.ToString();
+
+            if (String.IsNullOrEmpty(input.End))
+                input.End = DateTime.MaxValue.ToString();
+
+            var payments = _paymentManager.GetPayments(input.TenantId,
+                DateTime.Parse(input.Begin),
+                DateTime.Parse(input.End));
+
+            var total = payments.Count();
+
+            return new PagedResultDto<PaymentOutput>
+            {
+                TotalCount = total,
+                Items = payments.MapTo<List<PaymentOutput>>()
             };
         }
 

@@ -25,6 +25,7 @@ namespace GRINTSYS.SAPMiddleware.EntityFrameworkCore
         public DbSet<ClientDiscount> ClientDiscounts { get; set; }
         public DbSet<ClientTransaction> ClientTransactions { get; set; }
         public DbSet<Payment> Payments { get; set; }
+        public DbSet<PaymentInvoiceItem> paymentInvoiceItems { get; set; }
         public DbSet<Bank> Banks { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<InvoiceHistory> InvoiceHistory { get; set; }

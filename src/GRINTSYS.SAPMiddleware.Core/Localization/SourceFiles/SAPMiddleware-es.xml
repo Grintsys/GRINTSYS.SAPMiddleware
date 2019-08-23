@@ -43,5 +43,9 @@
     <text name="TenantSelection_Detail" value="Por favor seleccione una de las siguientes empresas." />
     <text name="Logout" value="Cerrar sesión" />
 
+    <text name="Order">Orden</text>
+    <text name="Payment">Pago</text>
+    <text name="M2Module">M2 Module</text>
+
   </texts>
 </localizationDictionary>

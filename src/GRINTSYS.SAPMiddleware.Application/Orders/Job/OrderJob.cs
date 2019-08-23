@@ -8,6 +8,7 @@ using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Orders;
 using GRINTSYS.SAPMiddleware.M2.Products;
 using GRINTSYS.SAPMiddleware.Mail;
+using GRINTSYS.SAPMiddleware.Orders.Dto;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
@@ -26,77 +27,78 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
         private readonly OrderManager _orderManager;
         private readonly CartManager _cartManager;
         private readonly UserManager _userManager;
+        private readonly IOrderAppService _orderService;
 
         public OrderJob(ProductManager productManager, 
             OrderManager orderManager, 
             CartManager cartManager,
-            UserManager userManager)
+            UserManager userManager,
+            IOrderAppService orderService)
         {
             _productManager = productManager;
             _orderManager = orderManager;
             _cartManager = cartManager;
             _userManager = userManager;
+            _orderService = orderService;
         }
 
-        public async Task CreateOrder(OrderParams args)
-        {
-            var newOrder = new Order()
-            {
-                TenantId = args.TenantId,
-                UserId = args.UserId,
-                Status = OrderStatus.CreadoEnAplicacion,
-                DeliveryDate = args.DeliveryDate,
-                Comment = args.Comment,
-                CardCode = args.CardCode
-            };
-
-            var order = await _orderManager.CreateOrder(newOrder);
-
-            var products = _cartManager.GetCartProductItemsByUser(args.UserId, args.TenantId);
-
-            foreach (var item in products)
-            {
-                var newOrderItem = new OrderItem()
-                {
-                    TenantId = args.TenantId,
-                    OrderId = order.Id,
-                    Code = item.Variant.Code,
-                    Quantity = item.Quantity,
-                    Price = item.Variant.Price,
-                    TaxCode = "", //falta esto
-                    WarehouseCode = item.Variant.WareHouseCode
-                };
-
-                await _orderManager.CreateOrderItem(newOrderItem);
-                //actualiza el comprometido pero solo en M2
-                await _productManager.UpdateProductStock(item.Variant.Id, item.Quantity);
-            }
-
-            //Delete the user cart
-            await _cartManager.DeleteUserCart(args.UserId, args.TenantId);
-
-            //Hey this send to SAP
-            await SendToSap(order.Id);
-        }
-
-        public async Task SendToSap(int id)
-        {
-            Logger.Debug(String.Format("SendToSap({0})", id));
-            string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], id);
-            var response = await AppConsts.Instance.GetClient().GetAsync(url);
-
-            if (response.IsSuccessStatusCode)
-            {
-                Logger.Info("Success to send to SAP");
-            }
-        }
-
-        [UnitOfWork]
         public override async void Execute(OrderParams args)
         {
             try
             {
-                await CreateOrder(args);
+                var newOrder = new Order()
+                {
+                    TenantId = args.TenantId,
+                    UserId = args.UserId,
+                    Status = OrderStatus.CreadoEnAplicacion,
+                    DeliveryDate = args.DeliveryDate,
+                    Comment = args.Comment,
+                    CardCode = args.CardCode
+                };
+
+                var order = await _orderManager.CreateOrder(newOrder);
+
+                var products = _cartManager.GetCartProductItemsByUser(args.UserId, args.TenantId);
+
+                foreach (var item in products)
+                {
+                    var newOrderItem = new OrderItem()
+                    {
+                        TenantId = args.TenantId,
+                        OrderId = order.Id,
+                        Code = item.Variant.Code,
+                        Quantity = item.Quantity,
+                        Price = item.Variant.Price,
+                        TaxCode = "", //falta esto
+                        WarehouseCode = item.Variant.WareHouseCode
+                    };
+
+                    await _orderManager.CreateOrderItem(newOrderItem);
+                    //actualiza el comprometido pero solo en M2
+                    await _productManager.UpdateProductStock(item.Variant.Id, item.Quantity);
+                }
+
+                //Delete the user cart
+                await _cartManager.DeleteUserCart(args.UserId, args.TenantId);
+
+                //Hey this send to SAP
+                string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], order.Id);
+                //var response = await AppConsts.Instance.GetClient().GetAsync(url);
+
+                using (var Client = new HttpClient())
+                {
+                    Client.Timeout = TimeSpan.FromMinutes(5);
+                    Client.DefaultRequestHeaders.Accept.Clear();
+                    Client.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    var response = await Client.GetAsync(url);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        Logger.Info("Success to send to SAP");
+                    }
+                }
+
 
                 /*
                 //Finally send a mail
@@ -113,7 +115,7 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
                 });*/
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Logger.Error(e.Message);
 

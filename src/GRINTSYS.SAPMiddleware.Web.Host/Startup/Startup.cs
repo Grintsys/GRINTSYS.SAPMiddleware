@@ -16,6 +16,10 @@ using GRINTSYS.SAPMiddleware.Configuration;
 using GRINTSYS.SAPMiddleware.Identity;
 
 using Abp.AspNetCore.SignalR.Hubs;
+using Hangfire;
+using Hangfire.SqlServer;
+using Abp.Hangfire;
+using GRINTSYS.SAPMiddleware.Authorization;
 
 namespace GRINTSYS.SAPMiddleware.Web.Host.Startup
 {
@@ -76,6 +80,14 @@ namespace GRINTSYS.SAPMiddleware.Web.Host.Startup
                 });
             });
 
+            //Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password = myPassword;
+            String connection = @"Server=181.199.177.162; Database=SAPMiddleware; User ID=sa; Password=Pinac45; MultipleActiveResultSets=true";
+            //TODO: fix this please
+            services.AddHangfire(config =>
+            {
+                config.UseSqlServerStorage(connection);
+            });
+
             // Configure Abp and Dependency Injection
             return services.AddAbp<SAPMiddlewareWebHostModule>(
                 // Configure Log4Net logging
@@ -97,12 +109,11 @@ namespace GRINTSYS.SAPMiddleware.Web.Host.Startup
 
             app.UseAbpRequestLocalization();
 
-
             app.UseSignalR(routes =>
             {
                 routes.MapHub<AbpCommonHub>("/signalr");
             });
-
+          
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -123,6 +134,15 @@ namespace GRINTSYS.SAPMiddleware.Web.Host.Startup
                 options.IndexStream = () => Assembly.GetExecutingAssembly()
                     .GetManifestResourceStream("GRINTSYS.SAPMiddleware.Web.Host.wwwroot.swagger.ui.index.html");
             }); // URL: /swagger
+
+            app.UseHangfireServer();
+            app.UseHangfireDashboard();
+
+            /*
+            app.UseHangfireDashboard("/hangfire", new DashboardOptions
+            {
+                Authorization = new[] { new AbpHangfireAuthorizationFilter(PermissionNames.Pages_HangfireAccess) }
+            });*/   
         }
     }
 }

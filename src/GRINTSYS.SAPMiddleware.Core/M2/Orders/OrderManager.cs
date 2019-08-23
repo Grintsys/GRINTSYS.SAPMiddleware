@@ -58,11 +58,19 @@ namespace GRINTSYS.SAPMiddleware.M2.Orders
             return order;
         }
 
-        public List<Order> GetOrders(int tenantId, long userId, DateTime begin, DateTime end)
+        public List<Order> GetOrdersByUser(int tenantId, long userId, DateTime begin, DateTime end)
         {
-            return _orderRepository.GetAll()
-                .Where(w => w.TenantId == tenantId 
+            return _orderRepository.GetAllIncluding(x => x.OrderItems)
+                .Where(w => w.TenantId == tenantId
                     && w.UserId == userId
+                    && w.CreationTime >= begin && w.CreationTime <= end)
+                .ToList();
+        }
+
+        public List<Order> GetOrders(int tenantId, DateTime begin, DateTime end)
+        {
+            return _orderRepository.GetAllIncluding(x => x.OrderItems)
+                .Where(w => w.TenantId == tenantId
                     && w.CreationTime >= begin && w.CreationTime <= end)
                 .ToList();
         }
@@ -70,6 +78,11 @@ namespace GRINTSYS.SAPMiddleware.M2.Orders
         public Order UpdateOrder(Order order)
         {
             return _orderRepository.Update(order);
+        }
+
+        public async Task DeleteOrderAsync(Order order)
+        {
+             await _orderRepository.DeleteAsync(order);
         }
     }
 }

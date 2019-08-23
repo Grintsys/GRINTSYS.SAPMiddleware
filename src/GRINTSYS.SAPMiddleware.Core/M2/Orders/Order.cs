@@ -17,7 +17,7 @@ namespace GRINTSYS.SAPMiddleware.M2
     }
 
     public class Order: Entity, IHasCreationTime, IMustHaveTenant
-    {
+    { 
         public int TenantId { get; set; }
         public String RemoteId { get; set; }
         public OrderStatus Status { get; set; }

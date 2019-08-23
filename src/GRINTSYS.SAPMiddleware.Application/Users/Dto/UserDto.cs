@@ -37,7 +37,7 @@ namespace GRINTSYS.SAPMiddleware.Users.Dto
 
         public int SalesPersonId { get; set; }
 
-        public int CollectorId { get; set; }
+        public int CollectId { get; set; }
 
         public string[] RoleNames { get; set; }
     }

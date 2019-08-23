@@ -11,6 +11,7 @@ namespace GRINTSYS.SAPMiddleware.Carts.Dto
         public int Id { get; set; }
         public int ProductCount { get; set; }
         public double TotalPrice { get; set; }
+        public String TotalPriceFormatted { get; set; }
         public double Discount { get; set; }
         public double ISV { get; set; }
         public double Subtotal { get; set; }

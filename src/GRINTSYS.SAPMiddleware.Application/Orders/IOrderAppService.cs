@@ -9,8 +9,9 @@ namespace GRINTSYS.SAPMiddleware.Orders
 {
     public interface IOrderAppService: IApplicationService, ITransientDependency
     {
-        Task CreateOrder(AddOrderInput input);
+        Task CreateOrder(CreateOrderInput input);
         Task GetOrderInSap(SentToSapInput input);
+        Task DeleteOrder(DeleteOrderInput input);
         OrderOutput GetOrder(GetOrderInput input);
         PagedResultDto<OrderOutput> GetOrders(GetAllOrderInput input);
         List<SellerOutput> GetSellers(GetAllSellerInput input);

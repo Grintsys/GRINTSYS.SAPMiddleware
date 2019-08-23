@@ -10,6 +10,7 @@ namespace GRINTSYS.SAPMiddleware.M2
     {
         public int TenantId { get; set; }
         public int PaymentId { get; set; }
+        public int DocEntry { get; set; }
         public String DocumentCode { get; set; }
         public Double TotalAmount { get; set; }
         public Double BalanceDue { get; set; }

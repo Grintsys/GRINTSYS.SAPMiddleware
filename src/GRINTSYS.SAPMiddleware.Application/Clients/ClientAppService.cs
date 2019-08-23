@@ -76,6 +76,11 @@ namespace GRINTSYS.SAPMiddleware.Clients
             };
         }
 
+        public double GetClientDiscount(string cardcode, int itemgroup)
+        {
+            return _clientManager.GetClientDiscountByItemGroupCode(cardcode, itemgroup);
+        }
+
         public ClientDto GetClientDocuments(GetClientInput input)
         {
             var client = _clientManager.GetClient(input.Id);

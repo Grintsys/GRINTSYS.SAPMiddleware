@@ -15,9 +15,12 @@ namespace GRINTSYS.SAPMiddleware.Orders.Dto
         public String Status { get; set; }
         public String CardCode { get; set; }
         public String Comment { get; set; }
+        public String LastMessage { get; set; }
         public Int32 Series { get; set; }
         public String DeliveryDate { get; set; }
         public ClientDto Client { get; set; }
+        public double Total { get; set; }
+        public String TotalFormatted { get; set; }
         //public List<OrderItemOutput> Items { get; set;}
     }
 }

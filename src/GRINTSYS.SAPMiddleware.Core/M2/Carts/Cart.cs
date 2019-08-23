@@ -26,12 +26,13 @@ namespace GRINTSYS.SAPMiddleware.M2
         public CartType Type { get; set; }
         public DateTime CreationTime { get; set; }
 
-        public Cart(int tenantId, long userId = 1)
+        public Cart(int tenantId, string currency, long userId = 1)
         {
             CreationTime = Clock.Now;
             Type = CartType.CART;
             UserId = userId;
             TenantId = tenantId;
+            Currency = currency;
         }
 
         public String GetProductTotalPriceFormatted()

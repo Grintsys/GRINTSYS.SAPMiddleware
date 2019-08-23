@@ -1205,6 +1205,8 @@ namespace GRINTSYS.SAPMiddleware.Migrations
 
                     b.Property<double>("CreditLimit");
 
+                    b.Property<string>("Dimension");
+
                     b.Property<double>("InOrders");
 
                     b.Property<string>("Name");
@@ -1496,6 +1498,8 @@ namespace GRINTSYS.SAPMiddleware.Migrations
 
                     b.Property<DateTime>("CreationTime");
 
+                    b.Property<int>("DocEntry");
+
                     b.Property<string>("DocumentCode");
 
                     b.Property<double>("PayedAmount");
@@ -1510,7 +1514,7 @@ namespace GRINTSYS.SAPMiddleware.Migrations
 
                     b.HasIndex("PaymentId");
 
-                    b.ToTable("PaymentInvoiceItem");
+                    b.ToTable("paymentInvoiceItems");
                 });
 
             modelBuilder.Entity("GRINTSYS.SAPMiddleware.M2.Product", b =>

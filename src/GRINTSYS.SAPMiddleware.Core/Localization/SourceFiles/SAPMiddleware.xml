@@ -95,5 +95,13 @@
     <text name="Skins">Skins</text>
     <text name="Settings">Settings</text>
     <text name="Filter">Filter</text>
+    <text name="Order">Order</text>
+    <text name="Payment">Payment</text>
+    <text name="M2Module">M2 Module</text>
+    <text name="M2Admin">M2 Admin</text>
+    <text name="Autorization">Autorization</text>
+    <text name="Send">Send</text>
+    <text name="Approve">Approve</text>
+    <text name="Decline">Decline</text>
   </texts>
 </localizationDictionary>

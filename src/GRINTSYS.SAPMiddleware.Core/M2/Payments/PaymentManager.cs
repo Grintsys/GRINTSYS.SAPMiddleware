@@ -14,12 +14,15 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
     {
         private readonly IRepository<Payment> _paymentRepository;
         private readonly IRepository<Invoice> _invoiceRepository;
+        private readonly IRepository<PaymentInvoiceItem> _paymentInvoiceItemRepository;
 
         public PaymentManager(IRepository<Payment> paymentRepository,
-            IRepository<Invoice> invoiceRepository)
+            IRepository<Invoice> invoiceRepository,
+            IRepository<PaymentInvoiceItem> paymentInvoiceItem)
         {
             _paymentRepository = paymentRepository;
             _invoiceRepository = invoiceRepository;
+            _paymentInvoiceItemRepository = paymentInvoiceItem;
         }
 
         public Task CreateInvoice(Invoice invoice)
@@ -29,8 +32,6 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
 
         public Task CreatePayment(Payment payment)
         {
-            //ValidatePayedAmount(payment.InvoiceId, payment.PayedAmount);
-
             return _paymentRepository.InsertAsync(payment);
         }
 
@@ -67,6 +68,15 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
                 .ToList();
         }
 
+        public List<Payment> GetPayments(int tenantId, DateTime? begin, DateTime? end)
+        {
+            return _paymentRepository.GetAllIncluding(x => x.Bank, x=> x.InvoicesItems)
+                .Where(w => w.TenantId == tenantId)
+                .WhereIf(begin.HasValue && end.HasValue, w => w.CreationTime >= begin && w.CreationTime <= end)
+                .OrderByDescending( o => o.Id)
+                .ToList();
+        }
+
         public Payment UpdatePayment(Payment payment)
         {
             return _paymentRepository.Update(payment);
@@ -84,6 +94,11 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
 
             if (amount <= 0)
                 throw new UserFriendlyException("the amount can't be 0 or less");
+        }
+
+        public Task AddPaymentInvoiceItem(PaymentInvoiceItem item)
+        {
+            return _paymentInvoiceItemRepository.InsertAsync(item);
         }
     }
 }

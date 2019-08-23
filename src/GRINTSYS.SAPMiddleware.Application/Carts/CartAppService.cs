@@ -18,32 +18,34 @@ namespace GRINTSYS.SAPMiddleware.Carts
     {
         private CartManager _cartManager;
         private ProductManager _productManager;
+        private ClientManager _clientManager;
 
         public CartAppService(CartManager cartManager,
-            ProductManager productManager)
+            ProductManager productManager,
+            ClientManager clientManager)
         {
             this._cartManager = cartManager;
             this._productManager = productManager;
+            this._clientManager = clientManager;
         }
 
         public async Task AddItemToCart(AddCartItemInput input)
         {
             var userId = GetUserId();
 
+            //here we have some global settings
+            var tenant = await GetCurrentTenantAsync();
+
             // create the cart if not exits otherwise get the current cart
-            var cart = await _cartManager.CreateCart(new Cart(input.TenantId, userId));
+            var cart = await _cartManager.CreateCart(new Cart(input.TenantId, tenant.Currency, userId));
 
             // get the product that we'll add to the cart
             var productVariant = await _productManager.GetProductVariantAsync(input.ProductVariantId);
 
-            //var tenant = this.TenantManager.FindByIdAsync(input.TenantId);
-            var isv = await this.TenantManager.GetFeatureValueOrNullAsync(input.TenantId, "ISV");
-            //var isv = tenant == null ? 0.0 : tenant.
-            // Get the discount if that costumer apply
-            //var discount = _clientManager.GetClientDiscountByItemGroupCode(input.CardCode, productVariant.ItemGroup);
+            var discount = _clientManager.GetClientDiscountByItemGroupCode(input.CardCode, productVariant.ItemGroup);
 
-            var cartItem = new CartProductItem(input.TenantId, cart.Id, productVariant.Id, input.Quantity, productVariant.Price, 0, 0);
-            //add the item to the cart
+            var cartItem = new CartProductItem(input.TenantId, cart.Id, productVariant.Id, input.Quantity, productVariant.Price, tenant.ISV, discount);            
+            //finally add the item to the cart
             await _cartManager.CreateCartProductItem(cartItem);
         }
 
@@ -62,7 +64,6 @@ namespace GRINTSYS.SAPMiddleware.Carts
         public CartOutput GetCart(GetCartInput input)
         {
             var userId = AbpSession.GetUserId();
-            //var tenant = await GetCurrentTenantAsync();
 
             var cart = _cartManager.GetCartByUser(userId, input.TenantId);
 
@@ -73,15 +74,17 @@ namespace GRINTSYS.SAPMiddleware.Carts
 
             var items = _cartManager.GetCartProductItems(cart.Id);
 
+            var total = (items.Sum(c => c.Variant.Price * c.Quantity) - cart.GetProductDiscountPrice()) + cart.GetProductISVPrice();
             return new CartOutput()
             {
                 Id = cart.Id,
                 Subtotal = items.Sum(c => c.Variant.Price * c.Quantity),
                 ISV = cart.GetProductISVPrice(),
                 ProductCount = cart.GetProductCount(),
-                Currency = "NHL",
+                Currency = cart.Currency,
                 Discount = cart.GetProductDiscountPrice(),
-                TotalPrice = (items.Sum(c => c.Variant.Price * c.Quantity) - cart.GetProductDiscountPrice()) + cart.GetProductISVPrice(),
+                TotalPrice = total,
+                TotalPriceFormatted = cart.Currency + " " + total,
                 items = items.MapTo<List<CartProductItemOutput>>()
             };
         }
@@ -101,7 +104,7 @@ namespace GRINTSYS.SAPMiddleware.Carts
         public Task CreateCart(AddCartInput input)
         {
             var userId = GetUserId();
-            return _cartManager.CreateCart(new Cart(input.TenantId, userId));
+            return _cartManager.CreateCart(new Cart(input.TenantId, "", userId));
         }
     }
 }

@@ -9,7 +9,6 @@ namespace GRINTSYS.SAPMiddleware.M2.Clients
     public interface IClientManager: IDomainService
     {
         Client GetClient(int id);
-        List<ClientDiscount> GetClientDiscount(string cardcode);
-        Double GetClientDiscountByItemGroupCode(string cardcode, int itemGroupCode);
+        double GetClientDiscountByItemGroupCode(string cardcode, int itemgroup);
     }
 }

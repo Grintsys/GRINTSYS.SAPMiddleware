@@ -10,5 +10,6 @@ namespace GRINTSYS.SAPMiddleware.Payments.Dto
     public class PaymentItemOutput: EntityDto
     {
         public String DocumentCode { get; set; }
+        public int DocEntry { get; set; }
     }
 }

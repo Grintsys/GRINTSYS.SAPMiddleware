@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Text;
-using System.Threading.Tasks;
-using Abp.Application.Services.Dto;
+﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.BackgroundJobs;
 using Abp.Collections.Extensions;
@@ -11,12 +6,16 @@ using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
 using Abp.Runtime.Session;
 using Abp.UI;
-using AutoMapper.QueryableExtensions;
 using GRINTSYS.SAPMiddleware.Authorization.Users;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Orders;
 using GRINTSYS.SAPMiddleware.Orders.Dto;
 using GRINTSYS.SAPMiddleware.Orders.Job;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GRINTSYS.SAPMiddleware.Orders
 {
@@ -27,19 +26,22 @@ namespace GRINTSYS.SAPMiddleware.Orders
         //TODO: please find a better solution insted of create a user repository
         private readonly IRepository<User, long> _userRepository;
         private readonly IBackgroundJobManager _backgroundJobManager;
+        private readonly IAbpSession _session;
 
         public OrderAppService(OrderManager orderManager, 
             CartManager cartManager,
             IRepository<User, long> userRepository,
-            IBackgroundJobManager backgroundJobManager)
+            IBackgroundJobManager backgroundJobManager,
+            IAbpSession session)
         {
             _orderManager = orderManager;
             _cartManager = cartManager;
             _userRepository = userRepository;
             _backgroundJobManager = backgroundJobManager;
+            _session = session;
         }
 
-        public async Task CreateOrder(AddOrderInput input)
+        public async Task CreateOrder(CreateOrderInput input)
         {
             var userId = GetUserId();
 
@@ -55,6 +57,16 @@ namespace GRINTSYS.SAPMiddleware.Orders
                      Comment = input.Comment,
                      DeliveryDate = input.DeliveryDate
                 });
+        }
+
+        public async Task DeleteOrder(DeleteOrderInput input)
+        {
+            var order = _orderManager.GetOrder(input.OrderId);
+
+            if (order == null)
+                throw new UserFriendlyException("Order is not found");
+
+            await _orderManager.DeleteOrderAsync(order);
         }
 
         public OrderOutput GetOrder(GetOrderInput input)
@@ -77,15 +89,72 @@ namespace GRINTSYS.SAPMiddleware.Orders
 
         public PagedResultDto<OrderOutput> GetOrders(GetAllOrderInput input)
         {
-            var userId = GetUserId();
+            if (input.TenantId == 0)
+                input.TenantId = (int)_session.TenantId;
 
-            var orders = _orderManager.GetOrders(input.TenantId, 
-                userId, 
-                DateTime.Parse(input.begin), DateTime.Parse(input.end));
+            if (String.IsNullOrEmpty(input.begin))
+                input.begin = DateTime.MinValue.ToString();
+
+            if (String.IsNullOrEmpty(input.end))
+                input.end = DateTime.MaxValue.ToString();
+
+            var orders = _orderManager.GetOrders(input.TenantId,
+                DateTime.Parse(input.begin),
+                DateTime.Parse(input.end))
+                .Select(s => new OrderOutput()
+                {
+                    Id = s.Id,
+                    CardCode = s.CardCode,
+                    Comment = s.Comment,
+                    LastMessage = s.LastMessage,
+                    Status = ((OrderStatus)s.Status).ToString(),
+                    Total = s.GetTotal(),
+                    TotalFormatted = s.GetTotal().ToString()
+                })
+                .OrderByDescending(o => o.Id)
+                .ToList();
+
+            var total = orders.Count();
 
             return new PagedResultDto<OrderOutput>()
             {
-                Items = orders.MapTo<List<OrderOutput>>()
+                TotalCount = total,
+                Items = orders
+            };
+        }
+
+
+        //this methods need some refactor
+        public PagedResultDto<OrderOutput> GetOrdersByUser(GetAllOrderInput input)
+        {
+            var userId = GetUserId();
+
+            if (String.IsNullOrEmpty(input.begin))
+                input.begin = DateTime.MinValue.ToString();
+
+            if (String.IsNullOrEmpty(input.end))
+                input.end = DateTime.MaxValue.ToString();
+
+            var orders = _orderManager.GetOrdersByUser(input.TenantId,
+                userId,
+                DateTime.Parse(input.begin),
+                DateTime.Parse(input.end))
+                .Select(s => new OrderOutput()
+                {
+                    CardCode = s.CardCode,
+                    Comment = s.Comment,
+                    LastMessage = s.LastMessage,
+                    Status = ((OrderStatus)s.Status).ToString(),
+                    TotalFormatted = s.GetTotal().ToString()
+                })
+                .ToList();
+
+            var total = orders.Count();
+
+            return new PagedResultDto<OrderOutput>()
+            {
+                TotalCount = total,
+                Items = orders
             };
         }
 
@@ -101,6 +170,8 @@ namespace GRINTSYS.SAPMiddleware.Orders
 
         public async Task GetOrderInSap(SentToSapInput input)
         {
+            await _backgroundJobManager.EnqueueAsync<OrderToSAPJob, int>(input.Id);
+            /*
             Logger.Debug(String.Format("SendToSap({0})", input.Id));
             string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], input.Id);
             var response = await AppConsts.Instance.GetClient().GetAsync(url);
@@ -108,7 +179,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
             if (response.IsSuccessStatusCode)
             {
                 Logger.Info("Success to send to SAP");
-            }
+            }*/
         }
     }
 }
