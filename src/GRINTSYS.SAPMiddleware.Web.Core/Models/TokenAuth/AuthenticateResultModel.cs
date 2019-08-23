@@ -16,6 +16,6 @@
 
         public int SalesPersonId { get; set; }
 
-        public int CollectorId { get; set; }
+        public int CollectId { get; set; }
     }
 }

@@ -44,11 +44,6 @@ namespace GRINTSYS.SAPMiddleware.Web.Host.Startup
             IdentityRegistrar.Register(services);
             AuthConfigurer.Configure(services, _appConfiguration);
 
-            services.AddHangfire(config =>
-            {
-                config.UseSqlServerStorage(_appConfiguration.GetConnectionString("Default"));
-            });
-
             services.AddSignalR();
 
             // Configure CORS for angular2 UI
@@ -83,6 +78,14 @@ namespace GRINTSYS.SAPMiddleware.Web.Host.Startup
                     In = "header",
                     Type = "apiKey"
                 });
+            });
+
+            //Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password = myPassword;
+            String connection = @"Server=181.199.177.162; Database=SAPMiddleware; User ID=sa; Password=Pinac45; MultipleActiveResultSets=true";
+            //TODO: fix this please
+            services.AddHangfire(config =>
+            {
+                config.UseSqlServerStorage(connection);
             });
 
             // Configure Abp and Dependency Injection
