@@ -26,20 +26,14 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
         private readonly ProductManager _productManager;
         private readonly OrderManager _orderManager;
         private readonly CartManager _cartManager;
-        private readonly UserManager _userManager;
-        private readonly IOrderAppService _orderService;
 
         public OrderJob(ProductManager productManager, 
             OrderManager orderManager, 
-            CartManager cartManager,
-            UserManager userManager,
-            IOrderAppService orderService)
+            CartManager cartManager)
         {
             _productManager = productManager;
             _orderManager = orderManager;
             _cartManager = cartManager;
-            _userManager = userManager;
-            _orderService = orderService;
         }
 
         public override async void Execute(OrderParams args)
@@ -56,7 +50,7 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
                     CardCode = args.CardCode
                 };
 
-                var order = await _orderManager.CreateOrder(newOrder);
+                var orderId = await _orderManager.CreateOrder(newOrder);
 
                 var products = _cartManager.GetCartProductItemsByUser(args.UserId, args.TenantId);
 
@@ -65,7 +59,7 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
                     var newOrderItem = new OrderItem()
                     {
                         TenantId = args.TenantId,
-                        OrderId = order.Id,
+                        OrderId = orderId,
                         Code = item.Variant.Code,
                         Quantity = item.Quantity,
                         Price = item.Variant.Price,
@@ -82,7 +76,7 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
                 await _cartManager.DeleteUserCart(args.UserId, args.TenantId);
 
                 //Hey this send to SAP
-                string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], order.Id);
+                string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], orderId);
                 //var response = await AppConsts.Instance.GetClient().GetAsync(url);
 
                 using (var Client = new HttpClient())

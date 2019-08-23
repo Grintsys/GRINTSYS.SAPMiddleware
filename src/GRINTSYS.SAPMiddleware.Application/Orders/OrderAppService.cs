@@ -9,6 +9,7 @@ using Abp.UI;
 using GRINTSYS.SAPMiddleware.Authorization.Users;
 using GRINTSYS.SAPMiddleware.M2;
 using GRINTSYS.SAPMiddleware.M2.Orders;
+using GRINTSYS.SAPMiddleware.M2.Products;
 using GRINTSYS.SAPMiddleware.Orders.Dto;
 using GRINTSYS.SAPMiddleware.Orders.Job;
 using System;
@@ -23,6 +24,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
     {
         private readonly OrderManager _orderManager;
         private readonly CartManager _cartManager;
+        private readonly ProductManager _productManager;
         //TODO: please find a better solution insted of create a user repository
         private readonly IRepository<User, long> _userRepository;
         private readonly IBackgroundJobManager _backgroundJobManager;
@@ -30,12 +32,14 @@ namespace GRINTSYS.SAPMiddleware.Orders
 
         public OrderAppService(OrderManager orderManager, 
             CartManager cartManager,
+            ProductManager productManager,
             IRepository<User, long> userRepository,
             IBackgroundJobManager backgroundJobManager,
             IAbpSession session)
         {
             _orderManager = orderManager;
             _cartManager = cartManager;
+            _productManager = productManager;
             _userRepository = userRepository;
             _backgroundJobManager = backgroundJobManager;
             _session = session;
@@ -48,15 +52,44 @@ namespace GRINTSYS.SAPMiddleware.Orders
             if (!input.TenantId.HasValue && String.IsNullOrEmpty(input.CardCode))
                 throw new UserFriendlyException("Tenant or CardCode is not present");
 
-            await _backgroundJobManager.EnqueueAsync<OrderJob, OrderParams>(
-                new OrderParams
+            var newOrder = new Order()
+            {
+                TenantId = input.TenantId.Value,
+                UserId = userId,
+                Status = OrderStatus.CreadoEnAplicacion,
+                DeliveryDate = input.DeliveryDate,
+                Comment = input.Comment,
+                CardCode = input.CardCode
+            };
+
+            var orderId = await _orderManager.CreateOrder(newOrder);
+
+            var products = _cartManager.GetCartProductItemsByUser(userId, input.TenantId.Value);
+
+            foreach (var item in products)
+            {
+                var newOrderItem = new OrderItem()
                 {
-                     TenantId = input.TenantId.Value,
-                     UserId = userId,
-                     CardCode = input.CardCode,
-                     Comment = input.Comment,
-                     DeliveryDate = input.DeliveryDate
-                });
+                    TenantId = input.TenantId.Value,
+                    OrderId = orderId,
+                    Code = item.Variant.Code,
+                    Quantity = item.Quantity,
+                    Price = item.Variant.Price,
+                    TaxCode = "", //falta esto
+                    WarehouseCode = item.Variant.WareHouseCode
+                };
+
+                await _orderManager.CreateOrderItem(newOrderItem);
+                //actualiza el comprometido pero solo en M2
+                await _productManager.UpdateProductStock(item.Variant.Id, item.Quantity);
+            }
+
+            //Delete the user cart
+            await _cartManager.DeleteUserCart(userId, input.TenantId.Value);
+
+            //Hey this send to SAP using hangfire backgroundjobs
+            string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], orderId);
+            await AppConsts.Instance.GetClient().GetAsync(url);
         }
 
         public async Task DeleteOrder(DeleteOrderInput input)

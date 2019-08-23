@@ -24,19 +24,19 @@ namespace GRINTSYS.SAPMiddleware.M2.Orders
             _cartRespository = cartRespository;
         }
 
-        public async Task<Order> CreateOrder(Order order)
+        public async Task<int> CreateOrder(Order order)
         {
-            var cart = _cartRespository.GetAll()
-                .Where(w => w.UserId == order.UserId
-                    && w.TenantId == order.TenantId)
-                .FirstOrDefault();
-
+            var cart = await _cartRespository
+                .FirstOrDefaultAsync(w => 
+                    w.UserId == order.UserId
+                    && w.TenantId == order.TenantId);
+                
             if(cart == null)
             {
                 throw new UserFriendlyException("You can't create a new Order because your cart is empty");
             }
 
-            return await _orderRepository.InsertAsync(order);
+            return await _orderRepository.InsertAndGetIdAsync(order);
         }
 
         public Task CreateOrderItem(OrderItem orderItem)

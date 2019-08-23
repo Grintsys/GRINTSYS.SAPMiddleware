@@ -4,6 +4,7 @@ using System.Text;
 
 namespace GRINTSYS.SAPMiddleware.Orders.Job
 {
+    [Serializable]
     public class OrderParams
     {
         public int TenantId { get; set; }

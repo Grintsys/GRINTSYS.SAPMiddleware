@@ -12,6 +12,7 @@ using Abp.Zero.Configuration;
 using GRINTSYS.SAPMiddleware.Authentication.JwtBearer;
 using GRINTSYS.SAPMiddleware.Configuration;
 using GRINTSYS.SAPMiddleware.EntityFrameworkCore;
+using Abp.Hangfire.Configuration;
 
 namespace GRINTSYS.SAPMiddleware
 {
@@ -47,6 +48,8 @@ namespace GRINTSYS.SAPMiddleware
                  );
 
             ConfigureTokenAuth();
+
+            //Configuration.BackgroundJobs.UseHangfire();
         }
 
         private void ConfigureTokenAuth()
