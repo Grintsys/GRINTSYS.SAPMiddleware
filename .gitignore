@@ -252,3 +252,4 @@ paket-files/
 *.sln.iml
 src/GRINTSYS.SAPMiddleware.Web.Mvc/App_Data/Logs/Logs.txt
 src/GRINTSYS.SAPMiddleware.Web.Mvc/App_Data/Logs/Logs.txt
+src/GRINTSYS.SAPMiddleware.Web.Mvc/App_Data/Logs/Logs.txt
