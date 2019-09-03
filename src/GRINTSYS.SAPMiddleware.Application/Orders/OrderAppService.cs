@@ -49,8 +49,16 @@ namespace GRINTSYS.SAPMiddleware.Orders
         {
             var userId = GetUserId();
 
+            var tenant = await GetCurrentTenantAsync();
+
             if (!input.TenantId.HasValue && String.IsNullOrEmpty(input.CardCode))
                 throw new UserFriendlyException("Tenant or CardCode is not present");
+
+            //we don't need to change the order default database (Honduras is the default)
+            if (tenant.TenancyName.Equals("Guatemala")){
+                input.CardCode = "C1150";
+                input.Comment = "GT|" + input.Comment;
+            }
 
             var newOrder = new Order()
             {

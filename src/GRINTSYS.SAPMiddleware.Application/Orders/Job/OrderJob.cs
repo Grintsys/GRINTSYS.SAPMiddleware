@@ -75,39 +75,9 @@ namespace GRINTSYS.SAPMiddleware.Orders.Job
                 //Delete the user cart
                 await _cartManager.DeleteUserCart(args.UserId, args.TenantId);
 
-                //Hey this send to SAP
+                //Hey this send to SAP using hangfire backgroundjobs
                 string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], orderId);
-                //var response = await AppConsts.Instance.GetClient().GetAsync(url);
-
-                using (var Client = new HttpClient())
-                {
-                    Client.Timeout = TimeSpan.FromMinutes(5);
-                    Client.DefaultRequestHeaders.Accept.Clear();
-                    Client.DefaultRequestHeaders.Accept.Add(
-                        new MediaTypeWithQualityHeaderValue("application/json"));
-
-                    var response = await Client.GetAsync(url);
-                    if (response.IsSuccessStatusCode)
-                    {
-                        Logger.Info("Success to send to SAP");
-                    }
-                }
-
-
-                /*
-                //Finally send a mail
-                var user = await _userManager.GetUserByIdAsync(args.UserId);
-
-                if (user == null)
-                    return;
-
-                await new EmailHelper().Send(new EmailArgs
-                {
-                    Subject = String.Format("Confirmación de pedido para cliente {0} ha sido Creado En M2", args.CardCode),
-                    Body = "",
-                    To = user.EmailAddress
-                });*/
-
+                await AppConsts.Instance.GetClient().GetAsync(url);
             }
             catch (Exception e)
             {

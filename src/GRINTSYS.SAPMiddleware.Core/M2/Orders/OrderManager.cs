@@ -69,7 +69,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Orders
 
         public List<Order> GetOrders(int tenantId, DateTime begin, DateTime end)
         {
-            return _orderRepository.GetAllIncluding(x => x.OrderItems)
+            return _orderRepository.GetAllIncluding(x => x.OrderItems, x => x.User)
                 .Where(w => w.TenantId == tenantId
                     && w.CreationTime >= begin && w.CreationTime <= end)
                 .ToList();

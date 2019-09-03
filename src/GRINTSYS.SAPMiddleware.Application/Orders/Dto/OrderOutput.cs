@@ -21,6 +21,7 @@ namespace GRINTSYS.SAPMiddleware.Orders.Dto
         public ClientDto Client { get; set; }
         public double Total { get; set; }
         public String TotalFormatted { get; set; }
+        public String UserText { get; set; }
         //public List<OrderItemOutput> Items { get; set;}
     }
 }

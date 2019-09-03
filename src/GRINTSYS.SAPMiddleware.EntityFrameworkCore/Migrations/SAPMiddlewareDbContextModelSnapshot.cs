@@ -1676,6 +1676,10 @@ namespace GRINTSYS.SAPMiddleware.Migrations
                     b.Property<string>("ConnectionString")
                         .HasMaxLength(1024);
 
+                    b.Property<string>("CostingCode");
+
+                    b.Property<string>("CostingCode2");
+
                     b.Property<DateTime>("CreationTime");
 
                     b.Property<long?>("CreatorUserId");
@@ -1707,6 +1711,8 @@ namespace GRINTSYS.SAPMiddleware.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(128);
+
+                    b.Property<string>("SAPDatabase");
 
                     b.Property<string>("TenancyName")
                         .IsRequired()

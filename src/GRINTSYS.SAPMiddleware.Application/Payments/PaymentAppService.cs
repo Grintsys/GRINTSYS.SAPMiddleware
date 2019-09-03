@@ -39,6 +39,7 @@ namespace GRINTSYS.SAPMiddleware.Payments
         public async Task AutorizePayment(GetPaymentInput input)
         {
             var userId = GetUserId();
+            //GetCurrentTenantAsync()
             var user = await _userManager.FindByIdAsync(userId.ToString());
 
             Logger.Debug(String.Format("SendToSap({0})", input.Id));
@@ -48,18 +49,8 @@ namespace GRINTSYS.SAPMiddleware.Payments
             if (response.IsSuccessStatusCode)
             {
                 Logger.Info("Success to send to SAP");
-
                 /*aqui manda email de que se ejecuto correctamente o ocurrio algun error*/
             }
-
-            /*
-            await _backgroundJobManager.EnqueueAsync<PaymentJob, PaymentJobArgs>(
-               new PaymentJobArgs
-               {
-                   Id = input.Id,
-                   UserId = GetUserId(),
-                   To = user.EmailAddress
-            });*/
         }
 
         public async Task CreateInvoice(AddInvoiceInput input)
@@ -105,7 +96,7 @@ namespace GRINTSYS.SAPMiddleware.Payments
                 Body = String.Format("Pago Id: {0}, Factura: {1}, Fue Cancelado Por Finanzas", entity.Id, entity.Invoice.DocumentCode),
             });*/
 
-            var result = await new EmailHelper().Send(new EmailArgs()
+            await new EmailHelper().Send(new EmailArgs()
             {
                 To = entity.User.EmailAddress,
                 Subject = String.Format("Notificacion Pago Cancelado Por Finanzas, Id: {0}", entity.Id),
