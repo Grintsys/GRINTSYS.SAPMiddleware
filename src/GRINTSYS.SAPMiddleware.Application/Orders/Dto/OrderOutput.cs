@@ -11,7 +11,7 @@ namespace GRINTSYS.SAPMiddleware.Orders.Dto
     public class OrderOutput : EntityDto
     {
         public String RemoteId { get; set; }
-        public DateTime CreationTime { get; set; }
+        public String CreationTime { get; set; }
         public String Status { get; set; }
         public String CardCode { get; set; }
         public String Comment { get; set; }

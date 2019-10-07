@@ -8,6 +8,7 @@ using Abp.Runtime.Session;
 using Abp.UI;
 using GRINTSYS.SAPMiddleware.Authorization.Users;
 using GRINTSYS.SAPMiddleware.M2;
+using GRINTSYS.SAPMiddleware.M2.Clients;
 using GRINTSYS.SAPMiddleware.M2.Orders;
 using GRINTSYS.SAPMiddleware.M2.Products;
 using GRINTSYS.SAPMiddleware.Orders.Dto;
@@ -25,6 +26,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
         private readonly OrderManager _orderManager;
         private readonly CartManager _cartManager;
         private readonly ProductManager _productManager;
+        private readonly ClientManager _clientManager;
         //TODO: please find a better solution insted of create a user repository
         private readonly IRepository<User, long> _userRepository;
         private readonly IBackgroundJobManager _backgroundJobManager;
@@ -33,6 +35,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
         public OrderAppService(OrderManager orderManager, 
             CartManager cartManager,
             ProductManager productManager,
+            ClientManager clientManager,
             IRepository<User, long> userRepository,
             IBackgroundJobManager backgroundJobManager,
             IAbpSession session)
@@ -43,6 +46,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
             _userRepository = userRepository;
             _backgroundJobManager = backgroundJobManager;
             _session = session;
+            _clientManager = clientManager;
         }
 
         public async Task CreateOrder(CreateOrderInput input)
@@ -60,6 +64,9 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 input.Comment = "GT|" + input.Comment;
             }
 
+            //FIX: i don't want to do this here but i dont have to think a better solution, the problem is that this funtion is overload of functionality
+            var client = _clientManager.GetClientByCardCode(input.CardCode);
+
             var newOrder = new Order()
             {
                 TenantId = input.TenantId.Value,
@@ -67,7 +74,8 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 Status = OrderStatus.CreadoEnAplicacion,
                 DeliveryDate = input.DeliveryDate,
                 Comment = input.Comment,
-                CardCode = input.CardCode
+                CardCode = input.CardCode,
+                CardName = client.Name
             };
 
             var orderId = await _orderManager.CreateOrder(newOrder);
@@ -118,10 +126,10 @@ namespace GRINTSYS.SAPMiddleware.Orders
             {
                 Id = order.Id,
                 RemoteId = order.RemoteId,
-                CardCode = order.CardCode,
+                CardCode = order.CardCode + "|" + order.CardName,
                 Status = ((OrderStatus)order.Status).ToString(),
                 Comment = order.Comment,
-                CreationTime = order.CreationTime,
+                CreationTime = order.CreationTime.ToShortDateString(),
                 DeliveryDate = order.DeliveryDate,
                 Series = order.Series//,
                 //Items = order.OrderItems.MapTo<List<OrderItemOutput>>()
@@ -145,10 +153,11 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 .Select(s => new OrderOutput()
                 {
                     Id = s.Id,
-                    CardCode = s.CardCode,
+                    CardCode = s.CardCode + "|" + s.CardName,
                     Comment = s.Comment,
                     LastMessage = s.LastMessage,
                     Status = ((OrderStatus)s.Status).ToString(),
+                    CreationTime = s.CreationTime.ToShortDateString(),
                     Total = s.GetTotal(),
                     TotalFormatted = s.GetTotal().ToString()
                 })
@@ -182,7 +191,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 DateTime.Parse(input.end))
                 .Select(s => new OrderOutput()
                 {
-                    CardCode = s.CardCode,
+                    CardCode = s.CardCode + "|" + s.CardName,
                     Comment = s.Comment,
                     LastMessage = s.LastMessage,
                     Status = ((OrderStatus)s.Status).ToString(),
