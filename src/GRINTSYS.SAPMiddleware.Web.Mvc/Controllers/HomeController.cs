@@ -8,6 +8,7 @@ using System.Linq;
 using GRINTSYS.SAPMiddleware.Payments;
 using GRINTSYS.SAPMiddleware.Payments.Dto;
 using GRINTSYS.SAPMiddleware.Web.Models.Orders;
+using Abp.Runtime.Session;
 
 namespace GRINTSYS.SAPMiddleware.Web.Controllers
 {
@@ -16,12 +17,14 @@ namespace GRINTSYS.SAPMiddleware.Web.Controllers
     {
         private readonly IOrderAppService _orderService;
         private readonly IPaymentAppService _paymentService;
-
+        private readonly IAbpSession _session;
         public HomeController(IOrderAppService orderService, 
-            IPaymentAppService paymentService)
+            IPaymentAppService paymentService,
+            IAbpSession session)
         {
             _orderService = orderService;
             _paymentService = paymentService;
+            _session = session;
         }
 
         public ActionResult Index()

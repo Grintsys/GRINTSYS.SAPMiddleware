@@ -58,13 +58,14 @@ namespace GRINTSYS.SAPMiddleware.Orders
             if (!input.TenantId.HasValue && String.IsNullOrEmpty(input.CardCode))
                 throw new UserFriendlyException("Tenant or CardCode is not present");
 
-            //we don't need to change the order default database (Honduras is the default)
+
+            // this can be writen on SAPapi please review if it's possible
             if (tenant.TenancyName.Equals("Guatemala")){
                 input.CardCode = "C1150";
                 input.Comment = "GT|" + input.Comment;
             }
 
-            //FIX: i don't want to do this here but i dont have to think a better solution, the problem is that this funtion is overload of functionality
+            //FIX: i don't want to do this here but i dont have to think a better solution, the problem is that this funtion is overheading this function 
             var client = _clientManager.GetClientByCardCode(input.CardCode);
 
             var newOrder = new Order()
@@ -138,8 +139,10 @@ namespace GRINTSYS.SAPMiddleware.Orders
 
         public PagedResultDto<OrderOutput> GetOrders(GetAllOrderInput input)
         {
-            if (input.TenantId == 0)
+            if (input.TenantId != 0)
                 input.TenantId = (int)_session.TenantId;
+            else
+                return new PagedResultDto<OrderOutput>();
 
             if (String.IsNullOrEmpty(input.begin))
                 input.begin = DateTime.MinValue.ToString();

@@ -159,8 +159,10 @@ namespace GRINTSYS.SAPMiddleware.Payments
 
         public PagedResultDto<PaymentOutput> GetPayments(GetAllPaymentInput input)
         {
-            if (input.TenantId == 0)
+            if (input.TenantId != 0)
                 input.TenantId = (int)_session.TenantId;
+            else
+                return new PagedResultDto<PaymentOutput>();
 
             if (String.IsNullOrEmpty(input.Begin))
                 input.Begin = DateTime.MinValue.ToString();
