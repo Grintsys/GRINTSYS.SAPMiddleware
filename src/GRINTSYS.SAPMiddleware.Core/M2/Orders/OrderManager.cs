@@ -39,6 +39,11 @@ namespace GRINTSYS.SAPMiddleware.M2.Orders
             return await _orderRepository.InsertAndGetIdAsync(order);
         }
 
+        public async Task<int> CreateOrder2(Order order)
+        {
+            return await _orderRepository.InsertAndGetIdAsync(order);
+        }
+
         public Task CreateOrderItem(OrderItem orderItem)
         {
             return _orderItemRepository.InsertAsync(orderItem);

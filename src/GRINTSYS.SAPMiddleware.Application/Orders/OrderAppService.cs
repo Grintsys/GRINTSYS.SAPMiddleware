@@ -51,6 +51,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
 
         public async Task CreateOrder(CreateOrderInput input)
         {
+            var orderId = new int[2];
             var userId = GetUserId();
 
             var tenant = await GetCurrentTenantAsync();
@@ -58,15 +59,8 @@ namespace GRINTSYS.SAPMiddleware.Orders
             if (!input.TenantId.HasValue && String.IsNullOrEmpty(input.CardCode))
                 throw new UserFriendlyException("Tenant or CardCode is not present");
 
-
-            // this can be writen on SAPapi please review if it's possible
-            if (tenant.TenancyName.Equals("Guatemala")){
-                input.CardCode = "C1150";
-                input.Comment = "GT|" + input.Comment;
-            }
-
             //FIX: i don't want to do this here but i dont have to think a better solution, the problem is that this funtion is overheading this function 
-            var client = _clientManager.GetClientByCardCode(input.CardCode);
+            var client = _clientManager.GetClientByCardCode(input.CardCode, input.TenantId.Value);
 
             var newOrder = new Order()
             {
@@ -79,7 +73,23 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 CardName = client.Name
             };
 
-            var orderId = await _orderManager.CreateOrder(newOrder);
+            orderId[0] = await _orderManager.CreateOrder(newOrder);
+
+            if (tenant.TenancyName.Equals("Guatemala"))
+            {
+                var newOrder2 = new Order()
+                {
+                    TenantId = 2, //Honduras
+                    UserId = userId,
+                    Status = OrderStatus.CreadoEnAplicacion,
+                    DeliveryDate = input.DeliveryDate,
+                    Comment = input.Comment,
+                    CardCode = "C1150",
+                    CardName = "DISTRIBUIDORA DE VESTUARIO GTK S. A."
+                };
+
+                orderId[1] = await _orderManager.CreateOrder2(newOrder2);
+            }
 
             var products = _cartManager.GetCartProductItemsByUser(userId, input.TenantId.Value);
 
@@ -88,7 +98,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 var newOrderItem = new OrderItem()
                 {
                     TenantId = input.TenantId.Value,
-                    OrderId = orderId,
+                    OrderId = orderId[0],
                     Code = item.Variant.Code,
                     Quantity = item.Quantity,
                     Price = item.Variant.Price,
@@ -99,14 +109,36 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 await _orderManager.CreateOrderItem(newOrderItem);
                 //actualiza el comprometido pero solo en M2
                 await _productManager.UpdateProductStock(item.Variant.Id, item.Quantity);
+
+                if (tenant.TenancyName.Equals("Guatemala"))
+                {
+                    var newOrderItem2 = new OrderItem()
+                    {
+                        TenantId = 2, //Honduras
+                        OrderId = orderId[1],
+                        Code = item.Variant.Code,
+                        Quantity = item.Quantity,
+                        Price = 1,
+                        TaxCode = "", //falta esto
+                        WarehouseCode = item.Variant.WareHouseCode
+                    };
+
+                    await _orderManager.CreateOrderItem(newOrderItem2);
+                }
             }
 
             //Delete the user cart
             await _cartManager.DeleteUserCart(userId, input.TenantId.Value);
 
             //Hey this send to SAP using hangfire backgroundjobs
-            string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], orderId);
+            string url = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], orderId[0]);
             await AppConsts.Instance.GetClient().GetAsync(url);
+
+            if (tenant.TenancyName.Equals("Guatemala"))
+            {
+                string url2 = String.Format("{0}api/orders/{1}", ConfigurationManager.AppSettings["SAPEndpoint"], orderId[1]);
+                await AppConsts.Instance.GetClient().GetAsync(url2);
+            }
         }
 
         public async Task DeleteOrder(DeleteOrderInput input)
