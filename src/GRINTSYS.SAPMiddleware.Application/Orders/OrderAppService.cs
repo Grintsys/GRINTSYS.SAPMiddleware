@@ -80,7 +80,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 var newOrder2 = new Order()
                 {
                     TenantId = 2, //Honduras
-                    UserId = userId,
+                    UserId = 7, //GTK.M2
                     Status = OrderStatus.CreadoEnAplicacion,
                     DeliveryDate = input.DeliveryDate,
                     Comment = input.Comment,
@@ -171,7 +171,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
 
         public PagedResultDto<OrderOutput> GetOrders(GetAllOrderInput input)
         {
-            if (input.TenantId != 0)
+            if (_session.TenantId.HasValue)
                 input.TenantId = (int)_session.TenantId;
             else
                 return new PagedResultDto<OrderOutput>();
