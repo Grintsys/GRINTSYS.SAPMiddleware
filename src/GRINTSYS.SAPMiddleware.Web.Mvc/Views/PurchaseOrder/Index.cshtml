@@ -1,0 +1,83 @@
+﻿@using GRINTSYS.SAPMiddleware.Web.Startup
+@model GRINTSYS.SAPMiddleware.Web.Models.Orders.OrderListViewModel
+@{
+    ViewBag.CurrentPageName = "PurchaseOrder"; // The menu item will be active for this page.
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Roles/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Roles/Index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    @L("PurchaseOrder")
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("Refresh")</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@L("Id")</th>
+                            <th>@L("Status")</th>
+                            <th>@L("Comment")</th>
+                            <th>@L("Total")</th>
+                            <th>@L("Message")</th>
+                            <th>@L("Actions")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var order in Model.Orders)
+                        {
+                            <tr>
+                                <td>@order.Id</td>
+                                <td>@order.Status</td>
+                                <td>@order.Comment</td>
+                                <td>@order.TotalFormatted</td>
+                                <td>@order.LastMessage</td>
+                                <td><i class="material-icons" style="color:@(order.Status.Contains("SAP") ? "green":"red");">@(order.Status.Contains("SAP") ? "check_box" : "indeterminate_check_box")</i></td>
+                                <td class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a id="SendToSap" href="@Url.Action("SendToSap", "Order", new { orderId = order.Id })" class="waves-effect waves-block edit-user"><i class="material-icons">edit</i>@L("Send")</a></li>
+                                        <li><a id="DeleteOrder" href="@Url.Action("Delete", "Order", new { orderId = order.Id })" class="waves-effect waves-block edit-user"><i class="material-icons">edit</i>@L("Delete")</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#RoleCreateModal">
+                    <i class="material-icons">add</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="RoleEditModal" tabindex="-1" role="dialog" aria-labelledby="RoleEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>

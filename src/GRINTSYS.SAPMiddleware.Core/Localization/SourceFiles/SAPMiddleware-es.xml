@@ -45,6 +45,8 @@
 
     <text name="Order">Orden</text>
     <text name="Payment">Pago</text>
+    <text name="PurchaseOrder">Orden de Compra</text>
+    <text name="SapInvoice">Facturas SAP</text>
     <text name="M2Module">M2 Module</text>
 
   </texts>

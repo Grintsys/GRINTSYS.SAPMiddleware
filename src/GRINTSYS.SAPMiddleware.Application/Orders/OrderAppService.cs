@@ -51,6 +51,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
 
         public async Task CreateOrder(CreateOrderInput input)
         {
+            
             var orderId = new int[2];
             var userId = GetUserId();
 
@@ -227,6 +228,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 .Select(s => new OrderOutput()
                 {
                     CardCode = s.CardCode + "|" + s.CardName,
+                    CreationTime = s.CreationTime.ToString("dd/MMM/yyyy"),
                     Comment = s.Comment,
                     LastMessage = s.LastMessage,
                     Status = ((OrderStatus)s.Status).ToString(),
