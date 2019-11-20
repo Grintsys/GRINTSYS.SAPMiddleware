@@ -94,16 +94,20 @@ namespace GRINTSYS.SAPMiddleware.Orders
 
             var products = _cartManager.GetCartProductItemsByUser(userId, input.TenantId.Value);
 
-            foreach (var item in products)
+            foreach (var item in products.OrderBy(p=>p.Variant.Code))
             {
                 var newOrderItem = new OrderItem()
                 {
                     TenantId = input.TenantId.Value,
                     OrderId = orderId[0],
                     Code = item.Variant.Code,
+                    Name = string.Empty,
                     Quantity = item.Quantity,
                     Price = item.Variant.Price,
-                    TaxCode = "", //falta esto
+                    Discount = 0,
+                    DiscountPercent = 0,
+                    TaxValue = tenant.ISV,
+                    TaxCode = string.Empty, //falta esto
                     WarehouseCode = item.Variant.WareHouseCode
                 };
 
@@ -115,12 +119,16 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 {
                     var newOrderItem2 = new OrderItem()
                     {
-                        TenantId = 2, //Honduras
+                        TenantId = 2,
                         OrderId = orderId[1],
                         Code = item.Variant.Code,
+                        Name = string.Empty,
                         Quantity = item.Quantity,
                         Price = 1,
-                        TaxCode = "", //falta esto
+                        Discount = 0,
+                        DiscountPercent = 0,
+                        TaxValue = 0,
+                        TaxCode = string.Empty, //falta esto
                         WarehouseCode = item.Variant.WareHouseCode
                     };
 
@@ -156,18 +164,36 @@ namespace GRINTSYS.SAPMiddleware.Orders
         {
             var order = _orderManager.GetOrder(input.Id);
 
-            return new OrderOutput()
+            var orderOutput = new OrderOutput()
             {
                 Id = order.Id,
                 RemoteId = order.RemoteId,
-                CardCode = order.CardCode + "|" + order.CardName,
+                CreationTime = order.CreationTime.ToString("dd/MMM/yyyy"),
                 Status = ((OrderStatus)order.Status).ToString(),
+                CardCode = order.CardCode + "|" + order.CardName,
                 Comment = order.Comment,
-                CreationTime = order.CreationTime.ToShortDateString(),
                 DeliveryDate = order.DeliveryDate,
-                Series = order.Series//,
-                //Items = order.OrderItems.MapTo<List<OrderItemOutput>>()
+                Series = order.Series,
+                SubTotal = order.GetSubtotal(),
+                Discount = order.GetDiscount(),
+                IVA = order.GetIVA(),
+                Total = order.GetTotal(),
+                Items = order.OrderItems.Select(s=> new OrderItemOutput()
+                {
+                   Code = s.Code,
+                   Name = s.Name,
+                   Quantity = s.Quantity,
+                   Price = (s.Quantity * s.Price),
+                   Discount = (s.Discount),
+                   DiscountPercent = s.DiscountPercent,
+                   TaxValue = s.TaxValue,
+                   TaxCode = s.TaxCode,
+                   WarehouseCode = s.WarehouseCode
+                }).OrderBy(o=>o.Code)
+                  .ToList()
             };
+
+            return orderOutput;
         }
 
         public PagedResultDto<OrderOutput> GetOrders(GetAllOrderInput input)
@@ -193,7 +219,7 @@ namespace GRINTSYS.SAPMiddleware.Orders
                     Comment = s.Comment,
                     LastMessage = s.LastMessage,
                     Status = ((OrderStatus)s.Status).ToString(),
-                    CreationTime = s.CreationTime.ToShortDateString(),
+                    CreationTime = s.CreationTime.ToString("dd/MMM/yyyy"),
                     Total = s.GetTotal(),
                     TotalFormatted = s.GetTotal().ToString()
                 })
@@ -227,11 +253,13 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 DateTime.Parse(input.end))
                 .Select(s => new OrderOutput()
                 {
+                    Id = s.Id,
                     CardCode = s.CardCode + "|" + s.CardName,
-                    CreationTime = s.CreationTime.ToString("dd/MMM/yyyy"),
                     Comment = s.Comment,
                     LastMessage = s.LastMessage,
                     Status = ((OrderStatus)s.Status).ToString(),
+                    CreationTime = s.CreationTime.ToString("dd/MMM/yyyy"),
+                    Total = s.GetTotal(),
                     TotalFormatted = s.GetTotal().ToString()
                 })
                 .ToList();
