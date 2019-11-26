@@ -71,7 +71,8 @@ namespace GRINTSYS.SAPMiddleware.Orders
                 DeliveryDate = input.DeliveryDate,
                 Comment = input.Comment,
                 CardCode = input.CardCode,
-                CardName = client.Name
+                CardName = client.Name,
+                U_M2_UUID = Guid.NewGuid()
             };
 
             orderId[0] = await _orderManager.CreateOrder(newOrder);
@@ -86,7 +87,8 @@ namespace GRINTSYS.SAPMiddleware.Orders
                     DeliveryDate = input.DeliveryDate,
                     Comment = input.Comment,
                     CardCode = "C1150",
-                    CardName = "DISTRIBUIDORA DE VESTUARIO GTK S. A."
+                    CardName = "DISTRIBUIDORA DE VESTUARIO GTK S. A.",
+                    U_M2_UUID = newOrder.U_M2_UUID
                 };
 
                 orderId[1] = await _orderManager.CreateOrder2(newOrder2);

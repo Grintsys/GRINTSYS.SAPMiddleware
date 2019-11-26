@@ -31,6 +31,8 @@ namespace GRINTSYS.SAPMiddleware.M2
 
         public DateTime CreationTime { get; set; }
 
+        public Guid U_M2_UUID { get; set; }
+
         public Double GetTotal()
         {
             return (GetSubtotal() - GetDiscount()) + GetIVA();

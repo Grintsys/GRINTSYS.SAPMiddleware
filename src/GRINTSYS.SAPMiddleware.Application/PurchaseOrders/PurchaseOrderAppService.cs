@@ -8,6 +8,7 @@ using GRINTSYS.SAPMiddleware.M2.vwSapInvoices;
 using GRINTSYS.SAPMiddleware.PurchaseOrders.Dto;
 using System.Threading.Tasks;
 using GRINTSYS.SAPMiddleware.PurchaseOrders.Job;
+using System;
 
 namespace GRINTSYS.SAPMiddleware.PurchaseOrders
 {
@@ -55,7 +56,8 @@ namespace GRINTSYS.SAPMiddleware.PurchaseOrders
                 DocTotalExp = sapInvoice.DocTotalExp,
                 DocCurrency = sapInvoice.DocCurrency,
                 Comments = sapInvoice.Comments,
-                SlpCode = sapInvoice.SlpCode
+                SlpCode = sapInvoice.SlpCode,
+                U_M2_UUID = Guid.NewGuid()
             };
 
             var newPurchaseOrderId = await _purchaseOrderManager.CreatePurchaseOrder(newPurchaseOrder);
