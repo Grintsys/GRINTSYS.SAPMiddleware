@@ -26,5 +26,6 @@ namespace GRINTSYS.SAPMiddleware.M2
         public String DocCurrency { get; set; }
         public String Comments { get; set; }
         public int SlpCode { get; set; }
+        public Guid U_M2_UUID { get; set; }
     }
 }

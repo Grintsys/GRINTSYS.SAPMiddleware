@@ -112,7 +112,8 @@ namespace GRINTSYS.SAPMiddleware.SapInvoices
                 DocCurrency = s.DocCurrency,
                 Comments = s.Comments,
                 Status = s.Status,
-                LastMessage = s.LastMessage
+                LastMessage = s.LastMessage,
+                U_M2_UUID = s.U_M2_UUID
             }).OrderByDescending(o => o.DocCreateDate)
               .ToList();
 

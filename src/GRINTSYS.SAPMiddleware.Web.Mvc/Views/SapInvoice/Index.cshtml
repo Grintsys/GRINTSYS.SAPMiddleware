@@ -36,7 +36,7 @@
                     <thead>
                         <tr>
                             <th>Doc Num</th>
-                            <th>RemoteId</th>
+                            <th>Reference</th>
                             <th>Create Date</th>
                             <th>Doc Date</th>
                             <th>Client</th>
@@ -50,7 +50,7 @@
                         {
                             <tr>
                                 <td>@item.Id</td>
-                                <td>@item.RemoteId</td>
+                                <td>@item.U_M2_UUID</td>
                                 <td>@item.DocCreateDate</td>
                                 <td>@item.DocDate.ToShortDateString()</td>
                                 <td>@($"{item.CardCode} {item.CardName}")</td>
