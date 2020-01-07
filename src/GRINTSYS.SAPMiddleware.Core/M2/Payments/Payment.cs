@@ -11,18 +11,17 @@ namespace GRINTSYS.SAPMiddleware.M2
 {
     public enum PaymentStatus
     {
-        CreadoEnAplicacion = 1,
-        CreadoEnSAP = 2,
-        Error = 3,
-        CanceladoPorFinanzas = 4,
-        Autorizado = 5
+        CreadoEnAplicacion = 0,
+        CreadoEnSAP = 1,
+        Error = 2,
+        CanceladoPorFinanzas = 3,
+        Autorizado = 4
     }
-
     public enum PaymentType
     {
-        Efectivo = 1,
-        Cheque = 2,
-        Transferencia = 3
+        Efectivo = 0,
+        Cheque = 1,
+        Transferencia = 2
     }
 
     public class Payment: Entity, IHasCreationTime, IMustHaveTenant
@@ -32,36 +31,23 @@ namespace GRINTSYS.SAPMiddleware.M2
 
         public int TenantId { get; set; }
         public String DocEntry { get; set; }
-        [Required]
-        public long UserId { get; set; }
-        [Required]
-        public Int32 BankId { get; set; }
-        public String CardCode { get; set; }
-        //public Int32 ClientId { get; set; }
         public Double PayedAmount { get; set; }
         public String LastMessage { get; set; }
+        public PaymentStatus Status { get; set; }
         [StringLength(MaxCommentLength)]
         public String Comment { get; set; }
         [StringLength(MaxReferenceNumberLength)]
         public String ReferenceNumber { get; set; }
-        public PaymentStatus Status { get; set; }
+        public DateTime CreationTime { get; set; }
+        [Required]
+        public long UserId { get; set; }
+        [Required]
+        public Int32 BankId { get; set; }
         public PaymentType Type { get; set; }
         public DateTime PayedDate { get; set; }
-        public DateTime CreationTime { get; set; }
+        public String CardCode { get; set; }
         public virtual User User { get; set; }
         public virtual Bank Bank { get; set; }
-        //public virtual Client Client { get; set; }
         public virtual ICollection<PaymentInvoiceItem> InvoicesItems { get; set; }
-
-        public Payment()
-        {
-            Status = PaymentStatus.CreadoEnAplicacion;
-            Type = PaymentType.Transferencia;
-            CreationTime = Clock.Now;
-            PayedDate = Clock.Now;
-            LastMessage = "";
-            Comment = "";
-            PayedAmount = 0.0;
-        }
     }
 }

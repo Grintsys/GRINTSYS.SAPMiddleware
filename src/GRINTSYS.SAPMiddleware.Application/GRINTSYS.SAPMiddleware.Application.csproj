@@ -11,6 +11,9 @@
     <RootNamespace>GRINTSYS.SAPMiddleware</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Payments\Dto\AddPaymentOutput.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\GRINTSYS.SAPMiddleware.Core\GRINTSYS.SAPMiddleware.Core.csproj" />
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,8 @@ using System.Text;
 
 namespace GRINTSYS.SAPMiddleware.Clients.Dto
 {
-    public class GetClientInput: EntityDto
+    public class GetClientInput : EntityDto
     {
+        public string CardCode { get; set; }
     }
 }

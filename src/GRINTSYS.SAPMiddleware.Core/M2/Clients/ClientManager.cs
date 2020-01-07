@@ -32,6 +32,18 @@ namespace GRINTSYS.SAPMiddleware.M2.Clients
             return entity;
         }
 
+        public Client GetClient(string cardCode)
+        {
+            var entity = _clientRespository.GetAllIncluding(x => x.Invoices).FirstOrDefault(x => x.CardCode.Equals(cardCode));
+
+            if (entity == null)
+            {
+                throw new UserFriendlyException("Client not found");
+            }
+
+            return entity;
+        }
+
         public Client GetClientByCardCode(string cardCode, int tenantId)
         {
             var entity = _clientRespository.GetAll().FirstOrDefault(x => x.CardCode.Equals(cardCode) && x.TenantId.Equals(tenantId));

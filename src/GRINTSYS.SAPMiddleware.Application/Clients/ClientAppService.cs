@@ -90,6 +90,15 @@ namespace GRINTSYS.SAPMiddleware.Clients
             return obj;
         }
 
+        public ClientDto GetClientDocumentsByCardCode(GetClientInput input)
+        {
+            var client = _clientManager.GetClient(input.CardCode);
+
+            var obj = ObjectMapper.Map<ClientDto>(client);
+
+            return obj;
+        }
+
         protected override IQueryable<Client> CreateFilteredQuery(GetAllClientInput input)
         {
             return base.CreateFilteredQuery(input)

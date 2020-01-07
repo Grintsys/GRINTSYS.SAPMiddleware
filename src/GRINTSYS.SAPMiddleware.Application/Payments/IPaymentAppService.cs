@@ -11,7 +11,8 @@ namespace GRINTSYS.SAPMiddleware.Payments
 {
     public interface IPaymentAppService : IApplicationService
     {
-        Task CreatePayment(AddPaymentInput input);
+        Task<PaymentOutput> CreatePayment(AddPaymentInput input);
+        Task<PaymentOutput> UpdatePayment(UpdatePaymentInput input);
         Task CreateInvoice(AddInvoiceInput input);
         PaymentOutput GetPayment(GetPaymentInput input);
         PagedResultDto<PaymentOutput> GetPayments(GetAllPaymentInput input);

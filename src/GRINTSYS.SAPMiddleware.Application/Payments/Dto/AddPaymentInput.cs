@@ -13,17 +13,17 @@ namespace GRINTSYS.SAPMiddleware.Payments.Dto
         private const int MaxCommentLength = 150;
         private const int MaxReferenceNumberLength = 50;
         public int TenantId { get; set; }
-        public int DocEntry { get; set; }
-        public Int32 InvoiceId { get; set; }
-        public Int32 BankId { get; set; }
-        public String CardCode { get; set; }
         public Double PayedAmount { get; set; }
+        public int Status { get; set; }
         [StringLength(MaxCommentLength)]
         public String Comment { get; set; }
         [StringLength(MaxReferenceNumberLength)]
         public String ReferenceNumber { get; set; }
-        public PaymentType Type { get; set; }
+        public long UserId { get; set; }
+        public Int32 BankId { get; set; }
+        public PaymentType Type { get; set; }        
         public DateTime PayedDate { get; set; }
+        public String CardCode { get; set; }
         public List<PaymentItemOutput> PaymentItemList { get; set; }
     }
 }

@@ -1,0 +1,185 @@
+﻿@using System;
+@using System.Globalization;
+@using GRINTSYS.SAPMiddleware.Web.Models.Common.Modals
+@model GRINTSYS.SAPMiddleware.Web.Models.Payments.EditPaymentModalViewModel
+@{
+    Layout = null;
+}
+@*@section styles {
+
+    }
+    @section scripts
+    {
+
+    }*@
+
+@Html.Partial("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("EditPayment")))
+
+<div class="modal-body">
+    <form name="PaymentEditForm" role="form" novalidate class="form-validation">
+        <input type="hidden" name="Id" value="@Model.Payment.Id" />
+        <ul class="nav nav-tabs tab-nav-right" role="tablist">
+            <li role="presentation" class="active"><a href="#edit-user-details" data-toggle="tab">@L("Payment")</a></li>
+            <li role="presentation"><a href="#edit-user-roles" data-toggle="tab">@L("Items")</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane animated fadeIn active" id="edit-user-details">
+
+                <div class="row clearfix">
+                    <div class="col-sm-3">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="CardCode" type="text" disabled="disabled" name="CardCode" value="@Model.Payment.CardCode" class="validate form-control">
+                                <label for="CardCode" class="form-label">@L("CardCode")</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="CardName" type="text" disabled="disabled" name="CardName" value="@Model.Payment.CardName" required maxlength="32" class="validate form-control">
+                                <label for="CardName" class="form-label">@L("CardName")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix" style="margin-top:10px;">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="Comment" type="text" name="Comment" value="@Model.Payment.Comment" required maxlength="150" class="validate form-control">
+                                <label for="Comment" class="form-label">@L("Comment")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix" style="margin-top:10px;">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="ReferenceNumber" type="text" name="ReferenceNumber" value="@Model.Payment.ReferenceNumber" required maxlength="50" minlength="1" class="validate form-control">
+                                <label for="ReferenceNumber" class="form-label">@L("ReferenceNumber")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix" style="margin-top:10px;">
+                    <div class="col-sm-10">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="PayedAmount" type="number" name="PayedAmount" value="@Model.Payment.PayedAmount" min="0.01" required class="validate form-control">
+                                <label for="PayedAmount" class="form-label">@L("PayedAmount")</label>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" id="button1" class="btn bg-blue btn-circle waves-effect waves-circle waves-float">
+                            <i class="material-icons">verified_user</i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row clearfix" style="margin-top:10px;">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <select name="Type" id="Type" class="validate form-control">
+                                    <option value="0" selected="@((int)Model.Payment.Type == 0)">Efectivo</option>
+                                    <option value="1" selected="@((int)Model.Payment.Type == 1)">Cheque</option>
+                                    <option value="2" selected="@((int)Model.Payment.Type == 2)">Transferencia</option>
+                                </select>
+                                <label for="Type" class="form-label">@L("Type")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix" style="margin-top:10px;">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <select name="BankId" id="BankId" class="validate form-control">
+                                    @foreach (var item in ViewBag.Banks.Items)
+                                    {
+                                        <option value="@item.Id" selected="@(item.Id == Model.Payment.BankId)">@item.Name</option>
+                                    }
+                                </select>
+                                <label for="BankId" class="form-label">@L("BankId")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row clearfix" style="margin-top:10px;">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="PayedDate" type="date" name="PayedDate" value="@Model.Payment.PayedDate.ToString("yyyy-MM-dd")" required min="@DateTime.Now.ToString("yyyy-MM-dd")" class="validate form-control">
+                                <label for="PayedDate" class="form-label">@L("PayedDate")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div role="tabpanel" class="tab-pane animated fadeIn" id="edit-user-roles">
+                <div class="row">
+                    <div class="col-sm-12 ">
+                        <div class="body table-responsive">
+                            <table id="table1" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>@L("DocumentCode")</th>
+                                        <th>@L("TotalAmount")</th>
+                                        <th>@L("BalanceDue")</th>
+                                        @*<th>@L("CreatedDate")</th>*@
+                                        <th>@L("DueDate")</th>
+                                        <th>@L("OverdueDays")</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.ClientInvoices)
+                                    {
+                                        <tr>
+                                            <td>@item.DocumentCode</td>
+                                            <td>@string.Format(new CultureInfo("es-HN"), "{0:c}", item.TotalAmount)</td>
+                                            <td>@string.Format(new CultureInfo("es-HN"), "{0:c}", item.BalanceDue)</td>
+                                            @*<td>@item.CreationTime.ToString("dd/MM/yy")</td>*@
+                                            <td>@DateTime.Parse(item.DueDate).ToString("dd/MM/yy")</td>
+                                            <td>@item.OverdueDays</td>
+                                            <td>
+                                                <div class="col-sm-6">
+                                                    <input type="checkbox"
+                                                           name="paymentItem"
+                                                           value="@item.DocEntry"
+                                                           title="@item.DocumentCode"
+                                                           class="filled-in"
+                                                           id="@string.Format("paymentItem{0}",item.DocEntry)"
+                                                           @(Model.PaymentItems.Select(d => d.DocumentCode).Contains(item.DocumentCode) ? "checked" : "") />
+                                                    <label for="@string.Format("paymentItem{0}",item.DocEntry)" title="@item.DocEntry"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+@Html.Partial("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+
+<script src="~/view-resources/Views/Payments/_EditPaymentModal.js" asp-append-version="true"></script>
