@@ -13,7 +13,7 @@
     </environment>
 
     <environment names="Staging,Production">
-        <script src="~/view-resources/Views/Users/Index.min.js" asp-append-version="true"></script>
+        <script src="~/view-resources/Views/Payments/Index.js" asp-append-version="true"></script>
     </environment>
 }
 <div class="row clearfix">
@@ -58,7 +58,7 @@
                             <td>@payment.StatusDesc</td>
                             <td>@($"{payment.CardCode} {payment.CardName}")</td>
                             <td>@payment.PayedDate.ToString("dd/MMM/yyyy")</td>
-                            <td>@string.Format(new CultureInfo("es-HN"), "{0:c}", payment.PayedAmount)</td>                            
+                            <td>@string.Format((int)payment.Type == 3 ? new CultureInfo("en-US"): new CultureInfo("es-HN"), "{0:c}", payment.PayedAmount)</td>                            
                             <td>@payment.UserName</td>
                             <td>@payment.LastMessage</td>
                             <td><i class="material-icons" style="color:@(payment.StatusDesc.Contains("Autorizado") || payment.StatusDesc.Contains("SAP") ? "green":"red");">@(payment.StatusDesc.Contains("Autorizado") || payment.StatusDesc.Contains("SAP") ? "check_box" : "indeterminate_check_box")</i></td>

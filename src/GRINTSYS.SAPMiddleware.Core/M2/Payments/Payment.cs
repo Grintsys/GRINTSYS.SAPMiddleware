@@ -21,10 +21,12 @@ namespace GRINTSYS.SAPMiddleware.M2
     {
         Efectivo = 0,
         Cheque = 1,
-        Transferencia = 2
+        Transferencia = 2,
+        EfectivoDolar = 3,
+        MaquinaPOS = 4
     }
 
-    public class Payment: Entity, IHasCreationTime, IMustHaveTenant
+    public class Payment : Entity, IHasCreationTime, IMustHaveTenant
     {
         private const int MaxCommentLength = 150;
         private const int MaxReferenceNumberLength = 50;

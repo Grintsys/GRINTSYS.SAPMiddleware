@@ -91,6 +91,8 @@
                                     <option value="0" selected="@((int)Model.Payment.Type == 0)">Efectivo</option>
                                     <option value="1" selected="@((int)Model.Payment.Type == 1)">Cheque</option>
                                     <option value="2" selected="@((int)Model.Payment.Type == 2)">Transferencia</option>
+                                    <option value="3" selected="@((int)Model.Payment.Type == 3)">Efectivo Dolar $</option>
+                                    <option value="4" selected="@((int)Model.Payment.Type == 4)">Máquina POS</option>
                                 </select>
                                 <label for="Type" class="form-label">@L("Type")</label>
                             </div>
@@ -118,7 +120,7 @@
                     <div class="col-sm-12">
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input id="PayedDate" type="date" name="PayedDate" value="@Model.Payment.PayedDate.ToString("yyyy-MM-dd")" required min="@DateTime.Now.ToString("yyyy-MM-dd")" class="validate form-control">
+                                <input id="PayedDate" type="date" name="PayedDate" value="@Model.Payment.PayedDate.ToString("yyyy-MM-dd")" required class="validate form-control">
                                 <label for="PayedDate" class="form-label">@L("PayedDate")</label>
                             </div>
                         </div>

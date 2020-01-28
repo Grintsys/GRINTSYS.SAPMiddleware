@@ -360,7 +360,9 @@ namespace GRINTSYS.SAPMiddleware.Payments
                     Type = s.Type,
                     TypeDesc = ((PaymentType)s.Type).ToString(),
                     PayedDate = s.PayedDate,
-                    CardCode = $"{s.CardCode} {_clientManager.GetClient(s.CardCode).Name}"
+                    CardCode = $"{s.CardCode} {_clientManager.GetClient(s.CardCode).Name}",
+                    CardName = _clientManager.GetClient(s.CardCode).Name,
+                    UserName = s.User.Name
                 }).ToList()
             };
         }
