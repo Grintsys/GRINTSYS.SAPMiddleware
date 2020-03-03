@@ -30,6 +30,12 @@ namespace GRINTSYS.SAPMiddleware.EntityFrameworkCore
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<InvoiceHistory> InvoiceHistory { get; set; }
         public DbSet<Fees> Fees { get; set; }
+        public DbSet<VwSapInvoice> VwSapInvoices { get; set; }
+        public DbSet<VwSapInvoiceDetail> VwSapInvoiceDetails { get; set; }
+        public DbSet<VwSapInvoiceExpense> VwSapInvoiceExpenses { get; set; }       
+        public DbSet<PurchaseOrder> PurchaseOrders { get; set; }
+        public DbSet<PurchaseOrderDetail> PurchaseOrderDetails { get; set; }
+        public DbSet<PurchaseOrderExpense> PurchaseOrderExpenses { get; set; }
 
         public SAPMiddlewareDbContext(DbContextOptions<SAPMiddlewareDbContext> options)
             : base(options)

@@ -17,9 +17,6 @@ using GRINTSYS.SAPMiddleware.Identity;
 
 using Abp.AspNetCore.SignalR.Hubs;
 using Hangfire;
-using Hangfire.SqlServer;
-using Abp.Hangfire;
-using GRINTSYS.SAPMiddleware.Authorization;
 
 namespace GRINTSYS.SAPMiddleware.Web.Host.Startup
 {
@@ -81,11 +78,11 @@ namespace GRINTSYS.SAPMiddleware.Web.Host.Startup
             });
 
             //Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password = myPassword;
-            String connection = @"Server=181.199.177.162; Database=SAPMiddleware; User ID=sa; Password=Pinac45; MultipleActiveResultSets=true";
+            //String connection = @"Server=181.199.177.162; Database=SAPMiddleware; User ID=sa; Password=Pinac45; MultipleActiveResultSets=true";
             //TODO: fix this please
             services.AddHangfire(config =>
             {
-                config.UseSqlServerStorage(connection);
+                config.UseSqlServerStorage("Default");
             });
 
             // Configure Abp and Dependency Injection

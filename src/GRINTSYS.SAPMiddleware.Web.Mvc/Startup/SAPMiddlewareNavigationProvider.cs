@@ -59,13 +59,21 @@ namespace GRINTSYS.SAPMiddleware.Web.Startup
                         )
                     ).AddItem(
                         new MenuItemDefinition(
-                            "Payment",
-                             L("Payment"),
-                             url: "Payment",
+                            "Payments",
+                             L("Payments"),
+                             url: "Payments",
                              icon: "info",
                              requiredPermissionName: PermissionNames.Pages_M2Admin
                       )
-                    )               
+                    ).AddItem(
+                        new MenuItemDefinition(
+                            "SapInvoice",
+                             L("SapInvoice"),
+                             url: "SapInvoice",
+                             icon: "info",
+                             requiredPermissionName: PermissionNames.Pages_M2Admin_SapInvoice
+                      )
+                    )
             );
         }
 

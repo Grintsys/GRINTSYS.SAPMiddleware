@@ -1,0 +1,138 @@
+﻿@using System;
+@using System.Globalization;
+@using GRINTSYS.SAPMiddleware.Web.Startup
+@model GRINTSYS.SAPMiddleware.Web.Models.Payments.PaymentListViewModel
+@{
+    ViewBag.CurrentPageName = "Payment"; // The menu item will be active for this page.
+}
+
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Payments/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Payments/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <script>
+        $(document).ready(function () {
+            $("#FilterPayments").on("keyup", function (e) {
+                filterPayments();
+            });
+        });
+
+        $(window).bind("load", function () {
+            filterPayments();
+        });
+
+        var filterPayments = function () {
+            var values = $("#FilterPayments").val().toLowerCase().split(" ");
+
+            var rows = $("#tablePayments tr").not('thead tr');
+
+            if (values.length === 0) {
+                rows.show();
+                return;
+            }
+
+            rows.hide();
+
+            $.each(values, function (i, l) {
+                $("#tablePayments tr").not('thead tr').filter(function () {
+                    if ($(this).text().toLowerCase().indexOf(l) > -1)
+                        $(this).toggle(true)
+                });
+            });
+        }
+    </script>
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    @L("Payment")
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("Refresh")</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body row clearfix" style="margin-top:10px;">
+                <div class="col-sm-12">
+                    <div class="input-group input-group-lg" ">
+                        <span class="input-group-addon">
+                            <i class="material-icons">search</i>
+                        </span>
+                        <div class="form-line">
+                            <input id="FilterPayments" type="text" name="FilterPayments" data-role="tagsinput" placeholder="START TYPING..." value="CreadoEnAplicacion" class="validate form-control">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="body table-responsive">
+                <table id="tablePayments" class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>@L("Id")</th>
+                            <th>@L("Receipt Date")</th>
+                            <th>@L("Status")</th>
+                            <th>@L("Client")</th>
+                            <th>@L("Payment Date")</th>
+                            <th>@L("Total")</th>
+                            <th>@L("SalesPerson")</th>
+                            <th>@L("Message")</th>
+                            <th>@L("Actions")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var payment in Model.Payments)
+                        {
+                            <tr>
+                                <td>@payment.Id</td>
+                                <td>@payment.CreationTime.ToString("dd/MMM/yyyy")</td>
+                                <td>@payment.StatusDesc</td>
+                                <td>@($"{payment.CardCode} {payment.CardName}")</td>
+                                <td>@payment.PayedDate.ToString("dd/MMM/yyyy")</td>
+                                <td>@string.Format((int)payment.Type == 3 ? new CultureInfo("en-US") : new CultureInfo("es-HN"), "{0:c}", payment.PayedAmount)</td>
+                                <td>@payment.UserName</td>
+                                <td>@payment.LastMessage</td>
+                                <td><i class="material-icons" style="color:@(payment.StatusDesc.Contains("Autorizado") || payment.StatusDesc.Contains("SAP") ? "green":"red");">@(payment.StatusDesc.Contains("Autorizado") || payment.StatusDesc.Contains("SAP") ? "check_box" : "indeterminate_check_box")</i></td>
+                                <td class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="#" class="waves-effect waves-block edit-payment" data-user-id="@payment.Id" data-toggle="modal" data-target="#PaymentEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                        <li><a id="SendToSap" href="@Url.Action("Authorize", "Payments", new { paymentId = payment.Id })" class="waves-effect waves-block"><i class="material-icons">edit</i>@L("Approve")</a></li>
+                                        <li><a id="SendToSap" href="@Url.Action("Decline", "Payments", new { paymentId = payment.Id })" class="waves-effect waves-blockt"><i class="material-icons">edit</i>@L("Decline")</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                @*<button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#RoleCreateModal">
+                        <i class="material-icons">add</i>
+                    </button>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="PaymentEditModal" tabindex="-1" role="dialog" aria-labelledby="PaymentEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>

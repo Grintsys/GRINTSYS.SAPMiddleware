@@ -97,6 +97,8 @@
     <text name="Filter">Filter</text>
     <text name="Order">Order</text>
     <text name="Payment">Payment</text>
+    <text name="SapInvoice">Sap Invoice</text>
+    <text name="PurchaseOrder">Purchase Order</text>    
     <text name="M2Module">M2 Module</text>
     <text name="M2Admin">M2 Admin</text>
     <text name="Autorization">Autorization</text>

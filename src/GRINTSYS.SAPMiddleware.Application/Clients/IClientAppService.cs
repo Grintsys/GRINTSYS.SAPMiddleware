@@ -9,6 +9,7 @@ namespace GRINTSYS.SAPMiddleware.Clients
     {
         ClientDto GetClient(GetClientInput input);
         ClientDto GetClientDocuments(GetClientInput input);
+        ClientDto GetClientDocumentsByCardCode(GetClientInput input);
         double GetClientDiscount(string cardcode, int itemgroup);
         PagedResultDto<ClientDto> GetClientBySearchQuery(ClientSearchInput input);
     }

@@ -12,6 +12,8 @@
 
         public const string Pages_M2Admin = "Pages.M2Admin";
 
+        public const string Pages_M2Admin_SapInvoice = "Pages.M2Admin.SapInvoice";
+
         public const string Pages_HangfireAccess = "Pages.HangFireAccess";
     }
 }

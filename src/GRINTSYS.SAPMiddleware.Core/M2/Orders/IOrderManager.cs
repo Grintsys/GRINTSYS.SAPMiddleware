@@ -8,7 +8,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Orders
 {
     public interface IOrderManager: IDomainService
     {
-        Task<Order> CreateOrder(Order order);
+        Task<int> CreateOrder(Order order);
         Task CreateOrderItem(OrderItem orderItem);
         Order GetOrder(int id);
         Task DeleteOrderAsync(Order order);

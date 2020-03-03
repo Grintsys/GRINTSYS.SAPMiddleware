@@ -30,9 +30,14 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
             return _invoiceRepository.InsertAsync(invoice);
         }
 
-        public Task CreatePayment(Payment payment)
+        public Task<int> CreatePayment(Payment payment)
         {
-            return _paymentRepository.InsertAsync(payment);
+            return _paymentRepository.InsertAndGetIdAsync(payment);
+        }
+
+        public Task<Payment> UpdatePaymentAsync(Payment payment)
+        {
+            return _paymentRepository.UpdateAsync(payment);
         }
 
         public Task DeletePayment(int id)
@@ -61,7 +66,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
 
         public List<Payment> GetPaymentsByUser(int tenantId, long userId, DateTime? begin, DateTime? end)
         {
-            return _paymentRepository.GetAllIncluding(x => x.Bank)
+            return _paymentRepository.GetAllIncluding(x => x.Bank, x=> x.User)
                 .Where( w => w.TenantId == tenantId
                     && w.UserId == userId)
                 .WhereIf(begin.HasValue && end.HasValue,  w => w.CreationTime >= begin && w.CreationTime <= end)
@@ -70,7 +75,7 @@ namespace GRINTSYS.SAPMiddleware.M2.Payments
 
         public List<Payment> GetPayments(int tenantId, DateTime? begin, DateTime? end)
         {
-            return _paymentRepository.GetAllIncluding(x => x.Bank, x=> x.InvoicesItems)
+            return _paymentRepository.GetAllIncluding(x => x.Bank, x=> x.InvoicesItems, x=> x.User)
                 .Where(w => w.TenantId == tenantId)
                 .WhereIf(begin.HasValue && end.HasValue, w => w.CreationTime >= begin && w.CreationTime <= end)
                 .OrderByDescending( o => o.Id)

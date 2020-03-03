@@ -16,12 +16,13 @@ namespace GRINTSYS.SAPMiddleware.M2
         ErrorAlCrearEnSAP = 3
     }
 
-    public class Order: Entity, IHasCreationTime, IMustHaveTenant
-    { 
+    public class Order : Entity, IHasCreationTime, IMustHaveTenant
+    {
         public int TenantId { get; set; }
         public String RemoteId { get; set; }
         public OrderStatus Status { get; set; }
         public String CardCode { get; set; }
+        public String CardName {get;set;}
         public long UserId { get; set; }
         public String Comment { get; set; }
         public String LastMessage { get; set; }
@@ -29,6 +30,8 @@ namespace GRINTSYS.SAPMiddleware.M2
         public String DeliveryDate { get; set; }
 
         public DateTime CreationTime { get; set; }
+
+        public Guid U_M2_UUID { get; set; }
 
         public Double GetTotal()
         {
